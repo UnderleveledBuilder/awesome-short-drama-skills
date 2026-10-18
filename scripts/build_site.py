@@ -31,6 +31,7 @@ DIST = WEB / "dist"
 SITE = tomllib.loads((WEB / "site.toml").read_text(encoding="utf-8"))
 BASE = SITE["base_url"].rstrip("/")
 REPO_URL = f"https://github.com/{SITE['repo']}"
+SITEMAP_MAX = 300  # 每个 sitemap 文件最多几条（头条站长平台的限制）
 # 搜索引擎站长平台的所有权验证标签，写进每页 <head>（site.toml 的 [verify]）
 VERIFY_META = "".join(f'<meta name="{k}" content="{html.escape(v)}">\n' for k, v in SITE.get("verify", {}).items())
 LANGS = {
@@ -796,17 +797,29 @@ class Site:
         (DIST / "llms.txt").write_text("\n".join(lines), encoding="utf-8")
 
     def sitemap(self) -> None:
-        rows = []
+        # sitemap.xml 是索引，按语言分文件：GSC 能分开看中英文收录；
+        # 头条站长平台写着"不超过 300 条"（说的是条数还是文件数没写清），所以每个文件再按 300 条切
+        rows: dict = {lang: [] for lang in LANGS}
         for path, lastmod in self.pages:
             alts = "".join(f'<xhtml:link rel="alternate" hreflang="{LANGS[x]["hreflang"]}" href="{abs_url(x, path)}"/>'
                            for x in LANGS)
             alts += f'<xhtml:link rel="alternate" hreflang="x-default" href="{abs_url("zh", path)}"/>'
             for lang in LANGS:
-                rows.append(f"<url><loc>{abs_url(lang, path)}</loc><lastmod>{lastmod}</lastmod>{alts}</url>")
-        xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
-               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-               + "\n".join(rows) + "\n</urlset>\n")
-        (DIST / "sitemap.xml").write_text(xml, encoding="utf-8")
+                rows[lang].append((lastmod, f"<url><loc>{abs_url(lang, path)}</loc><lastmod>{lastmod}</lastmod>{alts}</url>"))
+        index = []
+        for lang, items in rows.items():
+            for i in range(0, len(items), SITEMAP_MAX):
+                chunk = items[i:i + SITEMAP_MAX]
+                name = f"sitemap-{lang}-{i // SITEMAP_MAX + 1}.xml"
+                (DIST / name).write_text(
+                    '<?xml version="1.0" encoding="UTF-8"?>\n'
+                    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+                    + "\n".join(r for _, r in chunk) + "\n</urlset>\n", encoding="utf-8")
+                index.append(f"<sitemap><loc>{BASE}/{name}</loc><lastmod>{max(m for m, _ in chunk)}</lastmod></sitemap>")
+        (DIST / "sitemap.xml").write_text(
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            + "\n".join(index) + "\n</sitemapindex>\n", encoding="utf-8")
         if SITE.get("indexnow_key"):
             (DIST / f"{SITE['indexnow_key']}.txt").write_text(SITE["indexnow_key"], encoding="utf-8")
         (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n", encoding="utf-8")
