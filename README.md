@@ -74,7 +74,7 @@
 
 - **小说改编短剧**：手上有一本小说，要出剧本和分镜
   - 组合：[narrative-to-screen-reader](https://github.com/zhlmi/narrative-to-screen-reader) → [shuohao-skills](https://github.com/eternityspring/shuohao-skills) → [screenwriter-skill](https://github.com/Vi7QY/screenwriter-skill)
-  - 思路：narrative-to-screen-reader 先判断故事能不能拍、怎么改，shuohao-skills 从拆角色跑到分镜，screenwriter-skill 最后按 37 条规则审稿
+  - 思路：narrative-to-screen-reader 先判断故事能不能拍、怎么改，shuohao-skills 从拆角色跑到分镜，screenwriter-skill 最后按 38 条规则审稿
 - **原创红果/抖音爆款剧本**：从一句创意写出能上线的分集剧本
   - 组合：[short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory) → [qianqianwriting](https://github.com/catyiqian/qianqianwriting) → [screenwriter-skill](https://github.com/Vi7QY/screenwriter-skill)
   - 思路：short-drama-factory 管集数、付费卡点和钩子，qianqianwriting 补救猫咪节拍和爆款拆解，screenwriter-skill 审稿

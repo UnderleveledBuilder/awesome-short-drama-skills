@@ -6,10 +6,10 @@
 name  = "小说改编短剧"
 goal  = "手上有一本小说，要出剧本和分镜"
 repos = ["zhlmi/narrative-to-screen-reader", "eternityspring/shuohao-skills", "Vi7QY/screenwriter-skill"]
-why   = "narrative-to-screen-reader 先判断故事能不能拍、怎么改，shuohao-skills 从拆角色跑到分镜，screenwriter-skill 最后按 37 条规则审稿"
+why   = "narrative-to-screen-reader 先判断故事能不能拍、怎么改，shuohao-skills 从拆角色跑到分镜，screenwriter-skill 最后按 38 条规则审稿"
 name_en = "Adapting a novel into a short drama"
 goal_en = "You have a novel and need scripts and storyboards"
-why_en  = "narrative-to-screen-reader first judges whether the story can be shot and how to adapt it; shuohao-skills runs from character breakdown to storyboards; screenwriter-skill reviews the result against 37 rules"
+why_en  = "narrative-to-screen-reader first judges whether the story can be shot and how to adapt it; shuohao-skills runs from character breakdown to storyboards; screenwriter-skill reviews the result against 38 rules"
 
 [[packs]]
 name  = "原创红果/抖音爆款剧本"

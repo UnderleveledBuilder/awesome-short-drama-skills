@@ -74,7 +74,7 @@ Most projects come from China's short-drama scene (Hongguo, Douyin and others), 
 
 - **Adapting a novel into a short drama**: You have a novel and need scripts and storyboards
   - Stack: [narrative-to-screen-reader](https://github.com/zhlmi/narrative-to-screen-reader) → [shuohao-skills](https://github.com/eternityspring/shuohao-skills) → [screenwriter-skill](https://github.com/Vi7QY/screenwriter-skill)
-  - Why: narrative-to-screen-reader first judges whether the story can be shot and how to adapt it; shuohao-skills runs from character breakdown to storyboards; screenwriter-skill reviews the result against 37 rules
+  - Why: narrative-to-screen-reader first judges whether the story can be shot and how to adapt it; shuohao-skills runs from character breakdown to storyboards; screenwriter-skill reviews the result against 38 rules
 - **Original hit scripts for Hongguo / Douyin**: Turn a one-line idea into an episode-by-episode script ready to launch
   - Stack: [short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory) → [qianqianwriting](https://github.com/catyiqian/qianqianwriting) → [screenwriter-skill](https://github.com/Vi7QY/screenwriter-skill)
   - Why: short-drama-factory manages episode count, paywall points and hooks; qianqianwriting adds Save the Cat beats and teardowns of hit dramas; screenwriter-skill reviews
