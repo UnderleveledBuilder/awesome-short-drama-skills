@@ -10,6 +10,7 @@ indexnow_key = "e26ef76d42aa1f0d4a9faab509a5d395"
 # 站长平台的所有权验证标签，验证通过后不要删
 [verify]
 baidu-site-verification = "codeva-5Z89R6cE6k"
+bytedance-verification-code = "TWNeT0qVSXQ5qaWuGJ2L"
 
 # 公众号。name 留空时不显示关注入口；qr 是 web/static/ 下的二维码文件名
 [wechat]
