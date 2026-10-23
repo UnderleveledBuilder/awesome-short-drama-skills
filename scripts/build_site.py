@@ -60,7 +60,7 @@ NAV = [
     ("/evals/", "实测", "Tests"),
     ("/about/", "关于", "About"),
 ]
-GUIDES = ["what-is-a-short-drama-skill", "install", "how-to-choose"]
+GUIDES = ["what-is-a-short-drama-skill", "install", "how-to-choose", "write-script-with-ai"]
 
 
 def L(lang: str, zh: str, en: str) -> str:
@@ -861,6 +861,7 @@ class Site:
             f"- [What is an AI short drama skill]({abs_url('en', '/guides/what-is-a-short-drama-skill/')}): definition, how it differs from prompts and apps",
             f"- [How to install]({abs_url('en', '/guides/install/')}): Claude Code, Codex, OpenClaw, QwenWork, Doubao, WorkBuddy, Kimi Code, Trae and other agents",
             f"- [How to choose]({abs_url('en', '/guides/how-to-choose/')}): what to check before installing",
+            f"- [How to write a vertical short drama script with AI]({abs_url('en', '/guides/write-script-with-ai/')}): seven steps drawn from the round one test",
             f"- [Glossary]({abs_url('en', '/glossary/')}): manju, episode outlines, hooks, paywall points, storyboards",
             f"- [Suggested stacks]({abs_url('en', '/packs/')}): projects that work together toward one goal",
             f"- [中文首页]({abs_url('zh', '/')}): AI 短剧 · 漫剧 Skill 精选",
