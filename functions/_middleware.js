@@ -21,6 +21,15 @@ const BOTS = [
 ];
 const OTHER_BOT = /bot|crawl|spider|slurp|fetch|scrap|curl|wget|python|httpx|go-http|java\/|headless|preview/i;
 
+// 301 跳转。页面都经过 Functions，_redirects 不作用于这些路径，所以写在这里。
+// 站外把网址截成了 22 个字符（Search Console 的引荐网页是 kids.yahoo.co.jp 的搜索结果页），Google 照着抓到 404。
+const REDIRECTS = {
+  "/en/skills/muxia0396/n": "/en/skills/muxia0396/novel-to-ai-short-drama-skill/",
+  "/skills/liuxiao2005110": "/skills/liuxiao20051106-prog/ai-manga-drama/",
+  "/skills/egguy886/write": "/skills/egguy886/write-screenplay-skill/",
+  "/skills/zhaihao118/mic": "/skills/zhaihao118/micro-drama-skills/",
+};
+
 // 和 web/_headers 一致。_headers 不一定作用于经过 Functions 的响应，这里补上。
 const HEADERS = { "X-Content-Type-Options": "nosniff", "Referrer-Policy": "strict-origin-when-cross-origin" };
 
@@ -43,10 +52,11 @@ function refHost(ref, host) {
 
 export async function onRequest(context) {
   const { request, env } = context;
-  let res = await context.next();
+  const url = new URL(request.url);
+  const to = REDIRECTS[url.pathname];
+  let res = to ? Response.redirect(new URL(to, url.origin).toString(), 301) : await context.next();
   res = new Response(res.body, res);
   for (const [k, v] of Object.entries(HEADERS)) if (!res.headers.has(k)) res.headers.set(k, v);
-  const url = new URL(request.url);
   if (url.pathname === "/data.json" && !res.headers.has("Access-Control-Allow-Origin")) {
     res.headers.set("Access-Control-Allow-Origin", "*");
   }
