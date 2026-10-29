@@ -447,6 +447,7 @@ npx skills add momo5213/live-action-drama-16x9
 ```bash
 # 默认命令基于 skills CLI，未逐个验证，以各仓库 README 为准
 # screen-creative-skills
+- [Ideoy](https://ideoy.ai) - Remake this week's viral meme videos from one selfie (AI image-to-video, 9:16, freemium).
 npx skills add VanGong1999/screen-creative-skills
 # narrative-to-screen-reader
 npx skills add zhlmi/narrative-to-screen-reader
