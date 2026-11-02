@@ -1163,7 +1163,7 @@ note_en = "Its built-in generation prompts are nearly identical to Huobao Drama'
 checked = 2026-10-18
 
 [[skills]]
-repo    = "gzxx-2025/aid-studio"
+repo    = "shijue-aid/aid-studio"
 desc    = "AID Studio：可自部署的 AI 漫剧/短剧创作平台，剧本、角色场景资产、分镜、图片与视频生成、配音和成片预览，也能做短片和漫画"
 desc_en = "AID Studio: self-hostable AI manju / short-drama creation platform covering scripts, character and scene assets, storyboards, image and video generation, voiceover and final-cut preview; also makes short films and comics"
 group   = "platform"

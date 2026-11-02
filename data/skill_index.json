@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-26",
+  "fetched_at": "2026-11-02",
   "repos": {
     "0xsline/short-drama": {
       "branch": "main",
@@ -842,6 +842,16 @@
           "path": "skills/image-prompt-writing/SKILL.md"
         },
         {
+          "description": "用「代码渲染」方式把用户挑选的风格模板 + 上传的图片/视频/音频素材 + 提示词合成为对应风格的成片视频（脱离 ComfyUI）。当用户要在「无限・秩影」模式下、或指定某个 Lemo-Opuscar 风格（油画厚涂/浮世绘/皮影戏/卫星简报/产品拆解 等 66 种）制作短片时使用。",
+          "name": "lemo-opuscar",
+          "path": "skills/lemo-opuscar/SKILL.md"
+        },
+        {
+          "description": "Direct and produce a short film made entirely in code, in one of the styles of the Lemo-Opuscar library (e.g. Impasto Oil Painting 油画厚涂, Watercolor Brush 水彩笔刷, Ukiyo-e 浮世绘, Satellite Briefing 卫星简报, Exploded Teardown 产品拆解). Use when the user asks for a video, film, short, promo, explainer or animati…",
+          "name": "lemo-opuscar",
+          "path": "skills/lemo-opuscar/tools/directory/SKILL.md"
+        },
+        {
           "description": "AI漫剧全流程一键生成技能。将小说内容转化为AI动漫短剧制作所需的全套素材：专业剧本、人物设定（信息提取+小传+视觉关键词+三视图提示词）、场景设定（提取+场景提示词）、分镜脚本（拆分+首帧/尾帧/视频提示词）、以及标准化Excel表格输出。当用户需要将小说转化为漫剧/动漫短剧、生成分镜脚本、生成AI绘图提示词，或提及漫剧生成、小说转动漫、AI短剧时使用。",
           "name": "manga-drama-generator",
           "path": "skills/manga-drama-generator/SKILL.md"
@@ -870,6 +880,11 @@
           "description": "Turn product images and ad requirements into minimalist product ad shorts for e-commerce promotion and product launches. The Skill confirms format and product variants, extracts selling points, writes concise English ad copy, builds product anchors, plans beat-synced typography/storyboards, and gen…",
           "name": "minimalist-product-ad-generator",
           "path": "skills/minimalist-product-ad-generator/SKILL.md"
+        },
+        {
+          "description": "通过公开搜索URL在16个搜索引擎(7个国内直连+9个国际)中做跨引擎检索、结果去重与多源交叉验证,无需API Key,内置零依赖Python脚本。Use when 用户要求“搜一下/查资料/多找几个来源/核实消息/找公众号文章/排查报错/找论文或开源项目”时。输入自然语言查询词,输出带来源链接与可信度标注的结构化结果。不适用于私有数据检索、批量抓取、需要登录后可见的内容。",
+          "name": "multi-search-engine",
+          "path": "skills/multi-search-engine/SKILL.md"
         },
         {
           "description": "Turn a brief music description and optional tagged lyrics into a professional MiniMax Music 3 structured caption with Global Metadata, Vocal Details, and a section-aware Arrangement. Use when users ask to enhance a music-generation prompt, preserve lyric-section directives, retrieve a similar style…",
@@ -932,22 +947,22 @@
           "path": "skills/script-to-storyboard/SKILL.md"
         },
         {
-          "description": "中文小说/剧本创作流水线：小说转剧本（素材挖点→三幕结构→场景剧本成稿）、剧本转分镜（分镜表+角色人设卡+AI绘图/视频Prompt）、小说直转分镜（一键拆解角色/场景/镜头，输出下游生成工具兼容 JSON），组成「小说→剧本→分镜」完整链路。当用户需要把小说改成剧本、写出分镜脚本、拆解小说镜头、生成角色人设卡与 AI 绘图提示词时使用。",
-          "name": "story-pipeline-cn",
-          "path": "skills/story-pipeline-cn/SKILL.md"
+          "description": "【套装内部技能 · 全流程用户通常无需直接调用；直接说需求给总控 short-drama-director 即可，总控会自动路由到本技能】【漫剧老李 V7.4.26 套装 · 子技能】资产锁定阶段专精引擎：从剧本提取三清单（角色外观/道具/场景）→**按素材形态产出**（M0 外观档案复述块 / **M1 出图提示词 + 图号编号 + 《素材接线单》·默认** / M2 分批出图锁定），并管理场景空间连续性、道具单实例锁与人群调度。**本包不持有图**——图由用户在外部平台自行生成；本引擎禁止索要图片、禁止因缺图阻断下游。触发词：拆资产、资产提取、资产图册、生图提示词、角色资产板、场景提示词…",
+          "name": "sd-asset-engine",
+          "path": "skills/sd-asset-engine/SKILL.md"
         },
         {
-          "description": "为 Qwen3-TTS 音色设计工作流编写人物音色参数。使用时机：为漫剧人物设计专属音色（音色样本 voice_ref），需给出代表性台词 text 与音色描述 voice_description。输出 text 与 voice_description。",
-          "name": "tts-voice-design",
-          "path": "skills/tts-voice-design/SKILL.md"
+          "description": "【套装内部技能 · 全流程用户通常无需直接调用；直接说需求给总控 short-drama-director 即可，总控会自动路由到本技能】【漫剧老李 V7.4.26 套装 · 子技能】打戏分镜专精引擎——负责一切打斗/武打/战斗场面的分镜提示词生成：打斗构思（动机/强弱错位/赌注/环境变数）、八步写作脑、八类自然句母版逐镜成句、铁律自检、摄影机行为锁与战场群战速查。触发词：打戏、武打、分镜打斗、战斗场面、大招、剑阵、法阵、法相、割草、对轰、招式、武学、拳法、刀剑对决、终结技、战场、群战、军阵、运镜锁。套装成员：总控 short-drama-director（锁系统与投喂格式权威）+ sd-d…",
+          "name": "sd-combat-engine",
+          "path": "skills/sd-combat-engine/SKILL.md"
         },
         {
-          "description": "电影感拍摄与镜头运动技能。当用户提到镜头运动、运镜、拍摄技巧、景别、推拉摇移、电影感构图、或需要为视频创作设计分镜脚本时触发本技能。",
-          "name": "video-cinematography",
-          "path": "skills/video-cinematography/SKILL.md"
+          "description": "【套装内部技能 · 全流程用户通常无需直接调用；直接说需求给总控 short-drama-director 即可，总控会自动路由到本技能】【漫剧老李 V7.4.26 套装 · 子技能】导演决策引擎（分镜选型依据层）：情境映射 E01~E15 + 80/15/5 权重机制 + 情绪锚点表 + 构图雷区 A/B 双态白名单，回答'这场戏该用什么镜头'，为分镜引擎提供选型依据。触发词：情境映射、这场戏用什么机位、情绪锚点、节拍表、雷区、构图雷区、正面居中能不能用、这镜该用什么。本技能为套装成员，完整全流程从总控 short-drama-director 进入。",
+          "name": "sd-decision-engine",
+          "path": "skills/sd-decision-engine/SKILL.md"
         }
       ],
-      "total": 37
+      "total": 54
     },
     "T8mars/minimax-h3-prompt-skill-T8": {
       "branch": "main",
@@ -1419,14 +1434,49 @@
           "path": "advanced/story-writing/skills/em-story-architect/SKILL.md"
         },
         {
+          "description": "Use when localizing Chinese short-drama dialogue only into natural North American English for DramaBox/ReelShort/Tallflix-style vertical dramas. Trigger for requests like \"只翻译台词\", \"对白本地化\", \"中文台词后加英文\", \"把英文台词插入剧本\", \"只处理对白不翻译动作线\", or \"用美国人日常会说的台词\". This skill keeps action lines unchanged, preserves C…",
+          "name": "drama-dialogue-localizer",
+          "path": "skills/drama-dialogue-localizer/SKILL.md"
+        },
+        {
+          "description": "剧本 AI Humanizer —— 把竖屏付费短剧（中文工作稿）逐批做\"去 AI 味 / 人性化\"措辞优化， 在严格锁住剧情、分镜、Beat、金句的前提下，只改措辞、节奏、可拍摄动作线与 parenthetical。 运行时先问 4–5 个普适问题（题材 / 主角声音 / 受众锚点 / 锁定项 / 文件与批次）， 自动扫描底稿生成\"锁定项清单\"给用户确认，再串 humanizer-zh 执行，输出新文件 + 变更日志。 适用场景： - 短剧终稿/精修稿读起来有 AI 味、书面腔、宣传腔、破折号过度、三段式排比、否定排比、作者总结句 - 动作线太文学化，需要改成能实际表演、拍摄的指示 - 想…",
+          "name": "drama-humanizer",
+          "path": "skills/drama-humanizer/SKILL.md"
+        },
+        {
+          "description": "艾玛短剧 · 英文对白打磨。打磨已有本地化英文对白的意图准确、自然口语、角色声音与跨集一致性；保留中文和动作，不以固定高分或零改动循环作为完成门槛。",
+          "name": "drama-localization-loop",
+          "path": "skills/drama-localization-loop/SKILL.md"
+        },
+        {
+          "description": "艾玛短剧 · 剧本精修。根据已有初稿或客户反馈精修节奏、对白与人物表现；只在授权范围删改，不自动重构人设、关键事件或卡点。",
+          "name": "drama-script-refiner",
+          "path": "skills/drama-script-refiner/SKILL.md"
+        },
+        {
           "description": "艾玛短剧 Beta公开专业版 · 故事改编。把指定对标的有效机制转为新故事方案，或按明确维度改变已有故事的人设、设定、关系与大纲；检查变化造成的连带影响。仅分析时不重写正文，已有集纲的忠实扩写另用集纲扩写方法。",
           "name": "em-adaptation",
           "path": "skills/em-adaptation/SKILL.md"
         },
         {
-          "description": "艾玛短剧 Beta精编专业版 · 中文对白诊断。诊断或精修短剧对白的自然度、人物声音、重复信息与攻防关系，按请求只评或改写。",
+          "description": "艾玛短剧 · 批注迁移。将中文编辑批注翻译并按语义定位迁入对应英文 Word，保留正文、原生批注结构、既有批注与线程；可整合用户提供的会议意见，但不执行批注内容或改写正文。",
+          "name": "em-comment-transfer",
+          "path": "skills/em-comment-transfer/SKILL.md"
+        },
+        {
+          "description": "艾玛短剧 · 台词效率。按功能性、情绪性逐句评分，执行低于5分删除、5至不足7分重写，并交付完整改稿；用于台词没用、信息重复、情绪太平、对白拖沓及用户新增相关反馈。持续记录用户对台词效率的要求与反例。",
+          "name": "em-dialogue-efficiency",
+          "path": "skills/em-dialogue-efficiency/SKILL.md"
+        },
+        {
+          "description": "艾玛短剧 · 中文对白诊断。诊断或精修中文短剧台词的车轱辘话、明情绪、言语行动、信息负载与活人感；包含0930实操课的做减法、称呼变化、人物声音和VO必要性检查。按请求只评或改写；整剧结构和跨语言本地化使用对应模块。",
           "name": "em-dialogue",
           "path": "skills/em-dialogue/SKILL.md"
+        },
+        {
+          "description": "艾玛短剧 · 英文对白打磨。二次打磨已有本地化英文对白的语义、自然度、可演性、人物声音与跨集一致性；保留中文、动作和故事事实。首次建立美国版文化与英文成品时使用美国本地化模块。",
+          "name": "em-english-polish",
+          "path": "skills/em-english-polish/SKILL.md"
         },
         {
           "description": "艾玛短剧 · 逐集钩子。诊断、设计或修复短剧集尾与下集承接，拆解指定对标并按授权迁移钩子机制。用于每集缺少追看理由、卡点弱或只有悬念没有期待；短视频口播开头不属于本技能。",
@@ -1449,6 +1499,36 @@
           "path": "skills/em-outline-to-script/SKILL.md"
         },
         {
+          "description": "艾玛短剧 · 海外分集。将海外短剧故事框架拆成逐集目标、行动、爽点和钩子兑现，诊断节奏与候选付费断点；只处理指定范围，不用固定秒数制造假精确。",
+          "name": "em-overseas-beats",
+          "path": "skills/em-overseas-beats/SKILL.md"
+        },
+        {
+          "description": "艾玛短剧 · 海外故事设计。把海外短剧选题发展为人物、世界规则、信息差、爽点与长线冲突组成的故事开发稿；适用于原创设计或获准维度的改编，不代替集纲扩写。",
+          "name": "em-overseas-engine",
+          "path": "skills/em-overseas-engine/SKILL.md"
+        },
+        {
+          "description": "艾玛短剧 · 海外选题。为海外竖屏短剧筛选题材、组合情绪卖点、判断目标受众与制作适配，交付有取舍依据的选题卡；不将历史资料当实时榜单。",
+          "name": "em-overseas-genre",
+          "path": "skills/em-overseas-genre/SKILL.md"
+        },
+        {
+          "description": "艾玛短剧 · 海外投稿包装。将已有海外短剧项目整理为卖点、梗概、人设、分集及样稿组成的可审阅投稿包，核对目标方要求；不自动上传、联系平台或发送邮件。",
+          "name": "em-overseas-pitch",
+          "path": "skills/em-overseas-pitch/SKILL.md"
+        },
+        {
+          "description": "艾玛短剧 · 海外题材与过稿参考。基于已整理的过稿指南和题材案例提供选题、故事设计、分集、审稿与投稿包装参考；用户要求使用这套资料或参考方法时使用。单项任务直达对应模块，不等同实时市场研究或自动投稿。",
+          "name": "em-overseas-reference",
+          "path": "skills/em-overseas-reference/SKILL.md"
+        },
+        {
+          "description": "艾玛短剧 · 海外过稿审查。按用户提供的海外短剧指南检查卖点、人物主动性、因果、节奏、本地化和投稿完整度，交付可定位的问题；不保证平台过稿，不擅自改写。",
+          "name": "em-overseas-review",
+          "path": "skills/em-overseas-review/SKILL.md"
+        },
+        {
           "description": "艾玛短剧 Beta精编专业版 · 剧本删减。删减剧本中的无效过场、重复信息和冗余表达，保留必要因果及情绪过程。",
           "name": "em-script-trim",
           "path": "skills/em-script-trim/SKILL.md"
@@ -1457,9 +1537,14 @@
           "description": "艾玛短剧 Beta精编专业版 · 结构拆解。分析剧本或集纲的主要冲突、段落结构、节奏与情感变化，不默认改稿。",
           "name": "em-structure",
           "path": "skills/em-structure/SKILL.md"
+        },
+        {
+          "description": "艾玛短剧 · 美国本地化。把中文短剧或尚未本地化的直译稿首次落成美国文化语境及英文或中英成品，保持获准故事机制和戏剧功能。已有美国版设定、只打磨英文对白时使用英文对白打磨模块。",
+          "name": "em-us-localization",
+          "path": "skills/em-us-localization/SKILL.md"
         }
       ],
-      "total": 10
+      "total": 24
     },
     "alchaincyf/seedance-skill": {
       "branch": "main",
