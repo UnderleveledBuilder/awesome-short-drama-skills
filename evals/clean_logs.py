@@ -12,6 +12,8 @@
   - 会话记录里 Claude Code 自己用的内部记录：发给接口的请求副本、系统提示词快照、账号所属组织、额度和费用状态、
     界面状态等。只留下 sandbox_instructions 这一条，它记下了沙箱实际生效的读写范围。
 
+不是 JSON 的行也删掉：命令行工具把自己的提示（例如「no stdin data received」）和日志打到了同一个文件里，不是对话内容。
+
 在留下的事件里，删掉的（没有内容，或者是重复）：
   - thinking_tokens 事件：只有「已思考多少 token」的计数，占原始日志一大半行数。
   - 思考块的 signature：加密签名，不可读。思考正文本来就是空的，保留空的思考块，能看出模型在哪里思考过。
@@ -78,6 +80,9 @@ def clean(src: Path, dest: Path) -> tuple[int, int]:
     with src.open(encoding="utf-8") as f, dest.open("w", encoding="utf-8") as out:
         for line in f:
             if not line.strip():
+                continue
+            if not line.startswith("{"):  # 命令行工具自己的提示，不是事件
+                dropped += 1
                 continue
             ev = json.loads(line)
             kind = ev.get("type")

@@ -10,6 +10,8 @@
   python evals/judge.py reveal 001-open-brief --work /tmp/judge   # 评完后揭晓：把故事卡、比较结果和对应关系写进 evals/runs/<premise>/
 
   python evals/judge.py duel 001-open-brief --work /tmp/judge --judge gpt     # 换 GPT 当评审复核，结果另存 *-gpt
+  python evals/judge.py duel 003-skeleton --work /tmp/judge --sample 5        # 先试判 5 对（10 场）看理由
+  python evals/judge.py duel 003-skeleton --work /tmp/judge --pairs 123:456   # 只试判指定的几对
   python evals/judge.py cluster 001-open-brief --work /tmp/judge --judge gpt
 
 主评审和故事卡用和参赛者相同的模型（claude-opus-5-5），不给任何工具，只看匿名稿。
@@ -22,6 +24,8 @@ locate 的结果写在 evals/runs/<premise>/deliverables.toml，可以人工改�
 第一轮（001-open-brief）比剧本和人物大纲，每个 skill 只和对照组比；第二轮（002-topic）比选题，所有参赛者两两全比。
 两两比较的提示词 10-22 换成了第二版评分标准（不按拍摄成本扣分），两轮都用新提示词重判；
 抽故事卡和分组的提示词没变，不要改，verify.py 要靠它们重建当时的提示词。
+第三轮（003-skeleton）比全剧骨架，用第三版评分标准：评委提示词只写目标，附上共同的选题卡，只判甲或乙，
+不抽故事卡、不分组（大家写的是同一个故事）。超过 3000 字的骨架，评委只看前 3000 字（max_chars，pack 时截断）。
 """
 from __future__ import annotations
 
@@ -129,6 +133,8 @@ def track_dims(track: str, sp: "Spec | None" = None) -> dict[str, str]:
 
 
 def duel_schema(track: str, sp: "Spec | None" = None) -> dict:
+    if getattr(sp, "verdict", None):
+        return sp.verdict
     dims = list(track_dims(track, sp))
     return {"type": "object", "additionalProperties": False, "required": ["dims", "winner", "reason"],
             "properties": {"dims": {"type": "object", "additionalProperties": False, "required": dims,
@@ -209,6 +215,17 @@ def read_text(p: Path) -> str:
     return p.read_text(encoding="utf-8", errors="replace")
 
 
+def deliv_text(out: Path, ref: str) -> tuple[str, str]:
+    """deliverables.toml 里的一项：文件路径，或「路径#L起-止」只取其中几行（交付文件里顺手多写了别的，只取要比的那部分）。
+    返回（文件路径，正文）。"""
+    path, _, lines = ref.partition("#L")
+    text = read_text(out / path)
+    if lines:
+        a, b = (int(x.lstrip("L")) for x in lines.split("-"))
+        text = "\n".join(text.splitlines()[a - 1:b]) + "\n"
+    return path, text
+
+
 def cmd_locate(premise: str, work: Path) -> None:
     sp = spec(premise)
     target = EVALS / "runs" / premise / "deliverables.toml"
@@ -243,6 +260,19 @@ def scrub(text: str, names: list[str]) -> str:
     return text
 
 
+CLIP_NOTE = "（超过 {} 字，后面截掉了）"
+
+
+def clip(text: str, limit: int) -> str:
+    """超过 limit 字（去掉空白计，不算「<!-- 文件名 -->」那行）就在不超过 limit 的最后一个换行处截断，再注明截掉了。"""
+    def count(s):
+        return len(re.sub(r"\s", "", re.sub(r"<!-- .*? -->\n", "", s)))
+    if count(text) <= limit:
+        return text
+    cut = max(i for i, ch in enumerate(text) if ch == "\n" and count(text[:i]) <= limit)
+    return text[:cut].rstrip() + "\n\n" + CLIP_NOTE.format(limit) + "\n"
+
+
 def cmd_pack(premise: str, work: Path) -> None:
     sp = spec(premise)
     deliv = tomllib.loads(read_text(EVALS / "runs" / premise / "deliverables.toml"))
@@ -264,13 +294,18 @@ def cmd_pack(premise: str, work: Path) -> None:
         d = EVALS / "runs" / premise / s / run / "output"
         key_map[str(code)] = key
         for part in sp.parts:
-            text = "\n\n".join(f"<!-- {f} -->\n{read_text(d / f)}" for f in deliv[key][part])
-            (blind / f"{code}.{part}.md").write_text(scrub(text, names), encoding="utf-8")
+            text = scrub("\n\n".join("<!-- {} -->\n{}".format(*deliv_text(d, f)) for f in deliv[key][part]), names)
+            if getattr(sp, "max_chars", 0):
+                text = clip(text, sp.max_chars)
+            (blind / f"{code}.{part}.md").write_text(text, encoding="utf-8")
     (work / "key.json").write_text(json.dumps(key_map, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"{len(keys)} 份匿名稿写到 {blind}")
 
 
-def packet(work: Path, code: str, parts: list[str], labels: dict[str, str] | None = None) -> str:
+def packet(work: Path, code: str, parts: list[str], labels: dict[str, str] | None = None, bare: bool = False) -> str:
+    """拼给评审的匿名稿。bare 时不加「## 交付名」小标题（第三轮只比一份交付，评委提示词里已经写了是什么）。"""
+    if bare:
+        return "\n\n".join(read_text(work / "blind" / f"{code}.{p}.md") for p in parts)
     labels = labels or PARTS
     return "\n\n".join(f"## {labels[p]}\n\n{read_text(work / 'blind' / f'{code}.{p}.md')}" for p in parts)
 
@@ -314,8 +349,9 @@ def duel_prompt(work: Path, track: str, a: str, b: str, sp: "Spec | None" = None
     sp = sp or ROUND1
     parts = sp.tracks[track]
     dims = "\n".join(f"- {d}：{why}" for d, why in track_dims(track, sp).items())
-    return sp.duel.format(part="、".join(sp.parts[p] for p in parts), dims=dims, a=packet(work, a, parts, sp.parts),
-                          b=packet(work, b, parts, sp.parts))
+    bare = getattr(sp, "bare", False)
+    return sp.duel.format(part="、".join(sp.parts[p] for p in parts), dims=dims, card=getattr(sp, "brief", ""),
+                          a=packet(work, a, parts, sp.parts, bare), b=packet(work, b, parts, sp.parts, bare))
 
 
 def cmd_cluster(premise: str, work: Path) -> None:
@@ -333,7 +369,7 @@ def pairings(premise: str, slugs: list[str]) -> list[tuple[str, str]]:
     return list(itertools.combinations(sorted(slugs), 2))
 
 
-def cmd_duel(premise: str, work: Path) -> None:
+def cmd_duel(premise: str, work: Path, sample: int = 0, pairs: str = "") -> None:
     sp = spec(premise)
     key_map = json.loads(read_text(work / "key.json"))
     code_of = {v: k for k, v in key_map.items()}
@@ -350,6 +386,13 @@ def cmd_duel(premise: str, work: Path) -> None:
                     for a, b in ((x, y), (y, x)):
                         if (track, a, b) not in done:
                             jobs.append((track, a, b))
+    if sample:  # 试判：用固定种子抽 sample 对，每对两种顺序都比
+        pairs = sorted({(t, *sorted((a, b))) for t, a, b in jobs})
+        keep = set(random.Random(sp.seed).sample(pairs, min(sample, len(pairs))))
+        jobs = [j for j in jobs if (j[0], *sorted(j[1:])) in keep]
+    if pairs:  # 试判指定的几对（编号对编号），每对两种顺序都比
+        keep = {tuple(sorted(p.split(":"))) for p in pairs.split(",")}
+        jobs = [j for j in jobs if tuple(sorted(j[1:])) in keep]
 
     def one(job):
         track, a, b = job
@@ -377,6 +420,15 @@ def cmd_reveal(premise: str, work: Path) -> None:
                 if k in r:
                     r[k + "_run"] = key_map[r[k]]
         (base / name).write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
+    deliv = tomllib.loads(read_text(base / "deliverables.toml"))
+    sp = spec(premise)
+    lengths = {}
+    for key in sorted(deliv):
+        s, run = key.rsplit(".", 1)
+        out = base / s / run / "output"
+        lengths[key] = {part: sum(len(re.sub(r"\s", "", deliv_text(out, f)[1])) for f in deliv[key][part])
+                        for part in sp.parts}
+    (base / "lengths.json").write_text(json.dumps(lengths, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     for name in ("clusters.json", "clusters-gpt.json"):
         if not (work / name).exists():
             continue
@@ -444,6 +496,42 @@ TOPIC_DIMS = {"topic": {"卖点": "一句话卖点能不能让人立刻想看",
                         "上屏": "观众代入谁，这个人有没有一张能演戏的脸；每次爽点落在谁脸上；关键情绪靠不靠心里话撑"}}
 
 
+# ── 第三轮：全剧骨架 ──
+
+SKELETON_PARTS = {"skeleton": "全剧骨架"}
+
+SKELETON_LOCATE = """下面是一次给竖屏短剧写全剧骨架留下的文件清单，每个文件附了开头。需求要的交付是一份全剧骨架：整部剧怎么走，用来管住后面的分集大纲和剧本。
+请指出哪些文件是最终交付的全剧骨架（相对路径，按阅读顺序）。只选最终交付的正文；过程文件、分析报告、检查报告、配置和数据文件都不选。骨架分成几个文件写的，都选上。找不到就给空列表。
+
+{listing}"""
+
+# 评委提示词照 launch/RUBRIC.md 第三版一字不差；{card} 是需求里去掉开头三行要求以后的选题卡。
+SKELETON_DUEL = """下面是同一张选题卡写出的两份全剧骨架，甲和乙，出自不同作者。
+骨架之后要交给 AI 写成 60 集竖屏短剧，再全部由 AI 拍出来：没有演员和片场，画面和声音都由模型生成。不考虑拍摄成本和难度：场景和人物多少、AI 好不好拍，都不算长处也不算短处。
+
+目标：选出照着它写下去、拍出来以后，观众更可能一集接一集追到最后的那一份。
+
+怎么判由你决定。理由里引用原文。
+
+=== 选题卡 ===
+{card}
+
+=== 甲 ===
+{a}
+
+=== 乙 ===
+{b}"""
+
+# 只判甲或乙，不设平；两种顺序判得不一样就算平。
+SKELETON_VERDICT = {"type": "object", "additionalProperties": False, "required": ["reason", "winner"],
+                    "properties": {"reason": {"type": "string"}, "winner": {"type": "string", "enum": ["甲", "乙"]}}}
+
+
+def premise_card(premise: str) -> str:
+    """需求全文去掉第一段（交付要求），剩下的就是选题卡。"""
+    return read_text(EVALS / "premises" / f"{premise}.md").split("\n\n", 1)[1].strip()
+
+
 class Spec:
     """一轮评审的设置：交付分几份、各步的提示词、比较维度、配对方式、分组用的随机种子。"""
 
@@ -460,6 +548,11 @@ SPECS = {
                       cluster=TOPIC_CLUSTER, duel=TOPIC_DUEL, dims=TOPIC_DIMS, tracks={"topic": ["topic"]},
                       cluster_system="你是网文和短剧行业编辑，只按要求输出。",
                       duel_system="你是严格、公正的评审，只按要求输出。", seed=20261020, pairing="all"),
+    "003-skeleton": Spec(parts=SKELETON_PARTS, locate=SKELETON_LOCATE, card=None, card_schema=None, cluster=None,
+                         duel=SKELETON_DUEL, dims={"skeleton": {}}, tracks={"skeleton": ["skeleton"]},
+                         cluster_system=None, duel_system="你是严格、公正的评审，只按要求输出。", seed=20261030,
+                         pairing="all", verdict=SKELETON_VERDICT, bare=True, brief=premise_card("003-skeleton"),
+                         max_chars=3000),
 }
 
 
@@ -475,11 +568,14 @@ def main() -> None:
     ap.add_argument("premise")
     ap.add_argument("--work", required=True, type=Path, help="放匿名稿和中间结果的目录（仓库之外）")
     ap.add_argument("--judge", choices=["opus", "gpt"], default="opus", help="谁当评审；gpt 用来复核")
+    ap.add_argument("--sample", type=int, default=0, help="duel 只试判这么多对（固定种子抽，每对两种顺序）")
+    ap.add_argument("--pairs", default="", help="duel 只试判这几对，写成 编号:编号,编号:编号（每对两种顺序）")
     args = ap.parse_args()
     args.work.mkdir(parents=True, exist_ok=True)
     global JUDGE, RAW
     JUDGE, RAW = args.judge, args.work.resolve() / "raw" / args.judge
-    globals()[f"cmd_{args.step}"](args.premise, args.work.resolve())
+    extra = {"sample": args.sample, "pairs": args.pairs} if args.step == "duel" else {}
+    globals()[f"cmd_{args.step}"](args.premise, args.work.resolve(), **extra)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,16 @@
+{
+  "repo": "lixiaoxiao9888-create/short-drama-factory",
+  "premise": "003-skeleton",
+  "run": 2,
+  "session": "312fe758-01d4-4ae2-ab42-37fddb91f080",
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "started": "2026-10-30T17:23:12-07:00",
+  "claude_code": "2.1.314 (Claude Code)",
+  "commit": "33d9988f5b9d83963cf1010b49f321fc09ea5a22",
+  "installed": [
+    "short-drama-factory"
+  ],
+  "finished": "2026-10-30T17:27:33-07:00",
+  "turns": 2
+}

@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-30T00:00:00Z",
+  "source": "premise.md + 验尸官的婚礼_全剧骨架.md",
+  "scope": ["characters", "locations", "factions", "items"],
+  "checkedNames": ["林晚", "沈峥", "程野", "沈砚", "苏曼丽", "周启年", "宋婉仪", "宋知远", "沈氏", "苏家", "市法医中心"],
+  "findings": [],
+  "notes": "人名均为常见姓氏+常用字组合，未命中 ip-blocklist.md 的禁用角色名，也没有对应的知名真人；机构和地点只用泛称（市法医中心、港口），没有落到真实城市或机构。",
+  "replaced": 0,
+  "passed": true
+}

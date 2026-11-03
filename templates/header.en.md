@@ -51,6 +51,28 @@ Limits of this round:
 
 The full record and per-skill reviews (in Chinese): [Round 2](https://shortdramaskills.com/evals/round-2/).
 
+## Which skill to install for the series outline
+
+Round 3 (2026-10-31): the 20 skills from the first two rounds and a control with no skill installed each wrote the whole-series outline for a 60-episode short drama from the same premise card (how the whole drama unfolds, no episode outlines or scripts), 3 times each. Every entry was compared blind with every other and ranked by points. The reviewers were only told the goal: once the outline is written up and made entirely by AI, are viewers more likely to watch to the end. Both AI reviewers (Opus and GPT) put these 4 in their top five and above the control:
+
+| Skill | Place (Opus / GPT) | Good for | Watch out for |
+|---|---|---|---|
+| [zhu5859243-free/hongguo-shortdrama-screenwriting](https://github.com/zhu5859243-free/hongguo-shortdrama-screenwriting) | 1 / 4 | A round every 3 to 5 episodes with evidence, counter-move and round ending spelled out, which the reviewers judged ready to hand to AI episode by episode; steady across runs | Late key evidence arrives conveniently; some leaps in reasoning |
+| [adoria111/emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills) | 2 / 2 | Hard rules first: an evidence ladder, a cost for every win, and when the audience and the heroine each learn what | Slow middle; you fill in the concrete rounds |
+| [Tomsawyerhu/Chinese-WebNovel-Skill](https://github.com/Tomsawyerhu/Chinese-WebNovel-Skill) | 3 / 1 | Big cliffhangers pinned to episodes, each one changing the game; answers pay off early | You supply where the late key evidence comes from |
+| [lixiaoxiao9888-create/short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory) | 4 / 5 | A round about every 3 episodes, clear paywall points, which the reviewers judged ready for AI to expand episode by episode | Spends episodes 1–21 proving the impostor viewers already know about; reveals the killer early |
+
+Both reviewers ranked 6 skills below the control. Most are top-level outlines that stop at sections or acts, useful when a screenwriter or AI fills in each episode afterwards; the ones in this list are [catyiqian/qianqianwriting](https://github.com/catyiqian/qianqianwriting) and [eternityspring/shuohao-skills](https://github.com/eternityspring/shuohao-skills).
+
+Limits of this round:
+- The two reviewers disagreed more than in round 2, agreeing on 332 of 630 pair results; on the other 10 skills they differ, for example Opus placed ai-short-drama 13th and GPT 3rd.
+- One premise card only (a female-led revenge mystery); another genre might rank differently.
+- 10 drafts went over the 3,000-character limit and were cut before judging; recounted without the comparisons they were in, each reviewer's top five stays the same.
+- Only one model was tested: claude-opus-5-5.
+- Only the outlines themselves were judged; this round did not test whether scripts written from them turn out well.
+
+The full record and per-skill reviews (in Chinese): [Round 3](https://shortdramaskills.com/evals/round-3/).
+
 **Legend**: 🌟 featured · 📝 prompt files (not a standard skill) · 🧩 full app · 🎬 supported video models · 💤 not updated for 180+ days · 📦 archived · ⚠️ repo unavailable
 
 **Let your agent choose**: this list is also a skill. Run `npx skills add UnderleveledBuilder/awesome-short-drama-skills` to install short-drama-skill-finder, then ask your agent "I use Codex to adapt novels into short dramas. Which skill should I install?"

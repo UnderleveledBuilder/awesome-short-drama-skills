@@ -1,14 +1,71 @@
 <!--
 title: 短剧 Skill 实测
-seo_title: AI 短剧和网文 Skill 实测：剧本和选题两轮，同一个模型各跑 3 次，和不装 skill 的对照组匿名盲比
-description: 第二轮 11 个网文和短剧选题 skill 加对照组，给同一个爽文故事定选题，两两盲比排出积分；第一轮 10 个短剧剧本 skill 写同一份开放需求，和对照组盲比剧本和人物大纲。同一个模型，每个跑 3 次，过程全公开。
+seo_title: AI 短剧和网文 Skill 实测：剧本、选题、全剧骨架三轮，同一个模型各跑 3 次，和不装 skill 的对照组匿名盲比
+description: 第三轮 20 个短剧和网文 skill 加对照组，给同一张选题卡写 60 集全剧骨架，两两盲比，两位 AI 评审都看好的有 4 个；第二轮 11 个网文和短剧选题 skill 加对照组，给同一个爽文故事定选题，两两盲比排出积分；第一轮 10 个短剧剧本 skill 写同一份开放需求，和对照组盲比剧本和人物大纲。同一个模型，每个跑 3 次，过程全公开。
 crumb: 实测
-updated: 2026-10-23
+updated: 2026-10-31
 -->
 <p class="lead">目录里的「人工核对」只说明项目信息准确，不说明好不好用。这一页放实测：<strong>同一份需求交给不同的 skill，把产出原样摆出来，再匿名盲比</strong>，让你自己判断。</p>
 
-<div class="note"><p><strong>第二轮已完成（2026-10-20）：</strong>11 个网文和短剧的选题 skill 加 1 个不装 skill 的对照组，给同一个爽文故事定选题，各定 3 次，共 36 次，所有参赛者两两盲比。全过程见<a href="/evals/round-2/">第二轮实测记录</a>，原始数据在 <a href="{{repo_url}}/tree/main/evals/runs/002-topic">GitHub</a>。</p>
+<div class="note"><p><strong>第三轮已完成（2026-10-31）：</strong>前两轮的 20 个 skill 加 1 个不装 skill 的对照组，给同一张选题卡写 60 集短剧的全剧骨架，各写 3 次，共 63 次，所有参赛者两两盲比。全过程见<a href="/evals/round-3/">第三轮实测记录</a>，原始数据在 <a href="{{repo_url}}/tree/main/evals/runs/003-skeleton">GitHub</a>。</p>
+<p><strong>第二轮已完成（2026-10-20）：</strong>11 个网文和短剧的选题 skill 加 1 个不装 skill 的对照组，给同一个爽文故事定选题，各定 3 次，共 36 次，所有参赛者两两盲比。全过程见<a href="/evals/round-2/">第二轮实测记录</a>，原始数据在 <a href="{{repo_url}}/tree/main/evals/runs/002-topic">GitHub</a>。</p>
 <p><strong>第一轮已完成（2026-10-18）：</strong>10 个剧本类 skill 加 1 个不装 skill 的对照组，同一份开放需求各跑 3 次，共 33 次。全过程都能查：<a href="/evals/round-1/">第一轮实测记录</a>里有给 agent 的全部输入、每次运行的每一步、评审看到的匿名稿、每一场盲比的提示词和判决，以及评审体检。原始数据在 <a href="{{repo_url}}/tree/main/evals/runs/001-open-brief">GitHub</a>。</p></div>
+
+<h2 id="round-3">第三轮：全剧骨架</h2>
+<p>需求是给同一张选题卡《验尸官的婚礼》写全剧骨架：整部剧 60 集怎么走，用来管住后面的分集大纲和剧本。要拍成 60 集竖屏短剧，每集 1–2 分钟，全部由 AI 拍；只交骨架，3000 字以内。前两轮测过的 20 个 skill 全部参加，加 1 个不装 skill 的对照组，都用 Claude Code、claude-opus-5-5、推理强度 high，开场指令和固定回复一字不差。大家写的是同一个故事，比的只是怎么把它铺成 60 集。</p>
+<p>评审看不到骨架出自谁：21 个参赛者两两比，第 n 次运行对第 n 次运行，先后顺序对调再比一次，两次都判它赢才算赢。赢记 1 分，平记 0.5 分，每个参赛者比 60 次，满分 60。评审提示词只写目标：照着这份骨架写下去、拍出来以后，观众更可能一集接一集追到最后；不考虑拍摄成本和难度，不列评分维度，怎么判由评审自己定。主评审是 claude-opus-5-5；又请 GPT（gpt-6-astra）用一字不差的提示词重判一遍。这一轮两位评审的分歧比第二轮大，所以下面只写两位评审一致的结论。这些都是 AI 评审的看法，不等于观众的选择。</p>
+
+<h3>主要发现</h3>
+<ol>
+  <li><strong>AI 评审认为，装上比不装强的有 4 个。</strong>hongguo-shortdrama-screenwriting、emma-screenwriting-skills、Tomsawyerhu/Chinese-WebNovel-Skill、short-drama-factory，两位评审都排进前五，也都排在对照组前面。两位评审看到的共同点，是把 60 集拆到了他们认为能直接往下写的颗粒：hongguo 和 short-drama-factory 每三到五集一个回合，写明亮出什么证据、对手怎么反扑、回合怎么收尾；Chinese-WebNovel-Skill 把大卡点钉在具体集数，要求「必须换局，不能只留悬念」；emma 用一张「知情边界」表，规定观众和女主各在第几集知道什么。两位评审的第一名不同：Opus 是 hongguo，GPT 是 Chinese-WebNovel-Skill。</li>
+  <li><strong>两位评审都排在对照组后面的有 6 个。</strong>Distilled-Novel-Toolbox、webnovel-writer、bookflow-skill、chinese-longnovel-skill、qianqianwriting、shuohao-skills。扣分多在两处：只写到段或幕，段内每集靠什么推进没写；长段低谷，或者关键证据前面没埋好。它们多是总纲式写法，长处在补设定、锁揭示顺序、把爽点钉到集数这些地方，后面有编剧或 AI 逐集补细时用得上，见下表「适合谁」。</li>
+  <li><strong>其余 10 个，两位评审看法不一。</strong>分歧最大的是 ai-short-drama（Opus 第 13，GPT 第 3）、screenwriting-skills（Opus 第 4，GPT 第 11）和 manju-laoli-skill（Opus 第 18，GPT 第 7）。从理由看，Opus 常把规则表、伏笔表和压到终局才亮的底牌算作长处；GPT 更常说这些是没落地的承诺，或者是巧合送来的答案，它更看重阶段答案兑现得早不早，翻盘是不是女主自己挣来的。</li>
+  <li><strong>两位评审都常扣分的地方，多出在选题卡自带的坑上。</strong>卡上写明女主在婚礼上一眼认出新郎是替身，不少骨架却再花十几二十集去证明这件观众已经知道的事。她三年前解剖过一具无名男尸，那其实就是她的未婚夫，卡上没交代她当时为什么没认出来，补上这个漏洞的加分，没补的扣分。关键证据来得太巧（旧表里藏着存储卡、修好的旧手机里有录音），21 个参赛者里过半被扣过这一条。几乎所有骨架都在第 30 集前后写了同一种反转，对照组也写了，这不是 skill 带来的差别。</li>
+  <li><strong>挑 skill 要看你卡在哪一步。</strong>第一轮写剧本两位评审都判三次全赢对照组的 4 个里，这一轮只有 emma 两位评审都排进前五；第二轮选题进前三的 webnovel-writer，这一轮两位评审都排在对照组后面。跨轮都靠前的有两个：emma（第一轮剧本、这一轮骨架）和 Chinese-WebNovel-Skill（第二轮选题、这一轮骨架）。</li>
+  <li><strong>有的 skill 三次分数很接近，有的每次都不一样。</strong>hongguo、emma、ai-short-drama 三次的分数，两位评审给的最高和最低都只差 5.5 分以内（每次满分 20）；shanyin 起伏最大，第 1 次两位评审都给了 17 分以上，第 2 次都不到 5 分。</li>
+</ol>
+
+<h3>积分</h3>
+<p>分三组：两位评审都排在对照组前面的、两位评审看法不一的、两位评审都排在对照组后面的；组内按两位评审的积分之和排。积分后面括号里是 60 次比较的「赢-平-输」。「适合谁」按两位评审都常提的长处和问题写。</p>
+<table>
+  <thead><tr><th>项目</th><th>Opus</th><th>GPT 复核</th><th>适合谁</th></tr></thead>
+  <tbody>
+    <tr><th colspan="4">两位评审都排在对照组前面（4 个）</th></tr>
+    <tr><td><a href="https://github.com/Tomsawyerhu/Chinese-WebNovel-Skill">Tomsawyerhu/Chinese-WebNovel-Skill</a></td><td>第 3 名<br><small>45 分（37-16-7）</small></td><td>第 1 名<br><small>57 分（55-4-1）</small></td><td>要一份卡点集数、信息差都写定的骨架，直接交给 AI 往下扩写分集；后段关键证据的来路要自己补。</td></tr>
+    <tr><td><a href="/skills/zhu5859243-free/hongguo-shortdrama-screenwriting/">zhu5859243-free/hongguo-shortdrama-screenwriting</a></td><td>第 1 名<br><small>51 分（44-14-2）</small></td><td>第 4 名<br><small>46 分（43-6-11）</small></td><td>要把骨架直接拆给 AI 逐集写、要求每集都有证据、反制和钩子的短剧；三次分数接近，出稿稳定。</td></tr>
+    <tr><td><a href="/skills/adoria111/emma-screenwriting-skills/">adoria111/emma-screenwriting-skills</a></td><td>第 2 名<br><small>46.5 分（40-13-7）</small></td><td>第 2 名<br><small>47.5 分（42-11-7）</small></td><td>想先定一套硬引擎（证据阶梯、赢必付代价、信息差）当分集的约束框架；中段的具体回合要自己补。</td></tr>
+    <tr><td><a href="/skills/lixiaoxiao9888-create/short-drama-factory/">lixiaoxiao9888-create/short-drama-factory</a></td><td>第 4 名<br><small>42.5 分（32-21-7）</small></td><td>第 5 名<br><small>43 分（37-12-11）</small></td><td>要每三四集一次结算、付费卡点清楚、直接交给 AI 逐集扩写的项目；用之前先压缩替身那一段，把凶手藏深一点。</td></tr>
+    <tr><th colspan="4">两位评审看法不一（10 个）</th></tr>
+    <tr><td><a href="/skills/hao0321/ai-short-drama/">Hao0321/ai-short-drama</a></td><td>第 13 名<br><small>26.5 分（14-25-21）</small></td><td>第 3 名<br><small>47 分（43-8-9）</small></td><td>下游有编剧或 AI 能自己补集级钩子，需要一份逻辑严、爽点回收有规则、能防长篇注水的框架；三次分数接近。</td></tr>
+    <tr><td><a href="/skills/jtydhr88/screenwriting-skills/">jtydhr88/screenwriting-skills</a></td><td>第 4 名<br><small>42.5 分（36-13-11）</small></td><td>第 11 名<br><small>29 分（19-20-21）</small></td><td>想先给下游 AI 定节拍规则、伏笔兑付表和代价链这类硬约束的；具体场面要自己补，女主的动机要核对。</td></tr>
+    <tr><td><a href="https://github.com/xindoo/sumeru">xindoo/sumeru</a></td><td>第 7 名<br><small>37 分（28-18-14）</small></td><td>第 6 名<br><small>34 分（26-16-18）</small></td><td>需要强节点、中点胜利和女主自我追责绑在一起、结尾有情感回收的大框架；中段的证据空档要补。两位评审都排在对照组前面，但去掉超字数那次后，GPT 那边排到对照组后面。</td></tr>
+    <tr><td><a href="https://github.com/tance-mang/chinese-webnovel-skills">tance-mang/chinese-webnovel-skills</a></td><td>第 9 名<br><small>36.5 分（28-17-15）</small></td><td>第 10 名<br><small>29.5 分（23-13-24）</small></td><td>想要规则硬、伏笔有账可查、付费卡点和证据反扑都写清的骨架；这一轮它的名次主要靠超字数的两次。</td></tr>
+    <tr><td><a href="/skills/0xsline/short-drama/">0xsline/short-drama</a></td><td>第 6 名<br><small>38.5 分（28-21-11）</small></td><td>第 13 名<br><small>27 分（20-14-26）</small></td><td>想要逐集节拍密、卡点和伏笔都标好集数、直接交给 AI 扩写的；写分集前先核对卡点表和正文对不对得上。</td></tr>
+    <tr><td><a href="https://github.com/qingyabailu-git/webfiction-write">qingyabailu-git/webfiction-write</a></td><td>第 10 名<br><small>34 分（24-20-16）</small></td><td>第 9 名<br><small>30 分（22-16-22）</small></td><td>想要证据攻防和付费卡点排到集数、带倒计时的骨架；三次详略差得多，拿到稿先看中后段是不是只剩概述。</td></tr>
+    <tr><td><a href="/skills/shanyin-ai/shanyin-screenwriting-master/">Shanyin-ai/shanyin-screenwriting-master</a></td><td>第 7 名<br><small>37 分（31-12-17）</small></td><td>第 15 名<br><small>23 分（19-8-33）</small></td><td>想要女主内心线和外线追凶紧扣、转变节点能拍出来的；三次差别很大，第 1 次两位评审都给了高分，第 2 次都垫底。</td></tr>
+    <tr><td><a href="https://github.com/zenstory-ai/oh-story-claudecode">zenstory-ai/oh-story-claudecode</a></td><td>第 11 名<br><small>32 分（22-20-18）</small></td><td>第 16 名<br><small>22.5 分（19-7-34）</small></td><td>要一份大节点锚得准、中点反转强、带倒计时和信息闸门的骨架，并愿意自己补中段；不适合不经补充直接交给 AI 写满 60 集。</td></tr>
+    <tr><td><a href="/skills/zenstory-ai/drama-skills/">zenstory-ai/drama-skills</a></td><td>第 12 名<br><small>28 分（19-18-23）</small></td><td>第 14 名<br><small>25.5 分（18-15-27）</small></td><td>看重因果升级和主角代价、下游另有一步专门补逐集钩子和卡点的流程；不适合直接交给 AI 逐集展开、又要求集集有爽点的。</td></tr>
+    <tr><td><a href="/skills/lixiaoxiao9888-create/manju-laoli-skill/">lixiaoxiao9888-create/manju-laoli-skill</a></td><td>第 18 名<br><small>14 分（7-14-39）</small></td><td>第 7 名<br><small>31 分（23-16-21）</small></td><td>需要一份管得住真相和结局的「编剧室底账」，下游另有人补单集节拍和卡点；不适合直接拿去让 AI 逐集写高密度爽剧。</td></tr>
+    <tr><td>对照组（不装 skill）</td><td>第 13 名<br><small>26.5 分（15-23-22）</small></td><td>第 8 名<br><small>30.5 分（22-17-21）</small></td><td>这是不装 skill 时模型自己的写法：逻辑扎实，逐集节拍要自己补。</td></tr>
+    <tr><th colspan="4">两位评审都排在对照组后面（6 个）</th></tr>
+    <tr><td><a href="https://github.com/lingfengQAQ/webnovel-writer">lingfengQAQ/webnovel-writer</a></td><td>第 16 名<br><small>21.5 分（14-15-31）</small></td><td>第 11 名<br><small>29 分（24-10-26）</small></td><td>想先拿一份双线清楚、中点签名反噬的悬疑骨架、再自己补逐集节拍的；三次差别大，第 2 次两位评审都给了最高分。</td></tr>
+    <tr><td><a href="https://github.com/LanyXiaosheng/bookflow-skill">LanyXiaosheng/bookflow-skill</a></td><td>第 17 名<br><small>17 分（6-22-32）</small></td><td>第 17 名<br><small>21 分（16-10-34）</small></td><td>看重悬疑逻辑自洽、要先定死设定补丁、倒计时和证据排期的总纲；分集时要加密中段回合，让翻盘由女主自己挣来。</td></tr>
+    <tr><td><a href="https://github.com/dama-cyber/Distilled-Novel-Toolbox">dama-cyber/Distilled-Novel-Toolbox</a></td><td>第 15 名<br><small>23 分（13-20-27）</small></td><td>第 21 名<br><small>10.5 分（6-9-45）</small></td><td>想要强中点双反转加倒计时骨架的；分集时要补满锚点之间的空集，压缩长低谷。</td></tr>
+    <tr><td><a href="/skills/eternityspring/shuohao-skills/">eternityspring/shuohao-skills</a></td><td>第 21 名<br><small>6.5 分（0-13-47）</small></td><td>第 18 名<br><small>20 分（16-8-36）</small></td><td>先锁爽点节拍和大爆点集数的流水线式分集项目，另有环节补因果链和证据来源。</td></tr>
+    <tr><td><a href="https://github.com/xiaofeng-928/chinese-longnovel-skill">xiaofeng-928/chinese-longnovel-skill</a></td><td>第 18 名<br><small>14 分（5-18-37）</small></td><td>第 20 名<br><small>12 分（8-8-44）</small></td><td>要一副揭示顺序锁死、内线代价每幕写清的幕级骨架、最怕提前泄底的；要逐集钩子密的可执行稿，它不太合适。</td></tr>
+    <tr><td><a href="/skills/catyiqian/qianqianwriting/">catyiqian/qianqianwriting</a></td><td>第 20 名<br><small>10.5 分（3-15-42）</small></td><td>第 19 名<br><small>15 分（10-10-40）</small></td><td>先要一份宏观骨架（卖点、中点、倒计时、结局、人物弧线），后面有人逐集补节拍和伏笔的。</td></tr>
+  </tbody>
+</table>
+<p>每个参赛者的骨架怎么写、两位评审都看好的和都指出的问题，见 <a href="{{repo_url}}/blob/main/evals/runs/003-skeleton/review.md">点评摘要</a>；每一场盲比的稿子、提示词和判决，见<a href="/evals/round-3/">第三轮实测记录</a>。</p>
+
+<h3>这一轮的限制</h3>
+<ul>
+  <li><strong>只用了一个模型。</strong>结论只说明在 claude-opus-5-5 下这些 skill 的表现，换模型可能不同。</li>
+  <li><strong>只有一张选题卡。</strong>这一轮只有一个故事，是女频悬疑复仇，换个题材名次可能不同。</li>
+  <li><strong>只评骨架本身。</strong>这一轮没测照着骨架往下写出来的剧本好不好，也没拍出来；观众买不买账要上线以后才知道。</li>
+  <li><strong>评审是 AI，这一轮两位评审分歧大。</strong>两份名次的相关系数 0.66（1 是完全一致，第二轮 0.87）；按「两种顺序都赢才算赢」的每对结果，630 对里 332 对一致（52.7%，第二轮 68%）。两位评审看法不一的那 10 个到底谁更好，这一轮说不清。两位评审也都偏向某个位置：Opus 偏向后看的那份，GPT 偏向先看的那份。详见<a href="/evals/round-3/checks/">评审体检</a>。</li>
+  <li><strong>有 10 份超了 3000 字。</strong>按规则截到 3000 字再评，两位评审仍然更看好这几份。去掉「后面截掉了」那行说明重判一遍，被截那份的胜率变化都在 5 个点以内；去掉它们参与的场次重算，两位评审各自的前五名不变。详见点评摘要的「截断说明的检查」。</li>
+</ul>
 
 <h2 id="round-2">第二轮：选题</h2>
 <p>需求是给一个新的爽文故事定选题，这个故事以后可以写成网文，也可以拍成竖屏短剧；只定选题，交一句话卖点和选题说明。题材、篇幅、平台都不给。参赛的是短剧和小说两个清单里能从零出选题的 skill，按星数挑了 11 个，加 1 个不装 skill 的对照组，都用 Claude Code、claude-opus-5-5、推理强度 high，开场指令和固定回复一字不差。skill 给出几个方案时，统一让它选自己最推荐的那个。</p>
@@ -98,14 +155,14 @@ updated: 2026-10-23
 
 <h2>怎么测</h2>
 <ol>
-  <li><strong>同一份输入，越少越好</strong>：需求只写篇幅和交付物，不给题材、人物和情节，所有参赛 skill 共用。</li>
+  <li><strong>同一份输入，越少越好</strong>：需求只写篇幅和交付物，不给题材、人物和情节，所有参赛 skill 共用。第三轮比骨架，大家拿的是同一张选题卡。</li>
   <li><strong>只有 skill 一个变量</strong>：同一个 agent、同一个模型、同样的推理强度和工具权限，记下版本号。对照组只是不装 skill。</li>
   <li><strong>固定 skill 版本</strong>：记下每个仓库测试时的 commit。</li>
-  <li><strong>按 skill 自己的流程走</strong>：开场只调用入口 skill。skill 停下来问问题时，统一回复同一句话，其他问题按 skill 自己的推荐。给了几个题材或故事方案的，第一轮让第 n 次运行选第 n 个，好让三次写不同的故事；第二轮比的就是选题，改成选它最推荐的那个。</li>
+  <li><strong>按 skill 自己的流程走</strong>：开场只调用入口 skill。skill 停下来问问题时，统一回复同一句话，其他问题按 skill 自己的推荐。给了几个题材或故事方案的，第一轮让第 n 次运行选第 n 个，好让三次写不同的故事；第二轮起改成选它最推荐的那个。</li>
   <li><strong>能跑 skill 自带的脚本</strong>：命令在系统沙箱里运行，不能联网，看不到其他参赛者的产出。</li>
   <li><strong>每个跑三次，全部保留</strong>：不挑最好的一次。</li>
   <li><strong>匿名盲评</strong>：评审看不到稿子出自哪个 skill，先后顺序对调各比一次。</li>
-  <li><strong>按 AI 出片来评</strong>：评审假定稿子要交给 AI 从头拍成片，没有演员和片场。特效、异能、大场面、群戏、场景多、角色多都不扣分，也不加分；看的是拍出来观众会不会一直看下去。</li>
+  <li><strong>按 AI 出片来评</strong>：评审假定稿子要交给 AI 从头拍成片，没有演员和片场。特效、异能、大场面、群戏、场景多、角色多都不扣分，也不加分；看的是拍出来观众会不会一直看下去。第三轮的评审提示词只写目标和「不考虑拍摄成本和难度」，不再逐条列。</li>
 </ol>
 
 <h2>看什么</h2>
@@ -123,9 +180,10 @@ updated: 2026-10-23
   </tbody>
 </table>
 <p>第二轮比选题，看五项：卖点（一句话卖点能不能让人立刻想看）、新意（是不是常见套路换个名字）、冲突和爽点（主角要什么、谁挡着、爽点能不能一直供得上）、续航（按它自己打算的篇幅撑不撑得住）、上屏（观众代入谁，这个人有没有一张能演戏的脸；爽点落在谁脸上；关键情绪靠不靠心里话撑）。</p>
-<p>点评只写观察和例子。第一轮不打总分；第二轮两两全比，按积分排了名次。运行器是 <a href="{{repo_url}}/blob/main/evals/run.py">evals/run.py</a>，评审是 <a href="{{repo_url}}/blob/main/evals/judge.py">evals/judge.py</a>，任何人都可以按同样的方法复现。</p>
+<p>第三轮比全剧骨架，不列评分维度，只告诉评审目标：照着骨架写下去、拍出来以后，观众更可能一集接一集追到最后。</p>
+<p>点评只写观察和例子。第一轮不打总分；第二轮起两两全比，按积分排名次。运行器是 <a href="{{repo_url}}/blob/main/evals/run.py">evals/run.py</a>，评审是 <a href="{{repo_url}}/blob/main/evals/judge.py">evals/judge.py</a>，任何人都可以按同样的方法复现。</p>
 
 <h2>想推荐 skill 参加实测？</h2>
 <p>在 <a href="{{repo_url}}/issues">GitHub 提 issue</a>，写上仓库地址和它擅长的题材。</p>
 <h2>想亲自来比一比？</h2>
-<p>下一轮欢迎真人参赛：网文作者、编剧或者团队，按同一道题交一份选题，和 skill 的选题一起匿名盲比，结果照样公开。想参加的，在 <a href="{{repo_url}}/issues">GitHub 提 issue</a> 报名。</p>
+<p>下一轮欢迎真人参赛：网文作者、编剧或者团队，按同一道题交稿，和 skill 的稿子一起匿名盲比，结果照样公开。想参加的，在 <a href="{{repo_url}}/issues">GitHub 提 issue</a> 报名。</p>

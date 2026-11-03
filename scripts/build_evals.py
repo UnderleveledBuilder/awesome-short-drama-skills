@@ -245,7 +245,7 @@ class Record:
         body: list[str] = []
         body.append('<h2 id="verify">怎么核对</h2><ul>'
                     f'<li>全部原始数据在 <a href="{self.tree}">GitHub</a>：每次运行的产出、问答记录、原始日志（logs/）、'
-                    '评审看到的匿名稿（blind/）、编号和出处的对应表（blind_key.json）、故事卡、分组和每一场比较的判决。</li>'
+                    f'评审看到的匿名稿（blind/）、编号和出处的对应表（blind_key.json）、{self.raw_files}。</li>'
                     f'<li>原始日志公开前用 <a href="{self.repo_url}/blob/main/evals/clean_logs.py">clean_logs.py</a> 清理过：'
                     '去掉本机路径、用户名、额度用量和 Claude Code 的内部记录，其余原样保留。删了什么写在脚本开头。</li>'
                     f'<li><a href="{self.raw}MANIFEST.sha256">MANIFEST.sha256</a> 记着这一轮每个文件的 sha256 指纹。'
@@ -330,7 +330,7 @@ class Record:
         src = (f'<a href="https://github.com/{e(repo)}/tree/{e(m["commit"])}">{e(repo)}@{e(m["commit"][:8])}</a>'
                if m.get("commit") else "不装 skill")
         installed = "、".join(f"<code>{e(x)}</code>" for x in m.get("installed", [])) or "无"
-        card = next(c for c in r.cards if c["code"] == code)
+        card = next((c for c in r.cards if c["code"] == code), None)  # 第三轮不抽故事卡
         duels = self.run_duels(run)
         body = [f"<h1>{e(self.name(slug))} · 第 {n.split('-')[1]} 次运行</h1>",
                 f'<p class="lead">{self.run_lead(run, card)}</p>',
@@ -339,7 +339,8 @@ class Record:
                 f"<dt>时间</dt><dd>{bj(m['started']).strftime('%Y-%m-%d %H:%M')}–{bj(m['finished']).strftime('%H:%M')}（北京时间），"
                 f"{self.minutes(m)} 分钟</dd>"
                 f"<dt>轮数</dt><dd>{m['turns']} 轮，工具调用 {tools} 次，按 API 价格折算 {money(self.run_cost(run))}</dd>"
-                f'<dt>匿名编号</dt><dd>{code}（评审只看到这个编号）· <a href="{self.base}stories/#card-{code}">故事卡</a></dd>'
+                f'<dt>匿名编号</dt><dd>{code}（评审只看到这个编号）'
+                + (f'· <a href="{self.base}stories/#card-{code}">故事卡</a>' if card else "") + "</dd>"
                 f"{duels}"
                 f'<dt>原始文件</dt><dd><a href="{self.tree}{e(slug)}/{n}">产出和问答记录</a> · '
                 f'<a href="{self.raw}logs/runs/{e(run)}.jsonl">原始日志</a></dd></dl>']
@@ -363,6 +364,9 @@ class Record:
 
     deliv_label = "三项交付"
     fingerprints = "和 GPT 调用时记下的提示词指纹比对"
+    raw_files = "故事卡、分组和每一场比较的判决"
+    show_quotes = True
+    length_rule = "提示词写明「篇幅长不加分」。"
 
     def outputs(self, run: str, d: Path) -> str:
         role = {}
@@ -657,21 +661,11 @@ class Record:
                     '<ul><li><b>换序一致</b>：同一对稿子甲乙对调后，结论不变的对数。「完全翻转」是两次各判一边赢，'
                     '说明这对稿子评审自己也拿不准，按规则算平。</li>'
                     '<li><b>位置</b>：判甲、判乙各多少次。每对稿子两种顺序都比过，不偏的评审判甲应该接近一半。</li>'
-                    '<li><b>篇幅</b>：分出胜负的比较里，判长的那份赢的次数。提示词写明「篇幅长不加分」。</li></ul>'
+                    f'<li><b>篇幅</b>：分出胜负的比较里，判长的那份赢的次数。{self.length_rule}</li></ul>'
                     f'<table class="tbl"><thead><tr><th></th><th>换序一致</th><th>位置</th><th>判长的赢</th></tr></thead>'
                     f'<tbody>{"".join(rows)}</tbody></table>' + self.length_note())
-        qrows, misses = [], []
-        for j in r.duels:
-            q = r.quotes(j)
-            qrows.append(f"<li>{JUDGE_NAME[j]}：{q['found']}/{q['total']} 条找得到（{pct(q['found'], q['total'])}）</li>")
-            for d, text in q["misses"][:40]:
-                misses.append(f'<li><small>{JUDGE_NAME[j]} · <a href="{self.duel_link(d)}">'
-                              f'{self.tracks[d["track"]]} {d["a"]} 对 {d["b"]}</a></small>「{e(text[:80])}」</li>')
-        body.append('<h2 id="quotes">引文核对</h2><p>提示词要求「理由要引用原文」。把理由里加了引号的话拿去两份稿子里找'
-                    '（不计空白，省略号两边分开找，四个字以下的不算）：</p>'
-                    f'<ul>{"".join(qrows)}</ul><p class="sub">找不到的大多是评审把几句话缩成一句、改了标点，或者引的是自己的概括；'
-                    '也可能有记错的。前 40 条列在下面，可以点进去对照原文。</p>'
-                    f'<details class="ev"><summary>找不到的引文</summary><div><ul>{"".join(misses)}</ul></div></details>')
+        if self.show_quotes:
+            body.append(self.quotes_html())
         a = r.agreement()
         if a:
             dims = "".join(f"<li>{e(k)}：{v[0]}/{v[1]}（{pct(*v)}）</li>" for k, v in a["dims"].items())
@@ -681,13 +675,28 @@ class Record:
                         f"<li>逐场（{a['calls']} 场）总体判断一致：{a['same']}/{a['calls']}（{pct(a['same'], a['calls'])}），"
                         f"Cohen's kappa {a['kappa']:.2f}（扣掉碰巧一致的部分；1 是完全一致，0 是和瞎猜一样）。</li>"
                         f"<li>每对的最终结果（赢、平、输）一致：{a['pairs_same']}/{a['pairs']}，kappa {a['pairs_kappa']:.2f}。</li>"
-                        f"<li>分维度逐场一致：<ul>{dims}</ul></li></ul>"
+                        + (f"<li>分维度逐场一致：<ul>{dims}</ul></li>" if dims else "") + "</ul>"
                         f'<h3>有争议的 {len(r.disputed())} 对</h3><ul>{disp}</ul>')
         body.append('<h2 id="limits">查不出来的</h2><ul>' + "".join(f"<li>{x}</li>" for x in self.limits()) + "</ul>")
         body.append(self.blocked())
         self.page(f"{self.base}checks/", f"评审体检 · {self.title}实测记录",
                   f"{self.title}实测的评审体检：换序一致率、位置偏差、篇幅偏差、引文核对、两位评审的一致度和有争议的对子。",
                   "".join(body), [("评审体检", self.base + "checks/")])
+
+    def quotes_html(self) -> str:
+        """评审体检的「引文核对」一节。"""
+        qrows, misses = [], []
+        for j in self.r.duels:
+            q = self.r.quotes(j)
+            qrows.append(f"<li>{JUDGE_NAME[j]}：{q['found']}/{q['total']} 条找得到（{pct(q['found'], q['total'])}）</li>")
+            for d, text in q["misses"][:40]:
+                misses.append(f'<li><small>{JUDGE_NAME[j]} · <a href="{self.duel_link(d)}">'
+                              f'{self.tracks[d["track"]]} {d["a"]} 对 {d["b"]}</a></small>「{e(text[:80])}」</li>')
+        return ('<h2 id="quotes">引文核对</h2><p>提示词要求「理由要引用原文」。把理由里加了引号的话拿去两份稿子里找'
+                '（不计空白，省略号两边分开找，四个字以下的不算）：</p>'
+                f'<ul>{"".join(qrows)}</ul><p class="sub">找不到的大多是评审把几句话缩成一句、改了标点，或者引的是自己的概括；'
+                '也可能有记错的。前 40 条列在下面，可以点进去对照原文。</p>'
+                f'<details class="ev"><summary>找不到的引文</summary><div><ul>{"".join(misses)}</ul></div></details>')
 
     def duel_link(self, d: dict) -> str:
         """一条判决记录所在的盲比页。"""
@@ -776,6 +785,16 @@ class PairRecord(Record):
     这里只重写和配对方式、交付有关的部分。"""
 
     deliv_label = "选题交付"
+    kind = "选题"
+    topic = "选题类 skill · 网文和短剧共用一道题"
+    input_step = "一道开放题：给一个新的爽文故事定选题，以后能写成网文、也能拍成竖屏短剧；不给题材，不限篇幅"
+    deliv_step = ("找出选题交付", "每次运行可能写出好几个文件，先认出哪些是一句话卖点和选题说明，人工核对")
+    entry_note = "仓库里有专门做选题的 skill，入口就用它；没有就用仓库的主入口"
+    reply_note = ("第一轮的固定回复是「第 n 次运行选第 n 个方案」，为的是让三次运行写不同的故事。这一轮比的就是选题，"
+                  "从几个方案里挑出最好的那个，本来就是选题 skill 的本事，所以改成让它选自己最推荐的。")
+    checks_step = "换序是否一致、偏不偏甲、偏不偏长稿、引文找不找得到、两位评审合不合"
+    site_desc = "AI 写小说和短剧的选题 skill"
+    extras = "撞题、"
 
     def name(self, slug: str) -> str:
         """这一轮的参赛者来自短剧和小说两个清单，一律写「作者/仓库」，免得简称撞名。"""
@@ -842,25 +861,25 @@ class PairRecord(Record):
         groups = {j: len(g) for j, g in r.groups.items()}
         n_calls = {j: len(d) for j, d in r.duels.items()}
         steps = [
-            ("#input", "需求", "一道开放题：给一个新的爽文故事定选题，以后能写成网文、也能拍成竖屏短剧；不给题材，不限篇幅"),
+            ("#input", "需求", self.input_step),
             ("#runs", f"运行 {n_runs} 次", f"{n_skills} 个 skill 加 1 个不装 skill 的对照组，各跑 {r.runs_per} 次，"
                                          f"同一个模型、同一条开场指令和固定回复，按 API 价格折算共 {money(cost)}"),
-            ("#runs", "找出选题交付", "每次运行可能写出好几个文件，先认出哪些是一句话卖点和选题说明，人工核对"),
+            ("#runs", *self.deliv_step),
             (f"{self.tree}blind", f"匿名打包 {len(list((r.dir / 'blind').glob('*.md')))} 份",
              "随机三位编号，抹掉 skill 名、仓库名和作者名"),
-            (f"{self.base}stories/", f"故事卡 {len(r.cards)} 张，分组，查撞题",
-             "每份选题抽一张故事卡，再按「换个名字就是同一个故事」分组："
-             + "，".join(f"{JUDGE_NAME[j][:-4]} 分 {g} 组" for j, g in groups.items())),
+            *([(f"{self.base}stories/", f"故事卡 {len(r.cards)} 张，分组，查撞题",
+                "每份选题抽一张故事卡，再按「换个名字就是同一个故事」分组："
+                + "，".join(f"{JUDGE_NAME[j][:-4]} 分 {g} 组" for j, g in groups.items()))] if r.cards else []),
             (f"{self.base}duels/", f"盲比 {len(r.pairs('opus'))} 对",
              f"{len(self.repos)} 个参赛者（含对照组）两两比，第 n 次运行对第 n 次运行，甲乙对调各比一次："
              + "，".join(f"{JUDGE_NAME[j]} {c} 次" for j, c in n_calls.items())),
             ("#results", "积分", "两种顺序都判它赢才算赢，记 1 分；都判对方赢算输；其余算平，记 0.5 分"),
-            (f"{self.base}checks/", "评审体检", "换序是否一致、偏不偏甲、偏不偏长稿、引文找不找得到、两位评审合不合"),
+            (f"{self.base}checks/", "评审体检", self.checks_step),
             (f"{self.base}timeline/", "过程记录", "安全检查、沙箱自检、试点，按时间排，附原始日志"),
         ]
         flow = "".join(f'<li><a href="{h}"><b>{i}. {e(t)}</b><span>{e(s)}</span></a></li>'
                        for i, (h, t, s) in enumerate(steps, 1))
-        body = [f"<h1>{e(self.title)}实测记录：选题类 skill · 网文和短剧共用一道题</h1>",
+        body = [f"<h1>{e(self.title)}实测记录：{e(self.topic)}</h1>",
                 f'<p class="lead">这一页把{e(self.title)}实测的全过程摆出来：给了 agent 什么、每次运行它做了什么、评审看到了什么、'
                 '怎么判的。每一步都能点开看原始的输入和输出。页面上的数字都是生成网站时从仓库里的原始数据现算的。</p>',
                 f'<p class="sub">结论和逐个点评见<a href="/evals/#{e(self.base.strip("/").rsplit("/", 1)[-1])}">实测页</a>。'
@@ -873,13 +892,11 @@ class PairRecord(Record):
                     '<h3>开场指令</h3><ul>'
                     f'<li>对照组：<code>{e(self.said["task"])}</code></li>'
                     f'<li>有入口 skill 的：<code>/入口skill名 {e(self.said["task"])}</code>，入口写在 '
-                    f'<a href="{self.raw}contestants.toml">contestants.toml</a>。仓库里有专门做选题的 skill，入口就用它；'
-                    '没有就用仓库的主入口</li>'
+                    f'<a href="{self.raw}contestants.toml">contestants.toml</a>。{e(self.entry_note)}</li>'
                     f'<li>工具箱型、没有单一入口的：<code>{e(self.said["toolkit"])}</code></li></ul>'
                     '<h3>之后每一轮的固定回复</h3>'
                     f'{doc(self.said["reply"])}'
-                    '<p>第一轮的固定回复是「第 n 次运行选第 n 个方案」，为的是让三次运行写不同的故事。这一轮比的就是选题，'
-                    '从几个方案里挑出最好的那个，本来就是选题 skill 的本事，所以改成让它选自己最推荐的。</p>'
+                    f'<p>{e(self.reply_note)}</p>'
                     '<h3>什么时候停</h3>'
                     f'<p>一轮结束后，如果 agent 没在提问、这一轮也没再改文件，而且目录里已经有产出，就算写完；'
                     f'连续三轮没改文件也停；最多 {runner.MAX_TURNS} 轮。代码见 '
@@ -895,9 +912,9 @@ class PairRecord(Record):
         body.append(self.standings_table())
         body.append(self.matrix())
         body.append(self.verify_html())
-        self.page(self.base, f"{self.title}实测记录：{n_skills} 个选题 skill 两两盲比的全部运行和评审过程",
-                  f"AI 写小说和短剧的选题 skill {self.title}实测的完整记录：给 agent 的全部输入、{n_runs} 次运行的每一步、"
-                  "匿名稿、每一场盲比的提示词和判决、积分、撞题、评审体检和过程记录，数字从原始数据现算。", "".join(body))
+        self.page(self.base, f"{self.title}实测记录：{n_skills} 个{self.kind} skill 两两盲比的全部运行和评审过程",
+                  f"{self.site_desc} {self.title}实测的完整记录：给 agent 的全部输入、{n_runs} 次运行的每一步、"
+                  f"匿名稿、每一场盲比的提示词和判决、积分、{self.extras}评审体检和过程记录，数字从原始数据现算。", "".join(body))
 
     def standings_table(self) -> str:
         r = self.r
@@ -980,7 +997,7 @@ class PairRecord(Record):
             body.append(f'<h2 id="{t}">{self.tracks[t]}</h2><table class="tbl"><thead><tr><th>编号</th><th>前一位</th>'
                         f'<th>后一位</th>{head}<th></th></tr></thead><tbody>{"".join(rows[t])}</tbody></table>')
         self.page(f"{self.base}duels/", f"盲比列表 · {self.title}实测记录",
-                  f"{self.title}实测全部盲比：所有参赛者两两比选题，两种顺序、两位评审的判决。",
+                  f"{self.title}实测全部盲比：所有参赛者两两比{self.kind}，两种顺序、两位评审的判决。",
                   "".join(body), [("盲比", self.base + "duels/")])
 
     def pair_page(self, track: str, x: str, y: str, pairs: dict[str, list], final: dict[str, str | None],
@@ -1116,8 +1133,57 @@ class PairRecord(Record):
                 "不能联网。靠联网扫榜找选题的 skill 这一轮没有测，测了的也只能凭已有资料判断市场。"]
 
 
+class SkeletonRecord(PairRecord):
+    """第三轮：所有参赛者按同一张选题卡写全剧骨架，两两比、按积分排名。和第二轮的不同：
+    大家写同一个故事，不抽故事卡、不分组；需求限 3000 字，超过的截到 3000 字再评；评委不分维度、只判总体。"""
+
+    deliv_label = "全剧骨架"
+    kind = "全剧骨架"
+    topic = "全剧骨架类 skill · 同一张选题卡"
+    input_step = "同一张选题卡《验尸官的婚礼》：给 60 集竖屏短剧写全剧骨架，全部由 AI 拍，只交骨架，3000 字以内"
+    deliv_step = ("找出骨架交付", "每次运行都只交了一份全剧骨架；超过 3000 字的 10 份截到 3000 字，后面注明截掉了")
+    entry_note = "仓库里有专门做全剧骨架（总纲、全剧大纲、系列圣经）的 skill，入口就用它；那一步只能从主入口走到的，就用主入口"
+    reply_note = ("固定回复和第二轮一样，让它选自己最推荐的方案；只多了半句「骨架之后的分集大纲和剧本不用写」，"
+                  "把需求里的「只交骨架」重说一遍，对所有参赛者一样。")
+    checks_step = "换序是否一致、偏不偏甲、偏不偏长稿、两位评审合不合"
+    site_desc = "AI 短剧全剧骨架 skill"
+    extras = ""
+    show_quotes = False  # 引文核对的比对方法还在改，这一轮先不放
+    length_rule = "需求限 3000 字以内，超过的截到 3000 字再评，这里按原稿字数算。"
+    raw_files = "每份骨架的字数（lengths.json）、每一场比较的判决，以及去掉截断说明的对照（duels-nonote.jsonl、duels-nonote-gpt.jsonl、judge-raw-nonote/）"
+    fingerprints = "和两位评审调用时记下的提示词指纹比对（去掉截断说明的对照也比）"
+
+    @functools.cached_property
+    def lengths(self) -> dict:
+        return json.loads((self.r.dir / "lengths.json").read_text(encoding="utf-8"))
+
+    def story_title(self, run: str) -> str:
+        return f"{self.lengths[run]['skeleton']:,} 字"
+
+    def run_lead(self, run: str, card: dict | None) -> str:
+        n = self.lengths[run]["skeleton"]
+        cut = "超过需求的 3000 字，评审只看到前 3000 字。" if n > 3000 else ""
+        return f"写了一份全剧骨架，{n:,} 字（去掉空白计）。{cut}"
+
+    def stories(self) -> None:
+        """这一轮不抽故事卡。"""
+
+    def length_note(self) -> str:
+        return ('<p class="sub">截断以后两位评审仍然更看好超字数的那几份，去掉截断说明重判也一样，'
+                f'见<a href="{self.raw}review.md">点评</a>的「截断说明的检查」。'
+                '两份都没超 3000 字时，长的那份也赢得多。这些数字说明不了谁对，只说明篇幅和结论有关，读结果时要记得。</p>')
+
+    def limits(self) -> list[str]:
+        return ["主评审和写稿的是同一个模型（claude-opus-5-5）。它可能偏爱自己的写法；对照组也是它写的，"
+                "所以这个偏差对所有参赛者大致相同，但不能排除。GPT 复核就是为了看换一个模型结论会不会变。",
+                f"每对参赛者只比了 {self.r.runs_per} 次。区间重叠的名次先后说明不了太多。",
+                "只有一个故事。换一张选题卡、换个题材，名次可能不同。",
+                "没有请人类编剧盲评。两位评审都是 AI，判的是纸面上的骨架，没有照着它写出来、拍出来。"]
+
+
 def build(site, rounds: dict, repo_url: str, repo_path, display_name) -> None:
     for premise, (zh, _, slug) in rounds.items():
         if (ROOT / "evals" / "runs" / premise / "timeline.toml").exists():
-            cls = PairRecord if judge.spec(premise).pairing == "all" else Record
+            sp = judge.spec(premise)
+            cls = Record if sp.pairing != "all" else SkeletonRecord if getattr(sp, "bare", False) else PairRecord
             cls(site, premise, slug, zh, repo_url, repo_path, display_name).build()

@@ -1,0 +1,191 @@
+# 每次运行里，哪个文件是全剧骨架。每次运行都只有一个 .md 文件，就是它；其余是 skill 自己的状态和数据文件（json），不算交付。
+# 按篇幅和正文里提到的集数查过：没有哪份顺手写了分集大纲或剧本，所以都整份交给评委，没有截取。改了要重新 pack。
+
+["0xsline__short-drama.run-1"]
+skeleton = ["creative-plan.md"]
+
+["0xsline__short-drama.run-2"]
+skeleton = ["creative-plan.md"]
+
+["0xsline__short-drama.run-3"]
+skeleton = ["creative-plan.md"]
+
+["Hao0321__ai-short-drama.run-1"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["Hao0321__ai-short-drama.run-2"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["Hao0321__ai-short-drama.run-3"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["LanyXiaosheng__bookflow-skill.run-1"]
+skeleton = ["全剧骨架.md"]
+
+["LanyXiaosheng__bookflow-skill.run-2"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["LanyXiaosheng__bookflow-skill.run-3"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["Shanyin-ai__shanyin-screenwriting-master.run-1"]
+skeleton = ["全剧骨架.md"]
+
+["Shanyin-ai__shanyin-screenwriting-master.run-2"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["Shanyin-ai__shanyin-screenwriting-master.run-3"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["Tomsawyerhu__Chinese-WebNovel-Skill.run-1"]
+skeleton = ["全剧骨架.md"]
+
+["Tomsawyerhu__Chinese-WebNovel-Skill.run-2"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["Tomsawyerhu__Chinese-WebNovel-Skill.run-3"]
+skeleton = ["全剧骨架.md"]
+
+["adoria111__emma-screenwriting-skills.run-1"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["adoria111__emma-screenwriting-skills.run-2"]
+skeleton = ["全剧骨架_验尸官的婚礼.md"]
+
+["adoria111__emma-screenwriting-skills.run-3"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["baseline.run-1"]
+skeleton = ["全剧骨架.md"]
+
+["baseline.run-2"]
+skeleton = ["全剧骨架.md"]
+
+["baseline.run-3"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["catyiqian__qianqianwriting.run-1"]
+skeleton = ["全剧骨架.md"]
+
+["catyiqian__qianqianwriting.run-2"]
+skeleton = ["全剧骨架.md"]
+
+["catyiqian__qianqianwriting.run-3"]
+skeleton = ["全剧骨架.md"]
+
+["dama-cyber__Distilled-Novel-Toolbox.run-1"]
+skeleton = ["全剧骨架.md"]
+
+["dama-cyber__Distilled-Novel-Toolbox.run-2"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["dama-cyber__Distilled-Novel-Toolbox.run-3"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["eternityspring__shuohao-skills.run-1"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["eternityspring__shuohao-skills.run-2"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["eternityspring__shuohao-skills.run-3"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["jtydhr88__screenwriting-skills.run-1"]
+skeleton = ["全剧骨架.md"]
+
+["jtydhr88__screenwriting-skills.run-2"]
+skeleton = ["全剧骨架.md"]
+
+["jtydhr88__screenwriting-skills.run-3"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["lingfengQAQ__webnovel-writer.run-1"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["lingfengQAQ__webnovel-writer.run-2"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["lingfengQAQ__webnovel-writer.run-3"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["lixiaoxiao9888-create__manju-laoli-skill.run-1"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["lixiaoxiao9888-create__manju-laoli-skill.run-2"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["lixiaoxiao9888-create__manju-laoli-skill.run-3"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["lixiaoxiao9888-create__short-drama-factory.run-1"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["lixiaoxiao9888-create__short-drama-factory.run-2"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["lixiaoxiao9888-create__short-drama-factory.run-3"]
+skeleton = ["全剧骨架.md"]
+
+["qingyabailu-git__webfiction-write.run-1"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["qingyabailu-git__webfiction-write.run-2"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["qingyabailu-git__webfiction-write.run-3"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["tance-mang__chinese-webnovel-skills.run-1"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["tance-mang__chinese-webnovel-skills.run-2"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["tance-mang__chinese-webnovel-skills.run-3"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["xiaofeng-928__chinese-longnovel-skill.run-1"]
+skeleton = ["全剧骨架.md"]
+
+["xiaofeng-928__chinese-longnovel-skill.run-2"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["xiaofeng-928__chinese-longnovel-skill.run-3"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["xindoo__sumeru.run-1"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["xindoo__sumeru.run-2"]
+skeleton = ["全剧骨架.md"]
+
+["xindoo__sumeru.run-3"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["zenstory-ai__drama-skills.run-1"]
+skeleton = ["全剧骨架.md"]
+
+["zenstory-ai__drama-skills.run-2"]
+skeleton = ["全剧骨架.md"]
+
+["zenstory-ai__drama-skills.run-3"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["zenstory-ai__oh-story-claudecode.run-1"]
+skeleton = ["全剧骨架.md"]
+
+["zenstory-ai__oh-story-claudecode.run-2"]
+skeleton = ["全剧骨架.md"]
+
+["zenstory-ai__oh-story-claudecode.run-3"]
+skeleton = ["全剧骨架.md"]
+
+["zhu5859243-free__hongguo-shortdrama-screenwriting.run-1"]
+skeleton = ["验尸官的婚礼-全剧骨架.md"]
+
+["zhu5859243-free__hongguo-shortdrama-screenwriting.run-2"]
+skeleton = ["验尸官的婚礼_全剧骨架.md"]
+
+["zhu5859243-free__hongguo-shortdrama-screenwriting.run-3"]
+skeleton = ["全剧骨架.md"]

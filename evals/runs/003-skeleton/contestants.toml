@@ -1,0 +1,94 @@
+# 参赛名单。entry 是开场用 /entry 调用的入口 skill；不写 entry 的是工具箱型仓库，开场只说「用已安装的 skill」。
+# 这一轮比全剧骨架：第一、二轮的 20 个 skill 全部参加，加不装 skill 的对照组。大家拿到同一张选题卡（premises/003-skeleton.md）。
+# 仓库里有专门做全剧骨架（总纲、全剧大纲、系列圣经）的 skill，入口就用它；那一步只能从主入口的流程走到的，用主入口。
+# 和前两轮入口不同的 7 个，原因写在各自那一行。
+# runs 是每个参赛者跑几次；固定回复让 agent 在它给出的几个方案里选它最推荐的那个，其他问题也按它自己的推荐。
+
+runs = 3
+
+[prompts]
+task = "我要给一部短剧写全剧骨架，要求在 premise.md 里，写好存成文件放在当前目录。"
+toolkit = "我要用已安装的 skill 给一部短剧写全剧骨架，要求在 premise.md 里，写好存成文件放在当前目录。"
+reply = "如果要我在几个方案里选，就选你最推荐的那个；其他要我定的，都按你推荐的来，不用再问我。请继续，直到 premise.md 要的全剧骨架写成文件；骨架之后的分集大纲和剧本不用写。"
+
+[[contestants]]
+repo = "baseline"          # 对照组：同一个 agent，不装任何 skill
+
+[[contestants]]
+repo  = "eternityspring/shuohao-skills"
+entry = "novel-outline"
+
+[[contestants]]
+repo  = "zenstory-ai/drama-skills"
+entry = "short-drama-develop"     # 第一轮是 /short-drama（路由）；路由把「开发点子、系列承诺」交给 develop
+
+[[contestants]]
+repo  = "lixiaoxiao9888-create/manju-laoli-skill"
+entry = "short-drama-director"    # 骨架在 sd-script-engine 里，但它写明只能从总控进入
+
+[[contestants]]
+repo  = "jtydhr88/screenwriting-skills"
+entry = "sw-series-engine-bible"  # 第一轮不指定；剧集流程的引擎、人物网、季弧三步都调它
+
+[[contestants]]
+repo  = "Shanyin-ai/shanyin-screenwriting-master"
+entry = "screenwriting-master"
+
+[[contestants]]
+repo  = "lixiaoxiao9888-create/short-drama-factory"
+entry = "short-drama-factory"
+
+[[contestants]]
+repo  = "adoria111/emma-screenwriting-skills"
+entry = "em-story-architect"
+
+[[contestants]]
+repo  = "zhu5859243-free/hongguo-shortdrama-screenwriting"
+entry = "hongguo-shortdrama-screenwriting"
+
+[[contestants]]
+repo  = "catyiqian/qianqianwriting"
+entry = "qianqianwriting"
+
+[[contestants]]
+repo  = "Hao0321/ai-short-drama"
+entry = "ai-short-drama"
+
+[[contestants]]
+repo  = "zenstory-ai/oh-story-claudecode"
+entry = "story-long-write"        # 第二轮是 /story（路由）；路由把「规划剧情、写大纲」交给 long-write
+
+[[contestants]]
+repo  = "lingfengQAQ/webnovel-writer"
+entry = "webnovel-init"
+
+[[contestants]]
+repo  = "0xsline/short-drama"
+entry = "short-drama"
+
+[[contestants]]
+repo  = "Tomsawyerhu/Chinese-WebNovel-Skill"
+entry = "Chinese-WebNovel-Skill"
+
+[[contestants]]
+repo  = "xindoo/sumeru"
+entry = "sumeru-outline"          # 第二轮是 /sumeru-topic（选题）；剧情框架和分卷规划在 outline
+
+[[contestants]]
+repo  = "LanyXiaosheng/bookflow-skill"
+entry = "bookflow-skill"
+
+[[contestants]]
+repo  = "dama-cyber/Distilled-Novel-Toolbox"
+
+[[contestants]]
+repo  = "tance-mang/chinese-webnovel-skills"
+entry = "outline"                 # 第二轮是 /idea（构思）；全书主线、终局、伏笔总表在 outline
+
+[[contestants]]
+repo  = "xiaofeng-928/chinese-longnovel-skill"
+entry = "chinese-longnovel-skill"
+
+[[contestants]]
+repo  = "qingyabailu-git/webfiction-write"
+entry = "fiction"                 # 第二轮是 /fiction-conceive；总纲要 conceive、start 两步串起来，只有主入口能串

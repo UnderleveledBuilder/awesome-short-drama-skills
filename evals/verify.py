@@ -10,6 +10,7 @@
      清单和 sha256sum 的格式相同，在轮次目录里运行 shasum -a 256 -c MANIFEST.sha256 也能核对。
   2. 用 judge.py 的同一段代码，从匿名稿重建每一次评审调用的提示词，和调用时记下的指纹比对。
      两两盲比两位评审的都存了；第一轮的故事分组只存了 GPT 的。
+     第三轮去掉截断说明的对照（judge-raw-nonote/）也核：把被截稿子结尾那行说明和它前面的空行删掉再重建。
   3. 用 stats.py 把实测记录页上的数字重算一遍，打印出来，可以和网站对照。
 只用标准库。
 """
@@ -19,6 +20,7 @@ import argparse
 import hashlib
 import json
 import sys
+import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -57,27 +59,42 @@ def check_manifest(base: Path) -> int:
     return bad + len(extra)
 
 
+def nonote_view(base: Path, sp) -> Path:
+    """去掉截断说明的匿名稿：被截的稿子只删掉结尾那行说明和它前面的空行，截法不变。"""
+    tmp = Path(tempfile.mkdtemp())
+    (tmp / "blind").mkdir()
+    note = "\n\n" + judge.CLIP_NOTE.format(sp.max_chars) + "\n"
+    for p in (base / "blind").glob("*.md"):
+        t = p.read_text(encoding="utf-8")
+        (tmp / "blind" / p.name).write_text(t[: -len(note)] + "\n" if t.endswith(note) else t, encoding="utf-8")
+    return tmp
+
+
 def check_prompts(base: Path) -> int:
     sp = judge.spec(base.name)
     problems = 0
-    for j, label in (("opus", "Opus"), ("gpt", "GPT")):
-        if not (base / "judge-raw" / j).is_dir():
+    for raw_dir, work, what in (("judge-raw", base, ""), ("judge-raw-nonote", None, "（去掉截断说明的对照）")):
+        if not (base / raw_dir).is_dir():
             continue
-        raw = {p.stem: json.loads(p.read_text(encoding="utf-8")) for p in (base / "judge-raw" / j).glob("*.json")}
-        ok = bad = 0
-        for cid, rec in sorted(raw.items()):
-            if cid == "cluster":
-                prompt = judge.cluster_prompt(judge.cluster_rows(base, sp.seed), sp)
-            else:
-                _, track, a, b = cid.split(".")
-                prompt = judge.duel_prompt(base, track, a, b, sp)
-            if hashlib.sha256(prompt.encode("utf-8")).hexdigest() == rec["prompt_sha256"]:
-                ok += 1
-            else:
-                bad += 1
-                print(f"  重建的提示词和记录不符：{j} {cid}")
-        print(f"2. 评审提示词：重建 {ok + bad} 次 {label} 调用，{ok} 次和记录一致")
-        problems += bad
+        work = work or nonote_view(base, sp)
+        for j, label in (("opus", "Opus"), ("gpt", "GPT")):
+            if not (base / raw_dir / j).is_dir():
+                continue
+            raw = {p.stem: json.loads(p.read_text(encoding="utf-8")) for p in (base / raw_dir / j).glob("*.json")}
+            ok = bad = 0
+            for cid, rec in sorted(raw.items()):
+                if cid == "cluster":
+                    prompt = judge.cluster_prompt(judge.cluster_rows(base, sp.seed), sp)
+                else:
+                    _, track, a, b = cid.split(".")
+                    prompt = judge.duel_prompt(work, track, a, b, sp)
+                if hashlib.sha256(prompt.encode("utf-8")).hexdigest() == rec["prompt_sha256"]:
+                    ok += 1
+                else:
+                    bad += 1
+                    print(f"  重建的提示词和记录不符：{raw_dir} {j} {cid}")
+            print(f"2. 评审提示词{what}：重建 {ok + bad} 次 {label} 调用，{ok} 次和记录一致")
+            problems += bad
     return problems
 
 

@@ -77,7 +77,8 @@ CJK = re.compile(r"[\u3400-\u9fff]")
 
 # ───────────────────────── 数据 ─────────────────────────
 
-ROUNDS = {"001-open-brief": ("第一轮", "round one", "round-1"), "002-topic": ("第二轮", "round two", "round-2")}
+ROUNDS = {"001-open-brief": ("第一轮", "round one", "round-1"), "002-topic": ("第二轮", "round two", "round-2"),
+          "003-skeleton": ("第三轮", "round three", "round-3")}
 
 
 def duel_record(run_dir: Path, name: str = "duels.jsonl") -> dict[tuple[str, str], dict[str, list[int]]]:
@@ -723,7 +724,9 @@ class Site:
                           f"{ordinal(place)} of {n} on points; against the control over three runs it won {w}, tied {ti}, lost {lo}. ")
             if "gpt" in st:
                 score += L(lang, f"换 GPT 复核：积分第 {st['gpt'][0]} 名。", f"Re-judged by GPT: placed {ordinal(st['gpt'][0])}. ")
-            return "<p>" + L(lang, f"参加了{zh_n}选题实测。", f"Took part in {en_n} of our tests, on story premises. ") + score + links
+            kind = (("骨架", "on 60-episode series outlines") if getattr(build_evals.judge.spec(run), "bare", False)
+                    else ("选题", "on story premises"))
+            return "<p>" + L(lang, f"参加了{zh_n}{kind[0]}实测。", f"Took part in {en_n} of our tests, {kind[1]}. ") + score + links
         rec = d.duels.get((run, slug), {})
         score = ""
         if rec:
@@ -883,6 +886,18 @@ class Site:
             lines.append(f"- [{display_name(s)}]({abs_url('en', repo_path(s))}) (★{fmt_stars(m.get('stars'))}, "
                          f"{d.groups[s['group']].get('label_en')}): {s.get('desc_en') or s['desc']}")
         lines += ["", "## Tests",
+                  f"- [Round three: whole-series outlines for one shared premise]({abs_url('en', '/evals/')}#round-3): all 20 "
+                  "skills from rounds one and two and a no-skill control each wrote the whole-series outline (how all 60 "
+                  "episodes unfold, no episode outlines or script) for the same premise card, a vertical short drama made "
+                  "entirely by AI, within 3,000 characters; three runs each with the same model (Claude Code, claude-opus-5-5). "
+                  "Every entry was compared blind with every other; the reviewer prompt only states the goal, picking the "
+                  "outline viewers are more likely to watch to the end. Both reviewers (Opus and GPT) ranked four skills in "
+                  "their top five and above the control: zhu5859243-free/hongguo-shortdrama-screenwriting, "
+                  "adoria111/emma-screenwriting-skills, Tomsawyerhu/Chinese-WebNovel-Skill and "
+                  "lixiaoxiao9888-create/short-drama-factory. The two reviewers agreed less than in round two.",
+                  f"- [Round three full record]({abs_url('zh', '/evals/round-3/')}) (Chinese): every run, every outline, "
+                  "the prompt and verdict of every blind comparison (judged by Opus, re-judged by GPT), reviewer health checks "
+                  "and the process log.",
                   f"- [Round two: premise skills for web novels and short dramas]({abs_url('en', '/evals/')}#round-2): 11 web "
                   "novel and short drama premise skills and a no-skill control each chose a premise for a new revenge-fantasy "
                   "story that could become a web novel or a vertical short drama (no genre, length or platform given), three "

@@ -71,7 +71,8 @@ class Round:
         self.sp = judge.spec(premise)
         self.roster = tomllib.loads((self.dir / "contestants.toml").read_text(encoding="utf-8"))
         self.runs_per = self.roster.get("runs", 1)
-        self.cards = [json.loads(l) for l in (self.dir / "cards.jsonl").open(encoding="utf-8")]
+        cards = self.dir / "cards.jsonl"  # 第三轮大家写同一个故事，不抽故事卡
+        self.cards = [json.loads(l) for l in cards.open(encoding="utf-8")] if cards.exists() else []
         self.duels: dict[str, list[dict]] = {}
         self.groups: dict[str, list[dict]] = {}
         for j, (duels, clusters) in JUDGES.items():
@@ -87,7 +88,8 @@ class Round:
     def packet(self, code: str, track: str) -> str:
         """评审看到的那份匿名稿，和 judge.py 拼给评审的一字不差。"""
         if (code, track) not in self._packets:
-            self._packets[code, track] = judge.packet(self.dir, code, self.sp.tracks[track], self.sp.parts)
+            self._packets[code, track] = judge.packet(self.dir, code, self.sp.tracks[track], self.sp.parts,
+                                                       getattr(self.sp, "bare", False))
         return self._packets[code, track]
 
     def prompt(self, track: str, a: str, b: str) -> str:
@@ -194,7 +196,7 @@ class Round:
             if d["track"] != track:
                 continue
             for side, run in (("甲", d["a_run"]), ("乙", d["b_run"])):
-                for dim, v in d["dims"].items():
+                for dim, v in d.get("dims", {}).items():
                     r = out.setdefault(run.rsplit(".", 1)[0], {}).setdefault(dim, [0, 0, 0])
                     r[0 if v == side else 1 if v == "平" else 2] += 1
         return out
@@ -213,7 +215,8 @@ class Round:
         return {"longer": longer, "decided": total}
 
     def quotes(self, j: str) -> dict:
-        """评审理由里加了引号的原文，能不能在两份稿子里找到。省略号两边分开找，空白不计。"""
+        """评审理由里加了引号的原文，能不能在两份稿子里找到。省略号两边分开找，空白不计。
+        按字面逐字比：引号写法、表格分隔和原稿不同的，也算找不到，所以偏低。"""
         found = total = 0
         misses = []
         for d in self.duels.get(j, []):
@@ -239,9 +242,9 @@ class Round:
         dims = Counter()
         dims_n = Counter()
         for o, p in both:
-            for k, v in o["dims"].items():
+            for k, v in o.get("dims", {}).items():
                 dims_n[k] += 1
-                dims[k] += v == p["dims"].get(k)
+                dims[k] += v == p.get("dims", {}).get(k)
         f = self.pair_outcomes if self.all_pairs else self.outcomes
         oa, ga = f("opus"), f("gpt")
         keys = [k for k in oa if k in ga]
@@ -377,6 +380,8 @@ def main_all_pairs(r: Round) -> None:
             print(f"   {slug:55} 撞题 {c['shared']}/{c['runs']}，和对照组撞 {c['with_baseline']}")
     if r.cluster_agreement() is not None:
         print(f"   两种分组的调整兰德指数 {r.cluster_agreement():.2f}")
+    if not r.cards:
+        return
     print("== 主角的姓：" + "，".join(f"{k} {v}" for k, v in r.surnames().most_common(5)) + f"（共 {len(r.cards)} 份）")
     for n in ("砚", "周砚", "禾"):
         k, who = r.name_count(n)
