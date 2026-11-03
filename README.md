@@ -53,6 +53,28 @@
 
 全过程和逐个点评见[第二轮实测记录](https://shortdramaskills.com/evals/round-2/)。
 
+## 写全剧骨架装哪个
+
+第三轮实测（2026-10-31）：前两轮的 20 个 skill 和一个不装 skill 的对照组，给同一张选题卡写 60 集短剧的全剧骨架（整部剧怎么走，不写分集大纲和剧本），各写 3 次；所有参赛者两两盲比，按积分排名。评审只被告知目标：照着骨架写下去、全部由 AI 拍出来以后，观众更可能追到最后。两位 AI 评审（Opus 和 GPT）都排进前五、也都排在对照组前面的有 4 个：
+
+| skill | 名次（Opus / GPT） | 适合 | 要注意 |
+|---|---|---|---|
+| [zhu5859243-free/hongguo-shortdrama-screenwriting](https://github.com/zhu5859243-free/hongguo-shortdrama-screenwriting) | 1 / 4 | 每 3 到 5 集一个回合，写明证据、反制和回合尾，评审认为能直接拆给 AI 逐集写；三次出稿稳定 | 后段关键证据来得巧，推理有跳步 |
+| [adoria111/emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills) | 2 / 2 | 先定一套硬规则：证据阶梯、每次赢都要付代价、观众和女主各在第几集知道什么 | 中段推进慢，具体回合要自己补 |
+| [Tomsawyerhu/Chinese-WebNovel-Skill](https://github.com/Tomsawyerhu/Chinese-WebNovel-Skill) | 3 / 1 | 大卡点钉在具体集数，要求真换局，答案兑现得早 | 后段关键证据的来路要自己补 |
+| [lixiaoxiao9888-create/short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory) | 4 / 5 | 约 3 集一回合，付费卡点清楚，评审认为适合直接交给 AI 逐集扩写 | 前 21 集反复证明观众早知道的替身，凶手亮底早 |
+
+两位评审都排在对照组后面的有 6 个，多是只写到段或幕的总纲，适合后面有编剧或 AI 逐集补细；本清单里的是 [catyiqian/qianqianwriting](https://github.com/catyiqian/qianqianwriting) 和 [eternityspring/shuohao-skills](https://github.com/eternityspring/shuohao-skills)。
+
+这一轮的局限：
+- 两位评审分歧比第二轮大，630 对里 332 对结论一致；其余 10 个 skill 两位评审看法不一，比如 ai-short-drama，Opus 排第 13，GPT 排第 3。
+- 只有一张选题卡（女频悬疑复仇），换个题材名次可能不同。
+- 有 10 份超了 3000 字的上限，截断后再评；去掉它们参与的场次重算，两位评审各自的前五名不变。
+- 只测了 claude-opus-5-5 一个模型。
+- 只评骨架本身，没测照着它往下写出来的剧本好不好。
+
+全过程和逐个点评见[第三轮实测记录](https://shortdramaskills.com/evals/round-3/)。
+
 **图例**：🌟 精选 · 📝 提示词文件（非标准 skill）· 🧩 完整应用 · 🎬 适配的视频模型 · 💤 超过 180 天未更新 · 📦 已归档 · ⚠️ 仓库失效
 
 **让 agent 帮你挑**：这份清单也是一个 skill。运行 `npx skills add UnderleveledBuilder/awesome-short-drama-skills` 装上 short-drama-skill-finder，再问你的 agent「我用 Codex 做小说改编短剧，装哪个 skill？」。
