@@ -286,6 +286,18 @@ note    = "偏电影，不专做短剧"
 note_en = "Film-oriented, not specific to short drama"
 checked = 2026-10-13
 
+[[skills]]
+repo    = "Alwzc/alphadrama-short-drama-skill"
+desc    = "竖屏短剧全流程：小说改 60 秒分集剧本、三视图角色锁定、12-18 镜 9:16 分镜与多模型视频提示词路由"
+desc_en = "Vertical short-drama pipeline: novel-to-60s episode script, 3-view character lock, 12-18 shot 9:16 storyboard and multi-model video prompt routing"
+group   = "pipeline"
+stages  = ["adaptation", "character", "drafting", "storyboard", "prompt"]
+format  = "skill"
+lang    = "multi"
+agents  = ["claude-code", "codex", "cursor", "openclaw", "gemini-cli"]
+models  = ["seedance", "minimax", "kling", "wan"]
+checked = 2026-11-13
+
 # ───────────────────────── 编剧 ─────────────────────────
 
 [[skills]]
