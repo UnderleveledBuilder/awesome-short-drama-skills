@@ -295,7 +295,7 @@ Turn a script into shots: storyboards, character and scene assets, and prompts f
 
 - **[seedance2-skill](https://github.com/dexhunter/seedance2-skill)** · ★ 4.4k<br>Generates video prompts for Seedance 2.0<br><sub>Stages: Prompts</sub><br><sub>updated 2026-09-19 · Multilingual · 2 skills · MIT</sub><br><sub>🎬 Seedance / Jimeng</sub>
 
-- **[awesome-seedance](https://github.com/LearnPrompt/awesome-seedance)** · ★ 2.4k<br>Seedance 2.5/2.0 prompt library: 800+ cases traceable to original posts and nearly 500 cross-model retests, with skills<br><sub>Stages: Prompts</sub><br><sub>updated 2026-11-02 · Multilingual · 15 skills · MIT</sub><br><sub>🎬 Seedance / Jimeng</sub>
+- **[awesome-seedance](https://github.com/LearnPrompt/awesome-seedance)** · ★ 2.5k<br>Seedance 2.5/2.0 prompt library: 1,000+ cases traceable to original posts and nearly 500 cross-model retests, with skills<br><sub>Stages: Prompts</sub><br><sub>updated 2026-11-13 · Multilingual · 15 skills · MIT</sub><br><sub>🎬 Seedance / Jimeng</sub>
 
 - **[higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill)** · ★ 838<br>Prompts for the Higgsfield platform: MCSLA formula, Seedance 2.5 multi-reference directing, performance direction, Soul ID character consistency, shot lists and failure diagnosis<br><sub>Stages: Characters · Prompts</sub><br><sub>updated 2026-10-25 · English · 36 skills · MIT</sub><br><sub>🎬 Seedance / Jimeng · Kling · Veo · Wan (Tongyi Wanxiang)</sub><br><sub>💡 Targets the paid Higgsfield platform; also includes advertising and marketing modules</sub>
 

@@ -164,13 +164,13 @@
     "LearnPrompt/awesome-seedance": {
       "archived": false,
       "description": "🎬 Evidence-led Seedance 2.5 / 2.0 prompt library: 840+ cases traced to original posts, 490+ cross-model retest runs, 27 copy-ready templates, 79 installable AI-video Skills. Synced daily from goodcase.ai. EN / 中文 / 日本語.",
-      "forks": 376,
+      "forks": 386,
       "full_name": "LearnPrompt/awesome-seedance",
       "license": "MIT",
-      "pushed_at": "2026-11-02",
+      "pushed_at": "2026-11-13",
       "skill_count": 15,
       "skill_count_truncated": false,
-      "stars": 2385,
+      "stars": 2528,
       "status": "ok"
     },
     "LingGuoAI/LingGuo-Drama": {

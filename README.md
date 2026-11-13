@@ -295,7 +295,7 @@ npx skills add zhu5859243-free/hongguo-shortdrama-screenwriting
 
 - **[seedance2-skill](https://github.com/dexhunter/seedance2-skill)** · ★ 4.4k<br>为 Seedance 2.0 生成高质量视频提示词<br><sub>阶段：提示词</sub><br><sub>更新于 2026-09-19 · 多语言 · 2 个 skill · MIT</sub><br><sub>🎬 Seedance / 即梦</sub>
 
-- **[awesome-seedance](https://github.com/LearnPrompt/awesome-seedance)** · ★ 2.4k<br>Seedance 2.5/2.0 提示词库：800+ 条可追溯原帖的案例、近 500 次跨模型复测，附 skill<br><sub>阶段：提示词</sub><br><sub>更新于 2026-11-02 · 多语言 · 15 个 skill · MIT</sub><br><sub>🎬 Seedance / 即梦</sub>
+- **[awesome-seedance](https://github.com/LearnPrompt/awesome-seedance)** · ★ 2.5k<br>Seedance 2.5/2.0 提示词库：1,000+ 条可追溯原帖的案例、近 500 次跨模型复测，附 skill<br><sub>阶段：提示词</sub><br><sub>更新于 2026-11-13 · 多语言 · 15 个 skill · MIT</sub><br><sub>🎬 Seedance / 即梦</sub>
 
 - **[higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill)** · ★ 838<br>Higgsfield 平台提示词：MCSLA 公式、Seedance 2.5 多参考导演、表演指导、Soul ID 角色一致性、镜头清单与失败诊断<br><sub>阶段：人物 · 提示词</sub><br><sub>更新于 2026-10-25 · 英文 · 36 个 skill · MIT</sub><br><sub>🎬 Seedance / 即梦 · 可灵 Kling · Veo · 通义万相 Wan</sub><br><sub>💡 面向 Higgsfield 付费平台，也含广告营销模块</sub>
 

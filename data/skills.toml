@@ -514,14 +514,14 @@ checked = 2026-10-13
 
 [[skills]]
 repo    = "LearnPrompt/awesome-seedance"
-desc    = "Seedance 2.5/2.0 提示词库：800+ 条可追溯原帖的案例、近 500 次跨模型复测，附 skill"
-desc_en = "Seedance 2.5/2.0 prompt library: 800+ cases traceable to original posts and nearly 500 cross-model retests, with skills"
+desc    = "Seedance 2.5/2.0 提示词库：1,000+ 条可追溯原帖的案例、近 500 次跨模型复测，附 skill"
+desc_en = "Seedance 2.5/2.0 prompt library: 1,000+ cases traceable to original posts and nearly 500 cross-model retests, with skills"
 group   = "visual"
 stages  = ["prompt"]
 format  = "skill"
 lang    = "multi"
 models  = ["seedance"]
-checked = 2026-10-13
+checked = 2026-11-13
 
 [[skills]]
 repo    = "liangdabiao/make-prompt-seedance2"
