@@ -286,6 +286,20 @@ note    = "偏电影，不专做短剧"
 note_en = "Film-oriented, not specific to short drama"
 checked = 2026-10-13
 
+[[skills]]
+repo    = "Alwzc/alphadrama-short-drama-skill"
+desc    = "竖屏短剧全流程：网文或剧本改成 60 秒一集的节拍和台词，三视图锁角色，拆 12–18 镜 9:16 分镜，按镜头类型分给不同视频模型写提示词"
+desc_en = "Vertical short-drama pipeline: turns a web-novel chapter or script into a 60-second episode beat sheet, locks characters with three-view sheets, breaks it into 12–18 vertical shots and routes each shot's prompt to Seedance, MiniMax H3, Kling or Wan."
+group   = "pipeline"
+stages  = ["adaptation", "character", "drafting", "storyboard", "prompt", "production"]
+format  = "skill"
+lang    = "multi"
+agents  = ["claude-code", "codex", "cursor", "openclaw", "gemini-cli"]
+models  = ["seedance", "minimax", "kling", "wan"]
+note    = "最后一步给 FFmpeg 拼竖屏的命令，也引到作者自己的 AlphaDrama Studio 网站一键出片"
+note_en = "The last step gives an FFmpeg command for vertical assembly and also points to the author's own AlphaDrama Studio site for one-click production."
+checked = 2026-11-13
+
 # ───────────────────────── 编剧 ─────────────────────────
 
 [[skills]]
@@ -544,6 +558,20 @@ format  = "skill"
 lang    = "zh"
 models  = ["seedance"]
 checked = 2026-10-13
+
+[[skills]]
+repo    = "ohmyopictures-cmyk/short-drama-starter"
+desc    = "AI 短剧新手七条规则：60 秒五段节拍、一个提示词只写一个镜头、六种入门运镜、锁住人脸、提示词固定顺序、生成前先确认花费"
+desc_en = "Seven beginner rules for 60-second AI short dramas: a five-beat map, one shot per prompt, six starter camera moves, keeping faces consistent, a fixed prompt order and a cost check before generating."
+group   = "visual"
+stages  = ["structure", "storyboard", "prompt"]
+format  = "skill"
+lang    = "en"
+agents  = ["claude-code", "codex"]
+models  = ["seedance", "kling"]
+note    = "免费精简版，作者另卖完整版（19–29 美元）；许可证只许个人免费用，不许转发文件"
+note_en = "Free starter edition; the author sells a full pack ($19–29). The license allows free personal use but not redistributing the files."
+checked = 2026-11-13
 
 [[skills]]
 repo    = "smixs/visual-skills"
@@ -945,6 +973,19 @@ format  = "skill"
 lang    = "zh"
 agents  = ["claude-code", "codex"]
 checked = 2026-10-13
+
+[[skills]]
+repo    = "OakcoderX/awesome-agent-skills"
+desc    = "苏格拉底式故事诊断：对小说、剧本、分集大纲先提几种对立解释，拿原文证据和反例检验，再给最小改动，也可以判不用改"
+desc_en = "Socratic story diagnosis for novels, screenplays and series outlines: it proposes competing explanations, tests them against textual evidence, counterexamples and counterfactuals, then suggests the smallest useful revision, or none."
+group   = "craft"
+stages  = ["structure", "character", "revision"]
+format  = "skill"
+lang    = "en"
+install = "npx skills add https://github.com/OakcoderX/awesome-agent-skills/tree/main/socratic-story-cartographer"
+note    = "仓库是 VoltAgent/awesome-agent-skills 的 fork，首页还是那份清单的说明；skill 在 socratic-story-cartographer 目录"
+note_en = "The repo is a fork of VoltAgent/awesome-agent-skills and its front page is still that list's README; the skill lives in the socratic-story-cartographer folder."
+checked = 2026-11-13
 
 [[skills]]
 repo    = "mudden2380078550-creator/write-chinese-long-screenplay"

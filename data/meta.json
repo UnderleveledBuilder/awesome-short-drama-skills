@@ -51,6 +51,19 @@
       "stars": 51,
       "status": "ok"
     },
+    "Alwzc/alphadrama-short-drama-skill": {
+      "archived": false,
+      "description": "Agent skill for turning web novels & scripts into 60s 9:16 vertical short-drama episodes with 3-view character lock and multi-model prompts (Seedance, MiniMax H3, Kling, Wan).",
+      "first_seen": "2026-11-13",
+      "forks": 0,
+      "full_name": "Alwzc/alphadrama-short-drama-skill",
+      "license": "MIT",
+      "pushed_at": "2026-11-13",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 0,
+      "status": "ok"
+    },
     "ArcReel/ArcReel": {
       "archived": false,
       "description": "AI Agent 驱动的开源可自部署视频工作台：将小说与剧本转为角色、场景、道具资产、分镜、视频和剪映草稿，支持跨镜头一致性、多供应商与费用追踪 | Self-hosted AI video workspace for stories, storyboards and short-form video production",
@@ -234,6 +247,19 @@
       "skill_count": 36,
       "skill_count_truncated": false,
       "stars": 838,
+      "status": "ok"
+    },
+    "OakcoderX/awesome-agent-skills": {
+      "archived": false,
+      "description": "A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.",
+      "first_seen": "2026-11-13",
+      "forks": 1,
+      "full_name": "OakcoderX/awesome-agent-skills",
+      "license": "MIT",
+      "pushed_at": "2026-11-09",
+      "skill_count": 2,
+      "skill_count_truncated": false,
+      "stars": 2,
       "status": "ok"
     },
     "Shanyin-ai/shanyin-director-master": {
@@ -886,6 +912,19 @@
       "skill_count": 2,
       "skill_count_truncated": false,
       "stars": 23,
+      "status": "ok"
+    },
+    "ohmyopictures-cmyk/short-drama-starter": {
+      "archived": false,
+      "description": "AI short drama skill for Claude Code and Codex. Seven free beginner rules for 60-second YouTube Shorts dramas: story beats, one steady face, storyboard before video, camera moves for Seedance or Kling.",
+      "first_seen": "2026-11-13",
+      "forks": 0,
+      "full_name": "ohmyopictures-cmyk/short-drama-starter",
+      "license": null,
+      "pushed_at": "2026-11-06",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 0,
       "status": "ok"
     },
     "oiuv/ai-short-drama": {
