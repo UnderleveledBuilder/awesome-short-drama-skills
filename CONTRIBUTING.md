@@ -26,7 +26,7 @@
    python3 scripts/build.py                       # 重新生成 README.md 和英文版 README.en.md
    ```
 
-   跳过这一步也可以，合并后 GitHub Actions 会自动刷新并生成。
+   跳过这一步也可以，合并后维护者会刷新并生成。
 3. 提交 PR。CI 会校验数据格式。
 
 ## 字段说明
@@ -77,4 +77,4 @@ checked = 2026-10-13              # 可选，人工核对日期（TOML 日期，
 | `scripts/build_site.py` | 生成网站 [shortdramaskills.com](https://shortdramaskills.com) 到 `web/dist/`；`--serve` 本地预览 |
 | `functions/_middleware.js` | 网站访问日志，写入 Cloudflare Analytics Engine（绑定名 `CRAWL_LOG`）；爬虫记 UA 和 IP，真人只记页面、来源、国家和网络运营商 |
 
-GitHub Actions 每周一自动刷新元数据和 SKILL.md 索引、重新生成 README，并把新候选和第三方文字的变化开成 issue；网站在 Cloudflare Pages 上随每次推送重新生成。
+每周一自动刷新元数据和 SKILL.md 索引、重新生成 README，并把新候选和第三方文字的变化开成 issue；网站在 Cloudflare Pages 上随每次推送重新生成。
