@@ -659,3 +659,47 @@ reason = "Hermes 助手的 Docker 部署，不是短剧"
 [[ignored]]
 repo   = "xianyu110/awesome-seedance-2.5"
 reason = "汇总已收录的 AtlasCloudAI、LearnPrompt 等提示词库；12 个 skill 是单个案例模板"
+
+[[ignored]]
+repo   = "ArmaniGustafsson016225/-virtual-card-usdt-autonomous-short-drama-multimodal-omni-vcc"
+reason = "只有一页 README，内容是推销虚拟卡和 USDT 支付服务，没有 skill 或代码"
+
+[[ignored]]
+repo   = "jjjjjinshan/aigc-drama-workflow"
+reason = "与已收录的 zenstory-ai/drama-skills 高度重合（10 个 skill 和校验脚本同名），主要多一个 Google Flow 出口"
+
+[[ignored]]
+repo   = "annalyseg805-blip/aisee-comic-to-drama"
+reason = "依赖作者自己的 bitahub/RunningHub 工作流，写死了节点编号，离开这些工作流用不上"
+
+[[ignored]]
+repo   = "Vallykrie/short-drama-finder-skill"
+reason = "帮观众找短剧全集和观看渠道，不是创作"
+
+[[ignored]]
+repo   = "JularDepick/Agent-Video-Driver.SKILL"
+reason = "代码逐帧生成的动效视频（科普、产品宣传、数据动画），不是短剧"
+
+[[ignored]]
+repo   = "YYC-Cube/YYC3-AI-Family-Comic-Drama"
+reason = "漫剧生产系统的方案文档和展示页，没有可装的 skill"
+
+[[ignored]]
+repo   = "zeative/motion-educator"
+reason = "教育讲解视频（代码动画），不是短剧"
+
+[[ignored]]
+repo   = "precious112/demo-director"
+reason = "产品演示视频，不是短剧"
+
+[[ignored]]
+repo   = "Pardesco/algorithmic-art-skill"
+reason = "算法生成艺术，不是短剧"
+
+[[ignored]]
+repo   = "jdrurka/explainer-skill"
+reason = "讲解视频，不是短剧"
+
+[[ignored]]
+repo   = "kuaizengji/beat-promo-director"
+reason = "卡点动态字幕宣传片，不是短剧"

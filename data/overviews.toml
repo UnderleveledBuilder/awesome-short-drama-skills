@@ -504,3 +504,19 @@ en = "Tell Claude Code or Codex to install the repo and break down a drama, and 
 ["reelbenchai/reelscript"]
 zh = "装到 Codex 时把 tools/reeldown 整个文件夹复制进技能目录。目录和批量下载脚本只用 Python 标准库，下载和校验要 ffmpeg、ffprobe；抖音网页采集要能在页面里执行 JavaScript 的浏览器工具。整剧下载要明确要求，按目录串行下载并记断点；拿不到的红果互动数据写 null，不填造数字。"
 en = "For Codex, copy the whole tools/reeldown folder into the skills directory. The listing and batch-download scripts use only the Python standard library; downloading and verifying need ffmpeg and ffprobe, and Douyin web collection needs a browser tool that can run JavaScript in the page. A whole-series download happens only when explicitly asked, serially with resumable checkpoints; Hongguo engagement data it cannot get is written as null rather than made up."
+
+["liangdabiao/seedance-storyboard-generator-realman"]
+zh = "把文章、小说或故事大纲改写成分集、带台词和镜头的短剧剧本，先为角色、场景、道具出参考图锁定形象，再写 Seedance 视频提示词，并按「文 → 资 → 视 → 剪」规划整部剧。默认追求真人实拍质感，把真人感拆成摄影介质等 6 个能直接写进提示词的维度，提示词带精确时间轴和逐字对白。"
+en = "It rewrites an article, novel or outline into an episodic short-drama script with dialogue and shots, makes reference images to lock characters, scenes and props, then writes Seedance video prompts and plans the whole production as text → assets → video → edit. It aims for a live-action film look by breaking realism into 6 concrete dimensions, such as the photographic medium, that go straight into prompts, with precise timelines and verbatim dialogue."
+
+["z2x7d54/ai-drama-director-skill"]
+zh = "每个版本有一份完整版 MD、PDF 和离线 HTML 阅读版，也可以把完整版 MD、剧本和启动指令一起交给 ChatGPT、DeepSeek 等智能体使用。9.0 版有 33 张图解和整场实战，讲个性化表演、整场情绪和跨组起态，另有可选的 3D 图流程。智能体自检后输出精简执行稿，把每个联合镜头的完整内容和素材交给视频工具生成。"
+en = "Each version comes as a full Markdown file, a PDF and an offline HTML reader, and you can also hand the full Markdown, your script and the starter prompt to an agent such as ChatGPT or DeepSeek. Version 9.0 has 33 diagrams and a full-scene walkthrough covering individual performance, scene-level emotion and starting poses across shot groups, plus an optional 3D image workflow. After a self-check the agent outputs a lean working draft, and each combined shot's full content and assets go to the video tool."
+
+["jonrusso/hand-drawn-2d-animation"]
+zh = "把仓库链接交给 agent，它按 INSTALL_FOR_AGENTS.md 自己安装；也可以作为 Claude Code 插件装。流程是故事访谈、角色设定图、分镜、一条总提示词，在剪映里用 Seedance 一次生成，再做质检，并用开源工具出一份铅笔动态分镜。画风致敬《小鹿斑比》的背景画师黄齐耀。"
+en = "Give your agent the repo link and it installs itself by following INSTALL_FOR_AGENTS.md; it also installs as a Claude Code plugin. The flow is a story interview, character sheets, a storyboard and one master prompt, generated in one pass with Seedance in CapCut, then QA and a pencil animatic built with open-source tools. The look is a tribute to Tyrus Wong's painted forests for Bambi."
+
+["aixlb/bcc"]
+zh = "Agent skill 用 npx skills add aixlb/bcc --skill bcc 安装，调用本地 bcc 命令行处理素材，命令行要 Node.js 20+（npm i -g @aixlb/bcc）。拆剧本导出 docx、md、txt 或 html，拆分镜先检测镜头、抽关键帧再逐镜分析，导出 xlsx 或 html；多条视频可以汇总成风格指南。模型支持 Gemini、Kimi、MiniMax 和自定义 OpenAI 兼容接口。"
+en = "Install the agent skill with npx skills add aixlb/bcc --skill bcc; it calls the local bcc CLI, which needs Node.js 20+ (npm i -g @aixlb/bcc). Script breakdowns export to docx, md, txt or html; storyboard breakdowns detect shots, extract keyframes and analyse each shot, exporting xlsx or html; several videos can be combined into a style guide. Supported models are Gemini, Kimi, MiniMax and any custom OpenAI-compatible API."

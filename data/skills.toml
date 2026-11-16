@@ -1187,6 +1187,41 @@ lang    = "en"
 models  = ["seedance", "minimax", "kling"]
 checked = 2026-11-16
 
+[[skills]]
+repo    = "liangdabiao/seedance-storyboard-generator-realman"
+desc    = "Seedance 真人感分镜生成器：故事改成短剧剧本，写人物场景道具生图词，按真人感六根支柱写视频提示词"
+desc_en = "Seedance live-action storyboard generator: turns a story into a short-drama script, writes image prompts for characters, scenes and props, and writes video prompts on six \"live-action realism\" pillars so shots look filmed rather than cartoonish."
+group   = "visual"
+stages  = ["adaptation", "drafting", "character", "storyboard", "prompt"]
+format  = "skill"
+lang    = "zh"
+models  = ["seedance"]
+checked = 2026-11-16
+
+[[skills]]
+repo    = "z2x7d54/ai-drama-director-skill"
+desc    = "AI 短剧导演：剧本转可逐组复制的分镜提示词，重点讲人物站位、动作衔接、情感表演和群戏调度，附图解自检"
+desc_en = "AI short-drama director: turns a script into storyboard prompts you copy group by group into a video tool, focusing on character blocking, action continuity, emotional performance and crowd scenes, with illustrated self-checks."
+group   = "visual"
+stages  = ["storyboard", "prompt"]
+format  = "skill"
+lang    = "zh"
+note    = "8.0 到 9.0 几个版本并存，原生 skill 在 9.0/ai-drama-director-storyboard"
+note_en = "Versions 8.0 to 9.0 coexist; the native skill is in 9.0/ai-drama-director-storyboard."
+checked = 2026-11-16
+
+[[skills]]
+repo    = "jonrusso/hand-drawn-2d-animation"
+desc    = "手绘风 2D 动画短片：一句话进，故事访谈、角色设定、分镜、一条总提示词，在剪映里用 Seedance 一次生成"
+desc_en = "Hand-drawn-looking 2D shorts: one sentence in, then a story interview, character sheets, storyboard and one master prompt, generated in one pass with Seedance in CapCut."
+group   = "visual"
+stages  = ["character", "drafting", "storyboard", "prompt", "production"]
+format  = "skill"
+lang    = "en"
+agents  = ["claude-code"]
+models  = ["seedance"]
+checked = 2026-11-16
+
 # ───────────────────────── 上游：IP 评估与故事拆解 ─────────────────────────
 
 [[skills]]
@@ -1245,6 +1280,18 @@ lang    = "zh"
 agents  = ["codex"]
 note    = "只管下载资料，拆解要配别的 skill"
 note_en = "Only downloads source material; pair it with another skill for the breakdown."
+checked = 2026-11-16
+
+[[skills]]
+repo    = "aixlb/bcc"
+desc    = "包拆拆：把视频拆成带时间码的剧本、逐镜分镜表和风格指南，有桌面版、命令行和 Agent skill"
+desc_en = "BCC: breaks videos down into a timecoded script, a shot-by-shot storyboard table and a style guide, available as a desktop app, a CLI and an agent skill."
+group   = "source"
+stages  = ["drafting", "storyboard"]
+format  = "skill"
+lang    = "zh"
+note    = "通用视频拆解，不专做短剧；要配模型 API Key"
+note_en = "General video breakdown, not specific to short drama; needs a model API key."
 checked = 2026-11-16
 
 # ───────────────────────── 编剧基本功 ─────────────────────────

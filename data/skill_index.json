@@ -1809,6 +1809,17 @@
       ],
       "total": 27
     },
+    "aixlb/bcc": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "包拆拆 skill —— 把视频拆成剧本(docx/md/html)、分镜表(xlsx/html)或风格指南(md)，与原版包拆拆功能一致。当用户提供视频文件并要求「拆剧本/生成分镜/分镜表/storyboard/风格研究/风格指南」，或提到 bcc / 包拆拆 / XLB Storyboard 时使用。自包含：CLI 已随 skill 分发且不调用任何外部模型 API，分析由你（Agent）用自己的模型完成——剧本要求模型支持原生视频输入（如 Kimi K3），分镜走切镜+关键帧管线。渐进式披露：详细规范在 references/ 下按需加载。",
+          "name": "bcc",
+          "path": "skills/bcc/SKILL.md"
+        }
+      ],
+      "total": 1
+    },
     "alchaincyf/seedance-skill": {
       "branch": "main",
       "skills": [
@@ -2293,6 +2304,17 @@
       ],
       "total": 1
     },
+    "jonrusso/hand-drawn-2d-animation": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Plans, prompts, generates and checks short 2D animated films that look hand-drawn, made with AI video models such as Seedance inside CapCut. Covers the story interview, character, place and object sheets, shot list and storyboard, a single master prompt for one-pass generation, frame-by-frame QA wi…",
+          "name": "hand-drawn-2d-animation",
+          "path": "skills/hand-drawn-2d-animation/SKILL.md"
+        }
+      ],
+      "total": 1
+    },
     "jtydhr88/screenwriting-skills": {
       "branch": "main",
       "skills": [
@@ -2546,6 +2568,17 @@
           "description": "生成 AI 短视频（Seedance 2.0 / 即梦 / 小云雀）分镜提示词的专家。当用户想生成任何形式的短视频提示词、视频脚本、分镜脚本时使用——包括但不限于：剧情/叙事视频、打斗/动作视频、风景旅拍、短剧、伪纪录片、家装空间漫游、UI 产品宣传片、口播视频、音乐卡点、品牌广告片 TVC、产品展示、电商带货视频（抖音/TikTok）、真人感种草/探店视频、视频延长或改剧情。只要用户提到\"生成视频提示词\"、\"帮我写分镜\"、\"做个短视频\"、\"带货视频\"、\"产品广告\"等就应触发。",
           "name": "seedance-video-prompt",
           "path": "skills/seedance-video-prompt/SKILL.md"
+        }
+      ],
+      "total": 1
+    },
+    "liangdabiao/seedance-storyboard-generator-realman": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "把故事/文章/大纲做成真人实拍质感、电影感的 AI 视频分镜。用于文-资-视-剪全流程：短剧剧本、角色/场景/道具资产提示词、Seedance 分镜提示词（精确时间轴+逐字对白+口型）。当要求真人感/写实/实拍质感/口型同步，或要点名二维动画/水墨/广告等风格时使用。真人写实的做法以 references/真人感电影写实指南.md 为准。",
+          "name": "seedance-storyboard-generator-realman",
+          "path": "SKILL.md"
         }
       ],
       "total": 1
@@ -3403,6 +3436,17 @@
           "description": "面向 Codex、Claude Code、WorkBuddy 和其他 Agent Skills 客户端，把一句话点子、故事梗概、小说、文案、剧本、分镜或已有素材，串成可理解、可衔接、可发布的 AI 短剧与 AI 短片。适用于抖音、红果短剧、视频号、快手、B站、YouTube 等横屏或竖屏内容；支持真人、独立短片、单元剧、连续剧、宠物、拟人奇幻、动画/漫剧、UGC 和品牌剧情。用于故事诊断、编剧、分镜、角色/重复道具一致性、Wan 3、Seedance 2.5/2.0/Fast、MiniMax H3 等模型选路、15–30 秒长段、原生对白、参考音频、配音、付费预算、连续性剪辑、物理质检和冷观…",
           "name": "dramake",
           "path": "skills/dramake/SKILL.md"
+        }
+      ],
+      "total": 1
+    },
+    "z2x7d54/ai-drama-director-skill": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "根据剧本制作、修订或核对AI短剧分镜表，重点处理人物空间关系、表演与情感、切镜节奏及联合镜头衔接。适用于把每段联合镜头交给视频模型生成的工作流；只分析规则或已有视频时按分析范围执行。",
+          "name": "ai-drama-director-storyboard",
+          "path": "8.0/ai-drama-director-storyboard/SKILL.md"
         }
       ],
       "total": 1

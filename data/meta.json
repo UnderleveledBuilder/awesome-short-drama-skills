@@ -578,6 +578,19 @@
       "stars": 7,
       "status": "ok"
     },
+    "aixlb/bcc": {
+      "archived": false,
+      "description": "包拆拆 / BCC：视频转剧本、分镜和风格指南。桌面版、CLI、Agent skill，共用 bcc-core。",
+      "first_seen": "2026-11-16",
+      "forks": 1,
+      "full_name": "aixlb/bcc",
+      "license": "MIT",
+      "pushed_at": "2026-10-25",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 5,
+      "status": "ok"
+    },
     "alchaincyf/seedance-skill": {
       "archived": false,
       "description": "Seedance.skill — 白模驱动的 AI 视频工作台。白模参考视频与提示词出自同一份 scene.json，渲染前做几何体检，还能从一张照片反解出白模。Control AI video with clay renders — and a prompt that can't drift from them.",
@@ -851,6 +864,19 @@
       "stars": 537,
       "status": "ok"
     },
+    "jonrusso/hand-drawn-2d-animation": {
+      "archived": false,
+      "description": "A tribute to Tyrus Wong's painted forests. Agent skill for 2D shorts that look hand-drawn, made with AI video (Seedance in CapCut): story bible, storyboard, one master prompt, one generation, QA and a pencil animatic. Claude Code + Codex.",
+      "first_seen": "2026-11-16",
+      "forks": 1,
+      "full_name": "jonrusso/hand-drawn-2d-animation",
+      "license": "Apache-2.0",
+      "pushed_at": "2026-10-24",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 8,
+      "status": "ok"
+    },
     "jtydhr88/screenwriting-skills": {
       "archived": false,
       "description": "Professional agent skills for screenwriting, television writing and dramaturgy",
@@ -935,6 +961,19 @@
       "skill_count": 1,
       "skill_count_truncated": false,
       "stars": 766,
+      "status": "ok"
+    },
+    "liangdabiao/seedance-storyboard-generator-realman": {
+      "archived": false,
+      "description": "真人实拍质感AI短剧分镜生成器 - Seedance Realman Storyboard Skill 一个帮你把故事/剧本变成真人实拍质感 AI 视频的技能包。  简单说：你给它一个故事，它帮你走完从剧本到成片的全过程，而且生成的画面尽量像真人拍的电影，而不是卡通、动画或塑料感的游戏画面。",
+      "first_seen": "2026-11-16",
+      "forks": 12,
+      "full_name": "liangdabiao/seedance-storyboard-generator-realman",
+      "license": null,
+      "pushed_at": "2026-11-16",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 47,
       "status": "ok"
     },
     "liangdabiao/smy-seedance-storyboard": {
@@ -1468,6 +1507,19 @@
       "skill_count": 9,
       "skill_count_truncated": false,
       "stars": 7455,
+      "status": "ok"
+    },
+    "z2x7d54/ai-drama-director-skill": {
+      "archived": false,
+      "description": "AI短剧导演 Skill | AI Short Drama Director Skill 8.0：剧本转分镜、人物空间、镜头衔接、情感表演、群戏调度；含图文教学、分镜自检与跨设备PDF/HTML阅读版。",
+      "first_seen": "2026-11-16",
+      "forks": 0,
+      "full_name": "z2x7d54/ai-drama-director-skill",
+      "license": null,
+      "pushed_at": "2026-10-17",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 9,
       "status": "ok"
     },
     "zenstory-ai/drama-skills": {
