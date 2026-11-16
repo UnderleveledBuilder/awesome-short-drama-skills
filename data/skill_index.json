@@ -12,6 +12,63 @@
       ],
       "total": 1
     },
+    "10291124jcjc-dotcom/ai-anime-series": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "AI 动画单元剧：定好一组原创动画角色（比如胖仓鼠和长腊肠犬），以后每集说一句主题，就写出 15 秒 / 30 秒 / 1 分钟的无台词动作喜剧剧本，自动拼出角色设定图、宫格故事板和即梦 Seedance 视频提示词（参考图编号、宫格数、每格秒数自动对齐），用户在即梦画布里出图出视频，再检查成片、改单个情节、记录已拍内容、拼合集。用户说「做一个像呱呱历险记那样的 AI 动画号」「AI 动画短剧」「动画单元剧」「出一集 XX 和 XX」「故事板直出」「九宫格分镜做动画」，或者要改已有一集的剧情、镜头、提示词时使用。Make a recurring-character AI animated c…",
+          "name": "ai-anime-series",
+          "path": "SKILL.md"
+        }
+      ],
+      "total": 1
+    },
+    "304939905/minimaxH3-ai-video-agent": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Acts as a director and previs supervisor for film, video, and AI filmmaking. Converts scripts, prose, story ideas, briefs, or existing image/video assets into executable production deliverables: script and subtext breakdown, beat sheet, director's book, blocking and staging, shot list with coverage…",
+          "name": "cinematic-director",
+          "path": "skills/cinematic-director/SKILL.md"
+        },
+        {
+          "description": "为 Grok Imagine 编写、改写和诊断视频提示词，覆盖文生视频、图生视频、参考图生成、视频编辑与视频续写。用于用户提到 Grok 视频、Grok Imagine、首帧动画、参考图一致性、视频延长、视频改物体/服装/风格、原生声音、运镜、逐秒节拍、中文审阅版或英文生成版时；也用于把故事、分镜或广告构想转换成可直接复制的 Grok 视频提示词。",
+          "name": "grok-video-director",
+          "path": "skills/grok-video-director/SKILL.md"
+        },
+        {
+          "description": "Write MiniMax H3 video generation prompts for T2VA, I2VA, FL2VA, L2VA, and Ref2VA. Use when rewriting multimodal requests into H3 prompt structures, composing integrated_multimodal_description, overall_soundscape, and non_diegetic_music, aligning keyframes, or defining reference labels for images,…",
+          "name": "h3-prompt-writing",
+          "path": "skills/h3-prompt-writing/SKILL.md"
+        },
+        {
+          "description": "给 AI 短剧出美术设定集（场景 + 叙事道具）：场景的设计意图、一致性锚点、光照时段变体、 空景提示词；道具的戏剧功能、状态变体、尺度参照、白底无手提示词。 产出 art.json + Markdown + 单页评审报告（含导出 JSON）。 为 AI 生成而设计，不是实拍——环境和道具都是生成资产，交付的是让它们跨集长一样的一致性方案； 11 道质量门全部由脚本确定性检查（锚点 3–5、无人无手、白底可抠、尺度短语、提示词英文……）。 有 novel-outline 的 outline.json 就用 seed 预填场景清单与出现集；出图走 codex 内置 $imagegen（可选）。…",
+          "name": "novel-art",
+          "path": "skills/novel-art/SKILL.md"
+        },
+        {
+          "description": "从小说或短故事里拆出角色表、人物画像、形象提示词、音色提示词， 并给每个角色出角色设定图（左半身像 + 右全身三视图 + 细节条），产出 JSON + Markdown + 可交互的 report.html。 报告语言可指定（--lang），默认中文，任意语言都支持； 出图风格可指定（--style），默认半写实，也可以出吉卜力动画风。 零依赖、零 API key，用当前会话额度；出图走 codex 内置 $imagegen（可选）。 Use when asked to 拆小说角色、分析人物、生成角色卡、character sheets from a novel。",
+          "name": "novel-characters",
+          "path": "skills/novel-characters/SKILL.md"
+        },
+        {
+          "description": "把一本小说改编成短剧大纲五件套：改编说明、人物表、爽点表、分集梗概、资产清单， 产出 outline.json + Markdown + 单页评审报告（KPI 带、关键决策、爽点时间轴、调度矩阵、场景概览、质量门）。 14 道质量门全部由脚本确定性检查（角色分档上限、主场景上限随集数动态、爽点间隔≤3集、每集钩子悬念必填……），不靠模型自觉； 支持体检模式：贴一份现成大纲进来，只跑质量门给诊断。 零依赖、零 API key，用当前会话额度。 Use when asked to 改编大纲、短剧大纲、拆大纲、小说转短剧、adaptation outline。",
+          "name": "novel-outline",
+          "path": "skills/novel-outline/SKILL.md"
+        },
+        {
+          "description": "给 AI 短剧写剧本：把 novel-outline 的分集梗概落成结构化的场次 + 节拍流（动作节拍与台词行交替）， 台词逐句带说话人与语气，时长逐集按语速确定性折算。产出 script.json + Markdown + 单页评审报告 （时长仪表 / 分集剧本 / 场次总表 / 按角色聚合的台词本，含导出 JSON）。 剧本管戏，分镜管拍——本 skill 不分镜头、无镜号、不写生成提示词，那些是下一层分镜 skill 的活。 10 道质量门全部由脚本确定性检查（每集时长 ±15%、单句 ≤35 字、说话人合法、钩子悬念落纸、 钩子具象前 3 拍内兑现（hookBeat 认领冷开场）、每…",
+          "name": "novel-script",
+          "path": "skills/novel-script/SKILL.md"
+        },
+        {
+          "description": "给 AI 短剧出分镜：三层结构——段（一次视频生成，≤15 秒）→ 分镜（段内 2–5 秒的剪切，认领剧本节拍） → 分镜图（每切一张关键帧：主分镜图钉 0.00 秒，子分镜图钉各自切点）。 每段自带一条 MiniMax H3 视频提示词（官方口径默认英文、逐镜换行，promptLang 可切中文）：对齐指令和 [Shot k] 切点时刻由分镜结构推导、逐字对账，台词逐字进 <d> 块（写法规范已内化为 references/h3-prompt.md，不依赖外部 skill）。 产出 storyboard.json + Markdown + 单页评审报告（分镜节奏带 / 分集分镜表 / 生成…",
+          "name": "novel-storyboard",
+          "path": "skills/novel-storyboard/SKILL.md"
+        }
+      ],
+      "total": 8
+    },
     "62656456/ai-film-skills": {
       "branch": "main",
       "skills": [
@@ -134,6 +191,17 @@
         {
           "description": "精细化 AI 短剧 IP 创作技能 OnlyShot（v0.7.0）。三阶段架构：Phase 1 创作（剧本+ref图，反复迭代）→ Phase 1.5 分镜图（每 grid 1-4 张候选静态图 = 视频首帧，工业级核心层）→ Phase 2 出片（按集解锁，4 模自动选）→ 自动初剪（字幕 + 每集 AI 标识）→ 上线前检查（2026 年 AI 微短剧新规）。v0.7.0：拼接初剪.py、compliance-2026.md、出片脚本 --dry-run 先看预估积分、--model-version、G AI 仿真人流。v0.6.0 关键升级：① ref 库工艺偏置铁律（现代摩天楼易拟…",
           "name": "ai-short-drama",
+          "path": "SKILL.md"
+        }
+      ],
+      "total": 1
+    },
+    "ADC1920/AI-Short-Drama-Studio": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "AI 短剧与短视频工作室（双形态·十段弹性路由）：概念→角色→世界观→分场→剧本融合→资产→表演→分镜提示词→出片→后期发布，每段可单独进入也可顺序推进，上游改动只标下游过期。用于 AI 短剧、漫剧、动态漫、竖屏微短剧、60 秒内短视频、口播脚本、开场钩子、发布文案与标签；提到即梦短剧工作室、Seedance、DreamScript、Anycook、DreamShot、宫格分镜、@素材引用、素材锚点、角色设定卡、画风三层、光影三件套、运镜三参数、多集项目、连续性台账、段缝衔接、转场、视频延长、配音/TTS、人脸审核、审核敏感词、否定约束失效、分镜提示词、关键帧、三层工艺分离、多人戏调度、场景…",
+          "name": "ai-short-drama-studio",
           "path": "SKILL.md"
         }
       ],
@@ -288,6 +356,39 @@
       ],
       "total": 2
     },
+    "ChinaYouShen/ai-short-drama": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "按用户选择创建或检查短剧、漫剧、人物与场景资产、图片提示词、分镜及 MiniMax H3 文戏武戏提示词；各阶段可跳过或直接启动，只加载当前任务模块。关键词：短剧、漫剧、分镜、文戏、武戏、必杀技、H3 提示词、多参考 Ref2VA、首尾帧。",
+          "name": "ai-short-drama",
+          "path": "SKILL.md"
+        }
+      ],
+      "total": 1
+    },
+    "Dogwind221/DWcinematic-whitebox": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "读取不同题材剧本，默认以《繁花》摄影为主，并按叙事需要选择其他导演的代表镜头手法，拆场、推导资产、设计分镜并制作 Blender 白模预演。按剧情语义转译风、重逢等意境为可播放的调度与镜头。用于剧本生成白模、导演风格分镜与镜头感优化，无需预先提供资产清单。摄影方法来自参考研习并独立实现。",
+          "name": "cinematic-whitebox",
+          "path": "SKILL.md"
+        }
+      ],
+      "total": 1
+    },
+    "EVZheng-Lab/ad-asset-bible": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Lira 的上游资产盘点器——把一份剧本变成一个 HTML 页，三张同构的表：场景 | 角色·服装 | 关键道具，每张都是「资产 | 需求描述 | 变体」，外加第四块「角色档案」。它回答的是资产问题:这个剧本有几处地方、几个人几套衣服、几件跨场景的道具，每份要几个变体，每场戏用哪一个,不漏任何一份。场景按地点切分去重（靠台词证据判断两个地名是不是同一处）；角色拆成「底档（脸/年龄/身形，写一遍）+ 每套服装一份资产 + 状态变体」，因为出图单元是「角色+一套服装」、换整套衣服图生图没有共同像素；道具只收跨场景的，并登记它画面上间接引用了谁（照片/油画/建筑画 → 必须走参考生图）；道具被激活…",
+          "name": "ad-asset-bible",
+          "path": "SKILL.md"
+        }
+      ],
+      "total": 1
+    },
     "Hao0321/ai-short-drama": {
       "branch": "main",
       "skills": [
@@ -339,6 +440,17 @@
         }
       ],
       "total": 7
+    },
+    "JuneYaooo/rea-toon": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "逆向拆解短剧：真人短剧、AI 短剧、漫剧、动态漫画、解说类，单集或整部剧。拆成可复查的剧本源码（角色、逐句说话人、分场造型、戏剧节拍、逐镜看点），再出给编剧和制片看的爆款拆解报告（节奏曲线、爽点分布、人设、套路、可复用公式），整部剧另出跨集拆解（人物弧光、伏笔回收、集间钩子、付费卡点）。用户说\"拆一下这部短剧/这条为什么火/分析这部剧的套路/拆解这几集\"时使用。",
+          "name": "rea-toon",
+          "path": "skills/rea-toon/SKILL.md"
+        }
+      ],
+      "total": 1
     },
     "KKKKhazix/human-writing": {
       "branch": "main",
@@ -498,6 +610,22 @@
         }
       ],
       "total": 10
+    },
+    "Mcz070321/katil-skill": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Use when 用户说“提示词skill／提示词 skill／KATIL”，指定Seedance 2.5影视提示词，或需要通用 AI 影视创作与导演：电影分镜、剧情短片、文戏表演、动作战斗、恐怖悬疑、爱情、科幻奇幻、现实主义、广告、动画、故事板、长视频及配套角色／场景图提示词。纯转码、压缩和文件修复不触发影视创作。",
+          "name": "katil-skill",
+          "path": "SKILL.md"
+        },
+        {
+          "description": "Use when 用户显式指定 KATIL 动作模块／direct-cinematic-fights 兼容入口，或旧流程指向本入口；普通 KATIL 打斗请求由主技能处理，本入口只转接。文戏不触发动作编排。",
+          "name": "direct-cinematic-fights",
+          "path": "compatibility/direct-cinematic-fights/SKILL.md"
+        }
+      ],
+      "total": 2
     },
     "Nanako0129/sepia": {
       "branch": "main",
@@ -1436,10 +1564,98 @@
       ],
       "total": 1
     },
+    "Weeexiao/skills": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "为AI短剧设计和生成空间一致的场景资产图。用于从场景描述或既有参考图出发，按正视、反向平视、45度斜俯、90度俯视的链式流程制作四视角参考，并交付高分辨率四宫格；不用于角色设定图或单张无视角连续性要求的插画。",
+          "name": "ai-short-drama-scene-assets",
+          "path": "assets/ai-short-drama-scene-assets/SKILL.md"
+        },
+        {
+          "description": "通过 browser-skill (bsk) 操控用户已登录的 Chrome 中的 Google Gemini 网页生成图片，并保存全尺寸原图到指定目录（分辨率与比例随提示词而定，如 2816×1536 横版、1536×2816 竖版 9:16、3:4 等）。当用户要求\"用 Gemini 生成图片\"、\"打开 Gemini 帮我画一张图\"等时使用。包含已验证正确的完整流程与命令，无需试错。",
+          "name": "gemini-image-gen",
+          "path": "assets/gemini-image-gen/SKILL.md"
+        },
+        {
+          "description": "使用 Toonflow 无限画布和 MiniMax H3 制作已有歌曲驱动的对口型 MV，支持 Blender 白模预演、逐字唱词、角色场景参考、分段生成、任务恢复和按原音频裁尾。适用于分段歌曲视频及局部重做，不用于重新作曲或后期换轨伪造音频复用。",
+          "name": "audio-driven-mv",
+          "path": "production/audio-driven-mv/SKILL.md"
+        },
+        {
+          "description": "用 Blender 搭建低精度白模并渲染预演视频，验证站位、走位、构图、景别、路径、运镜与时间轴。输出 previs.blend、重建脚本与预演 MP4，供 H3 作运动参考或人工审片。用户要求\"白模\"\"预演\"\"走位验证\"\"运镜验证\"\"这个镜头前先试试\"时使用。不用于最终角色建模、表情口型验证或成片风格。",
+          "name": "blender-previs",
+          "path": "production/blender-previs/SKILL.md"
+        },
+        {
+          "description": "拆解并创作“假如某个场景有离谱人数”的荒诞生活系列短视频，从参考片观察、选题避重、日常目标、人数后果递进到人物对白与AI分镜。用于人数或规模放大带来的生活喜剧，不默认复制参考片剧情或直接生成付费视频。",
+          "name": "crowd-scale-shorts",
+          "path": "scriptwriting/crowd-scale-shorts/SKILL.md"
+        },
+        {
+          "description": "创作、改写或制作 POV 第一人称短片的剧本、分镜与生成方案，适用于历史逃生、人生体验、沉浸叙事和逆袭爽文。默认严格眼睛视点；支持从已有剧本继续制作、参考资产与固定旁白绑定、分段出片及验收。用户要求 POV、第一人称分镜、代入感短片，或修正主角入镜、运镜和动作问题时使用；普通第三人称短剧不使用。",
+          "name": "pov-shortdrama",
+          "path": "scriptwriting/pov-shortdrama/SKILL.md"
+        },
+        {
+          "description": "为系列化反诈/消费陷阱AI短剧（尤其《赵叔踩坑日记》）做从选题到开拍脚本的完整开发：提取系列配方、排查题材撞车、五维加权打分、写3秒钩子与8场骨架，再扩成带台词与时长预算的完整剧本、片段切分表和台词台账。当用户说“选个新一集题材”“这个骗局能不能拍”“下一集拍什么”“把选题写成剧本”“出一版台词”时使用。不负责写H3提示词和分镜执行。",
+          "name": "shortdrama-topic-script",
+          "path": "scriptwriting/shortdrama-topic-script/SKILL.md"
+        },
+        {
+          "description": "将短片创意、现有素材或脚本初稿转为可拍可剪的原创分镜；适用于短片策划、脚本优化与拍摄方案设计。",
+          "name": "ai-script-director",
+          "path": "storyboard/ai-script-director/SKILL.md"
+        },
+        {
+          "description": "Write MiniMax H3 video generation prompts for T2VA, I2VA, FL2VA, L2VA, and Ref2VA. Use when rewriting multimodal requests into H3 prompt structures, composing integrated_multimodal_description, overall_soundscape, and non_diegetic_music, aligning keyframes, or defining reference labels for images,…",
+          "name": "h3-prompt-writing",
+          "path": "storyboard/h3-prompt-writing/SKILL.md"
+        },
+        {
+          "description": "Design or revise cinematic live-action storyboards and MiniMax H3 Ref2VA prompt packages from scripts. Use when the user asks for 分镜设计、电影化镜头、运镜优化、H3 提示词、全能参考模型、参考图/视频/音频声明、角色音色绑定、硬切连续性、无时间轴提示词，或检查 H3 片段包。 Preserves dialogue exactly, writes storyboards without durations, and combines physical camera…",
+          "name": "minimax-h3-storyboard-director",
+          "path": "storyboard/minimax-h3-storyboard-director/SKILL.md"
+        },
+        {
+          "description": "以节约 Codex 用量为目标连接 DSH 桌面；小任务直接完成，DSH 独有能力直接调用工具，大块独立任务才交给模型执行。支持部署、派单前的技能与运行时到位检查、按需发现接口、复杂任务方案与验收。含 Blender 内置技能的路由表。",
+          "name": "dsh-orchestrator",
+          "path": "tooling/dsh-orchestrator/SKILL.md"
+        }
+      ],
+      "total": 11
+    },
+    "Work-Fisher/fisher-storylens": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "将韩剧式悬疑、复仇小说或剧本按角色生图提示词确认、场景生图提示词确认、用户上传图片后生成MiniMax视频提示词的三阶段流程制作，支持修改造型与连续片段，默认中文交付。",
+          "name": "korean-thriller-asset-to-video",
+          "path": "SKILL.md"
+        }
+      ],
+      "total": 1
+    },
     "YvonneMovingon/short-drama-skills": {
       "branch": "main",
       "skills": [],
       "total": 0
+    },
+    "Zeno-Zhu/VIDU-CLI-SKILL": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "从剧本到成片一条龙，三个入口。①剧本创作：手上没本子，按「无限轮回宇宙」写——世界篇→全剧大纲→逐集剧本→Word，17+12 道质量门脚本硬校验；②漫剧创作：手上有本子，直接盘资产、出角色设定板（固定版式）、出分镜组表、站位预演＋六项审核、写提示词、Vidu 出片；③符创作：把运镜、动作这类本事压成一张 16:9 能力卡。另有商业线（卖货 / 门店 / 企业宣传）走同一套干法。单组时长按渠道（Vidu 16 / H3·即梦2.0 15 / 即梦2.5 固定 30 / Wan3 4–30）、镜数按节奏、单镜不低于 1.2 秒；分镜表只写「这一组用谁」，pn 由脚本绑定并四方对账；设定图整张直…",
+          "name": "vidu-skill",
+          "path": "SKILL.md"
+        },
+        {
+          "description": "剪映 (JianYing) AI自动化剪辑的高级封装 API (JyWrapper)，提供开箱即用的 Python 接口，支持录屏、素材导入、字幕生成、Web 动效合成及项目导出。全面适配 MacOS (Apple Silicon/Intel) 与 Windows，支持 v5.9+ (draft_info.json) 架构、工程自修复、智能配音字幕及录屏变焦。",
+          "name": "jianying-editor",
+          "path": "jianying-editor/SKILL.md"
+        }
+      ],
+      "total": 2
     },
     "ZzzAloong/fight-scene-director": {
       "branch": "main",
@@ -1689,6 +1905,17 @@
       ],
       "total": 1
     },
+    "dennisonbertram/emulsion": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Collaborative 3D storyboard blocking for AI video generation. Use when the user wants to block out a shot, scene, or storyboard, direct camera moves, build a motion reference clip for Seedance or another video model, or says \"emulsion\", \"storyboard this\", \"block this shot\", or \"direct this scene\".…",
+          "name": "emulsion",
+          "path": "SKILL.md"
+        }
+      ],
+      "total": 1
+    },
     "dexhunter/seedance2-skill": {
       "branch": "main",
       "skills": [
@@ -1745,6 +1972,22 @@
         }
       ],
       "total": 7
+    },
+    "doublesq97-ui/su-ai-short-drama": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Develop and direct female-audience AI short dramas through role-specific workflows for showrunning, screenwriting, casting and original character design, art, performance, cinematography, storyboarding, sound, post, continuity, and asset handoff. Use when the user asks for 女频短剧、微短剧、言情或非言情女性向故事、女主成长…",
+          "name": "ai-short-drama-studio-female",
+          "path": "skills/ai-short-drama-studio-female/SKILL.md"
+        },
+        {
+          "description": "Develop and direct male-audience AI short dramas through role-specific workflows for showrunning, screenwriting, casting and original character design, art, performance, cinematography, storyboarding, sound, post, continuity, and asset handoff. Use when the user asks for 男频短剧、微短剧、玄幻修仙、都市逆袭、职业创业、历史权…",
+          "name": "ai-short-drama-studio-male",
+          "path": "skills/ai-short-drama-studio-male/SKILL.md"
+        }
+      ],
+      "total": 2
     },
     "e06084/claude-screenwriting": {
       "branch": "main",
@@ -1914,6 +2157,47 @@
         }
       ],
       "total": 13
+    },
+    "glitterpixely/skills": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Build, light, shade, scatter, bake, animate, and verify 3D props, environments, painterly/cel anime scenes, multi-angle AI-video graybox/turnaround plates, and game-ready GLB assets in Blender 5.x (live MCP or headless bpy/bmesh). Trigger terms: Blender, Blender 5, bpy, bmesh, Geometry Nodes, EEVEE…",
+          "name": "blender-craft",
+          "path": "blender-craft/SKILL.md"
+        },
+        {
+          "description": "Plan, inspect, write, repair, and validate surface-aware MiniMax H3 (Hailuo 3.0) audiovisual prompts across T2VA, I2VA, FL2VA, L2VA, and Ref2VA. Invoke whenever the user asks for a MiniMax H3 or Hailuo 3 prompt, Context-IR structured prompt, hosted @Image/@Video/@Audio prompt, open-weight SGLang/vL…",
+          "name": "h3-prompt-writing",
+          "path": "h3-prompt-writing/SKILL.md"
+        },
+        {
+          "description": "Write, optimize, audit, and repair Kling 4.0 and Kling 4.0 Flash video prompts using model-specific limits, explicit reference ownership, and Kuaishou DiT/Omni conditioning rules. Invoke whenever the user requests a Kling 4 or Kling 4.0 Flash prompt for text-to-video, image animation, First & Last…",
+          "name": "kling-4-prompting",
+          "path": "kling-4-prompting/SKILL.md"
+        },
+        {
+          "description": "Create, optimize, audit, and serialize production-ready MiniMax Music 3.0 songs, three-part Structured Captions, section-tagged lyrics, and runtime payloads. Invoke whenever the user requests a MiniMax Music 3.0 prompt, song package, structured music caption (Global Metadata / Vocal Details / Arran…",
+          "name": "minimax-music-30",
+          "path": "minimax-music-30/SKILL.md"
+        },
+        {
+          "description": "Write, optimize, audit, and repair Dreamina Seedance 2.5 video prompts and BytePlus ModelArk workflows (up to 30s or 180s Long Video, 50 multimodal @Image/@Video/@Audio refs, keyframes, storyboards, 3D blockouts, edit, extend, and result repair). Trigger terms: Seedance 2.5, sd25, sd25-pe, dreamina…",
+          "name": "seedance-25",
+          "path": "seedance-25/SKILL.md"
+        },
+        {
+          "description": "Create original song concepts, prosody- and phonetics-checked lyrics, parody/lyric adaptations, instrumental film/game scores, 6-stage studio signal-chain Style strings (with 83 sonic archetypes across 68–174 BPM), paste-ready Suno v6 prompt packages (Title, Style, Lyrics, Exclude, v6/v6-wild/v6-mi…",
+          "name": "suno-song-builder",
+          "path": "suno-song-builder/SKILL.md"
+        },
+        {
+          "description": "Build, debug, and polish 60 FPS Three.js and React Three Fiber scenes on WebGPU and WebGL2 (r165–r187+): photoreal PBR, colour/AgX/Neutral, HDRI/GI, fitted shadows, TSL shaders & compute, RenderPipeline/pmndrs post, OIT/TAAU/FSR1, stylized/toon/anime, glTF/KTX2/3DGS splats, instancing/BatchedMesh/B…",
+          "name": "threejs-rendering",
+          "path": "threejs-rendering/SKILL.md"
+        }
+      ],
+      "total": 7
     },
     "ilkaydemiralay/vision_art_creator": {
       "branch": "main",
@@ -2187,6 +2471,17 @@
       ],
       "total": 5
     },
+    "lbh1761745734-ui/mr-li-seedance-25": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "安装或本机首次启用先显示固定署名与特别鸣谢。引导用户确认剧本、制作范围，按剧本推荐并自定义审美基调，按真实表演容量编写 Seedance 提示词，制作与分类资产、返工并交付。适用于逐步选择或按已确认方案连续执行、保持对白与连续性、整理总素材库及分集分场文件夹的任务。",
+          "name": "mr-li-seedance-25",
+          "path": "SKILL.md"
+        }
+      ],
+      "total": 1
+    },
     "leynos/visual-storytelling-skills": {
       "branch": "main",
       "skills": [
@@ -2266,6 +2561,17 @@
       ],
       "total": 1
     },
+    "liangie7420/Master-director": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Create and revise AI comic-drama or short-drama projects through a persistent, evidence-gated ReAct loop: scripts, assets, shots, model inputs and observed reviews. Use for production, an existing project's next shot, or maintenance of this workflow.",
+          "name": "manju-director",
+          "path": "SKILL.md"
+        }
+      ],
+      "total": 1
+    },
     "liuxiao20051106-prog/ai-manga-drama": {
       "branch": "main",
       "skills": [
@@ -2281,6 +2587,17 @@
         }
       ],
       "total": 2
+    },
+    "lixiaoxiao9888-create/forest-laoli-h3": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "MiniMax H3（海螺 3.0）专用短剧全流程 Skill（人格：漫剧老李；通用型·不绑定任何渲染平台或生产机）：剧本 → 资产参考图 → H3 分镜 → 三字段/六段式投喂稿 → 机检交付，一条链走完，输出可直接投 H3-Base / H3-Context-IR。只做短剧视频，不含广告/营销/产品片。画幅推荐 9:16 竖屏（短剧主流），16:9 横屏实测同样可用，全片一致即可，禁 auto。核心三件事——运镜、越轴、站位；核心纪律——词根级清洗（H3 对词根极敏感，否定词与抽象词会被画出来）、门窗状态锁与画外动作隔离、单段同框与依托物唯一锁、氛围层六件套，并强制 H3 官方硬规格（单…",
+          "name": "forest-laoli-h3",
+          "path": "forest-laoli-h3/SKILL.md"
+        }
+      ],
+      "total": 1
     },
     "lixiaoxiao9888-create/manju-laoli-skill": {
       "branch": "main",
@@ -2427,6 +2744,22 @@
         }
       ],
       "total": 7
+    },
+    "mariozhaofan-pixel/screenplay-generator-skill": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Turn a rough story idea, genre brief, reference work, meme premise, episode concept, or user demand into a complete executable screenplay with script-derived image-style and camera-movement prompts, followed by a synchronized director-grade per-CUT storyboard. Use when the user asks for short-video…",
+          "name": "script-generator",
+          "path": "script-generator/SKILL.md"
+        },
+        {
+          "description": "爆款编剧skill（飞书版）。以《The Coffee Break Screenwriter》及书库方法共创人物、因果反转和对白，支持故事开发、直接成稿、续写、定点修改及参考片研究，分批交付标准中文Markdown剧本；可选本地工作或与导演共用飞书多维表，自动同步定稿及采用修订。",
+          "name": "viral-screenwriter",
+          "path": "viral-screenwriter/SKILL.md"
+        }
+      ],
+      "total": 2
     },
     "mengxiujie/ManjuForge": {
       "branch": "main",
@@ -2586,6 +2919,17 @@
       ],
       "total": 5
     },
+    "ouxxyy/storyboard-scavenger": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "将任何想法转换成 AI 视频分镜提示词（Kling 可灵 / Seedance 即梦 / Sora 等）。当用户想要生成视频、制作短视频、创作分镜、使用可灵/Kling、Seedance/即梦、Sora、Runway 等 AI 视频工具时调用。",
+          "name": "seedance-storyboard",
+          "path": "SKILL.md"
+        }
+      ],
+      "total": 1
+    },
     "phileiny/h3-storyboard-skill": {
       "branch": "main",
       "skills": [
@@ -2625,6 +2969,28 @@
         {
           "description": "将用户的打斗构想通过场景、动作分镜方案、招式库、技能库和示例剧本的多层关键词检索，编译为可靠的战斗剧情、动作链、空间路线与动作分镜。用于打斗剧情构思、动作设计、招式设计、条件型技能设计、战斗分镜；不负责提示词生成，也不负责资料吸收与入库（吸收与入库由 fight-video-increase-skill 承担）。",
           "name": "fight-video-create-skill",
+          "path": "SKILL.md"
+        }
+      ],
+      "total": 1
+    },
+    "reelbenchai/reelscript": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Read Douyin user lists (at most 50 works) or Hongguo episode directories, or download selected videos and return relative paths, text, counts, and up to three comments above 100 likes. Supports Android USB observations and an optional reviewed Hongguo registered-source backend without extracting br…",
+          "name": "reeldown",
+          "path": "tools/reeldown/SKILL.md"
+        }
+      ],
+      "total": 1
+    },
+    "sanxsnr/ai-short-drama-from-zero": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Guide beginners and experienced creators through AI short-drama production from idea to final film. Diagnose project state, create or repair production-ready scripts, unified directorial camera plans, spatially solved SEG/SHOT/CUT structures, assets, storyboards, Seedance 2.0/I2V/FLF2V prompts, gen…",
+          "name": "ai-short-drama-director",
           "path": "SKILL.md"
         }
       ],
@@ -2702,6 +3068,57 @@
         }
       ],
       "total": 8
+    },
+    "svenkatreddy/universal-video-skills": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Stitch AI clips into a finished video: ffmpeg concat, transitions, title cards, watermarks, subtitles, and platform exports (16:9, 9:16, 1:1). Use when individual clips exist and need to become one video.",
+          "name": "assembly-and-delivery",
+          "path": "skills/assembly-and-delivery/SKILL.md"
+        },
+        {
+          "description": "Keep faces, products, and props identical across AI-generated shots with an asset registry, reference sheets, and verbatim descriptions. Use when a character or product appears in more than one shot, or when faces keep drifting between generations.",
+          "name": "character-consistency",
+          "path": "skills/character-consistency/SKILL.md"
+        },
+        {
+          "description": "Direct the look of AI video like a cinematographer: camera language, movement, lighting, color, and style lenses. Use when a prompt needs a real shot in it, not just a subject, or when results look flat and amateur.",
+          "name": "cinematic-direction",
+          "path": "skills/cinematic-direction/SKILL.md"
+        },
+        {
+          "description": "Dialogue, voiceover, subtitles, and mixing for AI video: TTS casting, per-line timing, SRT subtitles, loudness. Use when a video has spoken lines, narration, or needs its audio finished in post.",
+          "name": "dialogue-and-audio",
+          "path": "skills/dialogue-and-audio/SKILL.md"
+        },
+        {
+          "description": "Translate a finished shot-brief into per-model instructions for Muse, Gemini/Veo, Sora, Kling, Runway, Pika, Luma, and Hailuo. Constraint sheets, prompt quirks, and what to verify. Use after the prompt is written, before generating.",
+          "name": "model-adapters",
+          "path": "skills/model-adapters/SKILL.md"
+        },
+        {
+          "description": "Generate video with Google Veo through the web app (Google Flow) on a Google AI Pro subscription: project setup, Veo prompting, browser-driven generation, full-duration QA, and stitching. Use when the backend is Veo via the browser rather than an API.",
+          "name": "muse-google-veo-web",
+          "path": "skills/muse-google-veo-web/SKILL.md"
+        },
+        {
+          "description": "Plan AI video like a production: beats, shot lists, storyboards, review gates, and a fast-track for simple jobs. Use when a video needs more than one shot, or when generations keep drifting off-story.",
+          "name": "story-and-shots",
+          "path": "skills/story-and-shots/SKILL.md"
+        },
+        {
+          "description": "Write text-to-video and image-to-video prompts that hold up in real generation. Shot-brief grammar, JSON prompting, negative prompts, and failure-mode hardening. Use when drafting, reviewing, or fixing a video generation prompt for any model.",
+          "name": "video-prompt-craft",
+          "path": "skills/video-prompt-craft/SKILL.md"
+        },
+        {
+          "description": "Review AI-generated clips like a QC department: per-shot checklists, frame evidence, continuity across joins, and honest verdicts. Use when deciding whether a clip ships, gets fixed, or gets cut.",
+          "name": "video-qa",
+          "path": "skills/video-qa/SKILL.md"
+        }
+      ],
+      "total": 9
     },
     "wddxh/ShortVideoDirector": {
       "branch": "main",
@@ -2884,6 +3301,57 @@
       ],
       "total": 35
     },
+    "weibo-job/guagua-animation-skills": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "根据已审核关键帧和分镜编写动作提示词并调用可用视频工具生成单镜头动画，检查动作与连续性。",
+          "name": "animation-prompt",
+          "path": "animation-prompt/SKILL.md"
+        },
+        {
+          "description": "为无对白双主角喜剧建立角色设定、参考图和版本，适用于首次角色定稿或有明确范围的角色调整。",
+          "name": "character-bible",
+          "path": "character-bible/SKILL.md"
+        },
+        {
+          "description": "按呱呱历险记创作手册调度角色、编剧、分镜、关键帧、视频、音效、剪辑和合集技能，支持单集制作与失败续跑。",
+          "name": "guagua-animation-pipeline",
+          "path": "guagua-animation-pipeline/SKILL.md"
+        },
+        {
+          "description": "把5至8条已审核动画单集合成带高光开场的合集，输出封面与文案，不自动发布或保证流量。",
+          "name": "ops-compiler",
+          "path": "ops-compiler/SKILL.md"
+        },
+        {
+          "description": "按无对白动画分镜生成镜头图像提示词和实际关键帧，绑定角色参考图并审核连续性。",
+          "name": "scene-generator",
+          "path": "scene-generator/SKILL.md"
+        },
+        {
+          "description": "为无对白喜剧动画配置并取得实际拟声、动作音效与背景音乐，按生成画面的动作时间对齐。",
+          "name": "sound-designer",
+          "path": "sound-designer/SKILL.md"
+        },
+        {
+          "description": "根据角色资产与主题编写约70秒无对白喜剧故事，设计预期违背笑点与跨集钩子，不负责画面生成。",
+          "name": "story-writer",
+          "path": "story-writer/SKILL.md"
+        },
+        {
+          "description": "将已审核动画镜头与音频按分镜合成为9:16单集MP4，验证时长、音画同步和播放质量。",
+          "name": "video-editor",
+          "path": "video-editor/SKILL.md"
+        },
+        {
+          "description": "把无对白动画故事拆成可生成、可剪辑的连续镜头表，控制喜剧节奏、空间关系与时间轴。",
+          "name": "visual-comedy-director",
+          "path": "visual-comedy-director/SKILL.md"
+        }
+      ],
+      "total": 9
+    },
     "woodfantasy/Seedance-ShotDesign-Skills": {
       "branch": "main",
       "skills": [
@@ -2901,6 +3369,17 @@
         {
           "description": "Acts as a director and previs supervisor for film, video, and AI filmmaking. Turns scripts, prose, briefs, or existing image and video assets into production deliverables — subtext breakdown, beat sheet, director's book, blocking and staging, shot list with coverage, keyframe and storyboard prompts…",
           "name": "cinematic-director",
+          "path": "SKILL.md"
+        }
+      ],
+      "total": 1
+    },
+    "wwaa34682-lab/novel-to-short-drama-skill": {
+      "branch": "master",
+      "skills": [
+        {
+          "description": "Use when turning a novel/web-fiction excerpt into an AI-generated vertical-platform short drama (短剧/漫剧) via a 7-step gated pipeline — adaptation, QA, pacing, clip storyboard, assets, key stills + visual audit, image-to-video.",
+          "name": "novel-to-short-drama",
           "path": "SKILL.md"
         }
       ],
@@ -3024,6 +3503,117 @@
         }
       ],
       "total": 4
+    },
+    "zhanghao123vip/ai-manju-skills": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "现代重生复仇AI漫剧全流程模板：用户只要给一句现代都市背景的重生回到过去、前世被丈夫或闺蜜害死、今生复仇、回到十八岁改命的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到现代重生、重生复仇、豪门重生、职场重生、前世今生、回到过去打脸渣男闺蜜，都应使用本模板，即使没有明确说要用它。故事发生在古代、七八十年代或末世时，不用本模板。",
+          "name": "chongsheng-manju",
+          "path": "skills/chongsheng-manju/SKILL.md"
+        },
+        {
+          "description": "古代穿越重生AI漫剧全流程模板：用户只要给一句穿越古代、魂穿、书穿、重生回古代的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到穿越漫剧、穿书、魂穿、古代重生、现代人到古代，都应使用本模板，即使没有明确说要用它。内宅嫡女重生优先用宅斗模板，后宫重生优先用宫斗模板。",
+          "name": "chuanyue-manju",
+          "path": "skills/chuanyue-manju/SKILL.md"
+        },
+        {
+          "description": "都市逆袭AI漫剧全流程模板：用户只要给一句赘婿、隐藏身份、战神回归、小人物翻身、当众打脸的现代都市故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到都市漫剧、赘婿、龙王、神豪、隐藏大佬、外卖员逆袭，都应使用本模板，即使没有明确说要用它。",
+          "name": "dushi-manju",
+          "path": "skills/dushi-manju/SKILL.md"
+        },
+        {
+          "description": "宫斗AI漫剧全流程模板：用户只要给一句后宫、宫斗、妃嫔争宠、皇后太后、后宫权谋的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到宫斗漫剧、后宫剧、妃嫔、冷宫逆袭、宫女上位，都应使用本模板，即使没有明确说要用它。",
+          "name": "gongdou-manju",
+          "path": "skills/gongdou-manju/SKILL.md"
+        },
+        {
+          "description": "家庭伦理AI漫剧全流程模板：用户只要给一句婆媳、儿媳反杀、原生家庭、夫妻矛盾、遗产纠纷、都市家庭的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到家庭短剧、家庭伦理漫剧、婆媳大战、姑姐、扶弟魔、中年逆袭，都应使用本模板，即使没有明确说要用它。",
+          "name": "jiating-manju",
+          "path": "skills/jiating-manju/SKILL.md"
+        },
+        {
+          "description": "民俗怪谈AI漫剧全流程模板：用户只要给一句乡村怪事、古宅传说、民俗禁忌、守村人、风水故事的点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到民俗漫剧、怪谈、灵异悬疑、古村秘闻、民间传说，都应使用本模板，即使没有明确说要用它。",
+          "name": "minsu-manju",
+          "path": "skills/minsu-manju/SKILL.md"
+        },
+        {
+          "description": "末日废土AI漫剧全流程模板：用户只要给一句末世、丧尸、囤货、基地、废土求生、天灾的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到末日漫剧、丧尸、末世重生、异能觉醒、废土、极寒、囤物资，都应使用本模板，即使没有明确说要用它。",
+          "name": "moshi-manju",
+          "path": "skills/moshi-manju/SKILL.md"
+        },
+        {
+          "description": "年代文AI漫剧全流程模板：用户只要给一句七零、八零、九零年代、知青、下海、军婚、大院的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到年代文漫剧、七零年代、八零致富、重生七零、改革开放创业，都应使用本模板，即使没有明确说要用它。",
+          "name": "niandai-manju",
+          "path": "skills/niandai-manju/SKILL.md"
+        },
+        {
+          "description": "权谋朝堂AI漫剧全流程模板：用户只要给一句朝堂、夺嫡、谋士、摄政、藩王、女帝、复国的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到权谋漫剧、朝堂戏、皇子夺嫡、寒门谋士、女帝登基，都应使用本模板，即使没有明确说要用它。",
+          "name": "quanmou-manju",
+          "path": "skills/quanmou-manju/SKILL.md"
+        },
+        {
+          "description": "职场商战AI漫剧全流程模板：用户只要给一句职场、创业、夺权、并购、公司内斗、女强人逆袭的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到职场漫剧、商战、董事会、上市、职场小白逆袭，都应使用本模板，即使没有明确说要用它。",
+          "name": "shangzhan-manju",
+          "path": "skills/shangzhan-manju/SKILL.md"
+        },
+        {
+          "description": "总裁甜宠AI漫剧全流程模板：用户只要给一句霸总、契约婚姻、先婚后爱、追妻、闪婚、甜宠恋爱的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到甜宠漫剧、霸总、总裁文、契约恋爱、双向奔赴，都应使用本模板，即使没有明确说要用它。",
+          "name": "tianchong-manju",
+          "path": "skills/tianchong-manju/SKILL.md"
+        },
+        {
+          "description": "武侠江湖AI漫剧全流程模板：用户只要给一句江湖、门派、绝学、侠客、复仇、正邪之争的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到武侠漫剧、江湖恩怨、少年侠客、武林盟主、剑客刀客，都应使用本模板，即使没有明确说要用它。",
+          "name": "wuxia-manju",
+          "path": "skills/wuxia-manju/SKILL.md"
+        },
+        {
+          "description": "大学校园青春AI漫剧全流程模板：用户只要给一句大学、学长学姐、社团、暗恋、毕业、青春成长的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到校园漫剧、大学恋爱、青春剧、学霸、毕业季，都应使用本模板，即使没有明确说要用它。",
+          "name": "xiaoyuan-manju",
+          "path": "skills/xiaoyuan-manju/SKILL.md"
+        },
+        {
+          "description": "西幻魔法AI漫剧全流程模板：用户只要给一句魔法学院、龙、王国、骑士、精灵、公爵千金、异世界的西方奇幻故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到西幻漫剧、魔法师、异世界、龙骑士、恶役千金，都应使用本模板，即使没有明确说要用它。",
+          "name": "xihuan-manju",
+          "path": "skills/xihuan-manju/SKILL.md"
+        },
+        {
+          "description": "星际机甲AI漫剧全流程模板：用户只要给一句星际、机甲、舰队、殖民星、虫族、星际战争的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到星际漫剧、机甲、太空歌剧、舰长、军校机甲，都应使用本模板，即使没有明确说要用它。",
+          "name": "xingji-manju",
+          "path": "skills/xingji-manju/SKILL.md"
+        },
+        {
+          "description": "系统无限流AI漫剧全流程模板：用户只要给一句系统、闯关、副本、无限流、任务奖励、规则怪谈式通关的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到系统文、无限流、副本、绑定系统、死亡游戏、闯关，都应使用本模板，即使没有明确说要用它。",
+          "name": "xitong-manju",
+          "path": "skills/xitong-manju/SKILL.md"
+        },
+        {
+          "description": "玄幻修仙AI漫剧全流程模板：用户只要给一句玄幻、修仙、仙侠、东方幻想题材的话，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到玄幻修仙漫剧、仙侠动态漫、废柴逆袭修仙、修仙短剧，或直接丢来一句修仙故事点子，都应使用本模板，即使没有明确说要用它。",
+          "name": "xuanhuan-manju",
+          "path": "skills/xuanhuan-manju/SKILL.md"
+        },
+        {
+          "description": "悬疑刑侦AI漫剧全流程模板：用户只要给一句破案、侦探、悬疑、密室、失踪案、反转的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到悬疑漫剧、刑侦、探案、推理、连环案、法医，都应使用本模板，即使没有明确说要用它。",
+          "name": "xuanyi-manju",
+          "path": "skills/xuanyi-manju/SKILL.md"
+        },
+        {
+          "description": "娱乐圈AI漫剧全流程模板：用户只要给一句明星、顶流、过气艺人、经纪人、黑红翻身、综艺、选秀的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到娱乐圈漫剧、顶流、影后、经纪人逆袭、黑红、翻红，都应使用本模板，即使没有明确说要用它。",
+          "name": "yule-manju",
+          "path": "skills/yule-manju/SKILL.md"
+        },
+        {
+          "description": "宅斗AI漫剧全流程模板：用户只要给一句嫡女、庶女、侯府、内宅、继母、主母、管家权的故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到宅斗漫剧、嫡女重生、侯门主母、高门内宅、打脸继母，都应使用本模板，即使没有明确说要用它。",
+          "name": "zhaidou-manju",
+          "path": "skills/zhaidou-manju/SKILL.md"
+        },
+        {
+          "description": "古代种田经商AI漫剧全流程模板：用户只要给一句种田、农家、开铺子、经商致富、带全家过好日子的古代故事点子，就产出企划案、资产图提示词库、分集剧本、分集导演手册（分镜图与视频提示词）和发布包。只要用户提到种田文、农门、悍妇经商、古代创业、逃荒，都应使用本模板，即使没有明确说要用它。",
+          "name": "zhongtian-manju",
+          "path": "skills/zhongtian-manju/SKILL.md"
+        }
+      ],
+      "total": 21
     },
     "zhlmi/narrative-to-screen-reader": {
       "branch": "main",

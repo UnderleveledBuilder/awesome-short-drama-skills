@@ -14,6 +14,32 @@
       "stars": 1631,
       "status": "ok"
     },
+    "10291124jcjc-dotcom/ai-anime-series": {
+      "archived": false,
+      "description": "AI 动画单元剧：固定原创角色，一句话出一集。角色设定图 + 宫格故事板 + 即梦 Seedance 一次生成。Claude Skill.",
+      "first_seen": "2026-11-16",
+      "forks": 82,
+      "full_name": "10291124jcjc-dotcom/ai-anime-series",
+      "license": null,
+      "pushed_at": "2026-10-28",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 392,
+      "status": "ok"
+    },
+    "304939905/minimaxH3-ai-video-agent": {
+      "archived": false,
+      "description": "MiniMax H3 AI 视频全流程 Agent：从剧本、分镜、提示词到生成与审片的可追溯工作流；整合导演、H3、Grok 与漫剧五件套 Skill。",
+      "first_seen": "2026-11-16",
+      "forks": 0,
+      "full_name": "304939905/minimaxH3-ai-video-agent",
+      "license": null,
+      "pushed_at": "2026-11-12",
+      "skill_count": 8,
+      "skill_count_truncated": false,
+      "stars": 8,
+      "status": "ok"
+    },
     "62656456/ai-film-skills": {
       "archived": false,
       "description": "Open Film Skills: 21 independent modules for story, directing, visual assets and AI-film production, with research galleries and playable 3D previs.",
@@ -36,6 +62,19 @@
       "skill_count": 1,
       "skill_count_truncated": false,
       "stars": 414,
+      "status": "ok"
+    },
+    "ADC1920/AI-Short-Drama-Studio": {
+      "archived": false,
+      "description": "AI 短剧与短视频工作室技能（Agent Skill）：十段弹性路由（概念→角色→世界观→分场→剧本融合→资产→表演→分镜提示词→出片→后期发布），每段可单独进入，上游改动只标下游过期。多集短剧与 60 秒内短视频双形态，一项目一目录、产物驱动进度。28 个带自检的机检脚本覆盖剧本、分镜、引用、接缝、成本与改稿影响面，27 篇工艺文档，即梦 Seedance 出片。AI short-drama studio skill: ten-stage elastic routing, 28 self-tested scripts, 27 craft references, Seedance, cost ledger, rework impact graph.",
+      "first_seen": "2026-11-16",
+      "forks": 0,
+      "full_name": "ADC1920/AI-Short-Drama-Studio",
+      "license": "MIT",
+      "pushed_at": "2026-11-16",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 3,
       "status": "ok"
     },
     "AharaOoO/acheng-director-skill": {
@@ -87,6 +126,45 @@
       "skill_count": 2,
       "skill_count_truncated": false,
       "stars": 269,
+      "status": "ok"
+    },
+    "ChinaYouShen/ai-short-drama": {
+      "archived": false,
+      "description": "AI 生成短剧技能包：选题/大纲/人物/剧本/分镜/图片提示词 + MiniMax H3 文戏武戏提示词，适配 Codex / Cursor / DeepSeek Harness / 豆包 / 文心一言",
+      "first_seen": "2026-11-16",
+      "forks": 2,
+      "full_name": "ChinaYouShen/ai-short-drama",
+      "license": "GPL-3.0",
+      "pushed_at": "2026-11-16",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 3,
+      "status": "ok"
+    },
+    "Dogwind221/DWcinematic-whitebox": {
+      "archived": false,
+      "description": "DSH skill (DWcinematic-whitebox): script-to-Blender whitebox previz — derives shots, blocking and camera moves, then guides Blender renders in a cinematic style. 剧本转白模预演 · 分镜推导 + 运镜设计",
+      "first_seen": "2026-11-16",
+      "forks": 0,
+      "full_name": "Dogwind221/DWcinematic-whitebox",
+      "license": null,
+      "pushed_at": "2026-10-26",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 5,
+      "status": "ok"
+    },
+    "EVZheng-Lab/ad-asset-bible": {
+      "archived": false,
+      "description": "剧本 → 资产盘点：场景 / 角色·服装 / 关键道具三张表，Lira 的上游输入（Claude Code skill）",
+      "first_seen": "2026-11-16",
+      "forks": 1,
+      "full_name": "EVZheng-Lab/ad-asset-bible",
+      "license": "MIT",
+      "pushed_at": "2026-11-13",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 9,
       "status": "ok"
     },
     "Forget-C/Jellyfish": {
@@ -162,6 +240,19 @@
       "stars": 34,
       "status": "ok"
     },
+    "JuneYaooo/rea-toon": {
+      "archived": false,
+      "description": "AI 拆解学习短剧：为什么火、剧本怎么写、每一镜怎么拍 | Break down any short drama with AI: why it works, the script, every shot",
+      "first_seen": "2026-11-16",
+      "forks": 39,
+      "full_name": "JuneYaooo/rea-toon",
+      "license": null,
+      "pushed_at": "2026-11-15",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 219,
+      "status": "ok"
+    },
     "KKKKhazix/human-writing": {
       "archived": false,
       "description": "让 AI 写的中文读起来像一个具体的人在说话。通用创作与改稿 Skill，开箱即用。",
@@ -222,6 +313,19 @@
       "skill_count": 10,
       "skill_count_truncated": false,
       "stars": 21,
+      "status": "ok"
+    },
+    "Mcz070321/katil-skill": {
+      "archived": false,
+      "description": "KATIL — 通用 AI 影视创作与导演系统 · FX Director 2.0 / A general AI film direction system: 15 effect classes, evidence-graded directing decisions, 240 ability cards, 60 style recipes, bilingual shots.",
+      "first_seen": "2026-11-16",
+      "forks": 0,
+      "full_name": "Mcz070321/katil-skill",
+      "license": "MIT",
+      "pushed_at": "2026-11-11",
+      "skill_count": 2,
+      "skill_count_truncated": false,
+      "stars": 5,
       "status": "ok"
     },
     "Nanako0129/sepia": {
@@ -398,6 +502,32 @@
       "stars": 109,
       "status": "ok"
     },
+    "Weeexiao/skills": {
+      "archived": false,
+      "description": "AI 短剧制作 Agent Skills 合集：剧本、分镜、提示词、资产、成片，按分类存放",
+      "first_seen": "2026-11-16",
+      "forks": 1,
+      "full_name": "Weeexiao/skills",
+      "license": null,
+      "pushed_at": "2026-11-13",
+      "skill_count": 11,
+      "skill_count_truncated": false,
+      "stars": 6,
+      "status": "ok"
+    },
+    "Work-Fisher/fisher-storylens": {
+      "archived": false,
+      "description": "面向 Z-Image、Qwen-Image 2.1 与 MiniMax H3 的短剧制作 Skill：角色与场景提示词、图片确认、15秒分镜及按需 A/B 机位。",
+      "first_seen": "2026-11-16",
+      "forks": 5,
+      "full_name": "Work-Fisher/fisher-storylens",
+      "license": null,
+      "pushed_at": "2026-10-15",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 43,
+      "status": "ok"
+    },
     "YvonneMovingon/short-drama-skills": {
       "archived": false,
       "description": "经LuxReal平台工业化生产验证的 AI 短剧 Skill 合集 | AI Short Drama Skills, battle-tested in production by LuxReal",
@@ -408,6 +538,19 @@
       "skill_count": 0,
       "skill_count_truncated": false,
       "stars": 102,
+      "status": "ok"
+    },
+    "Zeno-Zhu/VIDU-CLI-SKILL": {
+      "archived": false,
+      "description": "用一句话做视频 · Vidu Q4 CLI skill（漫剧 / 商业视频）",
+      "first_seen": "2026-11-16",
+      "forks": 2,
+      "full_name": "Zeno-Zhu/VIDU-CLI-SKILL",
+      "license": null,
+      "pushed_at": "2026-11-09",
+      "skill_count": 2,
+      "skill_count_truncated": false,
+      "stars": 5,
       "status": "ok"
     },
     "ZzzAloong/fight-scene-director": {
@@ -533,6 +676,19 @@
       "stars": 19,
       "status": "ok"
     },
+    "dennisonbertram/emulsion": {
+      "archived": false,
+      "description": "🎞️ Collaborative storyboard blocking for AI filmmaking — a Claude Code skill with its own three.js app. Block shots with Claude live, export motion references, generate films.",
+      "first_seen": "2026-11-16",
+      "forks": 5,
+      "full_name": "dennisonbertram/emulsion",
+      "license": "MIT",
+      "pushed_at": "2026-11-12",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 14,
+      "status": "ok"
+    },
     "dexhunter/seedance2-skill": {
       "archived": false,
       "description": "skill to create best prompts for generating videos with seedance2.0",
@@ -556,6 +712,19 @@
       "skill_count": 7,
       "skill_count_truncated": false,
       "stars": 21,
+      "status": "ok"
+    },
+    "doublesq97-ui/su-ai-short-drama": {
+      "archived": false,
+      "description": "中文 AI 短剧编剧、导演、选角与分镜协作 Codex Skills（女频 / 男频双版本）",
+      "first_seen": "2026-11-16",
+      "forks": 5,
+      "full_name": "doublesq97-ui/su-ai-short-drama",
+      "license": "MIT",
+      "pushed_at": "2026-11-12",
+      "skill_count": 2,
+      "skill_count_truncated": false,
+      "stars": 70,
       "status": "ok"
     },
     "dramaclaw/dramaclaw": {
@@ -616,6 +785,19 @@
       "skill_count": 13,
       "skill_count_truncated": false,
       "stars": 9,
+      "status": "ok"
+    },
+    "glitterpixely/skills": {
+      "archived": false,
+      "description": "Custom creative AI skills for Seedance 2.5, MiniMax H3, Kling 4, MiniMax Music 3.0, and Suno.",
+      "first_seen": "2026-11-16",
+      "forks": 0,
+      "full_name": "glitterpixely/skills",
+      "license": "MIT",
+      "pushed_at": "2026-11-12",
+      "skill_count": 7,
+      "skill_count_truncated": false,
+      "stars": 7,
       "status": "ok"
     },
     "ilkaydemiralay/vision_art_creator": {
@@ -706,6 +888,19 @@
       "stars": 37,
       "status": "ok"
     },
+    "lbh1761745734-ui/mr-li-seedance-25": {
+      "archived": false,
+      "description": "李先生AI影视全流程Skill：把传统剧组的规矩交给 AI（CC BY-NC 4.0）",
+      "first_seen": "2026-11-16",
+      "forks": 2,
+      "full_name": "lbh1761745734-ui/mr-li-seedance-25",
+      "license": null,
+      "pushed_at": "2026-11-07",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 29,
+      "status": "ok"
+    },
     "leynos/visual-storytelling-skills": {
       "archived": false,
       "description": "Agent skills for AI film production — from prose to picture.",
@@ -754,6 +949,19 @@
       "stars": 249,
       "status": "ok"
     },
+    "liangie7420/Master-director": {
+      "archived": false,
+      "description": "AI 漫剧/短剧导演技能：把原文或主题转化为可投喂视频模型（Seedance/可灵/海螺）逐镜头产出的完整生产管线。四大一致性机制：尾帧承接、视频延长串联、资产卡锁定、关键帧插入。以持久化 ReAct loop 驱动 agent，将你的故事转为剧本、资产卡、分镜、模型输入与评审记录。",
+      "first_seen": "2026-11-16",
+      "forks": 1,
+      "full_name": "liangie7420/Master-director",
+      "license": "MIT",
+      "pushed_at": "2026-10-31",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 7,
+      "status": "ok"
+    },
     "liuxiao20051106-prog/ai-manga-drama": {
       "archived": false,
       "description": "AI漫剧工坊 - Claude Code Skill：从零创造AI动态漫画短剧的全流程制作助手，覆盖3条工具路线、30+AI工具、8阶段完整工作流",
@@ -765,6 +973,19 @@
       "skill_count": 2,
       "skill_count_truncated": false,
       "stars": 18,
+      "status": "ok"
+    },
+    "lixiaoxiao9888-create/forest-laoli-h3": {
+      "archived": false,
+      "description": "漫剧老李 · MiniMax H3（海螺 3.0）短剧全流程 Skill v2.1.1 · forest-laoli-h3 — 剧本→资产→H3分镜→三字段/六段式投喂稿→机检→交付包。通用型不绑定渲染端 · 六项锁 + 铁律 + H1~H36机检 + 29用例零放水 · 9:16推荐/16:9可用 | Platform-agnostic MiniMax H3 short-drama prompt pipeline with machine QC. 测试版，二次修改整合开源内容。",
+      "first_seen": "2026-11-16",
+      "forks": 16,
+      "full_name": "lixiaoxiao9888-create/forest-laoli-h3",
+      "license": "MIT",
+      "pushed_at": "2026-11-02",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 81,
       "status": "ok"
     },
     "lixiaoxiao9888-create/manju-laoli-skill": {
@@ -838,6 +1059,19 @@
       "skill_count": 7,
       "skill_count_truncated": false,
       "stars": 176,
+      "status": "ok"
+    },
+    "mariozhaofan-pixel/screenplay-generator-skill": {
+      "archived": false,
+      "description": "Codex skill for screenplay and storyboard generation",
+      "first_seen": "2026-11-16",
+      "forks": 0,
+      "full_name": "mariozhaofan-pixel/screenplay-generator-skill",
+      "license": null,
+      "pushed_at": "2026-11-13",
+      "skill_count": 2,
+      "skill_count_truncated": false,
+      "stars": 10,
       "status": "ok"
     },
     "mengxiujie/ManjuForge": {
@@ -940,6 +1174,19 @@
       "stars": 49,
       "status": "ok"
     },
+    "ouxxyy/storyboard-scavenger": {
+      "archived": false,
+      "description": "AI 视频分镜与提示词 Skill（AI video storyboard / video prompts）：把创意、参考图或音乐想法拆为七要素分镜，提供可灵 Kling、即梦 Seedance、Veo、Sora 工作流。",
+      "first_seen": "2026-11-16",
+      "forks": 1,
+      "full_name": "ouxxyy/storyboard-scavenger",
+      "license": "MIT",
+      "pushed_at": "2026-11-16",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 6,
+      "status": "ok"
+    },
     "phileiny/h3-storyboard-skill": {
       "archived": false,
       "description": "Claude Code skill for MiniMax H3 shot breakdown and character performance. Facial expression only renders when the shot has a <d> dialogue tag — measured, 42 dB vs 18 dB.",
@@ -987,6 +1234,32 @@
       "skill_count": 1,
       "skill_count_truncated": false,
       "stars": 110,
+      "status": "ok"
+    },
+    "reelbenchai/reelscript": {
+      "archived": false,
+      "description": "短剧剧本相关的工具集，目前公开 ReelDown 视频资料 skill",
+      "first_seen": "2026-11-16",
+      "forks": 3,
+      "full_name": "reelbenchai/reelscript",
+      "license": null,
+      "pushed_at": "2026-11-11",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 12,
+      "status": "ok"
+    },
+    "sanxsnr/ai-short-drama-from-zero": {
+      "archived": false,
+      "description": "AI短剧从0到1｜零基础完成你的第一部剧面向零基础新人的AI短剧制作Skill：从灵感、小说改编、剧本与分镜，到角色场景提示词、Seedance 2.0视频生成、问题诊断与成片交付。",
+      "first_seen": "2026-11-16",
+      "forks": 3,
+      "full_name": "sanxsnr/ai-short-drama-from-zero",
+      "license": "MIT",
+      "pushed_at": "2026-10-12",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 10,
       "status": "ok"
     },
     "senmanx/novel-to-manju": {
@@ -1050,6 +1323,19 @@
       "stars": 201,
       "status": "ok"
     },
+    "svenkatreddy/universal-video-skills": {
+      "archived": false,
+      "description": "Vendor-neutral AI video production skills for Muse, Claude, Grok, Gemini and other Agent Skills clients: prompt craft, cinematic direction, storyboarding, character consistency, dialogue and audio, assembly, model adapters, and QA.",
+      "first_seen": "2026-11-16",
+      "forks": 1,
+      "full_name": "svenkatreddy/universal-video-skills",
+      "license": "MIT",
+      "pushed_at": "2026-10-19",
+      "skill_count": 9,
+      "skill_count_truncated": false,
+      "stars": 9,
+      "status": "ok"
+    },
     "waooAI/waoowaoo": {
       "archived": false,
       "description": "首家工业级全流程 AI 影视生产平台。Industry-first professional AI Agent platform for controllable film & video production. From shorts to live-action with Hollywood-standard workflows.",
@@ -1070,6 +1356,19 @@
       "license": "MIT",
       "pushed_at": "2026-09-16",
       "skill_count": 35,
+      "skill_count_truncated": false,
+      "stars": 21,
+      "status": "ok"
+    },
+    "weibo-job/guagua-animation-skills": {
+      "archived": false,
+      "description": "9 Codex / Agent Skills for AI animation: character design, visual storytelling, storyboards, image-to-video, sound and editing. 无对白动画创作工作流：角色、编剧、分镜、生成、音效与剪辑。",
+      "first_seen": "2026-11-16",
+      "forks": 2,
+      "full_name": "weibo-job/guagua-animation-skills",
+      "license": "MIT",
+      "pushed_at": "2026-11-04",
+      "skill_count": 9,
       "skill_count_truncated": false,
       "stars": 21,
       "status": "ok"
@@ -1096,6 +1395,19 @@
       "skill_count": 1,
       "skill_count_truncated": false,
       "stars": 372,
+      "status": "ok"
+    },
+    "wwaa34682-lab/novel-to-short-drama-skill": {
+      "archived": false,
+      "description": "小说→AI短剧 7步流水线通用技能（改编/验收/压节奏/分镜/资产/分镜图/图生视频） | Novel-to-AI-short-drama 7-step pipeline skill",
+      "first_seen": "2026-11-16",
+      "forks": 0,
+      "full_name": "wwaa34682-lab/novel-to-short-drama-skill",
+      "license": "MIT",
+      "pushed_at": "2026-10-19",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 15,
       "status": "ok"
     },
     "wyuzhi/qisi-video-remix": {
@@ -1180,6 +1492,19 @@
       "skill_count": 4,
       "skill_count_truncated": false,
       "stars": 336,
+      "status": "ok"
+    },
+    "zhanghao123vip/ai-manju-skills": {
+      "archived": false,
+      "description": "21 个题材的 AI 漫剧全流程 Skill：一句点子生成企划案、资产图提示词、分集剧本、分镜与视频提示词。可用于 Claude Code、WorkBuddy、DeepSeek",
+      "first_seen": "2026-11-16",
+      "forks": 153,
+      "full_name": "zhanghao123vip/ai-manju-skills",
+      "license": "MIT",
+      "pushed_at": "2026-11-01",
+      "skill_count": 21,
+      "skill_count_truncated": false,
+      "stars": 847,
       "status": "ok"
     },
     "zhlmi/narrative-to-screen-reader": {

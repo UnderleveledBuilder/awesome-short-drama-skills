@@ -10,7 +10,7 @@
 
 这里收录给 AI 智能体（agent）用的短剧 skill，覆盖小说改编、集纲、钩子和付费卡点、剧本审稿、分镜、角色资产，以及给 Seedance、MiniMax、可灵等视频模型的提示词。大多是标准 SKILL.md 格式，千问办公、豆包电脑版、龙虾（OpenClaw）、WorkBuddy、Kimi Code、Qwen Code、CodeBuddy、Trae、Qoder、Claude Code、Codex 等支持技能的智能体都能装，装法见[常见问题](#faq)。每个项目都经过人工核对，按类型、创作阶段和适配的视频模型整理。
 
-收录 86 个 skill 项目 + 16 个相关开源平台 · 元数据更新于 2026-11-16
+收录 111 个 skill 项目 + 16 个相关开源平台 · 元数据更新于 2026-11-16
 
 ## 写剧本装哪个
 
@@ -84,13 +84,13 @@
 
 ## 目录
 
-- [本周新增](#new)（3）
+- [本周新增](#new)（28）
 - [推荐组合](#packs)
 - [按类型](#by-group)
-  - [全流程：剧本 → 分镜 → 成片](#group-pipeline)（24）
-  - [编剧：剧本 · 改编 · 审稿](#group-writing)（10）
-  - [分镜 · 视觉资产 · 视频提示词](#group-visual)（40）
-  - [上游：IP 评估与故事拆解](#group-source)（3）
+  - [全流程：剧本 → 分镜 → 成片](#group-pipeline)（35）
+  - [编剧：剧本 · 改编 · 审稿](#group-writing)（11）
+  - [分镜 · 视觉资产 · 视频提示词](#group-visual)（51）
+  - [上游：IP 评估与故事拆解](#group-source)（5）
   - [编剧基本功](#group-craft)（6）
   - [配套：去 AI 味](#group-companion)（3）
   - [相关开源平台（完整应用，非 skill）](#group-platform)（16）
@@ -103,8 +103,33 @@
 <a id="new"></a>
 ## 本周新增
 
-近 7 天新收录 3 个：
+近 7 天新收录 28 个：
 
+- [ai-manju-skills](https://github.com/zhanghao123vip/ai-manju-skills) ★847：21 个题材的 AI 漫剧模板：一句点子出企划案、资产图提示词、分集剧本、分镜与视频提示词、发布文案
+- [ai-anime-series](https://github.com/10291124jcjc-dotcom/ai-anime-series) ★392：AI 动画单元剧：固定原创角色，一句主题出一集无台词动作喜剧，角色设定图加宫格故事板，即梦 Seedance 一次生成
+- [rea-toon](https://github.com/JuneYaooo/rea-toon) ★219：AI 拆解短剧：为什么火、剧本怎么写、每一镜怎么拍，真人、AI 剧和漫剧都能拆，产出网页和 VIDEO.md
+- [forest-laoli-h3](https://github.com/lixiaoxiao9888-create/forest-laoli-h3) ★81：漫剧老李 H3 版：剧本 → 资产参考图 → H3 分镜 → 三字段/六段式投喂稿 → 机检 → 交付包，只做 MiniMax H3
+- [su-ai-short-drama](https://github.com/doublesq97-ui/su-ai-short-drama) ★70：女频/男频两版 Codex 短剧 skill：总导演、编剧、选角与角色设计、分镜导演按岗位协作，共读写项目档案
+- [fisher-storylens](https://github.com/Work-Fisher/fisher-storylens) ★43：开源模型短剧提示词助手：从剧本先定角色、再定场景，按确认过的图写 MiniMax H3 视频提示词，15 秒一段
+- [mr-li-seedance-25](https://github.com/lbh1761745734-ui/mr-li-seedance-25) ★29：李先生 AI 影视全流程：剧本定稿后锁剧本、定风格、做人物场景素材，按表演时长切段写 Seedance 2.5 提示词
+- [guagua-animation-skills](https://github.com/weibo-job/guagua-animation-skills) ★21：无对白 AI 动画短片：8 个环节 skill 加总调度，角色、编剧、分镜、关键帧、图生视频、音效、剪辑与连载合集
+- [novel-to-short-drama-skill](https://github.com/wwaa34682-lab/novel-to-short-drama-skill) ★15：小说 → AI 短剧七步：改编、独立验收、压节奏、Clip 分镜、资产、关键静帧审查、图生视频，上一步通过才往下
+- [emulsion](https://github.com/dennisonbertram/emulsion) ★14：AI 拍片的分镜走位：Claude 在自带的 three.js 小程序里摆方块人、定动作和机位关键帧，导出运动参考给视频模型
+- [reelscript](https://github.com/reelbenchai/reelscript) ★12：ReelDown 视频资料工具：读抖音主页作品和红果剧集目录，下载选定视频或整剧，附文本与互动数据
+- [ai-short-drama-from-zero](https://github.com/sanxsnr/ai-short-drama-from-zero) ★10：零基础 AI 短剧向导：先判断你做到哪一步，一次带一关，从灵感或小说到剧本、分镜、资产、Seedance 出片
+- [screenplay-generator-skill](https://github.com/mariozhaofan-pixel/screenplay-generator-skill) ★10：爆款编剧 v15：短剧剧本每批最多 2 集，开场带钩子和记忆锚点，附编剧书库转写和视频反推，有本地版和飞书版
+- [ad-asset-bible](https://github.com/EVZheng-Lab/ad-asset-bible) ★9：副导演·资产盘点：把剧本拆成场景、角色服装、关键道具、角色档案和特效几张表，标出每场用哪个变体
+- [universal-video-skills](https://github.com/svenkatreddy/universal-video-skills) ★9：不绑模型的 AI 视频 skill 包：提示词、运镜、多镜故事、人脸一致、对白音频、拼接和成片前检查
+- [minimaxH3-ai-video-agent](https://github.com/304939905/minimaxH3-ai-video-agent) ★8：MiniMax H3 视频全流程工作区模板：剧本、分镜、资产、提示词、付费前校验和审片记录，整合 8 个 skill
+- [Master-director](https://github.com/liangie7420/Master-director) ★7：漫剧导演：原文或主题 → 剧本、资产卡、分镜、模型输入与评审记录，用尾帧承接等四种机制保一致性
+- [skills](https://github.com/glitterpixely/skills) ★7：Seedance 2.5、MiniMax H3、可灵 4 视频提示词 skill，带本地 Python 校验；另有 Suno、MiniMax Music 写歌
+- [skills](https://github.com/Weeexiao/skills) ★6：AI 短剧制作 skill 合集：系列短剧选题与剧本、POV 爽剧、H3 分镜导演、场景四视角资产、Blender 白模预演
+- [storyboard-scavenger](https://github.com/ouxxyy/storyboard-scavenger) ★6：AI 视频分镜与提示词：创意、参考图或音乐想法拆成七要素分镜，带可灵、即梦、Veo、Sora 各自的写法
+- [VIDU-CLI-SKILL](https://github.com/Zeno-Zhu/VIDU-CLI-SKILL) ★5：Vidu Q4 一句话做视频：写短剧剧本，出人物、场景、道具设定板，排 16 秒分镜组，写提示词并提交生成
+- [katil-skill](https://github.com/Mcz070321/katil-skill) ★5：KATIL 影视导演决策系统：先用九维任务契约定这场戏怎么拍，再出中英双语提示词；特效按 15 类事件调度
+- [DWcinematic-whitebox](https://github.com/Dogwind221/DWcinematic-whitebox) ★5：白模镜头导演：读剧本推导场景、角色道具和运镜，在 Blender 里做可编辑的白模剧情预演，默认《繁花》式构图
+- [ai-short-drama](https://github.com/ChinaYouShen/ai-short-drama) ★3：酉神 AI 短剧技能包：选题、剧本到分镜和 MiniMax H3 文戏武戏提示词，武戏按门派招式选，附交付校验脚本
+- [AI-Short-Drama-Studio](https://github.com/ADC1920/AI-Short-Drama-Studio) ★3：AI 短剧/短视频工作室：十段弹性路由，从概念到出片发布每段可单独进入，28 个机检脚本，即梦 Seedance 出片
 - [awesome-agent-skills](https://github.com/OakcoderX/awesome-agent-skills) ★2：苏格拉底式故事诊断：对小说、剧本、分集大纲先提几种对立解释，拿原文证据和反例检验，再给最小改动，也可以判不用改
 - [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill) ★0：竖屏短剧全流程：网文或剧本改成 60 秒一集的节拍和台词，三视图锁角色，拆 12–18 镜 9:16 分镜，按镜头类型分给不同视频模型写提示词
 - [short-drama-starter](https://github.com/ohmyopictures-cmyk/short-drama-starter) ★0：AI 短剧新手七条规则：60 秒五段节拍、一个提示词只写一个镜头、六种入门运镜、锁住人脸、提示词固定顺序、生成前先确认花费
@@ -141,6 +166,8 @@
 
 - 🌟 **[manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill)** · ★ 2.1k<br>漫剧老李：AIGC 漫剧导演全流程，门控剧本、资产锁定、分镜、投喂提示词、规则化质检<br><sub>阶段：剧本 · 审稿 · 分镜 · 提示词</sub><br><sub>更新于 2026-11-15 · 中文 · 11 个 skill · MIT</sub><br><sub>🎬 Seedance / 即梦 · MiniMax H3</sub><br><sub>💡 作者标注为测试版，整合了其他开源内容</sub>
 
+- **[ai-manju-skills](https://github.com/zhanghao123vip/ai-manju-skills)** · ★ 847<br>21 个题材的 AI 漫剧模板：一句点子出企划案、资产图提示词、分集剧本、分镜与视频提示词、发布文案<br><sub>阶段：选题 · 人物 · 集纲 · 剧本 · 分镜 · 提示词</sub><br><sub>更新于 2026-11-01 · 中文 · 21 个 skill · MIT</sub>
+
 - **[OnlyShot](https://github.com/A-cat-with-carrots/OnlyShot)** · ★ 414<br>神仙鱼短剧流水线：一句话 → 剧本、分镜、分镜图、视频、剪辑五步，沉淀 17 种失败模式<br><sub>阶段：剧本 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-11-12 · 中文 · MIT</sub><br><sub>🎬 Seedance / 即梦</sub>
 
 - **[infinite-creation](https://github.com/SwotAtmk/infinite-creation)** · ★ 347<br>提交小说或剧本，用本地 ComfyUI + MiniMax H3 + Agent 自动连续生产视频，不限时长<br><sub>阶段：改编 · 提示词 · 出片</sub><br><sub>更新于 2026-11-13 · 中文 · 55 个 skill · MIT</sub><br><sub>🎬 ComfyUI（本地） · MiniMax H3</sub><br><sub>💡 28 个 skill 里也有广告、宣传片类</sub>
@@ -161,6 +188,8 @@
 
 - **[novel-to-manju](https://github.com/senmanx/novel-to-manju)** · ★ 80<br>小说转漫剧全流程：爆款改文 → 剧本 → 人物/场景三视图 → 分镜 → 视频提示词<br><sub>阶段：改编 · 人物 · 剧本 · 分镜 · 提示词</sub><br><sub>更新于 2026-08-17 · 中文</sub><br><sub>🎬 MiniMax H3</sub>
 
+- **[su-ai-short-drama](https://github.com/doublesq97-ui/su-ai-short-drama)** · ★ 70<br>女频/男频两版 Codex 短剧 skill：总导演、编剧、选角与角色设计、分镜导演按岗位协作，共读写项目档案<br><sub>阶段：选题 · 人物 · 集纲 · 剧本 · 分镜 · 提示词</sub><br><sub>更新于 2026-11-12 · 中文 · 2 个 skill · MIT</sub><br><sub>💡 作者标注低维护，按现状提供</sub>
+
 - **[ai-short-drama](https://github.com/oiuv/ai-short-drama)** · ★ 49<br>雪风爽剧：一句话补全创作需求，按爽点模型写分集剧本并同步角色/场景/道具档案，再拆镜写 Seedance 2.0 提示词<br><sub>阶段：人物 · 集纲 · 剧本 · 分镜 · 提示词</sub><br><sub>更新于 2026-08-22 · 中文 · 5 个 skill</sub><br><sub>🎬 Seedance / 即梦</sub><br><sub>💡 随「雪风AI短剧工坊」应用发布，README 未写 agent 安装步骤；仓库无许可证</sub>
 
 - **[jingju-skills](https://github.com/jxshow/jingju-skills)** · ★ 45<br>鲸剧：AI 漫剧全流程，大纲、人设一致性、分集剧本、分镜、图/视频提示词、ComfyUI 批量出图<br><sub>阶段：人物 · 集纲 · 剧本 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-06-09 · 中文</sub><br><sub>🎬 ComfyUI（本地）</sub>
@@ -177,9 +206,27 @@
 
 - **[hardcore-director](https://github.com/jlam00-dev/hardcore-director)** · ★ 22<br>硬核导演：影视与 AI 视频总控，按阶段路由编剧/短剧、角色场景、分镜、Seedance 2.5/Wan 3.0/H3 提示词、声音与剪辑模块<br><sub>阶段：人物 · 集纲 · 剧本 · 审稿 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-11-06 · 中文 · MIT</sub><br><sub>🎬 Seedance / 即梦 · 通义万相 Wan · MiniMax H3 · 可灵 Kling</sub><br><sub>💡 整合包：大部分模块是第三方 skill 快照（已注明来源），也覆盖广告和宣传片</sub>
 
+- **[guagua-animation-skills](https://github.com/weibo-job/guagua-animation-skills)** · ★ 21<br>无对白 AI 动画短片：8 个环节 skill 加总调度，角色、编剧、分镜、关键帧、图生视频、音效、剪辑与连载合集<br><sub>阶段：人物 · 剧本 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-11-04 · 中文 · 9 个 skill · MIT</sub><br><sub>💡 作者标注为实验性，还没做真实出片的端到端实测</sub>
+
 - **[ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama)** · ★ 18<br>AI 漫剧工坊：一句创意到成片的八步流程，任务卡剧本、角色参考图库、风格锚、分镜、图/视频提示词、配音字幕与合成终检<br><sub>阶段：人物 · 集纲 · 剧本 · 审稿 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-09-17 · 多语言 · 2 个 skill · MIT</sub>
 
 - **[vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator)** · ★ 17<br>影视部门式 skill 包：编剧、导演、角色、美术、摄影、分镜、镜头表、提示词、声音、剪辑，由总监 skill 调度和质检<br><sub>阶段：人物 · 剧本 · 审稿 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-10-31 · 英文 · 11 个 skill · MIT</sub><br><sub>🎬 Nano Banana · Sora · Veo · 可灵 Kling</sub><br><sub>💡 偏电影，不专做短剧</sub>
+
+- **[novel-to-short-drama-skill](https://github.com/wwaa34682-lab/novel-to-short-drama-skill)** · ★ 15<br>小说 → AI 短剧七步：改编、独立验收、压节奏、Clip 分镜、资产、关键静帧审查、图生视频，上一步通过才往下<br><sub>阶段：改编 · 人物 · 集纲 · 审稿 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-10-19 · 中文 · MIT</sub><br><sub>🎬 Seedance / 即梦</sub>
+
+- **[ai-short-drama-from-zero](https://github.com/sanxsnr/ai-short-drama-from-zero)** · ★ 10<br>零基础 AI 短剧向导：先判断你做到哪一步，一次带一关，从灵感或小说到剧本、分镜、资产、Seedance 出片<br><sub>阶段：改编 · 人物 · 剧本 · 审稿 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-10-12 · 中文 · MIT</sub><br><sub>🎬 Seedance / 即梦</sub>
+
+- **[minimaxH3-ai-video-agent](https://github.com/304939905/minimaxH3-ai-video-agent)** · ★ 8<br>MiniMax H3 视频全流程工作区模板：剧本、分镜、资产、提示词、付费前校验和审片记录，整合 8 个 skill<br><sub>阶段：改编 · 剧本 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-11-12 · 中文 · 8 个 skill</sub><br><sub>🎬 MiniMax H3</sub><br><sub>💡 整合包：导演、H3、Grok 和漫剧五件套共 8 个 skill，来源见 skills/README.md；模型接口要自己接</sub>
+
+- **[Master-director](https://github.com/liangie7420/Master-director)** · ★ 7<br>漫剧导演：原文或主题 → 剧本、资产卡、分镜、模型输入与评审记录，用尾帧承接等四种机制保一致性<br><sub>阶段：改编 · 人物 · 剧本 · 审稿 · 分镜 · 提示词</sub><br><sub>更新于 2026-10-31 · 中文 · MIT</sub><br><sub>🎬 Seedance / 即梦 · 可灵 Kling · MiniMax H3</sub>
+
+- **[skills](https://github.com/Weeexiao/skills)** · ★ 6<br>AI 短剧制作 skill 合集：系列短剧选题与剧本、POV 爽剧、H3 分镜导演、场景四视角资产、Blender 白模预演<br><sub>阶段：选题 · 剧本 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-11-13 · 中文 · 11 个 skill</sub><br><sub>🎬 MiniMax H3</sub><br><sub>💡 个人合集，另含 Gemini 网页生图、对口型 MV、DSH 部署等工具</sub>
+
+- **[VIDU-CLI-SKILL](https://github.com/Zeno-Zhu/VIDU-CLI-SKILL)** · ★ 5<br>Vidu Q4 一句话做视频：写短剧剧本，出人物、场景、道具设定板，排 16 秒分镜组，写提示词并提交生成<br><sub>阶段：人物 · 剧本 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-11-09 · 中文 · 2 个 skill</sub><br><sub>💡 也做带货、门店和企业宣传片；出片走 Vidu，部分模式扣积分</sub>
+
+- **[ai-short-drama](https://github.com/ChinaYouShen/ai-short-drama)** · ★ 3<br>酉神 AI 短剧技能包：选题、剧本到分镜和 MiniMax H3 文戏武戏提示词，武戏按门派招式选，附交付校验脚本<br><sub>阶段：选题 · 改编 · 人物 · 集纲 · 剧本 · 审稿 · 分镜 · 提示词</sub><br><sub>更新于 2026-11-16 · 中文 · GPL-3.0</sub><br><sub>🎬 MiniMax H3</sub><br><sub>💡 只出到文字和提示词，不调接口出片</sub>
+
+- **[AI-Short-Drama-Studio](https://github.com/ADC1920/AI-Short-Drama-Studio)** · ★ 3<br>AI 短剧/短视频工作室：十段弹性路由，从概念到出片发布每段可单独进入，28 个机检脚本，即梦 Seedance 出片<br><sub>阶段：人物 · 集纲 · 剧本 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-11-16 · 中文 · MIT</sub><br><sub>🎬 Seedance / 即梦</sub>
 
 - **[alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)** · ★ 0<br>竖屏短剧全流程：网文或剧本改成 60 秒一集的节拍和台词，三视图锁角色，拆 12–18 镜 9:16 分镜，按镜头类型分给不同视频模型写提示词<br><sub>阶段：改编 · 人物 · 剧本 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-11-13 · 多语言 · MIT</sub><br><sub>🎬 Seedance / 即梦 · MiniMax H3 · 可灵 Kling · 通义万相 Wan</sub><br><sub>💡 最后一步给 FFmpeg 拼竖屏的命令，也引到作者自己的 AlphaDrama Studio 网站一键出片</sub>
 
@@ -194,6 +241,8 @@ npx skills add eternityspring/shuohao-skills
 npx skills add zenstory-ai/drama-skills
 # manju-laoli-skill
 npx skills add lixiaoxiao9888-create/manju-laoli-skill
+# ai-manju-skills
+npx skills add zhanghao123vip/ai-manju-skills
 # OnlyShot
 npx skills add A-cat-with-carrots/OnlyShot
 # infinite-creation
@@ -214,6 +263,8 @@ npx skills add LuoJiangYong/muse-video-skill
 npx skills add Hao0321/ai-short-drama
 # novel-to-manju
 npx skills add senmanx/novel-to-manju
+# su-ai-short-drama
+npx skills add doublesq97-ui/su-ai-short-drama
 # ai-short-drama
 npx skills add oiuv/ai-short-drama
 # jingju-skills
@@ -230,10 +281,28 @@ npx skills add JohnKeating1997/spark-video
 npx skills add mengxiujie/ManjuForge
 # hardcore-director
 npx skills add jlam00-dev/hardcore-director
+# guagua-animation-skills
+npx skills add weibo-job/guagua-animation-skills
 # ai-manga-drama
 npx skills add liuxiao20051106-prog/ai-manga-drama
 # vision_art_creator
 npx skills add ilkaydemiralay/vision_art_creator
+# novel-to-short-drama-skill
+npx skills add wwaa34682-lab/novel-to-short-drama-skill
+# ai-short-drama-from-zero
+npx skills add sanxsnr/ai-short-drama-from-zero
+# minimaxH3-ai-video-agent
+npx skills add 304939905/minimaxH3-ai-video-agent
+# Master-director
+npx skills add liangie7420/Master-director
+# skills
+npx skills add Weeexiao/skills
+# VIDU-CLI-SKILL
+npx skills add Zeno-Zhu/VIDU-CLI-SKILL
+# ai-short-drama
+npx skills add ChinaYouShen/ai-short-drama
+# AI-Short-Drama-Studio
+npx skills add ADC1920/AI-Short-Drama-Studio
 # alphadrama-short-drama-skill
 npx skills add Alwzc/alphadrama-short-drama-skill
 ```
@@ -258,6 +327,8 @@ npx skills add Alwzc/alphadrama-short-drama-skill
 - **[screenplay-review-checklist](https://github.com/zhlmi/screenplay-review-checklist)** · ★ 16<br>对抗式剧本踩雷诊断：拿 37 条判据只给你的故事找问题<br><sub>阶段：审稿</sub><br><sub>更新于 2026-08-15 · 中文</sub>
 
 - **[write-screenplay-skill](https://github.com/egguy886/write-screenplay-skill)** · ★ 12<br>小说/设定转商业剧本，国内短剧与出海微短剧双模式<br><sub>阶段：改编 · 剧本</sub><br><sub>更新于 2026-11-10 · 中文 · MIT</sub>
+
+- **[screenplay-generator-skill](https://github.com/mariozhaofan-pixel/screenplay-generator-skill)** · ★ 10<br>爆款编剧 v15：短剧剧本每批最多 2 集，开场带钩子和记忆锚点，附编剧书库转写和视频反推，有本地版和飞书版<br><sub>阶段：选题 · 集纲 · 剧本 · 审稿</sub><br><sub>更新于 2026-11-13 · 中文 · 2 个 skill</sub><br><sub>💡 要从 Releases 下载本地版或飞书版 ZIP 安装；许可证限制再发布</sub>
 
 - **[emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills)** · ★ 7<br>艾玛短剧技能组：结构拆解、改编、选题迭代、期待设计、逐集钩子、集纲扩写、对白诊断、剧本删减<br><sub>阶段：选题 · 改编 · 集纲 · 剧本 · 审稿</sub><br><sub>更新于 2026-11-14 · 中文 · 27 个 skill · MIT</sub>
 
@@ -284,6 +355,8 @@ npx skills add SoloEnt-AI/5min-drama-contest
 npx skills add zhlmi/screenplay-review-checklist
 # write-screenplay-skill
 npx skills add egguy886/write-screenplay-skill
+# screenplay-generator-skill
+npx skills add mariozhaofan-pixel/screenplay-generator-skill
 # emma-screenwriting-skills
 npx skills add adoria111/emma-screenwriting-skills
 # gushi-skill
@@ -323,6 +396,8 @@ npx skills add zhu5859243-free/hongguo-shortdrama-screenwriting
 
 - **[lanshu-awesome-ai-video-kit](https://github.com/cclank/lanshu-awesome-ai-video-kit)** · ★ 456<br>企业 AI 视频项目工具包：Seedance/可灵提示词、分镜、模型选择与调试，附 600 多条 prompt 和方法论<br><sub>阶段：分镜 · 提示词</sub><br><sub>更新于 2026-10-07 · 中文 · 7 个 skill · MIT</sub><br><sub>🎬 Seedance / 即梦 · 可灵 Kling</sub>
 
+- **[ai-anime-series](https://github.com/10291124jcjc-dotcom/ai-anime-series)** · ★ 392<br>AI 动画单元剧：固定原创角色，一句主题出一集无台词动作喜剧，角色设定图加宫格故事板，即梦 Seedance 一次生成<br><sub>阶段：人物 · 剧本 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-10-28 · 中文</sub><br><sub>🎬 Seedance / 即梦</sub>
+
 - **[DirectorSKILL](https://github.com/wuwangzhang1216/DirectorSKILL)** · ★ 372<br>AI 拍片：镜头清单、关键帧与视频提示词，内置斯皮尔伯格等 20 种导演风格<br><sub>阶段：分镜 · 提示词</sub><br><sub>更新于 2026-08-31 · 多语言 · MIT</sub>
 
 - **[minimax-h3-prompt-skill-T8](https://github.com/T8mars/minimax-h3-prompt-skill-T8)** · ★ 336<br>MiniMax H3 / Seedance 2.0 视频提示词案例库与可安装 skill，附视频浏览器<br><sub>阶段：提示词</sub><br><sub>更新于 2026-11-15 · 多语言 · 284 个 skill · MIT</sub><br><sub>🎬 MiniMax H3 · Seedance / 即梦</sub>
@@ -349,15 +424,21 @@ npx skills add zhu5859243-free/hongguo-shortdrama-screenwriting
 
 - **[fight-prompt-director](https://github.com/irenerachel/fight-prompt-director)** · ★ 81<br>AI 打戏提示词：角色差异化动作、交锋因果链、跨镜连续性，出高强度/慢节奏/中间型三版，适配 Seedance 与 H3<br><sub>阶段：分镜 · 提示词</sub><br><sub>更新于 2026-09-02 · 中文 · MIT</sub><br><sub>🎬 Seedance / 即梦 · MiniMax H3</sub>
 
+- **[forest-laoli-h3](https://github.com/lixiaoxiao9888-create/forest-laoli-h3)** · ★ 81<br>漫剧老李 H3 版：剧本 → 资产参考图 → H3 分镜 → 三字段/六段式投喂稿 → 机检 → 交付包，只做 MiniMax H3<br><sub>阶段：人物 · 剧本 · 审稿 · 分镜 · 提示词</sub><br><sub>更新于 2026-11-02 · 中文 · MIT</sub><br><sub>🎬 MiniMax H3</sub><br><sub>💡 作者标注为测试版，整合了其他开源内容</sub>
+
 - **[acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill)** · ★ 68<br>Acheng 导演引擎：剧本、分镜、文戏五轨表演、打戏因果链、特效与资产，编译成 MiniMax H3 / Seedance 提示词<br><sub>阶段：人物 · 剧本 · 审稿 · 分镜 · 提示词</sub><br><sub>更新于 2026-10-01 · 中文 · 11 个 skill · Apache-2.0</sub><br><sub>🎬 MiniMax H3 · Seedance / 即梦</sub><br><sub>💡 CC BY-NC-ND 4.0（禁商用、禁演绎）；附 132 段运镜白模视频，仓库体积较大</sub>
 
 - **[seedance-skill](https://github.com/alchaincyf/seedance-skill)** · ★ 64<br>白模驱动的 Seedance 工作台：用 scene.json 渲染白模参考视频并做几何体检，可从照片反解白模，按白模几何写提示词<br><sub>阶段：分镜 · 提示词</sub><br><sub>更新于 2026-10-13 · 中文 · MIT</sub><br><sub>🎬 Seedance / 即梦</sub><br><sub>💡 白模渲染需 Node、ffmpeg 与 hyperframes</sub>
+
+- **[fisher-storylens](https://github.com/Work-Fisher/fisher-storylens)** · ★ 43<br>开源模型短剧提示词助手：从剧本先定角色、再定场景，按确认过的图写 MiniMax H3 视频提示词，15 秒一段<br><sub>阶段：人物 · 分镜 · 提示词</sub><br><sub>更新于 2026-10-15 · 中文</sub><br><sub>🎬 MiniMax H3</sub>
 
 - **[storyboard-director](https://github.com/kevinchin12/storyboard-director)** · ★ 37<br>故事 → 分镜脚本，子代理并行生成逐镜线稿，HTML 审片板返修指定镜头，确认后汇总成按镜头排序的视频提示词<br><sub>阶段：分镜 · 提示词</sub><br><sub>更新于 2026-10-11 · 英文 · 5 个 skill · MIT</sub><br><sub>💡 README 为中文；逐镜线稿依赖 Codex 内置生图</sub>
 
 - **[story-video-director](https://github.com/zlbigger/story-video-director)** · ★ 35<br>把任意故事变成图片素材、分镜、中文视听提示词与 API 调用清单<br><sub>阶段：人物 · 分镜 · 提示词</sub><br><sub>更新于 2026-10-07 · 中文 · MIT</sub>
 
 - **[fight-scene-director](https://github.com/ZzzAloong/fight-scene-director)** · ★ 34<br>多画风打戏设计：动作编排、空间调度、镜头与特效规则，可先出站位图/轨迹图生图词，再按轨迹写视频提示词<br><sub>阶段：分镜 · 提示词</sub><br><sub>更新于 2026-09-06 · 英文 · MIT</sub><br><sub>🎬 Seedance / 即梦 · MiniMax H3</sub><br><sub>💡 skill 正文为英文，输出中文提示词</sub>
+
+- **[mr-li-seedance-25](https://github.com/lbh1761745734-ui/mr-li-seedance-25)** · ★ 29<br>李先生 AI 影视全流程：剧本定稿后锁剧本、定风格、做人物场景素材，按表演时长切段写 Seedance 2.5 提示词<br><sub>阶段：人物 · 分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-11-07 · 中文</sub><br><sub>🎬 Seedance / 即梦</sub><br><sub>💡 许可证 CC BY-NC 4.0，不能商用</sub>
 
 - **[ai-film-skills](https://github.com/nigo-studio/ai-film-skills)** · ★ 27<br>从 AI 动作片《CROW LINE》流程拆出的 skill：Seedance 2.5 参考生视频提示词导演，三联角色设定图保持跨镜一致<br><sub>阶段：人物 · 提示词</sub><br><sub>更新于 2026-08-23 · 英文 · 2 个 skill · MIT</sub><br><sub>🎬 Seedance / 即梦</sub><br><sub>💡 作者计划陆续发布故事、分镜、声音等其余阶段</sub>
 
@@ -373,7 +454,21 @@ npx skills add zhu5859243-free/hongguo-shortdrama-screenwriting
 
 - **[xiaxia](https://github.com/luanyi824-hash/xiaxia)** · ★ 15<br>夏夏：把确认剧本转成带时长预算、机位焦段、真实光源、调度与动作因果的导演分镜，可编译为 Seedance 2.5 任务<br><sub>阶段：分镜 · 提示词</sub><br><sub>更新于 2026-09-08 · 中文</sub><br><sub>🎬 Seedance / 即梦</sub><br><sub>💡 视觉方法改编自 popopo-99/zy-cinematic-realism；CC BY-NC 4.0，商用需另行授权</sub>
 
+- **[emulsion](https://github.com/dennisonbertram/emulsion)** · ★ 14<br>AI 拍片的分镜走位：Claude 在自带的 three.js 小程序里摆方块人、定动作和机位关键帧，导出运动参考给视频模型<br><sub>阶段：分镜 · 提示词</sub><br><sub>更新于 2026-11-12 · 英文 · MIT</sub><br><sub>🎬 Seedance / 即梦</sub>
+
 - **[visual-storytelling-skills](https://github.com/leynos/visual-storytelling-skills)** · ★ 11<br>从文字到画面：场景清单、镜头设计、视频模型提示词、视频生成<br><sub>阶段：分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-11-13 · 英文 · 8 个 skill · ISC</sub><br><sub>🎬 可灵 Kling · Seedance / 即梦 · Nano Banana</sub>
+
+- **[ad-asset-bible](https://github.com/EVZheng-Lab/ad-asset-bible)** · ★ 9<br>副导演·资产盘点：把剧本拆成场景、角色服装、关键道具、角色档案和特效几张表，标出每场用哪个变体<br><sub>阶段：人物 · 分镜</sub><br><sub>更新于 2026-11-13 · 中文 · MIT</sub>
+
+- **[universal-video-skills](https://github.com/svenkatreddy/universal-video-skills)** · ★ 9<br>不绑模型的 AI 视频 skill 包：提示词、运镜、多镜故事、人脸一致、对白音频、拼接和成片前检查<br><sub>阶段：分镜 · 提示词 · 出片</sub><br><sub>更新于 2026-10-19 · 英文 · 9 个 skill · MIT</sub><br><sub>🎬 Veo · Sora · 可灵 Kling</sub><br><sub>💡 通用视频，不专做短剧</sub>
+
+- **[skills](https://github.com/glitterpixely/skills)** · ★ 7<br>Seedance 2.5、MiniMax H3、可灵 4 视频提示词 skill，带本地 Python 校验；另有 Suno、MiniMax Music 写歌<br><sub>阶段：提示词</sub><br><sub>更新于 2026-11-12 · 英文 · 7 个 skill · MIT</sub><br><sub>🎬 Seedance / 即梦 · MiniMax H3 · 可灵 Kling</sub>
+
+- **[storyboard-scavenger](https://github.com/ouxxyy/storyboard-scavenger)** · ★ 6<br>AI 视频分镜与提示词：创意、参考图或音乐想法拆成七要素分镜，带可灵、即梦、Veo、Sora 各自的写法<br><sub>阶段：分镜 · 提示词</sub><br><sub>更新于 2026-11-16 · 中文 · MIT</sub><br><sub>🎬 可灵 Kling · Seedance / 即梦 · Veo · Sora</sub><br><sub>💡 通用视频，不专做短剧</sub>
+
+- **[DWcinematic-whitebox](https://github.com/Dogwind221/DWcinematic-whitebox)** · ★ 5<br>白模镜头导演：读剧本推导场景、角色道具和运镜，在 Blender 里做可编辑的白模剧情预演，默认《繁花》式构图<br><sub>阶段：分镜</sub><br><sub>更新于 2026-10-26 · 中文</sub><br><sub>💡 要能操作 Blender 的环境，可配 Blender MCP；作者在 DeepSeek Harness 里验证过</sub>
+
+- **[katil-skill](https://github.com/Mcz070321/katil-skill)** · ★ 5<br>KATIL 影视导演决策系统：先用九维任务契约定这场戏怎么拍，再出中英双语提示词；特效按 15 类事件调度<br><sub>阶段：分镜 · 提示词</sub><br><sub>更新于 2026-11-11 · 多语言 · 2 个 skill · MIT</sub><br><sub>🎬 Seedance / 即梦</sub><br><sub>💡 通用影视，不专做短剧</sub>
 
 - **[live-action-drama-16x9](https://github.com/momo5213/live-action-drama-16x9)** · ★ 1<br>16:9 真人精品短剧：剧本分析、分镜运镜、光影与细微表演、视频提示词、连续性审查<br><sub>阶段：审稿 · 分镜 · 提示词</sub><br><sub>更新于 2026-09-11 · 中文</sub>
 
@@ -406,6 +501,8 @@ npx skills add Shanyin-ai/shanyin-director-master
 npx skills add jnMetaCode/ai-shortfilm-prompts
 # lanshu-awesome-ai-video-kit
 npx skills add cclank/lanshu-awesome-ai-video-kit
+# ai-anime-series
+npx skills add 10291124jcjc-dotcom/ai-anime-series
 # DirectorSKILL
 npx skills add wuwangzhang1216/DirectorSKILL
 # minimax-h3-prompt-skill-T8
@@ -430,16 +527,22 @@ npx skills add liyue-aigc/seedance-2-5-fight-director
 npx skills add qualsenWeb/fight-video-create-skill
 # fight-prompt-director
 npx skills add irenerachel/fight-prompt-director
+# forest-laoli-h3
+npx skills add lixiaoxiao9888-create/forest-laoli-h3
 # acheng-director-skill
 npx skills add AharaOoO/acheng-director-skill
 # seedance-skill
 npx skills add alchaincyf/seedance-skill
+# fisher-storylens
+npx skills add Work-Fisher/fisher-storylens
 # storyboard-director
 npx skills add kevinchin12/storyboard-director
 # story-video-director
 npx skills add zlbigger/story-video-director
 # fight-scene-director
 npx skills add ZzzAloong/fight-scene-director
+# mr-li-seedance-25
+npx skills add lbh1761745734-ui/mr-li-seedance-25
 # ai-film-skills
 npx skills add nigo-studio/ai-film-skills
 # ai-comic-drama-director-skills
@@ -454,8 +557,22 @@ npx skills add babicat4242-svg/seedance-2-5-prompting
 npx skills add zhouwei713/chinese-epic-scene-director
 # xiaxia
 npx skills add luanyi824-hash/xiaxia
+# emulsion
+npx skills add dennisonbertram/emulsion
 # visual-storytelling-skills
 npx skills add leynos/visual-storytelling-skills
+# ad-asset-bible
+npx skills add EVZheng-Lab/ad-asset-bible
+# universal-video-skills
+npx skills add svenkatreddy/universal-video-skills
+# skills
+npx skills add glitterpixely/skills
+# storyboard-scavenger
+npx skills add ouxxyy/storyboard-scavenger
+# DWcinematic-whitebox
+npx skills add Dogwind221/DWcinematic-whitebox
+# katil-skill
+npx skills add Mcz070321/katil-skill
 # live-action-drama-16x9
 npx skills add momo5213/live-action-drama-16x9
 # short-drama-starter
@@ -471,9 +588,13 @@ npx skills add ohmyopictures-cmyk/short-drama-starter
 
 - **[screen-creative-skills](https://github.com/VanGong1999/screen-creative-skills)** · ★ 512<br>影视策划与评估：小说/IP 评估、情节点拆解、人物小传与关系、大纲、小说改编短剧或长剧<br><sub>阶段：选题 · 改编 · 人物 · 集纲</sub><br><sub>更新于 2026-10-20 · 中文 · 31 个 skill · MIT</sub><br><sub>💡 31 个 skill 在仓库里有两份副本</sub>
 
+- **[rea-toon](https://github.com/JuneYaooo/rea-toon)** · ★ 219<br>AI 拆解短剧：为什么火、剧本怎么写、每一镜怎么拍，真人、AI 剧和漫剧都能拆，产出网页和 VIDEO.md<br><sub>阶段：选题 · 集纲 · 剧本 · 分镜</sub><br><sub>更新于 2026-11-15 · 多语言</sub><br><sub>💡 很费 token：每集约 30 次看图调用</sub>
+
 - **[narrative-to-screen-reader](https://github.com/zhlmi/narrative-to-screen-reader)** · ★ 135<br>把手上的故事翻译成影视开发语言：快速诊断、编剧改编读本、导演视听读本、演员读本、制片摘要<br><sub>阶段：选题 · 改编 · 人物</sub><br><sub>更新于 2026-10-01 · 中文</sub>
 
 - **[analyze-hit-novel](https://github.com/ciel-oliver/analyze-hit-novel)** · ★ 19<br>爆款小说拆文：把爆款小说/漫剧拆成可验证的叙事系统，供改编参考<br><sub>阶段：选题 · 改编 · 集纲</sub><br><sub>更新于 2026-09-04 · 中文</sub>
+
+- **[reelscript](https://github.com/reelbenchai/reelscript)** · ★ 12<br>ReelDown 视频资料工具：读抖音主页作品和红果剧集目录，下载选定视频或整剧，附文本与互动数据<br><sub>阶段：选题</sub><br><sub>更新于 2026-11-11 · 中文</sub><br><sub>💡 只管下载资料，拆解要配别的 skill</sub>
 
 
 <details><summary>安装命令</summary>
@@ -482,10 +603,14 @@ npx skills add ohmyopictures-cmyk/short-drama-starter
 # 默认命令基于 skills CLI，未逐个验证，以各仓库 README 为准
 # screen-creative-skills
 npx skills add VanGong1999/screen-creative-skills
+# rea-toon
+npx skills add JuneYaooo/rea-toon
 # narrative-to-screen-reader
 npx skills add zhlmi/narrative-to-screen-reader
 # analyze-hit-novel
 npx skills add ciel-oliver/analyze-hit-novel
+# reelscript
+npx skills add reelbenchai/reelscript
 ```
 
 </details>
@@ -597,61 +722,61 @@ npx skills add Nanako0129/sepia
 
 卡在某一步时，从这里找能帮上忙的 skill。「专项」只覆盖 3 个以内的阶段，「综合」是全流程或多环节项目；各自按星数排序。
 
-**选题 · IP 评估**（6）
+**选题 · IP 评估**（13）
 
-- 专项（2）：[narrative-to-screen-reader](https://github.com/zhlmi/narrative-to-screen-reader) · [analyze-hit-novel](https://github.com/ciel-oliver/analyze-hit-novel)
-- 综合（4）：[short-drama](https://github.com/0xsline/short-drama) · [screen-creative-skills](https://github.com/VanGong1999/screen-creative-skills) · [ai-short-drama](https://github.com/Hao0321/ai-short-drama) · [emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills)
+- 专项（3）：[narrative-to-screen-reader](https://github.com/zhlmi/narrative-to-screen-reader) · [analyze-hit-novel](https://github.com/ciel-oliver/analyze-hit-novel) · [reelscript](https://github.com/reelbenchai/reelscript)
+- 综合（10）：[short-drama](https://github.com/0xsline/short-drama) · [ai-manju-skills](https://github.com/zhanghao123vip/ai-manju-skills) · [screen-creative-skills](https://github.com/VanGong1999/screen-creative-skills) · [rea-toon](https://github.com/JuneYaooo/rea-toon) · [ai-short-drama](https://github.com/Hao0321/ai-short-drama) · [su-ai-short-drama](https://github.com/doublesq97-ui/su-ai-short-drama) · [screenplay-generator-skill](https://github.com/mariozhaofan-pixel/screenplay-generator-skill) · [emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills) · [skills](https://github.com/Weeexiao/skills) · [ai-short-drama](https://github.com/ChinaYouShen/ai-short-drama)
 
-**改编（小说 → 剧本）**（22）
+**改编（小说 → 剧本）**（27）
 
 - 专项（5）：[infinite-creation](https://github.com/SwotAtmk/infinite-creation) · [narrative-to-screen-reader](https://github.com/zhlmi/narrative-to-screen-reader) · [novel-to-ai-short-drama-skill](https://github.com/muxia0396/novel-to-ai-short-drama-skill) · [analyze-hit-novel](https://github.com/ciel-oliver/analyze-hit-novel) · [write-screenplay-skill](https://github.com/egguy886/write-screenplay-skill)
-- 综合（17）：[shuohao-skills](https://github.com/eternityspring/shuohao-skills) · [drama-skills](https://github.com/zenstory-ai/drama-skills) · [Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator) · [screenwriting-skills](https://github.com/jtydhr88/screenwriting-skills) · [short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory) · [XiaoLuo-AI-Drama-Skill](https://github.com/zhurui0523/XiaoLuo-AI-Drama-Skill) · [screen-creative-skills](https://github.com/VanGong1999/screen-creative-skills) · [smy-seedance-storyboard](https://github.com/liangdabiao/smy-seedance-storyboard) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [qisi-video-remix](https://github.com/wyuzhi/qisi-video-remix) · [short-drama-skills](https://github.com/YvonneMovingon/short-drama-skills) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [novel-to-manju](https://github.com/senmanx/novel-to-manju) · [Comfy-H3-Director](https://github.com/MIKA6941/Comfy-H3-Director) · [ai-comic-drama-director-skills](https://github.com/djyy1031/ai-comic-drama-director-skills) · [emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
+- 综合（22）：[shuohao-skills](https://github.com/eternityspring/shuohao-skills) · [drama-skills](https://github.com/zenstory-ai/drama-skills) · [Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator) · [screenwriting-skills](https://github.com/jtydhr88/screenwriting-skills) · [short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory) · [XiaoLuo-AI-Drama-Skill](https://github.com/zhurui0523/XiaoLuo-AI-Drama-Skill) · [screen-creative-skills](https://github.com/VanGong1999/screen-creative-skills) · [smy-seedance-storyboard](https://github.com/liangdabiao/smy-seedance-storyboard) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [qisi-video-remix](https://github.com/wyuzhi/qisi-video-remix) · [short-drama-skills](https://github.com/YvonneMovingon/short-drama-skills) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [novel-to-manju](https://github.com/senmanx/novel-to-manju) · [Comfy-H3-Director](https://github.com/MIKA6941/Comfy-H3-Director) · [ai-comic-drama-director-skills](https://github.com/djyy1031/ai-comic-drama-director-skills) · [novel-to-short-drama-skill](https://github.com/wwaa34682-lab/novel-to-short-drama-skill) · [ai-short-drama-from-zero](https://github.com/sanxsnr/ai-short-drama-from-zero) · [minimaxH3-ai-video-agent](https://github.com/304939905/minimaxH3-ai-video-agent) · [Master-director](https://github.com/liangie7420/Master-director) · [emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills) · [ai-short-drama](https://github.com/ChinaYouShen/ai-short-drama) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
 
-**人物 · 角色资产**（29）
+**人物 · 角色资产**（43）
 
-- 专项（9）：[shanyin-screenwriting-master](https://github.com/Shanyin-ai/shanyin-screenwriting-master) · [higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill) · [ai-film-skills](https://github.com/62656456/ai-film-skills) · [narrative-to-screen-reader](https://github.com/zhlmi/narrative-to-screen-reader) · [story-video-director](https://github.com/zlbigger/story-video-director) · [5min-drama-contest](https://github.com/SoloEnt-AI/5min-drama-contest) · [ai-film-skills](https://github.com/nigo-studio/ai-film-skills) · [claude-screenwriting](https://github.com/e06084/claude-screenwriting) · [awesome-agent-skills](https://github.com/OakcoderX/awesome-agent-skills)
-- 综合（20）：[shuohao-skills](https://github.com/eternityspring/shuohao-skills) · [drama-skills](https://github.com/zenstory-ai/drama-skills) · [screenwriting-skills](https://github.com/jtydhr88/screenwriting-skills) · [short-drama](https://github.com/0xsline/short-drama) · [XiaoLuo-AI-Drama-Skill](https://github.com/zhurui0523/XiaoLuo-AI-Drama-Skill) · [screen-creative-skills](https://github.com/VanGong1999/screen-creative-skills) · [novel-to-manju](https://github.com/senmanx/novel-to-manju) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [ai-short-drama](https://github.com/oiuv/ai-short-drama) · [jingju-skills](https://github.com/jxshow/jingju-skills) · [open-source-video-gen-skill](https://github.com/mini-yifan/open-source-video-gen-skill) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [ShortVideoDirector](https://github.com/wddxh/ShortVideoDirector) · [Comfy-H3-Director](https://github.com/MIKA6941/Comfy-H3-Director) · [ai-comic-drama-director-skills](https://github.com/djyy1031/ai-comic-drama-director-skills) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [chinese-epic-scene-director](https://github.com/zhouwei713/chinese-epic-scene-director) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
+- 专项（11）：[shanyin-screenwriting-master](https://github.com/Shanyin-ai/shanyin-screenwriting-master) · [higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill) · [ai-film-skills](https://github.com/62656456/ai-film-skills) · [narrative-to-screen-reader](https://github.com/zhlmi/narrative-to-screen-reader) · [fisher-storylens](https://github.com/Work-Fisher/fisher-storylens) · [story-video-director](https://github.com/zlbigger/story-video-director) · [5min-drama-contest](https://github.com/SoloEnt-AI/5min-drama-contest) · [ai-film-skills](https://github.com/nigo-studio/ai-film-skills) · [claude-screenwriting](https://github.com/e06084/claude-screenwriting) · [ad-asset-bible](https://github.com/EVZheng-Lab/ad-asset-bible) · [awesome-agent-skills](https://github.com/OakcoderX/awesome-agent-skills)
+- 综合（32）：[shuohao-skills](https://github.com/eternityspring/shuohao-skills) · [drama-skills](https://github.com/zenstory-ai/drama-skills) · [screenwriting-skills](https://github.com/jtydhr88/screenwriting-skills) · [short-drama](https://github.com/0xsline/short-drama) · [ai-manju-skills](https://github.com/zhanghao123vip/ai-manju-skills) · [XiaoLuo-AI-Drama-Skill](https://github.com/zhurui0523/XiaoLuo-AI-Drama-Skill) · [screen-creative-skills](https://github.com/VanGong1999/screen-creative-skills) · [ai-anime-series](https://github.com/10291124jcjc-dotcom/ai-anime-series) · [forest-laoli-h3](https://github.com/lixiaoxiao9888-create/forest-laoli-h3) · [novel-to-manju](https://github.com/senmanx/novel-to-manju) · [su-ai-short-drama](https://github.com/doublesq97-ui/su-ai-short-drama) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [ai-short-drama](https://github.com/oiuv/ai-short-drama) · [jingju-skills](https://github.com/jxshow/jingju-skills) · [open-source-video-gen-skill](https://github.com/mini-yifan/open-source-video-gen-skill) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [mr-li-seedance-25](https://github.com/lbh1761745734-ui/mr-li-seedance-25) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [guagua-animation-skills](https://github.com/weibo-job/guagua-animation-skills) · [ShortVideoDirector](https://github.com/wddxh/ShortVideoDirector) · [Comfy-H3-Director](https://github.com/MIKA6941/Comfy-H3-Director) · [ai-comic-drama-director-skills](https://github.com/djyy1031/ai-comic-drama-director-skills) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [novel-to-short-drama-skill](https://github.com/wwaa34682-lab/novel-to-short-drama-skill) · [chinese-epic-scene-director](https://github.com/zhouwei713/chinese-epic-scene-director) · [ai-short-drama-from-zero](https://github.com/sanxsnr/ai-short-drama-from-zero) · [Master-director](https://github.com/liangie7420/Master-director) · [VIDU-CLI-SKILL](https://github.com/Zeno-Zhu/VIDU-CLI-SKILL) · [ai-short-drama](https://github.com/ChinaYouShen/ai-short-drama) · [AI-Short-Drama-Studio](https://github.com/ADC1920/AI-Short-Drama-Studio) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
 
-**结构 · 集纲 · 钩子**（26）
+**结构 · 集纲 · 钩子**（33）
 
 - 专项（11）：[shanyin-screenwriting-master](https://github.com/Shanyin-ai/shanyin-screenwriting-master) · [qianqianwriting](https://github.com/catyiqian/qianqianwriting) · [5min-drama-contest](https://github.com/SoloEnt-AI/5min-drama-contest) · [write-chinese-long-screenplay](https://github.com/mudden2380078550-creator/write-chinese-long-screenplay) · [analyze-hit-novel](https://github.com/ciel-oliver/analyze-hit-novel) · [claude-screenwriting](https://github.com/e06084/claude-screenwriting) · [kunka-screenwriting-master](https://github.com/geslie1/kunka-screenwriting-master) · [gushi-skill](https://github.com/pipivv/gushi-skill) · [hongguo-shortdrama-screenwriting](https://github.com/zhu5859243-free/hongguo-shortdrama-screenwriting) · [awesome-agent-skills](https://github.com/OakcoderX/awesome-agent-skills) · [short-drama-starter](https://github.com/ohmyopictures-cmyk/short-drama-starter)
-- 综合（15）：[shuohao-skills](https://github.com/eternityspring/shuohao-skills) · [screenwriting-skills](https://github.com/jtydhr88/screenwriting-skills) · [short-drama](https://github.com/0xsline/short-drama) · [short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory) · [screen-creative-skills](https://github.com/VanGong1999/screen-creative-skills) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [ai-short-drama](https://github.com/Hao0321/ai-short-drama) · [ai-short-drama](https://github.com/oiuv/ai-short-drama) · [jingju-skills](https://github.com/jxshow/jingju-skills) · [open-source-video-gen-skill](https://github.com/mini-yifan/open-source-video-gen-skill) · [ManjuForge](https://github.com/mengxiujie/ManjuForge) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [ShortVideoDirector](https://github.com/wddxh/ShortVideoDirector) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills)
+- 综合（22）：[shuohao-skills](https://github.com/eternityspring/shuohao-skills) · [screenwriting-skills](https://github.com/jtydhr88/screenwriting-skills) · [short-drama](https://github.com/0xsline/short-drama) · [ai-manju-skills](https://github.com/zhanghao123vip/ai-manju-skills) · [short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory) · [screen-creative-skills](https://github.com/VanGong1999/screen-creative-skills) · [rea-toon](https://github.com/JuneYaooo/rea-toon) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [ai-short-drama](https://github.com/Hao0321/ai-short-drama) · [su-ai-short-drama](https://github.com/doublesq97-ui/su-ai-short-drama) · [ai-short-drama](https://github.com/oiuv/ai-short-drama) · [jingju-skills](https://github.com/jxshow/jingju-skills) · [open-source-video-gen-skill](https://github.com/mini-yifan/open-source-video-gen-skill) · [ManjuForge](https://github.com/mengxiujie/ManjuForge) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [ShortVideoDirector](https://github.com/wddxh/ShortVideoDirector) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [novel-to-short-drama-skill](https://github.com/wwaa34682-lab/novel-to-short-drama-skill) · [screenplay-generator-skill](https://github.com/mariozhaofan-pixel/screenplay-generator-skill) · [emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills) · [ai-short-drama](https://github.com/ChinaYouShen/ai-short-drama) · [AI-Short-Drama-Studio](https://github.com/ADC1920/AI-Short-Drama-Studio)
 
-**剧本 · 对白**（43）
+**剧本 · 对白**（57）
 
 - 专项（11）：[shanyin-screenwriting-master](https://github.com/Shanyin-ai/shanyin-screenwriting-master) · [seedance-2-5-video-director](https://github.com/liyue-aigc/seedance-2-5-video-director) · [film-studio-skills](https://github.com/machina-exm/film-studio-skills) · [fight-video-create-skill](https://github.com/qualsenWeb/fight-video-create-skill) · [qianqianwriting](https://github.com/catyiqian/qianqianwriting) · [5min-drama-contest](https://github.com/SoloEnt-AI/5min-drama-contest) · [write-chinese-long-screenplay](https://github.com/mudden2380078550-creator/write-chinese-long-screenplay) · [write-screenplay-skill](https://github.com/egguy886/write-screenplay-skill) · [kunka-screenwriting-master](https://github.com/geslie1/kunka-screenwriting-master) · [gushi-skill](https://github.com/pipivv/gushi-skill) · [hongguo-shortdrama-screenwriting](https://github.com/zhu5859243-free/hongguo-shortdrama-screenwriting)
-- 综合（32）：[shuohao-skills](https://github.com/eternityspring/shuohao-skills) · [drama-skills](https://github.com/zenstory-ai/drama-skills) · [Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator) · [manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · [screenwriting-skills](https://github.com/jtydhr88/screenwriting-skills) · [short-drama](https://github.com/0xsline/short-drama) · [short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory) · [XiaoLuo-AI-Drama-Skill](https://github.com/zhurui0523/XiaoLuo-AI-Drama-Skill) · [OnlyShot](https://github.com/A-cat-with-carrots/OnlyShot) · [Micro-Drama-Skills](https://github.com/zhaihao118/Micro-Drama-Skills) · [smy-seedance-storyboard](https://github.com/liangdabiao/smy-seedance-storyboard) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [qisi-video-remix](https://github.com/wyuzhi/qisi-video-remix) · [workrally](https://github.com/Tencent/workrally) · [short-drama-skills](https://github.com/YvonneMovingon/short-drama-skills) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [muse-video-skill](https://github.com/LuoJiangYong/muse-video-skill) · [ai-short-drama](https://github.com/Hao0321/ai-short-drama) · [novel-to-manju](https://github.com/senmanx/novel-to-manju) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [ai-short-drama](https://github.com/oiuv/ai-short-drama) · [jingju-skills](https://github.com/jxshow/jingju-skills) · [open-source-video-gen-skill](https://github.com/mini-yifan/open-source-video-gen-skill) · [short-drama-director](https://github.com/UncleWang2088/short-drama-director) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [ManjuForge](https://github.com/mengxiujie/ManjuForge) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [chinese-epic-scene-director](https://github.com/zhouwei713/chinese-epic-scene-director) · [emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
+- 综合（46）：[shuohao-skills](https://github.com/eternityspring/shuohao-skills) · [drama-skills](https://github.com/zenstory-ai/drama-skills) · [Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator) · [manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · [screenwriting-skills](https://github.com/jtydhr88/screenwriting-skills) · [short-drama](https://github.com/0xsline/short-drama) · [ai-manju-skills](https://github.com/zhanghao123vip/ai-manju-skills) · [short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory) · [XiaoLuo-AI-Drama-Skill](https://github.com/zhurui0523/XiaoLuo-AI-Drama-Skill) · [OnlyShot](https://github.com/A-cat-with-carrots/OnlyShot) · [ai-anime-series](https://github.com/10291124jcjc-dotcom/ai-anime-series) · [Micro-Drama-Skills](https://github.com/zhaihao118/Micro-Drama-Skills) · [smy-seedance-storyboard](https://github.com/liangdabiao/smy-seedance-storyboard) · [rea-toon](https://github.com/JuneYaooo/rea-toon) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [qisi-video-remix](https://github.com/wyuzhi/qisi-video-remix) · [workrally](https://github.com/Tencent/workrally) · [short-drama-skills](https://github.com/YvonneMovingon/short-drama-skills) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [muse-video-skill](https://github.com/LuoJiangYong/muse-video-skill) · [ai-short-drama](https://github.com/Hao0321/ai-short-drama) · [forest-laoli-h3](https://github.com/lixiaoxiao9888-create/forest-laoli-h3) · [novel-to-manju](https://github.com/senmanx/novel-to-manju) · [su-ai-short-drama](https://github.com/doublesq97-ui/su-ai-short-drama) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [ai-short-drama](https://github.com/oiuv/ai-short-drama) · [jingju-skills](https://github.com/jxshow/jingju-skills) · [open-source-video-gen-skill](https://github.com/mini-yifan/open-source-video-gen-skill) · [short-drama-director](https://github.com/UncleWang2088/short-drama-director) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [ManjuForge](https://github.com/mengxiujie/ManjuForge) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [guagua-animation-skills](https://github.com/weibo-job/guagua-animation-skills) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [chinese-epic-scene-director](https://github.com/zhouwei713/chinese-epic-scene-director) · [ai-short-drama-from-zero](https://github.com/sanxsnr/ai-short-drama-from-zero) · [screenplay-generator-skill](https://github.com/mariozhaofan-pixel/screenplay-generator-skill) · [minimaxH3-ai-video-agent](https://github.com/304939905/minimaxH3-ai-video-agent) · [Master-director](https://github.com/liangie7420/Master-director) · [emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills) · [skills](https://github.com/Weeexiao/skills) · [VIDU-CLI-SKILL](https://github.com/Zeno-Zhu/VIDU-CLI-SKILL) · [ai-short-drama](https://github.com/ChinaYouShen/ai-short-drama) · [AI-Short-Drama-Studio](https://github.com/ADC1920/AI-Short-Drama-Studio) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
 
-**审稿 · 质检 · 去 AI 味**（29）
+**审稿 · 质检 · 去 AI 味**（35）
 
 - 专项（11）：[humanizer](https://github.com/blader/humanizer) · [human-writing](https://github.com/KKKKhazix/human-writing) · [sepia](https://github.com/Nanako0129/sepia) · [seedance-2-5-video-director](https://github.com/liyue-aigc/seedance-2-5-video-director) · [shanyin-director-master](https://github.com/Shanyin-ai/shanyin-director-master) · [screenwriter-skill](https://github.com/Vi7QY/screenwriter-skill) · [screenplay-review-checklist](https://github.com/zhlmi/screenplay-review-checklist) · [claude-screenwriting](https://github.com/e06084/claude-screenwriting) · [kunka-screenwriting-master](https://github.com/geslie1/kunka-screenwriting-master) · [awesome-agent-skills](https://github.com/OakcoderX/awesome-agent-skills) · [live-action-drama-16x9](https://github.com/momo5213/live-action-drama-16x9)
-- 综合（18）：[drama-skills](https://github.com/zenstory-ai/drama-skills) · [manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · [screenwriting-skills](https://github.com/jtydhr88/screenwriting-skills) · [short-drama](https://github.com/0xsline/short-drama) · [short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory) · [short-drama-skills](https://github.com/YvonneMovingon/short-drama-skills) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [muse-video-skill](https://github.com/LuoJiangYong/muse-video-skill) · [ai-short-drama](https://github.com/Hao0321/ai-short-drama) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [short-drama-director](https://github.com/UncleWang2088/short-drama-director) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [ManjuForge](https://github.com/mengxiujie/ManjuForge) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [ai-comic-drama-director-skills](https://github.com/djyy1031/ai-comic-drama-director-skills) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills)
+- 综合（24）：[drama-skills](https://github.com/zenstory-ai/drama-skills) · [manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · [screenwriting-skills](https://github.com/jtydhr88/screenwriting-skills) · [short-drama](https://github.com/0xsline/short-drama) · [short-drama-factory](https://github.com/lixiaoxiao9888-create/short-drama-factory) · [short-drama-skills](https://github.com/YvonneMovingon/short-drama-skills) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [muse-video-skill](https://github.com/LuoJiangYong/muse-video-skill) · [ai-short-drama](https://github.com/Hao0321/ai-short-drama) · [forest-laoli-h3](https://github.com/lixiaoxiao9888-create/forest-laoli-h3) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [short-drama-director](https://github.com/UncleWang2088/short-drama-director) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [ManjuForge](https://github.com/mengxiujie/ManjuForge) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [ai-comic-drama-director-skills](https://github.com/djyy1031/ai-comic-drama-director-skills) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [novel-to-short-drama-skill](https://github.com/wwaa34682-lab/novel-to-short-drama-skill) · [ai-short-drama-from-zero](https://github.com/sanxsnr/ai-short-drama-from-zero) · [screenplay-generator-skill](https://github.com/mariozhaofan-pixel/screenplay-generator-skill) · [Master-director](https://github.com/liangie7420/Master-director) · [emma-screenwriting-skills](https://github.com/adoria111/emma-screenwriting-skills) · [ai-short-drama](https://github.com/ChinaYouShen/ai-short-drama)
 
-**分镜 · 镜头设计**（48）
+**分镜 · 镜头设计**（70）
 
-- 专项（19）：[visual-skills](https://github.com/smixs/visual-skills) · [shanyin-director-master](https://github.com/Shanyin-ai/shanyin-director-master) · [lanshu-awesome-ai-video-kit](https://github.com/cclank/lanshu-awesome-ai-video-kit) · [DirectorSKILL](https://github.com/wuwangzhang1216/DirectorSKILL) · [h3-storyboard-skill](https://github.com/phileiny/h3-storyboard-skill) · [film-studio-skills](https://github.com/machina-exm/film-studio-skills) · [ai-film-skills](https://github.com/62656456/ai-film-skills) · [Seedance-ShotDesign-Skills](https://github.com/woodfantasy/Seedance-ShotDesign-Skills) · [fight-video-create-skill](https://github.com/qualsenWeb/fight-video-create-skill) · [fight-prompt-director](https://github.com/irenerachel/fight-prompt-director) · [seedance-skill](https://github.com/alchaincyf/seedance-skill) · [storyboard-director](https://github.com/kevinchin12/storyboard-director) · [novel-to-ai-short-drama-skill](https://github.com/muxia0396/novel-to-ai-short-drama-skill) · [story-video-director](https://github.com/zlbigger/story-video-director) · [fight-scene-director](https://github.com/ZzzAloong/fight-scene-director) · [xiaxia](https://github.com/luanyi824-hash/xiaxia) · [visual-storytelling-skills](https://github.com/leynos/visual-storytelling-skills) · [live-action-drama-16x9](https://github.com/momo5213/live-action-drama-16x9) · [short-drama-starter](https://github.com/ohmyopictures-cmyk/short-drama-starter)
-- 综合（29）：[shuohao-skills](https://github.com/eternityspring/shuohao-skills) · [drama-skills](https://github.com/zenstory-ai/drama-skills) · [Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator) · [manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · [XiaoLuo-AI-Drama-Skill](https://github.com/zhurui0523/XiaoLuo-AI-Drama-Skill) · [OnlyShot](https://github.com/A-cat-with-carrots/OnlyShot) · [Micro-Drama-Skills](https://github.com/zhaihao118/Micro-Drama-Skills) · [smy-seedance-storyboard](https://github.com/liangdabiao/smy-seedance-storyboard) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [qisi-video-remix](https://github.com/wyuzhi/qisi-video-remix) · [workrally](https://github.com/Tencent/workrally) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [muse-video-skill](https://github.com/LuoJiangYong/muse-video-skill) · [ai-short-drama](https://github.com/Hao0321/ai-short-drama) · [novel-to-manju](https://github.com/senmanx/novel-to-manju) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [ai-short-drama](https://github.com/oiuv/ai-short-drama) · [jingju-skills](https://github.com/jxshow/jingju-skills) · [short-drama-director](https://github.com/UncleWang2088/short-drama-director) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [ManjuForge](https://github.com/mengxiujie/ManjuForge) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [ShortVideoDirector](https://github.com/wddxh/ShortVideoDirector) · [Comfy-H3-Director](https://github.com/MIKA6941/Comfy-H3-Director) · [ai-comic-drama-director-skills](https://github.com/djyy1031/ai-comic-drama-director-skills) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [chinese-epic-scene-director](https://github.com/zhouwei713/chinese-epic-scene-director) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
+- 专项（26）：[visual-skills](https://github.com/smixs/visual-skills) · [shanyin-director-master](https://github.com/Shanyin-ai/shanyin-director-master) · [lanshu-awesome-ai-video-kit](https://github.com/cclank/lanshu-awesome-ai-video-kit) · [DirectorSKILL](https://github.com/wuwangzhang1216/DirectorSKILL) · [h3-storyboard-skill](https://github.com/phileiny/h3-storyboard-skill) · [film-studio-skills](https://github.com/machina-exm/film-studio-skills) · [ai-film-skills](https://github.com/62656456/ai-film-skills) · [Seedance-ShotDesign-Skills](https://github.com/woodfantasy/Seedance-ShotDesign-Skills) · [fight-video-create-skill](https://github.com/qualsenWeb/fight-video-create-skill) · [fight-prompt-director](https://github.com/irenerachel/fight-prompt-director) · [seedance-skill](https://github.com/alchaincyf/seedance-skill) · [fisher-storylens](https://github.com/Work-Fisher/fisher-storylens) · [storyboard-director](https://github.com/kevinchin12/storyboard-director) · [novel-to-ai-short-drama-skill](https://github.com/muxia0396/novel-to-ai-short-drama-skill) · [story-video-director](https://github.com/zlbigger/story-video-director) · [fight-scene-director](https://github.com/ZzzAloong/fight-scene-director) · [xiaxia](https://github.com/luanyi824-hash/xiaxia) · [emulsion](https://github.com/dennisonbertram/emulsion) · [visual-storytelling-skills](https://github.com/leynos/visual-storytelling-skills) · [ad-asset-bible](https://github.com/EVZheng-Lab/ad-asset-bible) · [universal-video-skills](https://github.com/svenkatreddy/universal-video-skills) · [storyboard-scavenger](https://github.com/ouxxyy/storyboard-scavenger) · [katil-skill](https://github.com/Mcz070321/katil-skill) · [DWcinematic-whitebox](https://github.com/Dogwind221/DWcinematic-whitebox) · [live-action-drama-16x9](https://github.com/momo5213/live-action-drama-16x9) · [short-drama-starter](https://github.com/ohmyopictures-cmyk/short-drama-starter)
+- 综合（44）：[shuohao-skills](https://github.com/eternityspring/shuohao-skills) · [drama-skills](https://github.com/zenstory-ai/drama-skills) · [Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator) · [manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · [ai-manju-skills](https://github.com/zhanghao123vip/ai-manju-skills) · [XiaoLuo-AI-Drama-Skill](https://github.com/zhurui0523/XiaoLuo-AI-Drama-Skill) · [OnlyShot](https://github.com/A-cat-with-carrots/OnlyShot) · [ai-anime-series](https://github.com/10291124jcjc-dotcom/ai-anime-series) · [Micro-Drama-Skills](https://github.com/zhaihao118/Micro-Drama-Skills) · [smy-seedance-storyboard](https://github.com/liangdabiao/smy-seedance-storyboard) · [rea-toon](https://github.com/JuneYaooo/rea-toon) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [qisi-video-remix](https://github.com/wyuzhi/qisi-video-remix) · [workrally](https://github.com/Tencent/workrally) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [muse-video-skill](https://github.com/LuoJiangYong/muse-video-skill) · [ai-short-drama](https://github.com/Hao0321/ai-short-drama) · [forest-laoli-h3](https://github.com/lixiaoxiao9888-create/forest-laoli-h3) · [novel-to-manju](https://github.com/senmanx/novel-to-manju) · [su-ai-short-drama](https://github.com/doublesq97-ui/su-ai-short-drama) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [ai-short-drama](https://github.com/oiuv/ai-short-drama) · [jingju-skills](https://github.com/jxshow/jingju-skills) · [short-drama-director](https://github.com/UncleWang2088/short-drama-director) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [ManjuForge](https://github.com/mengxiujie/ManjuForge) · [mr-li-seedance-25](https://github.com/lbh1761745734-ui/mr-li-seedance-25) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [guagua-animation-skills](https://github.com/weibo-job/guagua-animation-skills) · [ShortVideoDirector](https://github.com/wddxh/ShortVideoDirector) · [Comfy-H3-Director](https://github.com/MIKA6941/Comfy-H3-Director) · [ai-comic-drama-director-skills](https://github.com/djyy1031/ai-comic-drama-director-skills) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [novel-to-short-drama-skill](https://github.com/wwaa34682-lab/novel-to-short-drama-skill) · [chinese-epic-scene-director](https://github.com/zhouwei713/chinese-epic-scene-director) · [ai-short-drama-from-zero](https://github.com/sanxsnr/ai-short-drama-from-zero) · [minimaxH3-ai-video-agent](https://github.com/304939905/minimaxH3-ai-video-agent) · [Master-director](https://github.com/liangie7420/Master-director) · [skills](https://github.com/Weeexiao/skills) · [VIDU-CLI-SKILL](https://github.com/Zeno-Zhu/VIDU-CLI-SKILL) · [ai-short-drama](https://github.com/ChinaYouShen/ai-short-drama) · [AI-Short-Drama-Studio](https://github.com/ADC1920/AI-Short-Drama-Studio) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
 
-**视频 / 图像提示词**（57）
+**视频 / 图像提示词**（77）
 
-- 专项（29）：[seedance2-skill](https://github.com/dexhunter/seedance2-skill) · [awesome-seedance](https://github.com/LearnPrompt/awesome-seedance) · [higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill) · [seedance-2-5-video-director](https://github.com/liyue-aigc/seedance-2-5-video-director) · [make-prompt-seedance2](https://github.com/liangdabiao/make-prompt-seedance2) · [visual-skills](https://github.com/smixs/visual-skills) · [zy-cinematic-realism](https://github.com/popopo-99/zy-cinematic-realism) · [ai-shortfilm-prompts](https://github.com/jnMetaCode/ai-shortfilm-prompts) · [lanshu-awesome-ai-video-kit](https://github.com/cclank/lanshu-awesome-ai-video-kit) · [DirectorSKILL](https://github.com/wuwangzhang1216/DirectorSKILL) · [infinite-creation](https://github.com/SwotAtmk/infinite-creation) · [minimax-h3-prompt-skill-T8](https://github.com/T8mars/minimax-h3-prompt-skill-T8) · [awesome-seedance-2.5-prompts-skills](https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills) · [h3-storyboard-skill](https://github.com/phileiny/h3-storyboard-skill) · [film-studio-skills](https://github.com/machina-exm/film-studio-skills) · [Seedance-ShotDesign-Skills](https://github.com/woodfantasy/Seedance-ShotDesign-Skills) · [seedance-2-5-fight-director](https://github.com/liyue-aigc/seedance-2-5-fight-director) · [ComfyUI-Agent-Kit](https://github.com/SlavaSexton/ComfyUI-Agent-Kit) · [fight-prompt-director](https://github.com/irenerachel/fight-prompt-director) · [seedance-skill](https://github.com/alchaincyf/seedance-skill) · [storyboard-director](https://github.com/kevinchin12/storyboard-director) · [story-video-director](https://github.com/zlbigger/story-video-director) · [fight-scene-director](https://github.com/ZzzAloong/fight-scene-director) · [ai-film-skills](https://github.com/nigo-studio/ai-film-skills) · [seedance-2-5-prompting](https://github.com/babicat4242-svg/seedance-2-5-prompting) · [xiaxia](https://github.com/luanyi824-hash/xiaxia) · [visual-storytelling-skills](https://github.com/leynos/visual-storytelling-skills) · [live-action-drama-16x9](https://github.com/momo5213/live-action-drama-16x9) · [short-drama-starter](https://github.com/ohmyopictures-cmyk/short-drama-starter)
-- 综合（28）：[drama-skills](https://github.com/zenstory-ai/drama-skills) · [Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator) · [manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · [OnlyShot](https://github.com/A-cat-with-carrots/OnlyShot) · [Micro-Drama-Skills](https://github.com/zhaihao118/Micro-Drama-Skills) · [smy-seedance-storyboard](https://github.com/liangdabiao/smy-seedance-storyboard) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [qisi-video-remix](https://github.com/wyuzhi/qisi-video-remix) · [workrally](https://github.com/Tencent/workrally) · [short-drama-skills](https://github.com/YvonneMovingon/short-drama-skills) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [muse-video-skill](https://github.com/LuoJiangYong/muse-video-skill) · [novel-to-manju](https://github.com/senmanx/novel-to-manju) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [ai-short-drama](https://github.com/oiuv/ai-short-drama) · [jingju-skills](https://github.com/jxshow/jingju-skills) · [open-source-video-gen-skill](https://github.com/mini-yifan/open-source-video-gen-skill) · [short-drama-director](https://github.com/UncleWang2088/short-drama-director) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [ManjuForge](https://github.com/mengxiujie/ManjuForge) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [ShortVideoDirector](https://github.com/wddxh/ShortVideoDirector) · [Comfy-H3-Director](https://github.com/MIKA6941/Comfy-H3-Director) · [ai-comic-drama-director-skills](https://github.com/djyy1031/ai-comic-drama-director-skills) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [chinese-epic-scene-director](https://github.com/zhouwei713/chinese-epic-scene-director) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
+- 专项（35）：[seedance2-skill](https://github.com/dexhunter/seedance2-skill) · [awesome-seedance](https://github.com/LearnPrompt/awesome-seedance) · [higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill) · [seedance-2-5-video-director](https://github.com/liyue-aigc/seedance-2-5-video-director) · [make-prompt-seedance2](https://github.com/liangdabiao/make-prompt-seedance2) · [visual-skills](https://github.com/smixs/visual-skills) · [zy-cinematic-realism](https://github.com/popopo-99/zy-cinematic-realism) · [ai-shortfilm-prompts](https://github.com/jnMetaCode/ai-shortfilm-prompts) · [lanshu-awesome-ai-video-kit](https://github.com/cclank/lanshu-awesome-ai-video-kit) · [DirectorSKILL](https://github.com/wuwangzhang1216/DirectorSKILL) · [infinite-creation](https://github.com/SwotAtmk/infinite-creation) · [minimax-h3-prompt-skill-T8](https://github.com/T8mars/minimax-h3-prompt-skill-T8) · [awesome-seedance-2.5-prompts-skills](https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills) · [h3-storyboard-skill](https://github.com/phileiny/h3-storyboard-skill) · [film-studio-skills](https://github.com/machina-exm/film-studio-skills) · [Seedance-ShotDesign-Skills](https://github.com/woodfantasy/Seedance-ShotDesign-Skills) · [seedance-2-5-fight-director](https://github.com/liyue-aigc/seedance-2-5-fight-director) · [ComfyUI-Agent-Kit](https://github.com/SlavaSexton/ComfyUI-Agent-Kit) · [fight-prompt-director](https://github.com/irenerachel/fight-prompt-director) · [seedance-skill](https://github.com/alchaincyf/seedance-skill) · [fisher-storylens](https://github.com/Work-Fisher/fisher-storylens) · [storyboard-director](https://github.com/kevinchin12/storyboard-director) · [story-video-director](https://github.com/zlbigger/story-video-director) · [fight-scene-director](https://github.com/ZzzAloong/fight-scene-director) · [ai-film-skills](https://github.com/nigo-studio/ai-film-skills) · [seedance-2-5-prompting](https://github.com/babicat4242-svg/seedance-2-5-prompting) · [xiaxia](https://github.com/luanyi824-hash/xiaxia) · [emulsion](https://github.com/dennisonbertram/emulsion) · [visual-storytelling-skills](https://github.com/leynos/visual-storytelling-skills) · [universal-video-skills](https://github.com/svenkatreddy/universal-video-skills) · [skills](https://github.com/glitterpixely/skills) · [storyboard-scavenger](https://github.com/ouxxyy/storyboard-scavenger) · [katil-skill](https://github.com/Mcz070321/katil-skill) · [live-action-drama-16x9](https://github.com/momo5213/live-action-drama-16x9) · [short-drama-starter](https://github.com/ohmyopictures-cmyk/short-drama-starter)
+- 综合（42）：[drama-skills](https://github.com/zenstory-ai/drama-skills) · [Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator) · [manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · [ai-manju-skills](https://github.com/zhanghao123vip/ai-manju-skills) · [OnlyShot](https://github.com/A-cat-with-carrots/OnlyShot) · [ai-anime-series](https://github.com/10291124jcjc-dotcom/ai-anime-series) · [Micro-Drama-Skills](https://github.com/zhaihao118/Micro-Drama-Skills) · [smy-seedance-storyboard](https://github.com/liangdabiao/smy-seedance-storyboard) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [qisi-video-remix](https://github.com/wyuzhi/qisi-video-remix) · [workrally](https://github.com/Tencent/workrally) · [short-drama-skills](https://github.com/YvonneMovingon/short-drama-skills) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [muse-video-skill](https://github.com/LuoJiangYong/muse-video-skill) · [forest-laoli-h3](https://github.com/lixiaoxiao9888-create/forest-laoli-h3) · [novel-to-manju](https://github.com/senmanx/novel-to-manju) · [su-ai-short-drama](https://github.com/doublesq97-ui/su-ai-short-drama) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [ai-short-drama](https://github.com/oiuv/ai-short-drama) · [jingju-skills](https://github.com/jxshow/jingju-skills) · [open-source-video-gen-skill](https://github.com/mini-yifan/open-source-video-gen-skill) · [short-drama-director](https://github.com/UncleWang2088/short-drama-director) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [ManjuForge](https://github.com/mengxiujie/ManjuForge) · [mr-li-seedance-25](https://github.com/lbh1761745734-ui/mr-li-seedance-25) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [guagua-animation-skills](https://github.com/weibo-job/guagua-animation-skills) · [ShortVideoDirector](https://github.com/wddxh/ShortVideoDirector) · [Comfy-H3-Director](https://github.com/MIKA6941/Comfy-H3-Director) · [ai-comic-drama-director-skills](https://github.com/djyy1031/ai-comic-drama-director-skills) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [novel-to-short-drama-skill](https://github.com/wwaa34682-lab/novel-to-short-drama-skill) · [chinese-epic-scene-director](https://github.com/zhouwei713/chinese-epic-scene-director) · [ai-short-drama-from-zero](https://github.com/sanxsnr/ai-short-drama-from-zero) · [minimaxH3-ai-video-agent](https://github.com/304939905/minimaxH3-ai-video-agent) · [Master-director](https://github.com/liangie7420/Master-director) · [skills](https://github.com/Weeexiao/skills) · [VIDU-CLI-SKILL](https://github.com/Zeno-Zhu/VIDU-CLI-SKILL) · [ai-short-drama](https://github.com/ChinaYouShen/ai-short-drama) · [AI-Short-Drama-Studio](https://github.com/ADC1920/AI-Short-Drama-Studio) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
 
-**出片 · 配音 · 剪辑**（17）
+**出片 · 配音 · 剪辑**（27）
 
-- 专项（4）：[infinite-creation](https://github.com/SwotAtmk/infinite-creation) · [ai-film-skills](https://github.com/62656456/ai-film-skills) · [ComfyUI-Agent-Kit](https://github.com/SlavaSexton/ComfyUI-Agent-Kit) · [visual-storytelling-skills](https://github.com/leynos/visual-storytelling-skills)
-- 综合（13）：[OnlyShot](https://github.com/A-cat-with-carrots/OnlyShot) · [Micro-Drama-Skills](https://github.com/zhaihao118/Micro-Drama-Skills) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [workrally](https://github.com/Tencent/workrally) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [jingju-skills](https://github.com/jxshow/jingju-skills) · [open-source-video-gen-skill](https://github.com/mini-yifan/open-source-video-gen-skill) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [ManjuForge](https://github.com/mengxiujie/ManjuForge) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
+- 专项（5）：[infinite-creation](https://github.com/SwotAtmk/infinite-creation) · [ai-film-skills](https://github.com/62656456/ai-film-skills) · [ComfyUI-Agent-Kit](https://github.com/SlavaSexton/ComfyUI-Agent-Kit) · [visual-storytelling-skills](https://github.com/leynos/visual-storytelling-skills) · [universal-video-skills](https://github.com/svenkatreddy/universal-video-skills)
+- 综合（22）：[OnlyShot](https://github.com/A-cat-with-carrots/OnlyShot) · [ai-anime-series](https://github.com/10291124jcjc-dotcom/ai-anime-series) · [Micro-Drama-Skills](https://github.com/zhaihao118/Micro-Drama-Skills) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [workrally](https://github.com/Tencent/workrally) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [jingju-skills](https://github.com/jxshow/jingju-skills) · [open-source-video-gen-skill](https://github.com/mini-yifan/open-source-video-gen-skill) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [ManjuForge](https://github.com/mengxiujie/ManjuForge) · [mr-li-seedance-25](https://github.com/lbh1761745734-ui/mr-li-seedance-25) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [guagua-animation-skills](https://github.com/weibo-job/guagua-animation-skills) · [ai-manga-drama](https://github.com/liuxiao20051106-prog/ai-manga-drama) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [novel-to-short-drama-skill](https://github.com/wwaa34682-lab/novel-to-short-drama-skill) · [ai-short-drama-from-zero](https://github.com/sanxsnr/ai-short-drama-from-zero) · [minimaxH3-ai-video-agent](https://github.com/304939905/minimaxH3-ai-video-agent) · [skills](https://github.com/Weeexiao/skills) · [VIDU-CLI-SKILL](https://github.com/Zeno-Zhu/VIDU-CLI-SKILL) · [AI-Short-Drama-Studio](https://github.com/ADC1920/AI-Short-Drama-Studio) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
 
 <a id="by-model"></a>
 ## 按视频模型查找
 
 仓库说明里明确提到适配的图像/视频模型（按星数排序）。
 
-**Seedance / 即梦**（35）：[seedance2-skill](https://github.com/dexhunter/seedance2-skill) · [Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator) · [awesome-seedance](https://github.com/LearnPrompt/awesome-seedance) · [manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · [higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill) · [seedance-2-5-video-director](https://github.com/liyue-aigc/seedance-2-5-video-director) · [make-prompt-seedance2](https://github.com/liangdabiao/make-prompt-seedance2) · [visual-skills](https://github.com/smixs/visual-skills) · [ai-shortfilm-prompts](https://github.com/jnMetaCode/ai-shortfilm-prompts) · [lanshu-awesome-ai-video-kit](https://github.com/cclank/lanshu-awesome-ai-video-kit) · [OnlyShot](https://github.com/A-cat-with-carrots/OnlyShot) · [minimax-h3-prompt-skill-T8](https://github.com/T8mars/minimax-h3-prompt-skill-T8) · [awesome-seedance-2.5-prompts-skills](https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills) · [smy-seedance-storyboard](https://github.com/liangdabiao/smy-seedance-storyboard) · [film-studio-skills](https://github.com/machina-exm/film-studio-skills) · [Seedance-ShotDesign-Skills](https://github.com/woodfantasy/Seedance-ShotDesign-Skills) · [seedance-2-5-fight-director](https://github.com/liyue-aigc/seedance-2-5-fight-director) · [ComfyUI-Agent-Kit](https://github.com/SlavaSexton/ComfyUI-Agent-Kit) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [fight-prompt-director](https://github.com/irenerachel/fight-prompt-director) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [seedance-skill](https://github.com/alchaincyf/seedance-skill) · [ai-short-drama](https://github.com/oiuv/ai-short-drama) · [short-drama-director](https://github.com/UncleWang2088/short-drama-director) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [fight-scene-director](https://github.com/ZzzAloong/fight-scene-director) · [ai-film-skills](https://github.com/nigo-studio/ai-film-skills) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [ShortVideoDirector](https://github.com/wddxh/ShortVideoDirector) · [ai-comic-drama-director-skills](https://github.com/djyy1031/ai-comic-drama-director-skills) · [seedance-2-5-prompting](https://github.com/babicat4242-svg/seedance-2-5-prompting) · [xiaxia](https://github.com/luanyi824-hash/xiaxia) · [visual-storytelling-skills](https://github.com/leynos/visual-storytelling-skills) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill) · [short-drama-starter](https://github.com/ohmyopictures-cmyk/short-drama-starter)
+**Seedance / 即梦**（45）：[seedance2-skill](https://github.com/dexhunter/seedance2-skill) · [Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator) · [awesome-seedance](https://github.com/LearnPrompt/awesome-seedance) · [manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · [higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill) · [seedance-2-5-video-director](https://github.com/liyue-aigc/seedance-2-5-video-director) · [make-prompt-seedance2](https://github.com/liangdabiao/make-prompt-seedance2) · [visual-skills](https://github.com/smixs/visual-skills) · [ai-shortfilm-prompts](https://github.com/jnMetaCode/ai-shortfilm-prompts) · [lanshu-awesome-ai-video-kit](https://github.com/cclank/lanshu-awesome-ai-video-kit) · [OnlyShot](https://github.com/A-cat-with-carrots/OnlyShot) · [ai-anime-series](https://github.com/10291124jcjc-dotcom/ai-anime-series) · [minimax-h3-prompt-skill-T8](https://github.com/T8mars/minimax-h3-prompt-skill-T8) · [awesome-seedance-2.5-prompts-skills](https://github.com/AtlasCloudAI/awesome-seedance-2.5-prompts-skills) · [smy-seedance-storyboard](https://github.com/liangdabiao/smy-seedance-storyboard) · [film-studio-skills](https://github.com/machina-exm/film-studio-skills) · [Seedance-ShotDesign-Skills](https://github.com/woodfantasy/Seedance-ShotDesign-Skills) · [seedance-2-5-fight-director](https://github.com/liyue-aigc/seedance-2-5-fight-director) · [ComfyUI-Agent-Kit](https://github.com/SlavaSexton/ComfyUI-Agent-Kit) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [fight-prompt-director](https://github.com/irenerachel/fight-prompt-director) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [seedance-skill](https://github.com/alchaincyf/seedance-skill) · [ai-short-drama](https://github.com/oiuv/ai-short-drama) · [short-drama-director](https://github.com/UncleWang2088/short-drama-director) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [fight-scene-director](https://github.com/ZzzAloong/fight-scene-director) · [mr-li-seedance-25](https://github.com/lbh1761745734-ui/mr-li-seedance-25) · [ai-film-skills](https://github.com/nigo-studio/ai-film-skills) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [ShortVideoDirector](https://github.com/wddxh/ShortVideoDirector) · [ai-comic-drama-director-skills](https://github.com/djyy1031/ai-comic-drama-director-skills) · [seedance-2-5-prompting](https://github.com/babicat4242-svg/seedance-2-5-prompting) · [novel-to-short-drama-skill](https://github.com/wwaa34682-lab/novel-to-short-drama-skill) · [xiaxia](https://github.com/luanyi824-hash/xiaxia) · [emulsion](https://github.com/dennisonbertram/emulsion) · [visual-storytelling-skills](https://github.com/leynos/visual-storytelling-skills) · [ai-short-drama-from-zero](https://github.com/sanxsnr/ai-short-drama-from-zero) · [Master-director](https://github.com/liangie7420/Master-director) · [skills](https://github.com/glitterpixely/skills) · [storyboard-scavenger](https://github.com/ouxxyy/storyboard-scavenger) · [katil-skill](https://github.com/Mcz070321/katil-skill) · [AI-Short-Drama-Studio](https://github.com/ADC1920/AI-Short-Drama-Studio) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill) · [short-drama-starter](https://github.com/ohmyopictures-cmyk/short-drama-starter)
 
-**MiniMax H3**（15）：[manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · [infinite-creation](https://github.com/SwotAtmk/infinite-creation) · [minimax-h3-prompt-skill-T8](https://github.com/T8mars/minimax-h3-prompt-skill-T8) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [h3-storyboard-skill](https://github.com/phileiny/h3-storyboard-skill) · [ComfyUI-Agent-Kit](https://github.com/SlavaSexton/ComfyUI-Agent-Kit) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [fight-prompt-director](https://github.com/irenerachel/fight-prompt-director) · [novel-to-manju](https://github.com/senmanx/novel-to-manju) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [open-source-video-gen-skill](https://github.com/mini-yifan/open-source-video-gen-skill) · [fight-scene-director](https://github.com/ZzzAloong/fight-scene-director) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [Comfy-H3-Director](https://github.com/MIKA6941/Comfy-H3-Director) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
+**MiniMax H3**（22）：[manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · [infinite-creation](https://github.com/SwotAtmk/infinite-creation) · [minimax-h3-prompt-skill-T8](https://github.com/T8mars/minimax-h3-prompt-skill-T8) · [short-drama-production](https://github.com/suihe1/short-drama-production) · [h3-storyboard-skill](https://github.com/phileiny/h3-storyboard-skill) · [ComfyUI-Agent-Kit](https://github.com/SlavaSexton/ComfyUI-Agent-Kit) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [fight-prompt-director](https://github.com/irenerachel/fight-prompt-director) · [forest-laoli-h3](https://github.com/lixiaoxiao9888-create/forest-laoli-h3) · [novel-to-manju](https://github.com/senmanx/novel-to-manju) · [acheng-director-skill](https://github.com/AharaOoO/acheng-director-skill) · [fisher-storylens](https://github.com/Work-Fisher/fisher-storylens) · [open-source-video-gen-skill](https://github.com/mini-yifan/open-source-video-gen-skill) · [fight-scene-director](https://github.com/ZzzAloong/fight-scene-director) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [Comfy-H3-Director](https://github.com/MIKA6941/Comfy-H3-Director) · [minimaxH3-ai-video-agent](https://github.com/304939905/minimaxH3-ai-video-agent) · [Master-director](https://github.com/liangie7420/Master-director) · [skills](https://github.com/glitterpixely/skills) · [skills](https://github.com/Weeexiao/skills) · [ai-short-drama](https://github.com/ChinaYouShen/ai-short-drama) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
 
-**可灵 Kling**（8）：[higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill) · [ai-shortfilm-prompts](https://github.com/jnMetaCode/ai-shortfilm-prompts) · [lanshu-awesome-ai-video-kit](https://github.com/cclank/lanshu-awesome-ai-video-kit) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [visual-storytelling-skills](https://github.com/leynos/visual-storytelling-skills) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill) · [short-drama-starter](https://github.com/ohmyopictures-cmyk/short-drama-starter)
+**可灵 Kling**（12）：[higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill) · [ai-shortfilm-prompts](https://github.com/jnMetaCode/ai-shortfilm-prompts) · [lanshu-awesome-ai-video-kit](https://github.com/cclank/lanshu-awesome-ai-video-kit) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [visual-storytelling-skills](https://github.com/leynos/visual-storytelling-skills) · [universal-video-skills](https://github.com/svenkatreddy/universal-video-skills) · [Master-director](https://github.com/liangie7420/Master-director) · [skills](https://github.com/glitterpixely/skills) · [storyboard-scavenger](https://github.com/ouxxyy/storyboard-scavenger) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill) · [short-drama-starter](https://github.com/ohmyopictures-cmyk/short-drama-starter)
 
 **通义万相 Wan**（5）：[higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill) · [ai-short-drama-skill](https://github.com/xixihhhh/ai-short-drama-skill) · [spark-video](https://github.com/JohnKeating1997/spark-video) · [hardcore-director](https://github.com/jlam00-dev/hardcore-director) · [alphadrama-short-drama-skill](https://github.com/Alwzc/alphadrama-short-drama-skill)
 
@@ -659,16 +784,16 @@ npx skills add Nanako0129/sepia
 
 **Nano Banana**（3）：[zy-cinematic-realism](https://github.com/popopo-99/zy-cinematic-realism) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [visual-storytelling-skills](https://github.com/leynos/visual-storytelling-skills)
 
-**Veo**（3）：[higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill) · [ai-shortfilm-prompts](https://github.com/jnMetaCode/ai-shortfilm-prompts) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator)
+**Veo**（5）：[higgsfield-ai-prompt-skill](https://github.com/OSideMedia/higgsfield-ai-prompt-skill) · [ai-shortfilm-prompts](https://github.com/jnMetaCode/ai-shortfilm-prompts) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [universal-video-skills](https://github.com/svenkatreddy/universal-video-skills) · [storyboard-scavenger](https://github.com/ouxxyy/storyboard-scavenger)
 
-**Sora**（2）：[ai-shortfilm-prompts](https://github.com/jnMetaCode/ai-shortfilm-prompts) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator)
+**Sora**（4）：[ai-shortfilm-prompts](https://github.com/jnMetaCode/ai-shortfilm-prompts) · [vision_art_creator](https://github.com/ilkaydemiralay/vision_art_creator) · [universal-video-skills](https://github.com/svenkatreddy/universal-video-skills) · [storyboard-scavenger](https://github.com/ouxxyy/storyboard-scavenger)
 
 <a id="faq"></a>
 ## 常见问题
 
 ### 做 AI 短剧有哪些好用的 skill？
 
-目前收录 86 个人工核对过的短剧 skill 项目（数据更新于 2026-11-16）。想从小说一路跑到分镜和视频提示词，先看[全流程](#group-pipeline)分组（24 个），星数最高的是 [shuohao-skills](https://github.com/eternityspring/shuohao-skills)、[drama-skills](https://github.com/zenstory-ai/drama-skills)、[manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill)；只缺某一步，就到[按创作阶段查找](#by-stage)里找对应阶段；不知道怎么搭配，可以从[推荐组合](#packs)开始。
+目前收录 111 个人工核对过的短剧 skill 项目（数据更新于 2026-11-16）。想从小说一路跑到分镜和视频提示词，先看[全流程](#group-pipeline)分组（35 个），星数最高的是 [shuohao-skills](https://github.com/eternityspring/shuohao-skills)、[drama-skills](https://github.com/zenstory-ai/drama-skills)、[manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill)；只缺某一步，就到[按创作阶段查找](#by-stage)里找对应阶段；不知道怎么搭配，可以从[推荐组合](#packs)开始。
 
 ### AI 短剧 skill（漫剧 skill）是什么？
 
@@ -676,7 +801,7 @@ npx skills add Nanako0129/sepia
 
 ### Claude Code 或 Codex 能做 AI 短剧吗？
 
-能。收录的 86 个项目里，84 个是标准 `SKILL.md` 格式，Claude Code、Codex 等支持 Agent Skills 的 agent 都能装；仓库里明确写了支持 Claude Code 的 28 个、支持 Codex 的 30 个。标准 skill 用 `npx skills add 作者/仓库名` 安装，每个分组末尾的「安装命令」里有现成命令。
+能。收录的 111 个项目里，109 个是标准 `SKILL.md` 格式，Claude Code、Codex 等支持 Agent Skills 的 agent 都能装；仓库里明确写了支持 Claude Code 的 37 个、支持 Codex 的 40 个。标准 skill 用 `npx skills add 作者/仓库名` 安装，每个分组末尾的「安装命令」里有现成命令。
 
 ### 能装进千问、豆包、龙虾（OpenClaw）、WorkBuddy 这些国产智能体吗？
 
@@ -692,15 +817,15 @@ npx skills add Nanako0129/sepia
 
 ### 有哪些适配 Seedance 的短剧 skill？
 
-写明适配哪个视频模型的 44 个项目里，35 个适配 Seedance（即梦），是最多的；其次是 MiniMax H3 15 个、可灵 Kling 8 个。星数最高的 Seedance 项目是 [seedance2-skill](https://github.com/dexhunter/seedance2-skill)、[Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator)、[awesome-seedance](https://github.com/LearnPrompt/awesome-seedance)。完整对照见[按视频模型查找](#by-model)。
+写明适配哪个视频模型的 60 个项目里，45 个适配 Seedance（即梦），是最多的；其次是 MiniMax H3 22 个、可灵 Kling 12 个。星数最高的 Seedance 项目是 [seedance2-skill](https://github.com/dexhunter/seedance2-skill)、[Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator)、[awesome-seedance](https://github.com/LearnPrompt/awesome-seedance)。完整对照见[按视频模型查找](#by-model)。
 
 ### 有短剧剧本 skill、分镜 skill 吗？
 
-有。覆盖「剧本 · 对白」阶段的有 43 个，专做剧本的（只管 3 步以内）星数最高的是 [shanyin-screenwriting-master](https://github.com/Shanyin-ai/shanyin-screenwriting-master)、[seedance-2-5-video-director](https://github.com/liyue-aigc/seedance-2-5-video-director)、[film-studio-skills](https://github.com/machina-exm/film-studio-skills)；覆盖「分镜 · 镜头设计」阶段的有 48 个，专做分镜的星数最高的是 [visual-skills](https://github.com/smixs/visual-skills)、[shanyin-director-master](https://github.com/Shanyin-ai/shanyin-director-master)、[lanshu-awesome-ai-video-kit](https://github.com/cclank/lanshu-awesome-ai-video-kit)。分组见[编剧：剧本 · 改编 · 审稿](#group-writing)和[分镜 · 视觉资产 · 视频提示词](#group-visual)。
+有。覆盖「剧本 · 对白」阶段的有 57 个，专做剧本的（只管 3 步以内）星数最高的是 [shanyin-screenwriting-master](https://github.com/Shanyin-ai/shanyin-screenwriting-master)、[seedance-2-5-video-director](https://github.com/liyue-aigc/seedance-2-5-video-director)、[film-studio-skills](https://github.com/machina-exm/film-studio-skills)；覆盖「分镜 · 镜头设计」阶段的有 70 个，专做分镜的星数最高的是 [visual-skills](https://github.com/smixs/visual-skills)、[shanyin-director-master](https://github.com/Shanyin-ai/shanyin-director-master)、[lanshu-awesome-ai-video-kit](https://github.com/cclank/lanshu-awesome-ai-video-kit)。分组见[编剧：剧本 · 改编 · 审稿](#group-writing)和[分镜 · 视觉资产 · 视频提示词](#group-visual)。
 
 ### 小说转短剧：怎么用 AI 把小说改编成短剧剧本？
 
-用改编类 skill，让 agent 按「拆小说 → 改编大纲 → 分集集纲和钩子 → 分集剧本 → 审稿」一步步做。收录的项目里覆盖「改编（小说 → 剧本）」阶段的有 22 个，星数最高的是 [shuohao-skills](https://github.com/eternityspring/shuohao-skills)、[drama-skills](https://github.com/zenstory-ai/drama-skills)、[Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator)。改编前想先判断一本小说值不值得拍，看[上游：IP 评估与故事拆解](#group-source)（3 个）。
+用改编类 skill，让 agent 按「拆小说 → 改编大纲 → 分集集纲和钩子 → 分集剧本 → 审稿」一步步做。收录的项目里覆盖「改编（小说 → 剧本）」阶段的有 27 个，星数最高的是 [shuohao-skills](https://github.com/eternityspring/shuohao-skills)、[drama-skills](https://github.com/zenstory-ai/drama-skills)、[Seedance2-Storyboard-Generator](https://github.com/liangdabiao/Seedance2-Storyboard-Generator)。改编前想先判断一本小说值不值得拍，看[上游：IP 评估与故事拆解](#group-source)（5 个）。
 
 ### skill 和扣子工作流、小云雀这类短剧智能体有什么区别？
 
@@ -708,7 +833,7 @@ npx skills add Nanako0129/sepia
 
 ### 这些 skill 安全吗？
 
-收录前逐个核对过仓库说明、目录和文件。至今审过 206 个仓库：收录 86 个 skill 项目和 16 个开源平台，其余 104 个没收，原因逐条记在 [data/ignore.toml](data/ignore.toml)，其中有照搬热门 skill、再诱导下载安装包的仓库。正常的 skill 只是几份文本文件，用不着 exe 或 dmg。skill 可能附带脚本，安装前先读一遍它的 `SKILL.md`。
+收录前逐个核对过仓库说明、目录和文件。至今审过 290 个仓库：收录 111 个 skill 项目和 16 个开源平台，其余 163 个没收，原因逐条记在 [data/ignore.toml](data/ignore.toml)，其中有照搬热门 skill、再诱导下载安装包的仓库。正常的 skill 只是几份文本文件，用不着 exe 或 dmg。skill 可能附带脚本，安装前先读一遍它的 `SKILL.md`。
 
 ### 多久更新一次？
 

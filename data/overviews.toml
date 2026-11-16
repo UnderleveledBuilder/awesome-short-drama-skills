@@ -404,3 +404,103 @@ en = "An admin console with a Go backend and a Vue 3 + TDesign frontend; Docker 
 ["gzxx-2025/aid-studio"]
 zh = "Java 后端加 React 管理端、Next.js 用户端的自托管平台，README 给出一键安装脚本，在 64 位 Linux 上以 Docker 或 systemd 部署，最低 2 核 4G，装好后用 sudo aid 命令升级、回滚和备份。用户端按项目管理剧本、分集和角色场景道具资产，生成分镜图、视频、多角色配音和对口型，也能做 AI 短片和静态漫画。自带模型供应商配置、按模型计费、支付宝和微信充值、实名认证等运营功能，各类模型的 key 需自配。资源目录里的 3 个剧本 skill 写明参考并重写自 zenstory-ai/drama-skills，由平台按固定版本调用。"
 en = "A self-hosted platform with a Java backend, a React admin frontend and a Next.js user frontend. The README's one-command installer deploys it on 64-bit Linux with Docker or systemd (minimum 2 cores and 4 GB RAM), and sudo aid commands then handle upgrades, rollbacks and backups. In the user frontend you manage scripts, episodes and character, scene and prop assets per project and generate storyboard images, video, multi-voice TTS and lip sync; it also does AI short films and static comics. Operator features include model-provider setup, per-model billing, Alipay and WeChat Pay top-ups and real-name verification, and you supply keys for every model. The 3 screenplay skills in its resource folder state that they are reimplemented from zenstory-ai/drama-skills and are called by the platform at pinned versions."
+
+["ChinaYouShen/ai-short-drama"]
+zh = "入口是根目录 SKILL.md，按需加载 references/ 里的选题、剧本、分镜、文戏和武戏文档，adapters/ 给 Codex、Cursor、DeepSeek Harness、豆包、文心一言、WorkBuddy 各一份接入文件。武戏按六大体系逐层选到门派和招式，金庸、古龙、梁羽生、温瑞安四家共 103 招写了特效。scripts/validate.py 检查字段、时间码、镜长、单段 15 秒等交付项，audit_vfx.py 逐条体检招式特效。许可证 GPL-3.0。"
+en = "The entry point is the root SKILL.md, which loads topic, script, storyboard, dialogue-scene and fight-scene docs from references/ on demand; adapters/ has an entry file each for Codex, Cursor, DeepSeek Harness, Doubao, ERNIE and WorkBuddy. Fight scenes are chosen layer by layer across six systems down to a school and a move, and 103 moves from Jin Yong, Gu Long, Liang Yusheng and Wen Ruian come with written visual effects. scripts/validate.py checks delivery items such as fields, timecodes, shot lengths and the 15-second segment limit, and audit_vfx.py audits every move's effect. Licensed GPL-3.0."
+
+["zhanghao123vip/ai-manju-skills"]
+zh = "每个题材是一个独立的 SKILL.md，有玄幻修仙、宫斗、宅斗、总裁甜宠、悬疑刑侦、民俗怪谈等 21 个，不需要安装依赖。可以装进 Claude Code、WorkBuddy，也可以把文件全文粘进 DeepSeek 等聊天工具使用。产出是文字和提示词，出图出视频要到外部平台自己做。"
+en = "Each genre is a standalone SKILL.md, 21 in all, including xianxia cultivation, palace intrigue, household intrigue, CEO romance, crime mystery and folk horror; nothing needs installing. You can load them into Claude Code or WorkBuddy, or paste a whole file into a chat tool such as DeepSeek. Output is text and prompts; you generate images and video on outside platforms yourself."
+
+["doublesq97-ui/su-ai-short-drama"]
+zh = "两个 skill 可以单独安装：女频版偏关系、情绪与信任，男频版偏能力成长、身份兑现与事业扩张，同一项目通常只选一版。可以只调用某个岗位，也可以沿总导演、编剧、选角、分镜的完整链路走，最后交剧本、角色卡、场景卡和分镜。仓库另附男女频两个网页版剧本参数生成器，可在线打开或下载 HTML 离线用。"
+en = "The two skills install separately: the female-oriented one leans on relationships, emotion and trust, the male-oriented one on growing power, revealed identity and building a career, and a project usually picks one. You can call a single role or run the full chain of showrunner, writer, casting and storyboard, ending with a script, character cards, scene cards and storyboard. The repo also has two web-based script-parameter generators, one per audience, usable online or as downloaded HTML offline."
+
+["304939905/minimaxH3-ai-video-agent"]
+zh = "在 Codex 里用，输入故事、小说片段或创意 brief，按剧本、分镜、资产、提示词、生成、剪辑、审片和记录的顺序推进。MiniMax H3 是主要视频模型，视频和生图接口都由使用者自己接入，仓库不含密钥和生成结果。提交前展示提示词、参数、价格依据和预计费用，生成后记下任务 ID、费用、文件哈希和审片状态。"
+en = "Used in Codex: you give it a story, a novel excerpt or a creative brief, and it moves through script, storyboard, assets, prompts, generation, editing, review and logging. MiniMax H3 is the main video model; you connect the video and image APIs yourself, and the repo holds no keys or generated output. Before submitting it shows the prompt, parameters, pricing basis and estimated cost, and afterwards it records the task ID, cost, file hash and review status."
+
+["Weeexiao/skills"]
+zh = "11 个 skill 按剧本、分镜、资产、成片、工程五类存放，每个目录有 SKILL.md 和说明 README。剧本类有系列短剧选题（机制台账防撞车、时长和台词台账）、第一人称 POV 爽剧（输出 Toonflow 短剧模板格式）和「离谱人数」荒诞短片；分镜类把剧本转成 MiniMax H3 Ref2VA 六段式提示词。场景资产按正视、反向、45° 斜俯、90° 俯视四个视角链式出图，复杂走位可先用 Blender 白模预演。"
+en = "Eleven skills are filed under five folders (scripts, storyboard, assets, production, tooling), each with a SKILL.md and a README. Script skills cover topic picking for a series (a mechanism ledger to avoid repeats, plus duration and dialogue ledgers), first-person POV payoff dramas (output in the Toonflow template format) and absurd \"crazy crowd size\" shorts; the storyboard skills turn a script into MiniMax H3 Ref2VA six-part prompts. Scene assets are generated as a chain of four views (front, reverse, 45° high angle, 90° top-down), and complex blocking can be checked first with a Blender whitebox previz."
+
+["Zeno-Zhu/VIDU-CLI-SKILL"]
+zh = "没有剧本时先写，默认按「无限轮回宇宙」设定出世界篇、全剧大纲和逐集台词的 Word，大纲和剧本各有脚本硬校验（17 道、12 道门）。资产分人物、场景、道具三类出设定板，整张板作出片参考图上传，编号由脚本按绑定表算好，避免人和图错位。平台单次最多 16 秒，一条任务装 4–8 个分镜，优先凑满 12–16 秒；默认闲时通道不扣积分，用自己的样音要走付费模式。"
+en = "If there is no script it writes one first, defaulting to an \"infinite reincarnation universe\" setup, and delivers the world bible, series outline and per-episode dialogue as a Word file, with hard script checks on the outline (17 gates) and the script (12 gates). Assets are character, scene and prop boards, each uploaded whole as the generation reference, and reference numbers are computed by script from a binding table so faces don't get swapped. The platform caps a run at 16 seconds, so each task packs 4–8 shots, ideally filling 12–16 seconds; the default off-peak mode costs no credits, while cloning your own voice sample needs the paid mode."
+
+["weibo-job/guagua-animation-skills"]
+zh = "默认是双主角反差、视觉喜剧、约 70 秒、9:16 竖屏、结尾留悬念，角色和主题可以换成自己的。总调度依次调用角色、编剧、喜剧分镜、场景、动画提示词、音效和剪辑技能，支持单集制作和失败续跑。9 个文件夹装进 Codex 技能目录后，可以先跑不产生媒体费用的文字试用；仓库不带模型、API 密钥和成片。"
+en = "The default is a two-lead contrast visual comedy, about 70 seconds, vertical 9:16, ending on a cliffhanger; you can swap in your own characters and theme. The orchestrator calls the character, writing, comedy storyboard, scene, animation prompt, sound and editing skills in turn, and supports single episodes and resuming after failures. After installing the 9 folders into Codex's skills directory you can start with a text-only trial that incurs no media cost; the repo ships no models, API keys or finished videos."
+
+["liangie7420/Master-director"]
+zh = "用 scripts/manage_skill.py install --host codex、claude 或 workbuddy 装到对应助手。在新会话调用 manju-director，给出故事、已有素材、画风、时长和目标模型版本，agent 先恢复或初始化项目循环，再按「目标与状态 → 行动 → 结果 → 观察 → 反思」推进。目标模型是 Seedance、可灵和海螺。"
+en = "Install with scripts/manage_skill.py install --host codex, claude or workbuddy. In a new session call manju-director with the story, existing assets, art style, duration and target model version; the agent first restores or initialises the project loop, then advances through goal and state, action, result, observation and reflection. Target models are Seedance, Kling and Hailuo."
+
+["wwaa34682-lab/novel-to-short-drama-skill"]
+zh = "一份编排 SKILL.md 加每一步的模板和检查清单。改编时情节锁优先，事件、时间线、动机和结局零偏差，另起验收官按 100 分制打分，95 分以上且无硬否决才算通过。每个 Clip 约 15 秒、至少 6 镜，人物出白底四视图；图生视频要用户明确放行才生成。文中以 LibTV 画布加 Seedance 2.0 为例，换别的画布或接口也能用。"
+en = "One orchestrating SKILL.md plus templates and checklists for each step. Adaptation puts the plot lock first, with zero drift in events, timeline, motives and ending, and a separate reviewer scores it out of 100: it passes only at 95+ with no hard veto. Each clip runs about 15 seconds with at least 6 shots, characters get a four-view sheet on white, and image-to-video runs only after the user explicitly approves. Examples use the LibTV canvas with Seedance 2.0, but any canvas or API works."
+
+["sanxsnr/ai-short-drama-from-zero"]
+zh = "开场让你选起点：只有灵感、已有小说或剧本、做到一半卡住，信息够时 skill 会自己判断。每轮只推进一个关卡，覆盖剧本、分镜、角色场景提示词、图片、Seedance 2.0 视频、声音剪辑和成片，也能根据失败截图和视频诊断返工。"
+en = "It starts by asking where you are: just an idea, an existing novel or script, or stuck halfway; with enough information it works this out itself. Each round advances one gate, covering script, storyboard, character and scene prompts, images, Seedance 2.0 video, sound, editing and the final cut, and it can diagnose rework from failure screenshots and videos."
+
+["ADC1920/AI-Short-Drama-Studio"]
+zh = "一个项目一个目录，十段是概念、角色、世界观、分场、剧本融合、资产、表演、分镜提示词、出片、后期发布，每段有最小输入、唯一产物和门禁；上游改动只把下游标为过期，不自动重写。28 个机检脚本覆盖剧本、分镜、引用、接缝、成本和改稿影响面。人物和场景用 @素材名 绑定参考图，每镜先出关键帧再生视频。"
+en = "One folder per project; the ten stages are concept, characters, world, scene breakdown, script merge, assets, performance, storyboard prompts, generation and post/release, each with a minimum input, a single output and a gate. Upstream changes only mark downstream work as stale rather than rewriting it. 28 check scripts cover the script, storyboard, references, seams, cost and the blast radius of revisions. Characters and scenes are bound to reference images by @asset name, and every shot gets a keyframe before video."
+
+["mariozhaofan-pixel/screenplay-generator-skill"]
+zh = "调用名是 $viral-screenwriter；本地版直接在项目目录里写，飞书版可以把定稿同步到飞书多维表。剧本交 Markdown，每批最多 2 集，视频提示词交给另装的 director-seedance-prompt。包里有编剧书库转写、方法卡和模板，带 verify_portable.py、check_environment.py 自检。"
+en = "It is invoked as $viral-screenwriter; the local edition writes straight into your project folder, while the Feishu edition can sync final drafts to a Feishu Bitable. Scripts are delivered as Markdown, at most 2 episodes per batch, and video prompts are handed to a separately installed director-seedance-prompt skill. The package includes transcribed screenwriting books, method cards and templates, with verify_portable.py and check_environment.py self-checks."
+
+["lixiaoxiao9888-create/forest-laoli-h3"]
+zh = "把 SKILL.md 和 references/ 放进 agent 技能目录即可调用，不绑定渲染平台，只交平台无关的纯文本提示稿和投喂包。规则针对 H3 的脾气：否定词和镜头术语会被画成画面，所以做五遍词根清洗；抽象情绪要落成眉、眼、口、颌的可见动作，附 30 种短剧情绪配方。机检规则 H1–H36，推荐 9:16，16:9 也可用。"
+en = "Drop SKILL.md and references/ into the agent's skills directory to use it; it is not tied to any rendering platform and delivers platform-neutral plain-text prompts and feed packs. The rules target H3's quirks: negations and camera jargon get rendered literally, so prompts go through five rounds of word-root cleaning, and abstract emotions must become visible brow, eye, mouth and jaw actions, with 30 short-drama emotion recipes. Machine checks run H1 to H36; 9:16 is recommended and 16:9 also works."
+
+["dennisonbertram/emulsion"]
+zh = "用 npx skills add 安装，对 Claude Code 说「给我分镜一场追逐戏」，它会启动本地桥接服务（python3 server.py，端口 8741）并在浏览器打开小程序。你和 agent 都能改场景，最后导出动作和机位参考视频交给视频模型。作者说明没有自动化测试，README 末尾的路线图功能还没做。"
+en = "Install with npx skills add, then ask Claude Code something like \"storyboard a chase scene for me\"; it starts a local bridge (python3 server.py on port 8741) and opens the app in your browser. Both you and the agent can edit the scene, and you export a motion and camera reference clip for the video model. The author notes there is no automated test suite and the roadmap features at the end of the README are not built."
+
+["EVZheng-Lab/ad-asset-bible"]
+zh = "产出是给 Higgsfield 官方图像提示词 skill Lira 的上游输入：一个剧本有几处地方、几个人几套衣服、几件跨场景道具，每份要几个变体。特效只收会重复出现、要保持一致的，拆成给图片模型的静态描述和给视频模型的动态描述。结果在网页上分 Tab 展示，各段可以单独复制。"
+en = "Its output is the upstream input for Lira, Higgsfield's official image-prompt skill: how many locations, how many people and outfits, how many props recur across scenes, and how many variants each needs. Only recurring effects that must stay consistent are logged, split into a static description for image models and a motion description for video models. Results show in a tabbed web page, with each block copyable on its own."
+
+["ouxxyy/storyboard-scavenger"]
+zh = "先建立环境和角色锚点，再按风格、影调、景别、构图、运镜等七要素逐镜头写提示词，models/ 目录按平台各有一份工作流。主要交付分镜和提示词，生成平台的费用和效果要自己确认。仓库带 .claude-plugin，可以作为 Claude Code 插件安装。"
+en = "It first sets environment and character anchors, then writes each shot's prompt from seven elements including style, tone, shot size, composition and camera move; models/ holds a workflow per platform. It mainly delivers storyboards and prompts, and you check generation cost and results on the platform yourself. The repo ships a .claude-plugin manifest, so it installs as a Claude Code plugin."
+
+["Mcz070321/katil-skill"]
+zh = "入口是 SKILL.md，不预设题材，动作、恐怖、爱情、广告、动画都走同一套决策流程；默认交平台无关的提示词，明确指定 Seedance 2.5 时才加载对应适配。每条结论标证据等级 EV0–EV3，结构检查通过不等于成片变好。特效层分 15 类、六层调度，按复杂度分三档预算。"
+en = "The entry point is SKILL.md; it presets no genre, so action, horror, romance, ads and animation all go through the same decision flow, and it delivers platform-neutral prompts unless you explicitly pick Seedance 2.5, which loads a matching adapter. Every conclusion carries an evidence grade from EV0 to EV3, so passing a structure check is never reported as a better video. The effects layer has 15 classes, six scheduling layers and three budget tiers by complexity."
+
+["lbh1761745734-ui/mr-li-seedance-25"]
+zh = "按传统剧组分工：创作者是导演，AI 是守规矩的副导演和场记，剧本一个字不改，按演员真实表演时长切段，每段带齐自己的素材。它会在生成平台上把节点建好，但按生成键的是创作者本人；配乐、字幕和包装留给后期。安装与自检要 Python 3.9+。"
+en = "It works like a traditional film crew: the creator directs, the AI acts as a disciplined assistant director and script supervisor, the script is never altered, segments are cut by the actors' real performance time, and each segment carries all its own assets. It builds the nodes on the generation platform, but the creator presses generate; music, subtitles and packaging are left for post. Installing and self-checking need Python 3.9+."
+
+["10291124jcjc-dotcom/ai-anime-series"]
+zh = "示例是 30 秒无台词的《汤圆和油条》，即梦 Seedance 2.5 一次生成。装进 Claude Code 后说「出一集…」，它写 15 秒、30 秒或 1 分钟的剧本，拼角色设定图、宫格故事板和视频提示词，出场角色几个就排几个参考图编号，时长多长宫格就几格。用户在即梦画布里出图出视频，附脚本拼宫格、抽帧检查、两段拼接、替换某段和拼合集。"
+en = "The sample is a 30-second dialogue-free episode, \"Tangyuan and Youtiao\", generated in one pass with Seedance 2.5. In Claude Code you say \"make an episode about…\" and it writes a 15-second, 30-second or 1-minute script and assembles the character sheet, grid storyboard and video prompt, numbering one reference per character on screen and sizing the grid to the duration. You generate images and video in the Jimeng canvas; scripts are included to build grids, check frames, join two segments, replace one and compile a collection."
+
+["Dogwind221/DWcinematic-whitebox"]
+zh = "按剧情从 15 位导演的手法里挑，运镜写成推、拉、横移、升降、环绕等显式字段，再解算成相机路径并自检位移。交付 .blend 文件、英雄机位图、白模预演视频以及分镜和 QA 记录。它是给 AI 编程代理读的 SKILL.md，不是 Blender 插件。"
+en = "It picks techniques from 15 directors to suit the story, writes camera moves as explicit fields (push, pull, truck, crane, orbit and so on), then solves them into camera paths and checks the motion. It delivers a .blend file, hero frames, a whitebox previz video, and storyboard and QA notes. It is a SKILL.md for AI coding agents to read, not a Blender add-on."
+
+["Work-Fisher/fisher-storylens"]
+zh = "围绕 Z-Image → Qwen-Image 2.1 → MiniMax H3 搭本地短剧链路，偏韩剧式悬疑、复仇和人物对峙。每段 15 秒、固定 3–4 个镜头、每镜 1–2 个机位，保持原剧本的事件和台词。另有 RunningHub 云端工作流，README 里的链接带邀请码。"
+en = "It builds a local short-drama chain around Z-Image → Qwen-Image 2.1 → MiniMax H3, aimed at Korean-drama-style suspense, revenge and confrontations. Each segment is 15 seconds with 3–4 fixed shots and 1–2 camera setups per shot, keeping the script's events and dialogue. There are also RunningHub cloud workflows; the README links carry invite codes."
+
+["svenkatreddy/universal-video-skills"]
+zh = "9 个 skill：提示词写一次，再用每个模型的适配表翻译给 Muse、Veo、Sora、可灵、Runway、Pika、Luma 或海螺。另有一个在 Google Flow 网页上跑 Veo 的端到端流程。任何读 Agent Skills 格式的客户端都能用。"
+en = "Nine skills: you write the prompt once, then translate it with a per-model adapter sheet for Muse, Veo, Sora, Kling, Runway, Pika, Luma or Hailuo. One skill is an end-to-end workflow for running Veo in Google Flow's web app. It works in any client that reads the Agent Skills format."
+
+["glitterpixely/skills"]
+zh = "从创意 brief 到可直接粘贴的视频或音乐提示词，每个 skill 附确定性校验脚本。seedance-25 覆盖多镜头和长视频、最多 50 个 @ 参考、编辑与延长；h3-prompt-writing 覆盖 MiniMax H3 的五种输入模式。另有 Blender 和 three.js 渲染 skill，生成在各平台用自己的账号完成。"
+en = "It goes from a creative brief to a paste-ready video or music prompt, and each skill ships deterministic validators. seedance-25 covers multi-shot and long video, up to 50 @ references, editing and extension; h3-prompt-writing covers MiniMax H3's five input modes. There are also Blender and three.js rendering skills; generation happens on each platform with your own account."
+
+["JuneYaooo/rea-toon"]
+zh = "对 Claude Code 或 Codex 说安装仓库并拆某部剧，agent 会装好命令行工具、照 SKILL.md 跑完；需要 ffmpeg、Python 3.10+，以及能看图的 agent 或兼容 OpenAI 接口的视觉模型。每个判断都附镜号、秒数、台词或截图作证据，整部剧另出人物弧光、伏笔、集间钩子和付费卡点的跨集拆解。产出一个 index.html（分析、剧本、分镜三种视图），另写一份 VIDEO.md 供 agent 之后追问。"
+en = "Tell Claude Code or Codex to install the repo and break down a drama, and the agent installs the CLI and runs the SKILL.md workflow to the end; it needs ffmpeg, Python 3.10+, and either an agent that can see images or an OpenAI-compatible vision model. Every judgement cites shot numbers, timestamps, lines or screenshots as evidence, and a whole series also gets a cross-episode breakdown of character arcs, foreshadowing, episode hooks and paywall points. Output is an index.html with study, script and shot-script views, plus a VIDEO.md for follow-up questions to an agent."
+
+["reelbenchai/reelscript"]
+zh = "装到 Codex 时把 tools/reeldown 整个文件夹复制进技能目录。目录和批量下载脚本只用 Python 标准库，下载和校验要 ffmpeg、ffprobe；抖音网页采集要能在页面里执行 JavaScript 的浏览器工具。整剧下载要明确要求，按目录串行下载并记断点；拿不到的红果互动数据写 null，不填造数字。"
+en = "For Codex, copy the whole tools/reeldown folder into the skills directory. The listing and batch-download scripts use only the Python standard library; downloading and verifying need ffmpeg and ffprobe, and Douyin web collection needs a browser tool that can run JavaScript in the page. A whole-series download happens only when explicitly asked, serially with resumable checkpoints; Hongguo engagement data it cannot get is written as null rather than made up."

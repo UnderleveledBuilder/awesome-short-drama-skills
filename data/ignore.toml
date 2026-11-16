@@ -421,3 +421,241 @@ reason = "漫剧 App：README 现为 Vite 模板加赞助广告，没写用途�
 [[ignored]]
 repo   = "NarratorAI-Studio/narrator-ai-cli-skill"
 reason = "电影/短剧解说视频，不是短剧创作；本体是自家付费解说 API 的调用说明，Key 需联系索取"
+
+# 11-16 候选 issue
+
+[[ignored]]
+repo   = "xuliang2024/minitv"
+reason = "短剧分发平台（CMS + H5 + App），管发行不管创作"
+
+[[ignored]]
+repo   = "iart-ai/explainer-video-skills"
+reason = "讲解视频（产品讲解、年度回顾），不是短剧"
+
+[[ignored]]
+repo   = "hyhy111/game-assets-maker"
+reason = "把视频转成游戏动画帧的工具，不是短剧"
+
+[[ignored]]
+repo   = "mileson/chaojifeng-video-content-creator"
+reason = "中文口播视频制作（口播清理、字幕、动效），不是短剧"
+
+[[ignored]]
+repo   = "howoneai/xiaolin-explainer-packaging"
+reason = "讲解视频包装，不是短剧"
+
+[[ignored]]
+repo   = "hyyyyyyz/dramai"
+reason = "完整应用，未到平台收录门槛（≥1k★）"
+
+[[ignored]]
+repo   = "vargHQ/skills"
+reason = "通用 AI 视频合集，主打 UGC 广告、产品和音乐视频"
+
+[[ignored]]
+repo   = "SallyRS/video-director"
+reason = "动效短视频（设计稿到渲染），不是短剧"
+
+[[ignored]]
+repo   = "PineComputer/pine-drama-studio"
+reason = "完整应用（桌面工作室），未到平台收录门槛（≥1k★）"
+
+[[ignored]]
+repo   = "Shenchangxin/yoyo"
+reason = "通用本地 agent 工作台，不是短剧"
+
+[[ignored]]
+repo   = "niobium617/prompt-reverse-engineer-skill"
+reason = "通用多模态提示词逆向，不针对短剧"
+
+[[ignored]]
+repo   = "HengryLiang/dsh-plugin-ai-drama"
+reason = "完整应用（DSH 插件），未到平台门槛（≥1k★）；随包技能要调用插件自己的 drama_* 工具"
+
+[[ignored]]
+repo   = "beatra-ai/ai-storyboard-generator-skill"
+reason = "Beatra 付费出图服务的调用 skill，分镜只出几张关键帧，也面向广告"
+
+[[ignored]]
+repo   = "beatra-ai/viral-video-remake-skill"
+reason = "Beatra 付费生成服务的调用 skill，翻拍爆款短视频，不是短剧"
+
+[[ignored]]
+repo   = "beatra-ai/ai-video-generator-skill"
+reason = "Beatra 付费生成服务的调用 skill，通用视频生成"
+
+[[ignored]]
+repo   = "beatra-ai/ai-media-generator-skill"
+reason = "Beatra 付费生成服务的调用 skill，通用图片、视频、音乐生成"
+
+[[ignored]]
+repo   = "beatra-ai/talking-avatar-video-skill"
+reason = "Beatra 付费生成服务的调用 skill，数字人口播"
+
+[[ignored]]
+repo   = "shiroonigami23-ui/Dungeon-king"
+reason = "Unity 游戏，不是短剧"
+
+[[ignored]]
+repo   = "lihaifeng01/huobao-drama"
+reason = "已收录的 chatfire-AI/huobao-drama 的复制版，加了 API 中转站推广"
+
+[[ignored]]
+repo   = "Lxcardoza993/lynx-awesome-video-prompts"
+reason = "AI 视频提示词仓库清单，资源清单不是 skill"
+
+[[ignored]]
+repo   = "DU8866-nice/awesome-ai-drama"
+reason = "AI 短剧开源工具清单，资源清单不是 skill"
+
+[[ignored]]
+repo   = "teen-boop/AiProductionPipeline"
+reason = "通用 AI 影视与广告制作合集，广告、宣传片占大头，不针对短剧"
+
+[[ignored]]
+repo   = "rogerwu188/qingshan-short-drama-production-line"
+reason = "完整应用（Python 引擎加发行），未到平台收录门槛（≥1k★）"
+
+[[ignored]]
+repo   = "echoD886/dramacanvas-ai-filmmaking-mcp"
+reason = "DramaCanvas 付费 SaaS 的 MCP 接入说明，没有 skill"
+
+[[ignored]]
+repo   = "konka0812/narrated-explainer-video"
+reason = "口播科普动画，不是短剧"
+
+[[ignored]]
+repo   = "suiyang-meta/sui-motion-graphic-reel"
+reason = "动效 Reel，不是短剧"
+
+[[ignored]]
+repo   = "mattvideoproductions/MVP-Prompts"
+reason = "YouTube 频道的通用 AI 图像视频提示词，不针对短剧"
+
+[[ignored]]
+repo   = "Yf040528/video-recreation-skill"
+reason = "电商爆款视频二创，不是短剧"
+
+[[ignored]]
+repo   = "ymh3753201/ai-commerce-video"
+reason = "电商产品视频，不是短剧"
+
+[[ignored]]
+repo   = "pengzhan00/story-agent-system"
+reason = "完整应用（本地 Ollama 多 agent 系统），未到平台收录门槛（≥1k★）"
+
+[[ignored]]
+repo   = "BRPLia/dramas-reales-skill"
+reason = "西班牙语、公式写死的真人道德小短剧，靠操作 Google Flow 网页出片"
+
+[[ignored]]
+repo   = "mileson/chaojifeng-video-design"
+reason = "产品宣传、音乐视频的视频设计方法，不是短剧"
+
+[[ignored]]
+repo   = "sonlovinbot-team/Muse-animated-short-film"
+reason = "越南语动画短片流程，绑定 Muse AI 平台 CLI（原 sonlovinbot/Muse-animated-short-film）"
+
+[[ignored]]
+repo   = "charliewwdev/OpenMontage"
+reason = "完整应用（自部署网页工作室），未到平台收录门槛（≥1k★）"
+
+[[ignored]]
+repo   = "10291124jcjc-dotcom/ai-fable-series"
+reason = "动物寓言科普栏目：拆穿生活习惯和广告套路，剧情只是讲知识的外壳"
+
+[[ignored]]
+repo   = "10291124jcjc-dotcom/ai-science-series"
+reason = "科普解说栏目，剧情只是讲知识的外壳"
+
+[[ignored]]
+repo   = "10291124jcjc-dotcom/cleopatra-modern-life"
+reason = "写死埃及艳后一个人物的搞笑栏目，换个题材就用不上"
+
+[[ignored]]
+repo   = "hubooooooo/shortfilm-agent"
+reason = "AIGC 生产应用底座，主打电商广告、文旅等多行业，未到平台门槛（≥1k★）"
+
+[[ignored]]
+repo   = "miles990/video-gif-studio"
+reason = "动画 GIF 和游戏精灵图，不是短剧"
+
+[[ignored]]
+repo   = "lizeping-hub/frameharbor-studio"
+reason = "电商素材和短剧的静态展示页加本地应用，未到平台门槛（≥1k★）"
+
+[[ignored]]
+repo   = "yubowen123/AIYOU_open-ai-video-drama-generator"
+reason = "完整应用，未到平台收录门槛（≥1k★）"
+
+[[ignored]]
+repo   = "Agions/kineo"
+reason = "完整应用，未到平台收录门槛（≥1k★）"
+
+[[ignored]]
+repo   = "junjamrk/OpenCinema"
+reason = "仓库已删除或改为私有（11-16 打开是 404）"
+
+[[ignored]]
+repo   = "Akillll-DuoHe/fy-code-animation"
+reason = "文案转代码动画（Remotion/Canvas），不是短剧"
+
+[[ignored]]
+repo   = "JayceHuang/jayce-recast-video-dgx"
+reason = "在已有视频里换人，不是短剧创作"
+
+[[ignored]]
+repo   = "ouxxyy/ouba-classmate"
+reason = "求职工具合集，不是短剧"
+
+[[ignored]]
+repo   = "hugohung/jd-ai-short-drama-libtv"
+reason = "只是把京东剧本助手的产出搬进 LibTV 画布的自动化，绑定这两个平台"
+
+[[ignored]]
+repo   = "TakeOff-Team/claude-shortform-video-editor"
+reason = "口播视频剪辑"
+
+[[ignored]]
+repo   = "obie/slopcore"
+reason = "AI 音乐 MV"
+
+[[ignored]]
+repo   = "mickyyang-1407/diy-audiobook"
+reason = "有声书和广播剧，不是短剧"
+
+[[ignored]]
+repo   = "kaomei/hand-drawn-video-prompts"
+reason = "口播文案转手绘解说短视频（财经、科普），不是短剧"
+
+[[ignored]]
+repo   = "VanGong1999/juben"
+reason = "完整应用，未到平台收录门槛（≥1k★）；随包 skill 是应用内的规则卡"
+
+[[ignored]]
+repo   = "charlesdove977/UGC-Factory"
+reason = "UGC 视频广告"
+
+[[ignored]]
+repo   = "VanGong1999/skills"
+reason = "剧本资料库（PDF 剧本和拉片笔记），不是 skill"
+
+[[ignored]]
+repo   = "Win-Hao/music-mv"
+reason = "代码画的音乐 MV，不是短剧"
+
+[[ignored]]
+repo   = "imMamdouhaboammar/designly"
+reason = "商业美术指导与设计，主打广告"
+
+[[ignored]]
+repo   = "crawfordxx/xiaoma-director"
+reason = "已归档，并入通用设计合集 xiaoma-design-master"
+
+[[ignored]]
+repo   = "AML1969/Paspartu"
+reason = "Hermes 助手的 Docker 部署，不是短剧"
+
+[[ignored]]
+repo   = "xianyu110/awesome-seedance-2.5"
+reason = "汇总已收录的 AtlasCloudAI、LearnPrompt 等提示词库；12 个 skill 是单个案例模板"
