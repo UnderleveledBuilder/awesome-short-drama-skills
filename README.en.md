@@ -12,6 +12,8 @@ Most projects come from China's short-drama scene (Hongguo, Douyin and others), 
 
 115 skill projects + 16 related open-source platforms · metadata updated 2026-11-16
 
+✍️ **Write a script without installing anything**: [dramawriter](https://write.shortdramaskills.com) is a site made by this list's maintainer. You write one sentence; three skills from "Which skill to install for scripts" below (zenstory, Shanyin and jtydhr88) each write a pitch, and you pick one blind, then see who wrote it. The pitches, the full skeleton, the characters and outline episodes 1–5 are free; after that you pay with credits. It has no effect on what gets listed or how it ranks.
+
 ## Which skill to install for scripts
 
 Round 1 (2026-10-18): 10 screenwriting skills and a control with no skill installed each wrote the same open brief 3 times, judged blind by two AI reviewers (Opus and GPT). The reviewers judge as if AI will make the whole drama, so effects, crowd scenes and many locations cost no points. Both reviewers found that these 4 beat the control in all 3 runs, on both the scripts and the character bible and outline:

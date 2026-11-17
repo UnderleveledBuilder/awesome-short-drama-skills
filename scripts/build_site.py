@@ -403,6 +403,8 @@ class Site:
 <p class="sub">{L(lang, f'每个项目都人工核对过仓库说明和分类；看过但没收的项目有 {len(d.ignored)} 个，都写了原因。数据更新于 {d.updated}。',
     f'Every entry was checked by hand against its README; {len(d.ignored)} more projects were reviewed and declined, each with a reason. Data updated {d.updated}.')}</p>
 <div class="note"><p>{L(lang, '「人工核对」不等于实测过效果。安装前请先读一遍 skill 的 SKILL.md，带脚本的 skill 会在你的电脑上执行代码。', '"Checked" does not mean tested. Read a skill\'s SKILL.md before installing; skills that ship scripts run code on your machine.')} <a href="{url(lang, '/guides/install/')}">{L(lang, '怎么安装 →', 'How to install →')}</a></p></div>
+<div class="note"><p>{L(lang, '✍️ 不想自己装，直接写剧本：<a href="https://write.shortdramaskills.com">dramawriter</a> 是本站做的网站。你写一句话，第一轮实测胜出的 zenstory、山音、jtydhr88 三个 skill 各写一份方案，你盲选，选完才揭晓是谁写的。方案、全剧骨架、人物和分集大纲前 5 集免费，往后按积分付费。它不影响收录和排名。',
+    '✍️ Write a script without installing anything: <a href="https://write.shortdramaskills.com">dramawriter</a> is a site made by the people behind this one. You write one sentence; zenstory, Shanyin and jtydhr88, three winners of our first test round, each write a pitch, and you pick one blind, then see who wrote it. The pitches, the full skeleton, the characters and outline episodes 1–5 are free; after that you pay with credits. It has no effect on what gets listed or how it ranks.')}</p></div>
 
 <h2 id="by-stage">{L(lang, '按创作阶段找', 'By production stage')}</h2>
 {self.tiles(lang, stages)}
