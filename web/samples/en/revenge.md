@@ -3,6 +3,7 @@ title: I Walked Out on His Wedding Day
 genre: Revenge
 idea: Framed for her sister's death by her own husband, she serves five years in prison and walks out on the day he marries the woman who really did it.
 skill: zenstory-ai/drama-skills
+model: DeepSeek V4.1 Flash (the default model)
 episodes: 10 of 60
 written: 2026-11-18
 order: 2
