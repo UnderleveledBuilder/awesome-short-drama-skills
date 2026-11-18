@@ -1573,3 +1573,27 @@ lang    = "multi"
 note    = "附带的剧本 skill 由平台内部按固定版本调用，写明参考并重写自 zenstory-ai/drama-skills"
 note_en = "Its bundled screenplay skills are called internally by the platform at pinned versions and state that they are reimplemented from zenstory-ai/drama-skills"
 checked = 2026-10-18
+
+[[skills]]
+repo    = "klingai-tech/claude-plugin-cn"
+desc    = "可灵官方 Claude 插件（国内版）：3 个 skill 接可灵托管的 MCP，写提示词和分镜、文生图、图生视频、多镜头规划；OAuth 登录，按积分扣费"
+desc_en = "Kling's official Claude plugin (China edition): three skills on Kling's hosted MCP for video prompts and storyboards, text-to-image, image-to-video, keyframes and multi-shot planning. Sign in to a Kling China account with OAuth; generation spends credits."
+group   = "visual"
+stages  = ["prompt", "production"]
+format  = "skill"
+lang    = "en"
+models  = ["kling"]
+agents  = ["claude-code", "gemini-cli"]
+checked = 2026-11-18
+
+[[skills]]
+repo    = "klingai-tech/claude-plugin"
+desc    = "可灵官方 Claude 插件（海外版）：和国内版同样 3 个 skill，接 kling.ai，账号和积分与国内版分开"
+desc_en = "Kling's official Claude plugin (global edition): the same three skills as the China edition, on kling.ai's hosted MCP. Accounts and credits are separate from the China edition; sign in with OAuth, and generation spends credits."
+group   = "visual"
+stages  = ["prompt", "production"]
+format  = "skill"
+lang    = "en"
+models  = ["kling"]
+agents  = ["claude-code", "codex", "gemini-cli"]
+checked = 2026-11-18

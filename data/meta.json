@@ -914,6 +914,32 @@
       "stars": 37,
       "status": "ok"
     },
+    "klingai-tech/claude-plugin": {
+      "archived": false,
+      "description": "",
+      "first_seen": "2026-11-18",
+      "forks": 2,
+      "full_name": "klingai-tech/claude-plugin",
+      "license": null,
+      "pushed_at": "2026-11-18",
+      "skill_count": 3,
+      "skill_count_truncated": false,
+      "stars": 3,
+      "status": "ok"
+    },
+    "klingai-tech/claude-plugin-cn": {
+      "archived": false,
+      "description": "",
+      "first_seen": "2026-11-18",
+      "forks": 1,
+      "full_name": "klingai-tech/claude-plugin-cn",
+      "license": null,
+      "pushed_at": "2026-11-18",
+      "skill_count": 3,
+      "skill_count_truncated": false,
+      "stars": 0,
+      "status": "ok"
+    },
     "lbh1761745734-ui/mr-li-seedance-25": {
       "archived": false,
       "description": "李先生AI影视全流程Skill：把传统剧组的规矩交给 AI（CC BY-NC 4.0）",
