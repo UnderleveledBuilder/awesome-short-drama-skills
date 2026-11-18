@@ -72,7 +72,8 @@ WRITE_GROUPS = {"writing", "craft"}  # 编剧、编剧基本功：这两类里�
 WRITE_MAX = 2000  # 那边输入框的字数上限
 
 # 英文样稿：web/samples/en/<slug>.md，dramawriter 写的剧，只放开头几集剧本，原样不改。文件开头 <!-- --> 里是
-# title、genre、idea（那一句话）、skill（owner/repo）、episodes（"10 of 60"）、written、order；下面是剧本原文。
+# title、genre、idea（那一句话）、skill（owner/repo）、model（写它的模型，可不写）、episodes（"3 of 60"）、written、order；
+# 下面是剧本原文。
 # 换稿就是换文件，网址 /en/samples/<slug>/ 跟着文件名走，不跟剧名。只出英文页。
 SAMPLES = WEB / "samples" / "en"
 
@@ -118,24 +119,30 @@ def inline_md(text: str) -> str:
     return re.sub(r"(?<![\w*])\*(?=\S)(.+?)(?<=\S)\*(?![\w*])", r"<em>\1</em>", text)
 
 
+# 单占一行的说话人：大写的名字，后面可以跟括号（V.O.、CONT'D）。INT./EXT. 是场景，不算。
+SPEAKER = re.compile(r"(?!(?:INT|EXT)\b)[A-Z][A-Z0-9 .'\-]{0,40}(?: \([^)]{1,30}\))?")
+
+
 def script_html(md: str) -> str:
     """样稿的剧本：# 是一集（页上的 h2，id 是 ep-N），## 是一场（h3），--- 是分隔线，其余按空行分段，段内换行照留。
-    第一行整行粗体（说话人）、下面还有行的段落是一段台词，排得往里缩一点。"""
+    一到三级标题写的是 "EP1" 或 "Episode 1" 的也是一集（有的编剧拿 ## 写集）。
+    第一行是说话人（整行粗体，或者单占一行的大写名字）、下面还有行的段落是一段台词，排得往里缩一点。"""
     out: list[str] = []
     para: list[str] = []
 
     def flush() -> None:
         if para:
-            line = len(para) > 1 and re.fullmatch(r"\*\*[^*]+\*\*", para[0])
+            line = len(para) > 1 and (re.fullmatch(r"\*\*[^*]+\*\*", para[0]) or SPEAKER.fullmatch(para[0]))
             out.append(('<p class="line">' if line else "<p>") + "<br>".join(inline_md(x) for x in para) + "</p>")
             para.clear()
 
     for raw in md.split("\n"):
         s = raw.strip()
         head = re.match(r"(#{1,6})\s+(.+)", s)
-        if head and len(head.group(1)) == 1:
+        episode = head and len(head.group(1)) <= 3 and re.match(r"(?:EP|Episode )0*(\d+)\b", head.group(2))
+        if head and (len(head.group(1)) == 1 or episode):
             flush()
-            n = re.match(r"EP0*(\d+)\b", head.group(2))
+            n = episode or re.match(r"EP0*(\d+)\b", head.group(2))
             out.append((f'<h2 id="ep-{n.group(1)}">' if n else "<h2>") + inline_md(head.group(2)) + "</h2>")
         elif head:
             flush()
@@ -568,7 +575,7 @@ class Site:
         box = self.write_box("en", "sds-en-home", "Try it with one sentence", "No sign-in needed, 3 a day.")
         cards = "".join(
             f'<li><a href="{url("en", "/samples/" + s["slug"] + "/")}">'
-            f'<span class="sample-meta">{e(s["genre"])} · {e(s["skill"])}</span>'
+            f'<span class="sample-meta">{e(s["genre"])} · {e(s["skill"])}{" · " + e(s["model"]) if s.get("model") else ""}</span>'
             f'<b>{e(s["title"])}</b>'
             f'<span class="sample-idea">“{e(s["idea"])}”</span>'
             f'<span class="sample-go">Read episodes 1–{s["shown"]} of {s["total"]} →</span></a></li>' for s in d.samples)
@@ -604,8 +611,11 @@ class Site:
         path = f"/samples/{s['slug']}/"
         listed = self.d.by_repo.get(s["skill"].lower())
         repo_link = f'<a href="https://github.com/{e(s["skill"])}">{e(s["skill"])}</a>'
+        model = s.get("model")
         facts = [("Started from", f"“{e(s['idea'])}”"), ("Genre", e(s["genre"])),
                  ("Episodes", f"1–{s['shown']} of {s['total']}"), ("Written", e(s["written"]))]
+        if model:
+            facts.insert(2, ("Model", e(model)))
         if listed:
             facts.append(("The skill in this list", f'<a href="{url("en", repo_path(listed))}">{e(display_name(listed))}</a>'))
         box = self.write_box(
@@ -613,13 +623,13 @@ class Site:
             f"{e(s['skill'])} and two other writers each pitch it; you pick blind, then see who wrote it. "
             "The pitches, the skeleton, the characters and outline episodes 1–5 are free.")
         body = (f'<article class="sample">{self.h1("en", s["title"], ours=False)}'
-                f'<p class="sample-stamp">First {s["shown"]} episodes. Written by AI with {repo_link}, on dramawriter. Unedited.</p>'
+                f'<p class="sample-stamp">First {s["shown"]} episodes. Written by AI with {repo_link}{" and " + e(model) if model else ""}, on dramawriter. Unedited.</p>'
                 f'<dl class="facts">{"".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in facts)}</dl>'
                 f'<div class="script">{script_html(s["script"])}</div>'
                 f'<p class="sample-end">That is the first {s["shown"]} of {s["total"]} episodes. The rest are not published here.</p>'
                 f'{box}</article>')
         desc = (f"The first {s['shown']} episodes of a {s['genre'].lower()} vertical short drama script, written by AI with the "
-                f"{s['skill']} skill from one sentence: “{s['idea']}” Unedited.")
+                f"{s['skill']} skill{' and ' + model if model else ''} from one sentence: “{s['idea']}” Unedited.")
         work = {"@context": "https://schema.org", "@type": "CreativeWork", "name": s["title"], "genre": s["genre"],
                 "inLanguage": "en", "dateCreated": s["written"], "description": desc, "url": abs_url("en", path),
                 "publisher": publisher()}
