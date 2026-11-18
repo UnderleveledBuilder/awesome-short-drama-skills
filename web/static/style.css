@@ -325,6 +325,41 @@ h1.display { font-size: var(--fs-display-m); font-stretch: var(--narrow); line-h
   .hero .write-box { margin-top: var(--s-6); min-height: 0; }
 }
 
+/* ---------- 英文首页：上半截是写剧本网站的落地页（样稿、收费、谁做的），下面接目录 ---------- */
+.landing .hero-intro .lead { font-size: var(--fs-18); }
+.landing-part { max-width: var(--page); }
+.landing-part > p { max-width: var(--reading); }
+.samples { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); gap: var(--s-4); padding: 0; margin: var(--s-4) 0; list-style: none; }
+.samples a {
+  display: flex; flex-direction: column; gap: var(--s-2); height: 100%; padding: var(--s-6);
+  border: 1px solid var(--line); border-radius: var(--r-surface); background: var(--paper); color: var(--ink); text-decoration: none;
+  transition: border-color var(--fast) var(--ease);
+}
+.samples a:hover { border-color: var(--line-strong); }
+.samples b { font-size: var(--fs-28); font-stretch: var(--narrow); font-weight: var(--medium); line-height: var(--lh-tight); }
+.sample-meta { font-size: var(--fs-13); color: var(--fog); overflow-wrap: anywhere; }
+.sample-idea { color: var(--slate); }
+.sample-go { margin-top: auto; padding-top: var(--s-2); font-size: var(--fs-14); font-weight: var(--medium); }
+.prices { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: var(--s-4); margin: var(--s-4) 0; max-width: var(--reading); }
+.price { padding: var(--s-6); border: 1px solid var(--line); border-radius: var(--r-surface); background: var(--paper); }
+.price p { margin: 0 0 var(--s-2); }
+.price .amount { font-size: var(--fs-display-s); font-stretch: var(--narrow); font-weight: var(--medium); line-height: 1; margin-bottom: var(--s-3); }
+.directory { margin-top: var(--s-16); padding-top: var(--s-8); border-top: 1px solid var(--line-strong); }
+.dir-title { margin: 0; font-size: var(--fs-display-m); font-stretch: var(--narrow); line-height: var(--lh-display); letter-spacing: var(--tracking-display); }
+
+/* ---------- 样稿页：剧本原文 ---------- */
+.sample-stamp { margin: 0 0 var(--s-6); padding: var(--s-3) var(--s-4); border-left: 2px solid var(--ink); border-radius: 0 var(--r-control) var(--r-control) 0; background: var(--hover); font-size: var(--fs-16); }
+.script { font-size: var(--fs-16); }
+.script h2 { margin: var(--s-12) 0 var(--s-4); padding-top: var(--s-6); border-top: 1px solid var(--line-strong); font-size: var(--fs-20); }
+.script h3 { margin: var(--s-6) 0 var(--s-3); font-size: var(--fs-14); color: var(--slate); }
+.script hr { display: none; } /* 原文里集与集之间的 ---：每集的标题已经有分隔线 */
+.script p.line { margin-left: var(--s-8); }
+.script em { font-style: normal; color: var(--slate); } /* 原文的斜体（舞台提示、括号里的语气）：本站不合成假斜体，用次要的字色 */
+.sample-end { margin-top: var(--s-12); font-size: var(--fs-14); color: var(--fog); }
+@media (max-width: 720px) {
+  .script p.line { margin-left: var(--s-4); }
+}
+
 /* ---------- 页脚 ---------- */
 .site-footer { border-top: 1px solid var(--line); font-size: var(--fs-13); color: var(--fog); }
 .site-footer .wrap { display: grid; gap: var(--s-3); padding-top: var(--s-6); padding-bottom: var(--s-8); }

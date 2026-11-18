@@ -71,6 +71,11 @@ WRITE_STAGES = ("character", "structure", "drafting")  # 人物、集纲、剧�
 WRITE_GROUPS = {"writing", "craft"}  # 编剧、编剧基本功：这两类里做上面几个阶段的 skill 页，底部放一条入口
 WRITE_MAX = 2000  # 那边输入框的字数上限
 
+# 英文样稿：web/samples/en/<slug>.md，dramawriter 写的剧，只放开头几集剧本，原样不改。文件开头 <!-- --> 里是
+# title、genre、idea（那一句话）、skill（owner/repo）、episodes（"10 of 60"）、written、order；下面是剧本原文。
+# 换稿就是换文件，网址 /en/samples/<slug>/ 跟着文件名走，不跟剧名。只出英文页。
+SAMPLES = WEB / "samples" / "en"
+
 # 中文大标题的字体：抖音美好体 Bold（SIL OFL 1.1）只留标题用到的字，改名 sds-zh-display（许可证保留了原名）。
 # 标题里出现子集外的字，生成时会提示；用 --fonts 重切。
 FONTS = WEB / "static" / "fonts"
@@ -97,6 +102,53 @@ CJK = re.compile(r"[\u3400-\u9fff]")
 
 ROUNDS = {"001-open-brief": ("第一轮", "round one", "round-1"), "002-topic": ("第二轮", "round two", "round-2"),
           "003-skeleton": ("第三轮", "round three", "round-3")}
+
+
+def read_sample(p) -> dict:
+    raw = p.read_text(encoding="utf-8")
+    m = re.match(r"<!--\s*\n(.*?)\n-->\s*\n", raw, re.S)
+    fields = {k.strip(): v.strip() for k, v in (line.split(":", 1) for line in m.group(1).splitlines() if ":" in line)}
+    shown, total = re.fullmatch(r"(\d+) of (\d+)", fields["episodes"]).groups()
+    return {**fields, "slug": p.stem, "shown": int(shown), "total": int(total), "script": raw[m.end():]}
+
+
+def inline_md(text: str) -> str:
+    """剧本里用到的两种行内标记：**粗体**、*斜体*。先转义再换。"""
+    text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", e(text))
+    return re.sub(r"(?<![\w*])\*(?=\S)(.+?)(?<=\S)\*(?![\w*])", r"<em>\1</em>", text)
+
+
+def script_html(md: str) -> str:
+    """样稿的剧本：# 是一集（页上的 h2，id 是 ep-N），## 是一场（h3），--- 是分隔线，其余按空行分段，段内换行照留。
+    第一行整行粗体（说话人）、下面还有行的段落是一段台词，排得往里缩一点。"""
+    out: list[str] = []
+    para: list[str] = []
+
+    def flush() -> None:
+        if para:
+            line = len(para) > 1 and re.fullmatch(r"\*\*[^*]+\*\*", para[0])
+            out.append(('<p class="line">' if line else "<p>") + "<br>".join(inline_md(x) for x in para) + "</p>")
+            para.clear()
+
+    for raw in md.split("\n"):
+        s = raw.strip()
+        head = re.match(r"(#{1,6})\s+(.+)", s)
+        if head and len(head.group(1)) == 1:
+            flush()
+            n = re.match(r"EP0*(\d+)\b", head.group(2))
+            out.append((f'<h2 id="ep-{n.group(1)}">' if n else "<h2>") + inline_md(head.group(2)) + "</h2>")
+        elif head:
+            flush()
+            out.append(f"<h3>{inline_md(head.group(2))}</h3>")
+        elif re.fullmatch(r"-{3,}", s):
+            flush()
+            out.append("<hr>")
+        elif not s:
+            flush()
+        else:
+            para.append(s)
+    flush()
+    return "\n".join(out)
 
 
 def duel_record(run_dir: Path, name: str = "duels.jsonl") -> dict[tuple[str, str], dict[str, list[int]]]:
@@ -153,6 +205,7 @@ class Data:
         tr_path = DATA / "translations.json"
         self.translations = json.loads(tr_path.read_text(encoding="utf-8")) if tr_path.exists() else {}
         self.untranslated: set[str] = set()
+        self.samples = sorted((read_sample(p) for p in SAMPLES.glob("*.md")), key=lambda x: int(x["order"]))
         # 参加过实测的项目：evals/runs/<轮次>/contestants.toml；有 duels.jsonl 的轮次再算出和对照组盲比的胜负
         self.evaluated: dict[str, list[str]] = {}
         self.duels: dict[tuple[str, str], dict[str, list[int]]] = {}
@@ -245,6 +298,7 @@ class Site:
         self.d = data
         self.pages: list[tuple[str, str]] = []  # (path, lastmod)，两种语言都有
         self.zh_pages: list[tuple[str, str]] = []  # 只有中文的页（实测记录）
+        self.en_pages: list[tuple[str, str]] = []  # 只有英文的页（样稿）
         self.css = asset("style.css")
         self.js = asset("write.js")
         self.display_chars: set[str] = set()  # 中文大标题用到的字
@@ -287,16 +341,19 @@ class Site:
 
     def page(self, lang: str, path: str, *, title: str, description: str, body: str, crumbs: list[tuple[str, str]],
              jsonld: list[dict] = (), lastmod: str | None = None, og_type: str = "website",
-             zh_only: bool = False, wide: bool = False) -> None:
+             zh_only: bool = False, en_only: bool = False, wide: bool = False) -> None:
         if lang == "zh":
             (self.zh_pages if zh_only else self.pages).append((path, lastmod or self.d.updated))
+        if en_only:
+            self.en_pages.append((path, lastmod or self.d.updated))
         other = "en" if lang == "zh" else "zh"
-        # 只有中文的页：不写英文对应页，语言切换去英文的实测页
+        # 只有中文的页：不写英文对应页，语言切换去英文的实测页；只有英文的页（样稿）：语言切换去中文首页
         alternates = (f'<link rel="alternate" hreflang="zh-CN" href="{abs_url("zh", path)}">' if zh_only else
+                      f'<link rel="alternate" hreflang="en" href="{abs_url("en", path)}">' if en_only else
                       f'<link rel="alternate" hreflang="zh-CN" href="{abs_url("zh", path)}">\n'
                       f'<link rel="alternate" hreflang="en" href="{abs_url("en", path)}">\n'
                       f'<link rel="alternate" hreflang="x-default" href="{abs_url("zh", path)}">')
-        switch = url(other, "/evals/" if zh_only else path)
+        switch = url(other, "/evals/" if zh_only else "/" if en_only else path)
         trail = [(L(lang, "首页", "Home"), "/"), *crumbs]
         crumb_ld = {
             "@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -447,25 +504,15 @@ class Site:
             f'<span>{e(tr(p, "goal", lang))}</span></a></li>' for i, p in enumerate(d.packs))
         stage_tags = "".join(f'<a class="chip" href="{url(lang, f"/stage/{k}/")}" title="{e(tr(st, "label", lang))}">{e(tr(st, "short", lang))}</a>'
                              for k, st in d.taxonomy["stages"].items() if d.in_stage(k))
-        box = self.write_box(
-            lang, "sds-home",
-            L(lang, "不想装？写一句话，三位编剧各写一份方案", "Rather not install? Write one sentence; three writers each write a pitch"),
-            L(lang, "第一轮实测胜出的 zenstory、山音、jtydhr88 三个 skill 各写一份，你盲选，选完才揭晓是谁写的。方案、全剧骨架、人物和分集大纲前 5 集免费，往后按积分付费。",
-              "zenstory, Shanyin and jtydhr88, three winners of our first test round, each write one; you pick blind, then see who wrote it. The pitches, the full skeleton, the characters and outline episodes 1–5 are free; after that you pay with credits."))
-        body = f"""
-<section class="hero">
-{self.h1(lang, L(lang, 'AI 短剧 · 漫剧 Skill 精选', 'AI Short Drama Skills'))}
-<div class="hero-intro">
+        intro = f"""<div class="hero-intro">
 <p class="lead">{L(lang,
     f'给千问、豆包、龙虾（OpenClaw）、WorkBuddy、Claude Code、Codex 等智能体用的短剧 skill（技能包）目录：从小说改编、分集剧本、钩子和付费卡点，到分镜、角色资产和 Seedance / 可灵 / MiniMax 视频提示词。收录 {n} 个 skill 项目和 {platforms} 个开源平台，按创作阶段和视频模型整理。',
     f'A curated directory of agent skills for AI short drama (micro drama, vertical drama) and AI manju, for Claude Code, Codex, OpenClaw and Chinese agents such as Qwen, Doubao and WorkBuddy: novel adaptation, episode scripts, hooks and paywall points, storyboards, character assets and prompts for Seedance, Kling and MiniMax. {n} skill projects and {platforms} open-source platforms, organized by production stage and video model.')}</p>
 <p class="sub">{L(lang, f'每个项目都人工核对过仓库说明和分类；看过但没收的项目有 {len(d.ignored)} 个，都写了原因。数据更新于 {d.updated}。',
     f'Every entry was checked by hand against its README; {len(d.ignored)} more projects were reviewed and declined, each with a reason. Data updated {d.updated}.')}</p>
 </div>
-<nav class="hero-stages" id="by-stage" aria-label="{L(lang, '按创作阶段找', 'By production stage')}"><span class="label">{L(lang, '按阶段找', 'By stage')}</span>{stage_tags}</nav>
-{box}
-</section>
-<div class="note"><p>{L(lang, '「人工核对」不等于实测过效果。安装前请先读一遍 skill 的 SKILL.md，带脚本的 skill 会在你的电脑上执行代码。', '"Checked" does not mean tested. Read a skill\'s SKILL.md before installing; skills that ship scripts run code on your machine.')} <a href="{url(lang, '/guides/install/')}">{L(lang, '怎么安装 →', 'How to install →')}</a></p></div>
+<nav class="hero-stages" id="by-stage" aria-label="{L(lang, '按创作阶段找', 'By production stage')}"><span class="label">{L(lang, '按阶段找', 'By stage')}</span>{stage_tags}</nav>"""
+        directory = f"""<div class="note"><p>{L(lang, '「人工核对」不等于实测过效果。安装前请先读一遍 skill 的 SKILL.md，带脚本的 skill 会在你的电脑上执行代码。', '"Checked" does not mean tested. Read a skill\'s SKILL.md before installing; skills that ship scripts run code on your machine.')} <a href="{url(lang, '/guides/install/')}">{L(lang, '怎么安装 →', 'How to install →')}</a></p></div>
 
 <h2 id="by-model">{L(lang, '按视频模型找', 'By video model')}</h2>
 {self.tiles(lang, model_rows)}
@@ -479,16 +526,106 @@ class Site:
 <h2 id="by-type">{L(lang, '按类型', 'By type')}</h2>
 {groups}
 """
+        if lang == "zh":
+            box = self.write_box(
+                lang, "sds-home", "不想装？写一句话，三位编剧各写一份方案",
+                "第一轮实测胜出的 zenstory、山音、jtydhr88 三个 skill 各写一份，你盲选，选完才揭晓是谁写的。方案、全剧骨架、人物和分集大纲前 5 集免费，往后按积分付费。")
+            body = f"""
+<section class="hero">
+{self.h1(lang, 'AI 短剧 · 漫剧 Skill 精选')}
+{intro}
+{box}
+</section>
+{directory}"""
+        else:
+            # 英文首页上半截是 dramawriter 的落地页，原来的目录整段接在下面，一样不少（原来的大标题降成 h2）
+            body = f"""{self.landing()}
+<section class="directory">
+<h2 class="dir-title" id="skills">AI Short Drama Skills</h2>
+{intro}
+</section>
+{directory}"""
         title = L(lang, f"AI 短剧 Skill 精选：{n} 个短剧、漫剧技能包（千问、豆包、龙虾、Claude Code 可用）",
-                  f"AI Short Drama Skills: {n} curated agent skills for micro drama and manju (Claude Code, Codex, OpenClaw, Qwen, Doubao)")
+                  f"AI Short Drama Skills: write a vertical short drama from one sentence, or browse {n} curated agent skills")
         desc = L(lang, f"收录 {n} 个 AI 短剧 / 漫剧 skill：小说改编、分集剧本、分镜、角色资产、Seedance / 可灵 / MiniMax 视频提示词，按创作阶段和视频模型整理，千问、豆包、龙虾、Claude Code 等智能体都能装，每周更新。",
-                 f"{n} curated agent skills for AI short drama and manju: adaptation, episode scripts, storyboards, character assets and Seedance / Kling / MiniMax prompts, organized by stage and video model, for Claude Code, Codex, OpenClaw and Chinese agents such as Qwen and Doubao, updated weekly.")
+                 f"Write one sentence and three AI writers built on skills from this list each pitch a vertical short drama; read unedited sample scripts. "
+                 f"Plus {n} curated agent skills for AI short drama and manju, organized by stage and video model, for Claude Code, Codex, OpenClaw, Qwen and Doubao, updated weekly.")
         website = {"@context": "https://schema.org", "@type": "WebSite", "name": "Awesome Short Drama Skills",
                    "alternateName": L(lang, "AI 短剧 Skill 精选", "AI Short Drama Skills"), "url": abs_url(lang, "/"),
                    "inLanguage": LANGS[lang]["hreflang"], "description": desc, "publisher": publisher(),
                    "sameAs": [REPO_URL]}
         self.page(lang, "/", title=title, description=desc, body=body, crumbs=[],
                   jsonld=[website, self.item_list(lang, L(lang, "精选", "Featured"), featured)])
+
+    def landing(self) -> str:
+        """英文首页的上半截：一句话的输入框、样稿、怎么收费、谁做的。
+        收费的话照抄 dramawriter 网站的英文文案（它的 app/copy/en.json：home.title、pricing.free.*、pricing.pack.*、
+        credits.packName、credits.packEnough；价格是它的 CREDIT_PACK），那边改了这里跟着改，不在这里另写许诺。"""
+        d = self.d
+        writers = [d.by_repo[r.lower()] for r in ("zenstory-ai/drama-skills", "Shanyin-ai/shanyin-screenwriting-master",
+                                                  "jtydhr88/screenwriting-skills") if r.lower() in d.by_repo]
+        writer_links = join("en", (f'<a href="{url("en", repo_path(s))}">{e(display_name(s))}</a>' for s in writers))
+        box = self.write_box("en", "sds-en-home", "Try it with one sentence", "No sign-in needed, 3 a day.")
+        cards = "".join(
+            f'<li><a href="{url("en", "/samples/" + s["slug"] + "/")}">'
+            f'<span class="sample-meta">{e(s["genre"])} · {e(s["skill"])}</span>'
+            f'<b>{e(s["title"])}</b>'
+            f'<span class="sample-idea">“{e(s["idea"])}”</span>'
+            f'<span class="sample-go">Read episodes 1–{s["shown"]} of {s["total"]} →</span></a></li>' for s in d.samples)
+        samples = (f'<section class="landing-part" aria-labelledby="samples"><h2 id="samples">Read what it writes</h2>'
+                   f'<p class="sub">Each one started from the sentence on its card. The writing is the site\'s, word for word; we did not edit it.</p>'
+                   f'<ul class="samples">{cards}</ul></section>') if d.samples else ""
+        return f"""
+<section class="hero landing">
+{self.h1("en", "One sentence becomes a vertical short drama")}
+<div class="hero-intro">
+<p class="lead">Write one sentence. Three writers each pitch it as a vertical short drama; you pick one blind, and the one you pick goes on to a full script, episode by episode.</p>
+<p class="sub">The writers are three skills from this list, winners of our <a href="{url("en", "/evals/")}">first test round</a>: {writer_links}. You choose first, then we tell you which skill wrote which.</p>
+</div>
+{box}
+</section>
+{samples}
+<section class="landing-part" aria-labelledby="pricing">
+<h2 id="pricing">Pricing</h2>
+<p class="sub">Pitches, the skeleton, the characters and outline episodes 1–5 are free; the rest uses credits as it's written.</p>
+<div class="prices">
+<div class="price"><p class="label">Free</p><p class="amount">$0</p><p>The free part: 3 pitch rounds a day; for the one you pick, the whole-drama skeleton, the characters and outline episodes 1–5.</p></div>
+<div class="price"><p class="label">1,000-credit pack</p><p class="amount">$9.99</p><p>With the default model, about enough to finish 40 dramas of 60 episodes.</p><p>You pay for what's written: nothing for a failed step, nothing if you stop before the first word.</p><p>One-time payment, no renewal. US dollars, by card or Alipay.</p></div>
+</div>
+</section>
+<section class="landing-part" aria-labelledby="who">
+<h2 id="who">Who makes it</h2>
+<p>The people behind this site also made the script-writing site, dramawriter: you write one sentence and a few screenwriting skills from this list each write a pitch. It has no effect on what gets listed or how it ranks, and we do not write creative skills of our own, so none of our own projects are in the tests or the rankings. <a href="{url("en", "/about/")}">About this list →</a></p>
+</section>
+"""
+
+    def sample(self, s: dict) -> None:
+        """一部样稿一页，只出英文：开头几集剧本原样放，页头写明是 AI 写的、哪个 skill、没改；页尾一个输入框。"""
+        path = f"/samples/{s['slug']}/"
+        listed = self.d.by_repo.get(s["skill"].lower())
+        repo_link = f'<a href="https://github.com/{e(s["skill"])}">{e(s["skill"])}</a>'
+        facts = [("Started from", f"“{e(s['idea'])}”"), ("Genre", e(s["genre"])),
+                 ("Episodes", f"1–{s['shown']} of {s['total']}"), ("Written", e(s["written"]))]
+        if listed:
+            facts.append(("The skill in this list", f'<a href="{url("en", repo_path(listed))}">{e(display_name(listed))}</a>'))
+        box = self.write_box(
+            "en", f"sds-en-sample-{s['slug']}", "Write your own from one sentence",
+            f"{e(s['skill'])} and two other writers each pitch it; you pick blind, then see who wrote it. "
+            "The pitches, the skeleton, the characters and outline episodes 1–5 are free.")
+        body = (f'<article class="sample">{self.h1("en", s["title"], ours=False)}'
+                f'<p class="sample-stamp">First {s["shown"]} episodes. Written by AI with {repo_link}, on dramawriter. Unedited.</p>'
+                f'<dl class="facts">{"".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in facts)}</dl>'
+                f'<div class="script">{script_html(s["script"])}</div>'
+                f'<p class="sample-end">That is the first {s["shown"]} of {s["total"]} episodes. The rest are not published here.</p>'
+                f'{box}</article>')
+        desc = (f"The first {s['shown']} episodes of a {s['genre'].lower()} vertical short drama script, written by AI with the "
+                f"{s['skill']} skill from one sentence: “{s['idea']}” Unedited.")
+        work = {"@context": "https://schema.org", "@type": "CreativeWork", "name": s["title"], "genre": s["genre"],
+                "inLanguage": "en", "dateCreated": s["written"], "description": desc, "url": abs_url("en", path),
+                "publisher": publisher()}
+        self.page("en", path, title=f"{s['title']}: a {s['genre'].lower()} vertical short drama script by AI (episodes 1–{s['shown']})",
+                  description=desc, body=body, crumbs=[(s["title"], path)], jsonld=[work], lastmod=s["written"],
+                  og_type="article", en_only=True)
 
     def stage_index(self, lang: str) -> None:
         d = self.d
@@ -1031,6 +1168,8 @@ class Site:
                 rows[lang].append((lastmod, f"<url><loc>{abs_url(lang, path)}</loc><lastmod>{lastmod}</lastmod>{alts}</url>"))
         for path, lastmod in self.zh_pages:
             rows["zh"].append((lastmod, f"<url><loc>{abs_url('zh', path)}</loc><lastmod>{lastmod}</lastmod></url>"))
+        for path, lastmod in self.en_pages:
+            rows["en"].append((lastmod, f"<url><loc>{abs_url('en', path)}</loc><lastmod>{lastmod}</lastmod></url>"))
         index = []
         for lang, items in rows.items():
             for i in range(0, len(items), SITEMAP_MAX):
@@ -1076,6 +1215,8 @@ class Site:
             self.content(lang, "glossary", [])
             self.content(lang, "evals", [])
             self.content(lang, "about", [])
+        for s in d.samples:
+            self.sample(s)
         build_evals.build(self, ROUNDS, REPO_URL, repo_path, display_name)
         self.not_found()
         self.data_json()
@@ -1137,7 +1278,8 @@ def main() -> None:
         print(f"提示：中文大标题里有 {len(missing)} 个字不在标题字体里（{''.join(sorted(missing))}），这些字会用系统字体显示；"
               "运行 python3 scripts/build_site.py --fonts 重切。")
     n = sum(1 for _ in DIST.rglob("index.html"))
-    print(f"已生成 {DIST.relative_to(ROOT)}：{n} 个页面（中英各 {len(site.pages)}，另有只出中文的实测记录 {len(site.zh_pages)} 页）。")
+    print(f"已生成 {DIST.relative_to(ROOT)}：{n} 个页面（中英各 {len(site.pages)}，另有只出中文的实测记录 {len(site.zh_pages)} 页、"
+          f"只出英文的样稿 {len(site.en_pages)} 页）。")
     if site.d.untranslated:
         print(f"提示：英文版有 {len(site.d.untranslated)} 段第三方中文说明没有译文，暂不显示；"
               "把「原文: 译文」补进 data/translations.json 即可。")
