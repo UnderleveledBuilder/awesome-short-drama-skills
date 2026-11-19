@@ -121,18 +121,20 @@ def inline_md(text: str) -> str:
 
 # 单占一行的说话人：大写的名字，后面可以跟括号（V.O.、CONT'D）。INT./EXT. 是场景，不算。
 SPEAKER = re.compile(r"(?!(?:INT|EXT)\b)[A-Z][A-Z0-9 .'\-]{0,40}(?: \([^)]{1,30}\))?")
+SAYS = re.compile(SPEAKER.pattern + r":\s+\S")
 
 
 def script_html(md: str) -> str:
     """样稿的剧本：# 是一集（页上的 h2，id 是 ep-N），## 是一场（h3），--- 是分隔线，其余按空行分段，段内换行照留。
     一到三级标题写的是 "EP1" 或 "Episode 1" 的也是一集（有的编剧拿 ## 写集）。
-    第一行是说话人（整行粗体，或者单占一行的大写名字）、下面还有行的段落是一段台词，排得往里缩一点。"""
+    第一行是说话人（整行粗体，或者单占一行的大写名字）、下面还有行的段落是一段台词，排得往里缩一点；
+    以"大写名字: "开头的段落（"CLARA: Clear."）也是一段台词。"""
     out: list[str] = []
     para: list[str] = []
 
     def flush() -> None:
         if para:
-            line = len(para) > 1 and (re.fullmatch(r"\*\*[^*]+\*\*", para[0]) or SPEAKER.fullmatch(para[0]))
+            line = (len(para) > 1 and (re.fullmatch(r"\*\*[^*]+\*\*", para[0]) or SPEAKER.fullmatch(para[0]))) or SAYS.match(para[0])
             out.append(('<p class="line">' if line else "<p>") + "<br>".join(inline_md(x) for x in para) + "</p>")
             para.clear()
 
