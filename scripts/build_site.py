@@ -601,7 +601,7 @@ class Site:
 <p class="sub">Pitches, the skeleton, the characters and outline episodes 1–5 are free; the rest uses credits as it's written.</p>
 <div class="prices">
 <div class="price"><p class="label">Free</p><p class="amount">$0</p><p>The free part: 3 pitch rounds a day; for the one you pick, the whole-drama skeleton, the characters and outline episodes 1–5.</p></div>
-<div class="price"><p class="label">1,000-credit pack</p><p class="amount">$9.99</p><p>With the default model, about enough to finish 40 dramas of 60 episodes.</p><p>You pay for what's written: nothing for a failed step, nothing if you stop before the first word.</p><p>One-time payment, no renewal. US dollars, by card or Alipay.</p></div>
+<div class="price"><p class="label">1,000-credit pack</p><p class="amount">$9.99</p><p>How many credits a drama takes depends on the model you choose.</p><p>You pay for what's written: nothing for a failed step, nothing if you stop before the first word.</p><p>One-time payment, no renewal. US dollars, by card or Alipay.</p></div>
 </div>
 </section>
 <section class="landing-part" aria-labelledby="who">
