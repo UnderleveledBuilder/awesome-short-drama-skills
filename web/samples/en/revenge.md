@@ -1,671 +1,213 @@
 <!--
-title: I Walked Out on His Wedding Day
+title: Wedding Bells, Prison Gates
 genre: Revenge
 idea: Framed for her sister's death by her own husband, she serves five years in prison and walks out on the day he marries the woman who really did it.
 skill: zenstory-ai/drama-skills
-model: DeepSeek V4.1 Flash (the default model)
-episodes: 10 of 60
+model: Gemini 4 Argon
+episodes: 3 of 60
 written: 2026-11-18
 order: 2
 -->
-# EP001 The Wedding
+# EP001 Iron Gates, Cathedral Bells
 
-## EP001-SC001 INT · Hotel ballroom · Late afternoon
+## EP001-SC001 EXT. · WOMEN'S STATE PENITENTIARY GATES · DAWN
 
-A hand lifts a pen off a ribboned tray.
+[SFX] Heavy iron prison gates grind open with a metallic shriek.
 
-The guest book lies open on a stand. The hand writes slowly, in full, and does not hurry.
+Cold dawn mist rolls across cracked asphalt. CLARA VANCE (29), lean and military-straight in a faded slate-grey denim jacket and plain white tee, steps across the yellow release stripe.
 
-[ON SCREEN] *Elena Vance*
+Beneath her cuffed denim hem, a matte-black court GPS ankle monitor blinks steady green above her left ankle.
 
-The woman holding the pen is thirty. The coat she is wearing is five years old and wrong for this room. Nobody at the door stopped her, because nobody at the door has ever seen her face.
+Clara stops outside the barbed-wire shadow and looks down at the stamped sheet in her hand.
 
-The quartet plays. Two hundred people. A waiter with a tray looks at the book, then at her, and stops moving.
+[ON-SCREEN TEXT] STATE DOC DISCHARGE CERTIFICATE — CLARA VANCE — SENTENCE SERVED: 5 YEARS (INVOLUNTARY MANSLAUGHTER OF LILY VANCE)
 
-Claire reaches her first. Cream dress, no hard edges. She puts two fingers to her collarbone before she speaks.
+Clara's right thumb slowly traces the thin silvered handcuff scar across her left wrist bone.
 
-Claire: "I'm so glad you came."
+[TRANSITION] The clang of the closing iron gate cuts directly into the ring of bronze cathedral bells.
 
-Elena: "You wrote the list."
+## EP001-SC002 INT. · VANCE CLIFFSIDE ESTATE BRIDAL ANTEROOM · MORNING
 
-Claire: "I did."
+[SFX] Cathedral wedding bells chime across the sunlit cliffside lawn.
 
-Elena: "Then you know I wasn't on it."
+SERENA BLAKE (28) stands before a floor-length gilded mirror in couture ivory bridal silk. Behind her, JULIAN CROSS (32), immaculate in a bespoke black tuxedo with platinum monogrammed J.C. cufflinks, lifts a pear-cut diamond necklace from a velvet tray.
 
-Daniel arrives half a second behind her.
+Julian fastens the diamond clasp around Serena's bare throat.
 
-Daniel: "Elena."
+Julian (murmuring against her ear): Five years, and the Vance fortune is finally yours, Mrs. Cross.
 
-Elena: "Don't stop. I've waited five years for this part."
+Serena's fingertips brush the pear-cut diamond resting at the base of her throat.
 
-The room turns in pieces. A table of Vivian's friends go quiet one chair at a time. The quartet plays straight through it.
+Serena (eyes fixed on the mirror): The prison gates opened at seven-thirty, Julian. Are you sure she won't come near the estate?
 
-Vivian is seated near the front, low in the frame, and does not stand.
+Julian (adjusting his right platinum cufflink): Her mandatory parole check-in downtown traps her until noon. And I put four armed guards at the cathedral doors with her mugshot.
 
-Vivian: "You look well."
+Serena turns in her veil and smiles.
 
-Elena: "I've been resting."
+Serena: Good. My sister-in-law belongs in the gutter where we left her.
 
-Elena takes a glass she does not drink and walks the room slowly enough to be filmed. A guest's phone comes up. Then another.
+## EP001-SC003 EXT. · VANCE CLIFFSIDE ESTATE CATHEDRAL STEPS · MORNING
 
-## EP001-SC002 INT · Hotel service corridor · Minutes later
+A black town car screeches to the curb at the base of the white limestone steps. Clara steps out onto the red carpet runner as probate attorney DAVID CHEN (34), wearing horn-rimmed glasses with a titanium briefcase chained to his wrist, hands her a thick manila packet stamped in red ink.
 
-Daniel, alone, phone to his ear. He squares a stack of napkins on a tray before he speaks.
+David Chen: Judge Harlan is officiating inside. You have until the gavel falls on the vows to serve the stay, Clara.
 
-Daniel: "She wasn't supposed to be out till the twenty-second. Find out what she has."
+Two burly CROSS SECURITY GUARDS step down the portico, holding up a printed prison mugshot of Clara.
 
-He hangs up. He squares the napkins again.
+Lead Guard (hand on his holstered taser): Stop right there. Clara Vance, you are barred from Cross property. Step off the curb or you go back in a cage.
 
----
+Clara does not slow her stride. Stopping inches from the guard's chest, she lifts her left trouser cuff to expose the blinking green GPS ankle monitor, then holds the red-stamped Superior Court summons two inches from his eyes.
 
-# EP002 The Child
+Clara (low, unhurried): Read the seal. This ankle monitor is synced to the Superior Court Probate Division. Obstruct a court-ordered trust filing and Judge Harlan signs your felony contempt warrant in sixty seconds.
 
-## EP002-SC001 EXT · Parking lot behind a grocery store · Afternoon
+The Lead Guard stares at the raised gold judicial seal, hesitates, and steps aside.
 
-A booster seat. A child in it, six years old, shoes swinging above the asphalt.
+## EP001-SC004 INT. · VANCE CLIFFSIDE ESTATE CATHEDRAL NAVE · MORNING
 
-Elena stands at the open back door of the car. Claire leans against the front fender with her arms loose.
+Sunlight streams through stained glass onto two hundred society guests and Cross Enterprises board directors. At the marble chancel, JUDGE VICTOR HARLAN (64) stands in formal judicial robes between Julian and Serena.
 
-Claire: "Five minutes. No lawyers, no cameras. Just us being decent."
+Judge Harlan: If any person present knows of any lawful impediment to this union, let them speak now or forever hold their peace.
 
-Elena crouches. Mia's left shoe is untied. Elena ties it.
+[SFX] The twelve-foot oak double doors at the rear of the nave crash open against the stone stops.
 
-Elena: "Your shoe was untied."
+Every head in the pews whips around. Clara walks straight down the center white rose-petal runner in her faded prison denim, her boots echoing against the marble until she stops ten feet from the altar.
 
-Mia: "I know. Mommy does it in the car."
+Serena gasps, her right hand flying to the pear-cut diamond necklace at her throat. Julian steps forward, his jaw clenching.
 
-Elena pulls the knot tight.
+Julian: How the hell did you get past the gate?
 
-Mia: "We don't go up the back stairs."
+Clara ignores Julian, locking her unblinking slate-grey eyes on the diamond necklace around Serena's neck before looking up at Judge Harlan.
 
-Elena: "Why not?"
+Clara: I have an impediment, Your Honor. Starting with the stolen heirloom necklace on the bride's throat—and the eight hundred million dollars in the Vance Family Trust my ex-husband looted while I was in state prison.
 
-Mia: "Because Mommy says."
+Serena shrinks back against the marble altar rail, her voice trembling in a performance for the packed pews.
 
-Elena looks up. Claire is smiling at her.
+Serena (pointing a shaking white-gloved finger at Clara): Julian, stop her! She killed Lily, and now she's here to kill me!
 
-Claire: "Time."
+Julian steps down the chancel stairs and slashes his hand toward the side aisles.
 
-Elena: "You said five."
+Julian (shouting): Security! Grab this convicted killer and throw her into the street!
 
-Claire: "It's been five."
+Four armed guards rush from the pillars and wrench Clara's arms behind her back.
 
-Mia: "Mommy says you're my aunt."
+# EP002 The Slayer-Statute Lien
 
-Elena: "I'm your mother's sister."
+## EP002-SC001 INT. · VANCE CLIFFSIDE ESTATE CATHEDRAL NAVE · MORNING
 
-Claire's hand goes to her throat. She reaches across, pulls the back door shut while Mia is still talking, and gets in.
+Serena shrinks against the altar rail screaming behind her lace veil as Julian points down the chancel steps.
 
-The car reverses. Elena stays where she is until it turns out of the lot.
+Julian: Grab this convicted killer and throw her into the street!
 
-## EP002-SC002 EXT · Halfway house, front steps · Night
+Two armed security guards wrench Clara's sleeves behind her back at the foot of the marble stairs. Press cameras flash across the front pews.
 
-A man in a windbreaker comes up the walk with a clipboard and a large envelope.
+Clara keeps both palms flat and open in full view of the lenses, offering zero physical resistance.
 
-Process server: "Elena Vance?"
+Clara (calm, addressing the altar): Take a good look, Judge Harlan. I am not touching these men, and I am not here as Julian Cross's ex-wife. I am appearing as Custodial Auditor of the Vance Family Trust.
 
-Elena: "Yes."
+Julian snatches the wireless microphone off the lectern, his baritone booming across the nave.
 
-He hands it over and goes. She opens it on the steps, in the porch light, with other residents coming and going behind her.
+Julian: You lost every right to that name five years ago, Clara! I sat on the witness stand in your manslaughter trial after police pried Lily's bloodied diamond bracelet out of your car trunk. Under the state Slayer Statute, a killer inherits nothing! Get her out!
 
-She reads the first page. Then the second.
+The guards tighten their grip to lift Clara off her boots.
 
-Elena (to herself): "Ten days."
+Clara twists her right wrist sharply out of the Lead Guard's fingers, pulls two documents from her manila packet, and steps straight up the chancel steps to lay them flat across Judge Harlan's open marriage binder.
 
-She folds both pages, puts them inside the old coat, and walks to the end of the property. She stops at the edge of the walk. The corner is a block away.
+Clara: Then read the law you used to frame me, Julian. First, the police impound receipt from that night proving my sedan's trunk lock was punched before Lily's bracelet was ever found inside. Second, a verified Probate Lien stamped by your own clerk thirty minutes ago, Judge Harlan.
 
-She does not go around the corner.
+[ON-SCREEN TEXT] SUPERIOR COURT PROBATE LIEN — ASSET FROZEN: VANCE CLIFFSIDE ESTATE ($42,000,000 PURCHASED FROM LILY VANCE TRUST PRINCIPAL)
 
----
+Judge Harlan adjusts his spectacles and runs his finger down the red-stamped deed schedule.
 
-# EP003 The Box
+Clara (turning to the stunned board directors): Under my father's trust indenture, Julian's Slayer-Statute control was a five-year provisional trusteeship that expires in thirty days unless the Custodial Auditor signs off. And since Julian illegally used forty-two million dollars of Lily's frozen trust principal to buy this cliffside wedding estate, I am freezing this property right now.
 
-## EP003-SC001 INT · First Mercantile, manager's desk · Morning
+Julian steps toward the lectern, his face darkening.
 
-A notary stamp, upside down on the page. Elena turns the page the right way up and reads it again.
+Julian: Judge Harlan, she's a paroled felon running a shakedown—
 
-Manager: "It's durable. It was never revoked. The stamp is good."
+Judge Harlan raises his hand, silencing Julian mid-sentence, and strikes his mahogany gavel against the lectern block.
 
-Elena: "Box 217."
+[SFX] The gavel crack echoes through the hushed cathedral.
 
-Manager: "Rent's paid through March. Cash, in person, every year."
+Judge Harlan: The seal of the Probate Division is valid, Mr. Cross. Vance Cliffside Estate is hereby frozen under a thirty-day statutory audit stay. If your guards lay another finger on Ms. Vance, I will hold them—and you—in felony contempt.
 
-Elena: "Paid by whom?"
+The guards drop their hands and step back. Across the aisle, Attorney David Chen stands by the open oak doors holding Clara's steel escrow briefcase and gives a single nod.
 
-Manager: "The renter. Nicole Kessler."
+ Clara looks straight into Julian's eyes.
 
-He unlocks the room and stands back. Elena goes in alone.
+Clara: Thirty days, Julian. I'm moving into the east wing this morning to audit every cent you touched.
 
-Inside the box: a dead phone. One photograph. A sealed envelope.
+At the altar rail, Serena presses the back of her wrist to her forehead, sways in her couture gown, and collapses gracefully into her bridesmaids' arms.
 
-[ON SCREEN] *On the envelope, in handwriting — For Mia's sixteenth birthday, or the day they try to take her.*
+Serena (gasping weakly): I can't breathe... get me upstairs to the bridal suite.
 
-She turns the photograph over. Three women at a restaurant table. A date stamp in the corner.
+## EP002-SC002 INT. · VANCE MANOR BRIDAL SUITE · MORNING
 
-Elena: "This is eight days before she died."
+Sunlight fills the vaulted dressing room. Clara walks past the gilded vanity table holding a steel asset-inventory clipboard and snaps a red court tamper-seal across the open wall safe.
 
-Manager: "I wouldn't know."
+Behind her, Serena—standing completely upright without a trace of dizziness—kicks the heavy mahogany double doors shut.
 
-Elena: "Ten fifty-two at night. I left at nine."
+[SFX] The brass deadbolt snaps into the doorframe with a sharp metallic click.
 
-She takes the phone and the photograph. She puts the envelope back and closes the box.
+Clara turns slowly around as Serena blocks the locked doors, alone with her in the suite.
 
-Manager: "You're not taking that one?"
+# EP003 Her Last Word Was Your Name
 
-Elena: "It's addressed to a child."
+## EP003-SC001 INT. · VANCE MANOR BRIDAL SUITE · MORNING
 
-Manager: "There's an alternate contact on the rental card. I'm required to notify them of any access."
+Serena kicks the heavy mahogany double doors shut and turns the brass deadbolt.
 
-Elena: "Don't."
+[SFX] The deadbolt locks into place.
 
-Manager: "I have to."
+The fragile victim vanishes from Serena's face. She strolls to the gilded vanity table, picks up a crystal flute of champagne, and looks at Clara in the mirror while her right fingertips trace Lily's pear-cut diamond necklace at her throat.
 
-He picks up the desk phone while she is still standing there.
+Serena (flat, venomous): No judge in here, Clara. No press cameras. Just you, me, and Parole Officer Roy Garrett waiting downstairs on Julian's payroll.
 
-## EP003-SC002 EXT · Bus stop · Night
+Clara does not look at Serena. She raises her court tablet, photographs the empty velvet slots inside the open wall safe, and checks off Item #04 on her steel clipboard.
 
-Elena sits on the bench with a charger cable and the dead phone in her lap. The screen lights up and asks for a six-digit code.
+Clara: Item four. One eighteen-karat pear-cut diamond necklace belonging to the estate of Lily Vance. Enjoy wearing it today, Serena. In twenty-nine days, it goes back into the vault.
 
-She types a date. The phone refuses it.
+Serena's smile hardens. She slams the champagne flute onto the marble vanity and steps across the rug until she stands six inches from Clara's chest.
 
-[CONTINUITY] The box key is on the ring in her right hand. She does not put it in her bag.
+Serena: You really think an accounting trick changes what you are? Julian spent five years erasing every trace of you from this house. I sleep in your bed. I wear your sister's diamonds. And if you so much as slap me right now, Officer Garrett throws you back into maximum security before lunch.
 
-Elena (to the phone): "All right."
+Clara keeps her hands motionless at her sides, her slate-grey eyes cold and level.
 
-The bus pulls up. She gets on with the phone still lit in her hand.
+Clara: You're blocking the light on safe shelf two.
 
----
+Infuriated by Clara's refusal to flinch, Serena hooks two manicured fingers inside the collar of Clara's faded prison denim jacket and pulls her half an inch closer, leaning her lips directly against Clara's right ear.
 
-# EP004 The House
+Serena (whispering): Do you want to know a secret, Clara? Right before Lily went over that balcony... her last word was your name.
 
-## EP004-SC001 INT · The house, front hall and back stairs · Afternoon
+Clara's pupils contract by a fraction of a millimeter. Down at her side, her right thumb presses hard into the silvered arrest scar on her left wrist bone.
 
-Two cardboard boxes on the floor of the hall. One word written on the side of each in marker: *ELENA 1*, *ELENA 2*.
+Serena steps back half a pace, tilting her chin upward with a triumphant smirk, daring Clara to swing.
 
-A deputy stands at the front door with his notebook out, looking at his phone.
+[SFX] Rapid footsteps and Julian's muffled voice approach in the outer corridor.
 
-Claire comes down the hall with a mug in both hands.
+[OS] Julian: Serena? Open the door!
 
-Claire: "Coffee? I made it the way you like it."
+Clara lowers her thumb from her wrist scar. Without touching a hair on Serena's head, Clara reaches past Serena's shoulder, flips the brass deadbolt open, and pulls the mahogany door wide just as Julian reaches for the handle.
 
-Elena walks past her to the back stairs and stops at the bottom step.
+Clara (walking calmly past them): Your bride is feeling much better, Julian.
 
-Elena: "You were here that night."
+Serena stares after her in the doorway, her hands clenching into fists at her sides.
 
-Claire: "I was upstairs getting Mia's monitor."
+## EP003-SC002 INT. · VANCE MANOR EAST-WING BEDROOM · NIGHT
 
-Elena: "Upstairs."
+A single brass desk lamp illuminates the austere bedroom. Clara kneels beside a battered steel prison footlocker, turns the key, and lifts out a red grid-ruled notebook alongside a certified copy of the County Medical Examiner's report.
 
-Claire: "The second floor."
+She lays the official report flat under the lamp beam and runs her steel pen beneath Paragraph 3.
 
-Elena: "Did you go up the back stairs?"
+[ON-SCREEN TEXT] COUNTY MEDICAL EXAMINER SUMMARY — DECEDENT: LILY VANCE — CAUSE: SEVERED C2 VERTEBRA — DEATH INSTANTANEOUS UPON TERRACE IMPACT (ZERO VOCALIZATION BELOW)
 
-Claire's hand goes to her throat.
+Clara opens her red grid notebook to a hand-drawn diagram of the conservatory balcony and writes a single line in crimson ink.
 
-Claire: "I was in the kitchen the whole time."
+Clara (murmuring to herself): Instantaneous death on the stone terrace. If Lily never made a sound down below... then the only person who heard her call my name was standing on the balcony pushing her over.
 
-The deputy writes something down.
+[SFX] Heavy boots thunder up the east-wing staircase.
 
-Elena does not push. She goes back to the boxes and opens the second one.
+Clara snaps the red notebook shut and slides it into the steel footlocker just as the bedroom door is kicked inward off its brass latch.
 
-Inside, an old canvas work bag. In it, her paper ledger. Pressed between two pages, a carbon copy of a wire transfer — three company names, one amount circled in pencil.
+PAROLE OFFICER ROY GARRETT (45), stocky in a tactical windbreaker, marches into the room flanked by two UNIFORMED DEPUTIES and Julian. Garrett slams a folded yellow warrant onto Clara's desk.
 
-Elena (quietly): "There you are."
-
-Claire: "She asks about you. I never know what to tell her."
-
-Elena: "Tell her the truth."
-
-Claire: "I do."
-
-Claire's hand stays flat on the door while she says it.
-
-## EP004-SC002 INT · The house, kitchen · Moments later
-
-Claire, alone, phone against her ear, the mug forgotten on the counter.
-
-Claire: "She was in the house. She took the canvas bag."
-
-Vivian (on the phone): "Then we move the hearing."
-
----
-
-# EP005 The Offer
-
-## EP005-SC001 INT · Coffee shop near the office · Morning
-
-Daniel sets a folder on the table and squares it to the edge.
-
-Daniel: "Supervised visits. Twice a month, starting after the adoption is final."
-
-Elena: "And?"
-
-Daniel: "And a statement that you don't contest."
-
-Elena: "Say I killed her."
-
-Daniel: "You were convicted."
-
-Elena: "Say it."
-
-He straightens the sugar packets. One. Two. Three.
-
-Elena: "That's what I thought."
-
-Daniel: "The bank called Claire. There's a box. My lawyer filed this morning. It's estate property."
-
-He slides a page across the table. She reads all of it before she touches it, then takes it.
-
-## EP005-SC002 INT · First Mercantile, manager's desk · An hour later
-
-Manager: "It's sealed pending the filing. I'm sorry."
-
-Elena: "I'm still attorney-in-fact until a judge says otherwise. Let me see the access card."
-
-He hesitates, then turns the card around. He does not let go of it.
-
-Three entries. Nicole's, five years ago. Elena's, last week. And a third, dated eleven months after Nicole died, signed *N. Kessler*.
-
-Elena: "This one."
-
-Manager: "That's the renter."
-
-Elena: "That's not her hand."
-
-She takes out her ledger, opens it to the page beside the carbon, and writes the date and the slip number by hand.
-
-## EP005-SC003 INT · Public library, second floor · Night
-
-Elena's pen moves under the date she copied. *Not her hand.*
-
-Her phone lights up on the table. Unknown number.
-
-Elena: "Yes."
-
-Claire (on the phone): "Elena. We should talk about Mia."
-
-Elena does not stop writing.
-
-# EP006 The Kindness
-
-## EP006-SC001 INT · Church hall on Delaney · Morning
-
-A folder is set down on a folding table and squared to the edge by two hands with a manicure.
-
-Claire sits across from Elena and pulls her chair in.
-
-Claire: "You look well."
-
-Elena: "You rented a church."
-
-Claire: "It was the only room I could get on a Monday."
-
-Elena opens the folder. Four pages. She reads all four before she speaks again.
-
-Claire: "Two hundred thousand. In installments. There's a statement on the last page, and visits once things settle."
-
-Elena turns to the last page and reads it twice.
-
-Elena: "Supervised."
-
-Claire: "At first."
-
-Elena: "And I don't contest."
-
-Claire: "You'd be signing that you want what's best for her."
-
-Elena closes the folder. She doesn't push it back across the table.
-
-Elena: "Who else was at the dinner?"
-
-Claire's hand goes to her throat.
-
-Claire: "I don't remember a dinner."
-
-Elena: "You paid for it."
-
-Claire: "I pay for a lot of things."
-
-Elena: "On the eleventh. Ten fifty-two at night."
-
-Claire: "I don't remember."
-
-Elena stands and puts the folder in her bag.
-
-Claire: "Take it. Read it properly."
-
-Elena: "I read everything."
-
-Claire: "I know. That's why I brought it."
-
-## EP006-SC002 EXT · Church steps · Minutes later
-
-Claire comes out behind her and stops on the top step with her bag on her shoulder.
-
-Claire: "Elena. I recorded this. For my own protection."
-
-She holds up her phone and plays it. Eleven seconds of Elena's own voice, thin in the open air.
-
-[SFX] *Elena's voice: "I'll think about it."*
-
-Claire puts the phone away and goes down the steps past her.
-
-Elena stays where she is. She takes out her ledger, opens it to the page with the carbon, and lays the offer's first page down beside it on the stone.
-
-[ON SCREEN] *Circled in pencil: 200,000. Printed on the offer: 200,000.*
-
-Elena (to herself): "Same number."
-
-She writes it down.
-
----
-
-# EP007 Standing
-
-## EP007-SC001 INT · Hearing room · Morning
-
-A handwritten page lies on the table in front of the bench. The corners are square. The writing is small and even.
-
-Elena stands behind it. Nobody stands with her.
-
-The judge reads it, then looks up.
-
-Judge: "Ms. Vance. What is your interest in this petition?"
-
-Elena: "I'm the child's only living relative on her mother's side."
-
-Judge: "That is not standing."
-
-Elena: "I understand."
-
-Judge: "Do you. Because you've filed a document that says so."
-
-At the other table, Daniel squares his papers to the edge. Then he does it again.
-
-Daniel's lawyer: "Your Honor, before we go further — the deputy's report from the property collection."
-
-Judge: "I've read it."
-
-Daniel's lawyer: "The respondent was found in the upstairs hall. She removed a canvas bag from the premises."
-
-Elena: "I removed my own bag."
-
-Daniel's lawyer: "It was logged."
-
-Elena: "It was logged. That part is true."
-
-The judge looks at her a moment longer than necessary.
-
-Judge: "What are you asking for, Ms. Vance?"
-
-Elena: "One thing. An order unsealing the safe-deposit box pending review."
-
-Daniel's lawyer: "The box is estate property —"
-
-Judge: "The box is a box. I'll review it. Ninety days on the petition, and the seal comes off for inspection."
-
-[SFX] *The gavel.*
-
-## EP007-SC002 INT · Courthouse corridor · Minutes later
-
-Vivian sits on the bench outside the doors, low in the frame, and does not stand when Elena comes out.
-
-Daniel goes past both of them without stopping.
-
-Vivian: "I'm told the child is settled."
-
-Elena: "She's six."
-
-Vivian: "She's settled."
-
-Elena: "You should put that in writing. You're good at writing."
-
-Vivian looks up at her for the first time.
-
-Vivian: "The box is a box."
-
-Elena: "It is."
-
-Vivian: "There is nothing in a box that a child needs."
-
-Elena: "There is nothing in a box that a child needs."
-
-She walks. Behind her, Vivian takes out her phone and does not dial it until Elena is through the doors.
-
----
-
-# EP008 The Slip
-
-## EP008-SC001 INT · First Mercantile, manager's desk · Morning
-
-An index card is turned around on the desk, face up, and held there by two fingers.
-
-Manager: "Unsealed pending review. You can look. You can't copy."
-
-Elena: "I can look."
-
-Three lines on the card. She reads them from the bottom up.
-
-Elena: "The first is hers. The second is mine, last week."
-
-Manager: "And the third is the renter's."
-
-Elena: "The third is eleven months after she died."
-
-Manager: "The card says N. Kessler."
-
-Elena takes out her ledger and lays the power of attorney beside the card, open at the signature.
-
-Elena: "Look at the K."
-
-Manager: "I'm not a handwriting expert."
-
-Elena: "You don't have to be. Her K loops back through the stem. This one stops. And the N leans left."
-
-The manager looks. He doesn't say anything.
-
-Elena: "Who processed it?"
-
-Manager: "I'd have to look that up."
-
-Elena: "Look it up."
-
-He turns to the terminal and types with one finger.
-
-Manager: "A teller. She left two years ago."
-
-Elena writes the name down. Then she photographs the card and the log with her phone, in front of him, slowly.
-
-Manager: "I said you can't copy."
-
-Elena: "You said I can't copy the card. I'm photographing my own signature."
-
-## EP008-SC002 INT · Apartment building, third floor landing · Early after noon
-
-A door opens on a chain. A woman in her sixties looks out through the gap.
-
-Teller: "I don't do banking at the door."
-
-Elena: "You're not doing banking. You processed a box entry eleven months ago. First Mercantile."
-
-The chain comes off.
-
-Inside, the apartment smells of cats. Elena sits on the edge of a chair and does not take her coat off.
-
-Teller: "There was a woman. Very nice. She had a letter from a lawyer and she had the card number right."
-
-Elena: "What did she take out?"
-
-Teller: "One folder. She said it was a mistake, that it had been put in the wrong box."
-
-Elena: "Did she sign?"
-
-Teller: "She signed the card. She was very nice about it."
-
-Elena: "Was she young?"
-
-Teller: "Younger than me. Cream coat. No rings."
-
-Elena writes it. Then she stops writing.
-
-Elena: "Did she say anything about the renter?"
-
-Teller: "She said the renter had passed. She was very sad about it. She left a twenty for the trouble."
-
-Elena looks at her.
-
-Elena: "Did you keep the twenty?"
-
-Teller: "I keep everything. I'm old."
-
-## EP008-SC003 EXT · Apartment building, front step · Moments later
-
-Elena comes down the steps and turns left, toward the bus.
-
-Above her, on the third floor landing, a window goes up. The teller leans out with a phone against her ear and watches her go.
-
----
-
-# EP009 The Passcode
-
-## EP009-SC001 INT · Public library, second floor · Night
-
-A pencil line in the margin of a carbon copy, held under a desk lamp.
-
-Elena turns the ledger so the margin is square to the light.
-
-Elena (to herself): "Six digits. I read you as a check number for five years."
-
-She picks up the phone from the box. Types. The screen opens.
-
-She sits back. Then she sits forward again.
-
-[ON SCREEN] *429 unread messages.*
-
-Every one of them is from a contact saved as a single letter. *C.*
-
-Elena: "No."
-
-She scrolls. The first is dated the week Nicole died.
-
-[ON SCREEN] *I'm sorry. I'm so sorry.*
-
-Elena: "No."
-
-She scrolls faster. The messages go on for years, one side of a conversation, never answered.
-
-Elena (reading): "I saw her today. She's walking." — "She said a word." — "I'm sorry."
-
-She stops on the last one.
-
-[ON SCREEN] *I know she gets out soon. We should talk about the box.*
-
-Elena looks at the date on it for a long time.
-
-Elena: "Eleven months."
-
-## EP009-SC002 INT · Public library, second floor · Moments later
-
-The phone lies flat on the table. Elena's hand lies flat beside it.
-
-She opens the voice memos.
-
-[ON SCREEN] *One file. 4:12. Front door.*
-
-Elena does not play it.
-
-She takes out her ledger, opens to a clean page, and writes the file name and the duration by hand, one letter at a time, the way a person writes when her hands are not steady.
-
-Then she writes the date under it.
-
-[CONTINUITY] The phone is on the table in front of her, screen up.
-
-[ON SCREEN] *Signal: one bar.*
-
-Elena looks at the bar. Then at the clock over the returns desk.
-
-Librarian (off): "Twenty minutes."
-
-Elena: "I need the media room."
-
-Librarian (off): "It's booked."
-
-Elena: "It's empty."
-
-She gathers the phone and the ledger and goes.
-
----
-
-# EP010 Four Minutes and Twelve Seconds
-
-## EP010-SC001 INT · Public library, media room · Night
-
-A key turns in a lock from the inside. The door is tried once from the outside and holds.
-
-The room is the size of a closet. A table, a chair, a screen, a jack in the wall.
-
-Elena sits. She takes out the ledger, opens it flat, and writes the file name and the duration again in a cleaner hand, as if the second copy made the first one true.
-
-[ON SCREEN] *Front door. 4:12.*
-
-She picks up the head phones. Puts them down. Checks the jack. Then checks it again.
-
-Elena (to herself): "It's a recording of a doorbell. That's all it is."
-
-She puts the head phones on. Her finger goes to the screen.
-
-The door opens.
-
-Claire stands in it with a library card in her hand and a paperback under her arm. She closes the door behind her and sits down across the table.
-
-Elena takes the head phones off.
-
-Elena: "You followed me."
-
-Claire: "I came to return a book."
-
-Elena: "At nine at night."
-
-Claire: "I read slow."
-
-Elena's hand stays on the phone.
-
-Claire: "Whatever is on that phone is five years old. And it is not worth what you're about to lose."
-
-Elena: "You don't know what's on it."
-
-Claire: "I know what's on it."
-
-The room is very quiet. Somewhere beyond the wall, a cart of books is rolled along a shelf.
-
-Claire: "You have a room. You have a parole officer who likes you. You have a door that opens now. Open that phone and all three close."
-
-Elena: "And if I don't?"
-
-Claire: "Then we can talk about Mia."
-
-Elena: "We're talking about Mia now."
-
-Claire's hand goes to her throat.
-
-## EP010-SC002 INT · Public library, media room · A minute later
-
-Neither of them has moved.
-
-Elena turns the phone face up on the table between them and puts one finger on the screen.
-
-Elena: "Answer one thing and I'll stop."
-
-Claire: "Elena."
-
-Elena: "Who else was in the house?"
-
-Claire's hand is already at her throat. She doesn't answer.
-
-Elena's finger comes down on the screen.
-
-The little screen lights her face from below. Across the table, it lights Clairs's.
-
-[ON SCREEN] *0:01*
-
-Neither of them moves.
+Officer Garrett: Hands where I can see them, Vance! Unannounced curfew and felony contraband sweep!

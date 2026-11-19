@@ -121,14 +121,15 @@ def inline_md(text: str) -> str:
 
 # 单占一行的说话人：大写的名字，后面可以跟括号（V.O.、CONT'D）。INT./EXT. 是场景，不算。
 SPEAKER = re.compile(r"(?!(?:INT|EXT)\b)[A-Z][A-Z0-9 .'\-]{0,40}(?: \([^)]{1,30}\))?")
-SAYS = re.compile(SPEAKER.pattern + r":\s+\S")
+# 一段以"名字: "开头的台词："CLARA: Clear."，或者名字只大写首字母、后面带括号："Julian (murmuring): Five years…"。
+SAYS = re.compile(r"(?!(?:INT|EXT)\b)[A-Z][A-Za-z.'\-]*(?: [A-Z][A-Za-z.'\-]*){0,3}(?: \([^)]{1,60}\))?:\s+\S")
 
 
 def script_html(md: str) -> str:
     """样稿的剧本：# 是一集（页上的 h2，id 是 ep-N），## 是一场（h3），--- 是分隔线，其余按空行分段，段内换行照留。
-    一到三级标题写的是 "EP1" 或 "Episode 1" 的也是一集（有的编剧拿 ## 写集）。
+    一到三级标题写的是 "EP1" 或 "Episode 1" 的也是一集（有的编剧拿 ## 写集）；"EP001-SC001" 这种是一场。
     第一行是说话人（整行粗体，或者单占一行的大写名字）、下面还有行的段落是一段台词，排得往里缩一点；
-    以"大写名字: "开头的段落（"CLARA: Clear."）也是一段台词。"""
+    以"名字: "开头的段落（"CLARA: Clear."、"Julian (murmuring): …"）也是一段台词。"""
     out: list[str] = []
     para: list[str] = []
 
@@ -141,7 +142,8 @@ def script_html(md: str) -> str:
     for raw in md.split("\n"):
         s = raw.strip()
         head = re.match(r"(#{1,6})\s+(.+)", s)
-        episode = head and len(head.group(1)) <= 3 and re.match(r"(?:EP|Episode )0*(\d+)\b", head.group(2))
+        # "EP001-SC001 ……" 是一场，不是一集：集号后面紧跟 "-" 的不算。
+        episode = head and len(head.group(1)) <= 3 and re.match(r"(?:EP|Episode )0*(\d+)\b(?!-)", head.group(2))
         if head and (len(head.group(1)) == 1 or episode):
             flush()
             n = episode or re.match(r"EP0*(\d+)\b", head.group(2))
