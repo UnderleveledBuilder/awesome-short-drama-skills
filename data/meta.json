@@ -141,6 +141,19 @@
       "stars": 5,
       "status": "ok"
     },
+    "Dikese411980/hotapi-skill": {
+      "archived": false,
+      "description": "HotAPI Agent Skill & Go SDK metadata for multimodal image, video, chat, and voice APIs — https://hotapi.ai/en",
+      "first_seen": "2026-11-23",
+      "forks": 0,
+      "full_name": "Dikese411980/hotapi-skill",
+      "license": "MIT",
+      "pushed_at": "2026-11-23",
+      "skill_count": 2,
+      "skill_count_truncated": false,
+      "stars": 0,
+      "status": "ok"
+    },
     "Dogwind221/DWcinematic-whitebox": {
       "archived": false,
       "description": "DSH skill (DWcinematic-whitebox): script-to-Blender whitebox previz — derives shots, blocking and camera moves, then guides Blender renders in a cinematic style. 剧本转白模预演 · 分镜推导 + 运镜设计",
@@ -478,6 +491,19 @@
       "stars": 37,
       "status": "ok"
     },
+    "VanGong1999/openwriting-skills": {
+      "archived": false,
+      "description": "蒸馏全网写作网课150+ 可安装写作 Skill：商业化写作/短剧 / 漫剧 / 网文 / 公文，适配 Claude Code、Codex、OpenCode，给 AI Agent 用的写作技能包合集——从短剧剧本到飞书周报，开箱即用别再手写 Prompt。开源写作 Skill 库：短剧、网文、公文、去 AI 味，一键挂到 Claude Code150+ installable writing skills for Claude Code / Codex — short drama, web novels, business docs & Feishu automation",
+      "first_seen": "2026-11-23",
+      "forks": 3,
+      "full_name": "VanGong1999/openwriting-skills",
+      "license": "MIT",
+      "pushed_at": "2026-11-19",
+      "skill_count": 165,
+      "skill_count_truncated": false,
+      "stars": 11,
+      "status": "ok"
+    },
     "VanGong1999/screen-creative-skills": {
       "archived": false,
       "description": "Skills for Film and Television Creation Agents|31 个影视创作评估策划Agent Skills｜AI影视自动化工作流｜竖屏短剧长剧IP改编｜情节题材提炼｜剧本小说IP创作策划评估｜人物小传｜拉片人物剧集故事五元素分析｜大纲生成｜",
@@ -614,6 +640,19 @@
       "skill_count": 1,
       "skill_count_truncated": false,
       "stars": 1504,
+      "status": "ok"
+    },
+    "azrianobr/dramazing": {
+      "archived": false,
+      "description": "An AI-assistant skill that turns a short story (Chinese, English or Korean) into an episodic AI drama: script, storyboard, first frames, video, subtitles. Image and video tools are pluggable.",
+      "first_seen": "2026-11-23",
+      "forks": 2,
+      "full_name": "azrianobr/dramazing",
+      "license": "Apache-2.0",
+      "pushed_at": "2026-11-17",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 5,
       "status": "ok"
     },
     "babicat4242-svg/seedance-2-5-prompting": {
@@ -938,6 +977,19 @@
       "skill_count": 3,
       "skill_count_truncated": false,
       "stars": 3,
+      "status": "ok"
+    },
+    "klingai-tech/skills": {
+      "archived": false,
+      "description": "",
+      "first_seen": "2026-11-23",
+      "forks": 2,
+      "full_name": "klingai-tech/skills",
+      "license": null,
+      "pushed_at": "2026-11-22",
+      "skill_count": 1,
+      "skill_count_truncated": false,
+      "stars": 2,
       "status": "ok"
     },
     "lbh1761745734-ui/mr-li-seedance-25": {

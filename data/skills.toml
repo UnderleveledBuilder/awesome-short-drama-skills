@@ -436,6 +436,19 @@ agents  = ["claude-code", "codex"]
 models  = ["seedance"]
 checked = 2026-11-16
 
+[[skills]]
+repo    = "azrianobr/dramazing"
+desc    = "把一篇短故事做成分集 AI 短剧：剧本、分镜、角色设定图和首帧、视频提示词、按台词剪辑、烧录字幕，横屏或 9:16 竖屏"
+desc_en = "Turns a short story (Chinese, English or Korean) into an episodic AI drama: script, storyboard, character sheets and first frames, video prompts, cuts aligned to dialogue and burned-in subtitles, landscape or 9:16; image and video tools plug in via adapters."
+group   = "pipeline"
+stages  = ["adaptation", "drafting", "storyboard", "prompt", "production"]
+format  = "skill"
+lang    = "multi"
+agents  = ["claude-code", "codex"]
+note    = "只有 Codex 出图加 Grok 出片的组合做完过整部（6 集横屏和 3 条竖屏），其他工具没测过"
+note_en = "Only Codex images plus Grok video have produced complete works (a 6-episode landscape drama and three vertical shorts); other tools are untested."
+checked = 2026-11-23
+
 # ───────────────────────── 编剧 ─────────────────────────
 
 [[skills]]
@@ -559,6 +572,19 @@ agents  = ["codex"]
 note    = "要从 Releases 下载本地版或飞书版 ZIP 安装；许可证限制再发布"
 note_en = "Install from the local or Feishu ZIP in Releases; the license restricts redistribution."
 checked = 2026-11-16
+
+[[skills]]
+repo    = "VanGong1999/openwriting-skills"
+desc    = "从写作网课蒸馏的 160 多个写作 skill，短剧、漫剧约 57 个：选题、付费卡点、集纲、人物、场景、审稿和合规"
+desc_en = "160+ writing skills distilled from writing courses, about 57 of them for short drama and manju: topic selection, paywall points, episode outlines, characters, scenes, review and compliance; the rest cover web fiction, new media and business writing."
+group   = "writing"
+stages  = ["market", "structure", "character", "drafting", "revision"]
+format  = "skill"
+lang    = "zh"
+agents  = ["claude-code", "codex", "opencode"]
+note    = "另含公文、飞书办公、网文和新媒体写作；按目录手动链接安装"
+note_en = "Also covers official documents, Feishu office tools, web fiction and new-media writing; install by symlinking the folders you need."
+checked = 2026-11-23
 
 # ───────────────────────── 分镜 · 视觉 ─────────────────────────
 
@@ -1224,9 +1250,8 @@ checked = 2026-11-16
 
 [[skills]]
 repo    = "Dikese411980/hotapi-skill"
-name    = "hotapi-skill (seedance-storyboard)"
-desc    = "Asset-First 分镜执行器：Seedream 5.0 锁资产、Seedance 2.5 草稿预览与 1080p 升频、离线 HTML 看板"
-desc_en = "Asset-First storyboard runner: lock character/scene refs with Seedream 5.0, render Seedance 2.5/2.0 drafts and 1080p finals, import project_bundle.json, and build an offline HTML board."
+desc    = "Seedance 分镜执行器：先用 Seedream 生成并锁定角色、场景、道具图，再逐段出 480p 草稿，选定的升 1080p，附离线审片看板"
+desc_en = "Seedance storyboard runner: generates and locks character, scene and prop references with Seedream, renders each segment as a 480p draft and upscales approved ones to 1080p, imports project_bundle.json and builds an offline HTML review board."
 group   = "visual"
 stages  = ["character", "storyboard", "prompt", "production"]
 format  = "skill"
@@ -1234,6 +1259,46 @@ lang    = "en"
 agents  = ["claude-code", "codex", "cursor", "opencode"]
 models  = ["seedance"]
 install = "npx skills add Dikese411980/hotapi-skill --skill seedance-storyboard"
+note    = "只能接 HotAPI 的付费接口（聚合 Seedance、Seedream 等模型的第三方服务）；同仓库另有一个 hotapi 通用接入 skill"
+note_en = "Works only through HotAPI's paid API, a third-party service that resells Seedance, Seedream and other models; the repo also has a general hotapi integration skill."
+checked = 2026-11-23
+
+[[skills]]
+repo    = "klingai-tech/skills"
+desc    = "可灵官方 CLI 的 skill：文生图、图生视频、全能参考、关键帧、可复用的 Element 主体和动作控制，提交后轮询取结果"
+desc_en = "Skill for Kling's official CLI: text-to-image, image-to-video, omni reference, keyframes, reusable Elements and motion control, polling submitted tasks for results."
+group   = "visual"
+stages  = ["prompt", "production"]
+format  = "skill"
+lang    = "zh"
+models  = ["kling"]
+note    = "要装可灵 CLI（Node 18 以上）并登录国内或海外账号，生成按积分扣费"
+note_en = "Needs Kling's CLI (Node 18+) signed in to a China or global account; generation spends credits."
+checked = 2026-11-23
+
+[[skills]]
+repo    = "klingai-tech/claude-plugin-cn"
+desc    = "可灵官方 Claude 插件（国内版）：3 个 skill 接可灵托管的 MCP，写提示词和分镜、文生图、图生视频、多镜头规划；OAuth 登录，按积分扣费"
+desc_en = "Kling's official Claude plugin (China edition): three skills on Kling's hosted MCP for video prompts and storyboards, text-to-image, image-to-video, keyframes and multi-shot planning. Sign in to a Kling China account with OAuth; generation spends credits."
+group   = "visual"
+stages  = ["prompt", "production"]
+format  = "skill"
+lang    = "en"
+models  = ["kling"]
+agents  = ["claude-code", "gemini-cli"]
+checked = 2026-11-18
+
+[[skills]]
+repo    = "klingai-tech/claude-plugin"
+desc    = "可灵官方 Claude 插件（海外版）：和国内版同样 3 个 skill，接 kling.ai，账号和积分与国内版分开"
+desc_en = "Kling's official Claude plugin (global edition): the same three skills as the China edition, on kling.ai's hosted MCP. Accounts and credits are separate from the China edition; sign in with OAuth, and generation spends credits."
+group   = "visual"
+stages  = ["prompt", "production"]
+format  = "skill"
+lang    = "en"
+models  = ["kling"]
+agents  = ["claude-code", "codex", "gemini-cli"]
+checked = 2026-11-18
 
 # ───────────────────────── 上游：IP 评估与故事拆解 ─────────────────────────
 
@@ -1586,27 +1651,3 @@ lang    = "multi"
 note    = "附带的剧本 skill 由平台内部按固定版本调用，写明参考并重写自 zenstory-ai/drama-skills"
 note_en = "Its bundled screenplay skills are called internally by the platform at pinned versions and state that they are reimplemented from zenstory-ai/drama-skills"
 checked = 2026-10-18
-
-[[skills]]
-repo    = "klingai-tech/claude-plugin-cn"
-desc    = "可灵官方 Claude 插件（国内版）：3 个 skill 接可灵托管的 MCP，写提示词和分镜、文生图、图生视频、多镜头规划；OAuth 登录，按积分扣费"
-desc_en = "Kling's official Claude plugin (China edition): three skills on Kling's hosted MCP for video prompts and storyboards, text-to-image, image-to-video, keyframes and multi-shot planning. Sign in to a Kling China account with OAuth; generation spends credits."
-group   = "visual"
-stages  = ["prompt", "production"]
-format  = "skill"
-lang    = "en"
-models  = ["kling"]
-agents  = ["claude-code", "gemini-cli"]
-checked = 2026-11-18
-
-[[skills]]
-repo    = "klingai-tech/claude-plugin"
-desc    = "可灵官方 Claude 插件（海外版）：和国内版同样 3 个 skill，接 kling.ai，账号和积分与国内版分开"
-desc_en = "Kling's official Claude plugin (global edition): the same three skills as the China edition, on kling.ai's hosted MCP. Accounts and credits are separate from the China edition; sign in with OAuth, and generation spends credits."
-group   = "visual"
-stages  = ["prompt", "production"]
-format  = "skill"
-lang    = "en"
-models  = ["kling"]
-agents  = ["claude-code", "codex", "gemini-cli"]
-checked = 2026-11-18

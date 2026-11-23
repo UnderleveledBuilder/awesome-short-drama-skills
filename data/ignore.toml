@@ -703,3 +703,27 @@ reason = "讲解视频，不是短剧"
 [[ignored]]
 repo   = "kuaizengji/beat-promo-director"
 reason = "卡点动态字幕宣传片，不是短剧"
+
+[[ignored]]
+repo   = "wiroai/Wiro-Skills"
+reason = "Wiro AI 付费生成服务的调用 skill，通用图片、视频、音乐、3D 生成，不针对短剧"
+
+[[ignored]]
+repo   = "zenstory-ai/zenstory"
+reason = "完整写作应用，未到平台收录门槛（≥1k★）；随包 skill 是操作 ZenStory 云端项目的 CLI 说明"
+
+[[ignored]]
+repo   = "liangdabiao/dsh-realman-studio"
+reason = "完整应用（DSH 插件），未到平台门槛（≥1k★）；随包 skill 是已收录的 seedance-storyboard-generator-realman 的快照"
+
+[[ignored]]
+repo   = "partjava/VideoAgent"
+reason = "完整应用（LangGraph 多智能体制片系统），未到平台门槛（≥1k★），没有 skill"
+
+[[ignored]]
+repo   = "vargHQ/awesome-ai-video-agents"
+reason = "AI 视频资源合集，不是 skill"
+
+[[ignored]]
+repo   = "bbroot/reels-script-studio"
+reason = "15 秒通用短视频脚本（种草、科普、Vlog 等），不是短剧"
