@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-16",
+  "fetched_at": "2026-11-23",
   "repos": {
     "0xsline/short-drama": {
       "branch": "main",
@@ -303,7 +303,7 @@
           "path": "agent_runtime_profile/.claude/skills/generate-grid/SKILL.md"
         },
         {
-          "description": "为旁白/解说剧本逐分镜生成旁白配音（TTS）。当 TTS 项目首轮自动剪辑需要补齐缺失配音、用户要求生成或重新生成某个分镜或某集旁白配音，或批量配音中断需要补齐时使用。",
+          "description": "为 TTS 项目生成旁白配音。首轮自动剪辑需补齐配音、用户要求生成或重合成某个剧本条目或某集配音、或批次中断需恢复时使用。",
           "name": "generate-narration-audio",
           "path": "agent_runtime_profile/.claude/skills/generate-narration-audio/SKILL.md"
         },
@@ -360,7 +360,7 @@
       "branch": "main",
       "skills": [
         {
-          "description": "按用户选择创建或检查短剧、漫剧、人物与场景资产、图片提示词、分镜及 MiniMax H3 文戏武戏提示词；各阶段可跳过或直接启动，只加载当前任务模块。关键词：短剧、漫剧、分镜、文戏、武戏、必杀技、H3 提示词、多参考 Ref2VA、首尾帧。",
+          "description": "按用户当前要的产物创建或检查短剧、漫剧、人物与场景资产、剧本、对白、钩子、分镜、图片提示词、H3 文戏武戏提示词；阶段可跳过，只加载当前任务需要的文件。关键词：短剧、漫剧、分镜、文戏、武戏、必杀技、H3 提示词、多参考 Ref2VA、首尾帧。",
           "name": "ai-short-drama",
           "path": "SKILL.md"
         }
@@ -677,7 +677,7 @@
           "path": "skills/higgsfield-3d/SKILL.md"
         },
         {
-          "description": "Writes the character-performance layer of a video prompt as behavior under pressure, not displayed emotion — objective, obstacle, tactics, beats, subtext, listening, body/status/proxemics, and mandatory eye life. Produces a reusable 150–220-word acting master profile per character plus a per-scene…",
+          "description": "RETIRED. The performance-direction text of this sub-skill was withdrawn in November 2026 because it reproduced third-party material (see THIRD_PARTY_NOTICES.md). Nothing to load here; use higgsfield-facs for facial action units and higgsfield-seedance for prompt structure.",
           "name": "higgsfield-acting",
           "path": "skills/higgsfield-acting/SKILL.md"
         },
@@ -717,7 +717,7 @@
           "path": "skills/higgsfield-cinema/SKILL.md"
         },
         {
-          "description": "Use when the user wants to run a full ad-campaign pipeline on top of Higgsfield Marketing Studio — 'create a campaign', 'build a content plan', 'run the content pipeline', 'generate 100 UGC videos', 'plan and schedule a launch', 'make a batch of ads from my product', or 'how much did this save vs t…",
+          "description": "RETIRED. The campaign-pipeline text of this sub-skill was withdrawn in November 2026 because it was an adaptation of a third-party skill (see THIRD_PARTY_NOTICES.md). Nothing to load here; Marketing Studio API facts live in higgsfield-marketing-studio.",
           "name": "higgsfield-content-factory",
           "path": "skills/higgsfield-content-factory/SKILL.md"
         },
@@ -727,7 +727,7 @@
           "path": "skills/higgsfield-facs/SKILL.md"
         },
         {
-          "description": "Use when the user mentions GPT Image 2.0 or GPT Image 2.5, gpt-image-2, gpt-image-2.5, gpt_image_2_5, GPT-Image-2 prompts, the Flare / Sunburst variants, a transparent-background image, or wants to generate an image with GPT Image 2.0 or 2.5. Covers when to prefer GPT Image 2.5 over 2.0 (transparen…",
+          "description": "Use when the user mentions GPT Image 2.0 or GPT Image 2.5, gpt-image-2, gpt-image-2.5, gpt_image_2_5, the Flare / Sunburst variants, or a transparent-background image. Covers the model surface on Higgsfield: when to prefer GPT Image 2.5 over 2.0 (transparent background, xhigh/max quality, extra asp…",
           "name": "higgsfield-gpt-image-2",
           "path": "skills/higgsfield-gpt-image-2/SKILL.md"
         },
@@ -2050,7 +2050,7 @@
       "branch": "main",
       "skills": [
         {
-          "description": "写剧本 skill（v4.1 电影级编导一体版）：将小说、粗纲或设定集转译为兼具“院线电影视听呼吸”与“爆款短剧强钩子留存”的专业剧本。支持“国内中文剧本”与“出海短剧剧本（英文角色名+中文导演级动作+地道英文潜台词对白）”双模式。 核心：1. 三层门禁（通用门禁 + 按题材选用的题材门禁 + 交给分镜的分镜规则），只有看懂测试拿结果说话；2. 弹性片长（国内 60–120 秒、出海 90–180 秒，首集与卡点集可到 225 秒）；3. 按题材换答案的开场、救猫咪、阻力方理由、“为什么不直接……”与首集兑现；4. 深度去 AI 味对白（说明书独白、复述腔、捧哏感叹、直译伪潜台词，lint…",
+          "description": "写剧本 skill（v5.0 前制编导与空间站位一体版）：吸收前制编导台（大纲节拍 / 静音可读动作流 / 开场站位锁）方法论，将小说、粗纲或设定集转译为兼具“院线电影视听呼吸”、“零空间穿帮可拍性”与“爆款剧集强钩子留存”的专业商业剧本。支持【横屏电影大片（16:9 / 2.39:1）与竖屏快节奏（9:16）自由选择】、【国内中文剧本与出海英文潜台词剧本双模式】。 核心：1. 物理子空间强制拆场 + 每场内置 **开场站位** 锚点锁（杜绝多空间混场与内外错位）；2. “静音可读”动作-对白交替流与道具来源守恒（严禁把原著关键戏核藏进潜台词括号或全押给后期独白）；3. 真实动作节拍 + 语…",
           "name": "write-screenplay",
           "path": "SKILL.md"
         }
@@ -2493,6 +2493,48 @@
       ],
       "total": 5
     },
+    "klingai-tech/claude-plugin": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Write or refine Kling AI image prompts, including prompt-only requests, or generate and edit images through the Kling AI MCP in Claude Code. Use for posters, product photography, portraits, covers, advertising stills, visual concepts, and controlled variants.",
+          "name": "kling-ai-generate-image",
+          "path": "skills/kling-ai-generate-image/SKILL.md"
+        },
+        {
+          "description": "Write Kling AI / 可灵 video prompts and storyboards, prepare video settings including HDR for approval, and submit authorized text-to-video, image-to-video, omni reference, keyframe, or motion-control requests in Claude Code.",
+          "name": "kling-ai-generate-video",
+          "path": "skills/kling-ai-generate-video/SKILL.md"
+        },
+        {
+          "description": "Handle Kling AI / 可灵 requests in Claude Code, including prompt-only planning, missing-asset next steps, generation preparation and approved image/video creation. Route creative work to the dedicated Skills; manage Elements, motion library, uploads, credits, existing tasks and account switching thro…",
+          "name": "kling-ai",
+          "path": "skills/kling-ai/SKILL.md"
+        }
+      ],
+      "total": 3
+    },
+    "klingai-tech/claude-plugin-cn": {
+      "branch": "main",
+      "skills": [
+        {
+          "description": "Write or refine Kling AI image prompts, including prompt-only requests, or generate and edit images through the Kling AI MCP. Use for Kling Image 4.0 / 可灵图片 4.0, 8K images, continuous image series, posters, product photography, portraits, covers, advertising stills, visual concepts, and controlled…",
+          "name": "kling-ai-generate-image",
+          "path": "skills/kling-ai-generate-image/SKILL.md"
+        },
+        {
+          "description": "Write Kling AI / 可灵 video prompts and storyboards, prepare video settings including HDR for approval, and submit authorized text-to-video, image-to-video, omni reference, keyframe, or motion-control requests through the Kling AI MCP.",
+          "name": "kling-ai-generate-video",
+          "path": "skills/kling-ai-generate-video/SKILL.md"
+        },
+        {
+          "description": "Handle Kling AI / 可灵 requests, including prompt-only planning, missing-asset next steps, generation preparation and approved image/video creation. Route creative work to the dedicated Skills; manage Elements, motion library, uploads, credits, existing tasks and account switching through the remote…",
+          "name": "kling-ai",
+          "path": "skills/kling-ai/SKILL.md"
+        }
+      ],
+      "total": 3
+    },
     "lbh1761745734-ui/mr-li-seedance-25": {
       "branch": "main",
       "skills": [
@@ -2697,7 +2739,7 @@
       "branch": "master",
       "skills": [
         {
-          "description": "抖音/红果爆款短剧工业化编剧超级系统 v4.9.1。纯剧本引擎（全赛道公开通用版，不含制作衔接）。核心：动态按需挂载矩阵（8交互模式x仅挂载核心文件，防Context爆炸）、情绪契约单元链往返法、40赛道题材全图（男频12/女频14/中性14）、六母型钩子库（含核心底牌不可逆剥夺型）+五大断章公式、A~I九类反转手段轮换矩阵+冷热台账分层、三档篇幅（标准 90~120 秒/正文480~850字 / 长档 150~195 秒弹性/820~1400字 / 漫剧 60~90 秒/330~620字）、单集15秒换挡四拍推进表（抓人立事->正面交锋->亮牌翻转->余波钩子）、强画面支撑三大视觉锚点（每…",
+          "description": "抖音/红果爆款短剧工业化编剧超级系统 v5.1。纯剧本引擎（全赛道公开通用版，不含制作衔接）。核心：动态按需挂载矩阵（10交互模式x仅挂载核心文件，防Context爆炸）、情绪契约单元链往返法+四级被看见圈层阶梯（L1~L4防中后段注水）、40赛道题材全图（男频12/女频14/中性14）、立项常识与礼法逻辑排雷清单+六栏世界规则卡（支持extract_world_rules自动反填）、前三集极速进场五步拍点+女频A/B双轨进场制（前5句挑明算盘+第1集半场必亮首张反制牌）、六母型钩子库+五大断章公式、A~I九类反转手段轮换矩阵+抗上下文压缩滚动递进状态包（rolling_checkpoint…",
           "name": "short-drama-factory",
           "path": "SKILL.md"
         }
@@ -3455,67 +3497,67 @@
       "branch": "main",
       "skills": [
         {
-          "description": "维护者专用的短剧创作经验提炼、分级验证与规则维护技能。仅在维护者明确授权的只读隔离会话中研读短剧项目材料（含经授权查看的成片与参考媒体），将内部观察整理为脱敏、带适用前提的公开参考指南或审查规则，或凭反例与模型演进降级、收窄、废止旧规则时使用；不用于日常创作、正式运行环境取数、媒体生成或粗略数据统计。",
+          "description": "【仅限仓库维护者显式调用，勿自动触发】在维护者授权的只读隔离会话中研读短剧项目材料与成片，提炼脱敏创作指南、按级验证规则或降级废止旧规则。绝不用于日常短剧创作、未授权取数或媒体生成。",
           "name": "short-drama-knowhow",
           "path": "maintainers/skills/short-drama-knowhow/SKILL.md"
         },
         {
-          "description": "从短剧剧本拆出角色与造型、场景与视角、道具与状态及跨场连戏关系，写成创作者可读的视觉设定。用户说“拆角色/场景/道具”“做视觉设定”“判断沿用还是新造型”“更新造型/道具状态”，或拿现成剧本直接拆美术设定时使用；不写图片提示词，不生成媒体。",
+          "description": "从短剧剧本拆解并维护人物、造型、场景、道具、角色声线设定及跨场连戏锁，写入《视觉设定.md》。用于“拆角色/场景/道具”“做视觉设定”“判断沿用或新造型”“更新造型状态与声线”；不写图片或视频提示词，不负责跨文档审查或媒体生成。",
           "name": "short-drama-assets",
           "path": "skills/short-drama-assets/SKILL.md"
         },
         {
-          "description": "拆解对标短剧或漫剧成片：测量集长、镜长、对白密度、开场与集尾、下一集怎么接，提炼可借鉴的叙事与视听手法，再和本项目的计划或自家成片放在同一把尺子下对照，把差距交给负责的技能补强；需要时把一集或连续多集还原成逐字剧本、跨集统一的人物场景道具、逐镜分镜和图片与视频提示词，集与集之间接得上。用户提供对标剧的视频或字幕，说“拆解这部剧”“对标一下”“和标杆差在哪”“学学这几部爆款”“把这几集还原出来”“反推剧本和提示词”，或要拿自家成片和对标比时使用；还原结果只放在对标目录，自有或已授权的作品才能交给下游，不替创作者定节奏数值。",
+          "description": "拆解对标短剧或漫剧成片，测量集长、镜长、对白密度与留钩节奏，提炼可借鉴手法并与本项目同尺比对；也支持将成片反推为标准剧本与制作文档。用户提供视频/字幕说“拆解/对标这部剧”“把视频反推成剧本”时使用；不直接修改原创项目文档。",
           "name": "short-drama-breakdown",
           "path": "skills/short-drama-breakdown/SKILL.md"
         },
         {
-          "description": "将中文小说、短剧或漫剧点子、梗概、改编材料、系列笔记或多集完整剧本整理成有据可查的改编方案、故事走向、立项简报、导演阐述、核心冲突设定与分集大纲，并按题材与制作形态（画风）匹配写法。用户提出“导入小说做短剧”“从多集剧本生成/补分集大纲”“开发短剧/漫剧”“做故事设定/系列大纲/分集规划”“写导演阐述”“这个题材怎么写”“定画风/制作形态”“把这个点子变成短剧”或需要梳理人物冲突与上下集交接时使用；已有单集剧本可直接进入剧本写作、视觉设定或审查流程，不强制补开发文件。",
+          "description": "将短剧/漫剧点子、梗概、已拆解的原著材料或多集完整剧本整理为改编方案、立项简报、导演阐述、核心冲突设定与分集大纲。用户说“开发短剧”“做故事设定/分集规划”“写导演阐述”“从多集剧本补分集大纲”时使用；不含长篇拆书、项目配置或单集写作。",
           "name": "short-drama-develop",
           "path": "skills/short-drama-develop/SKILL.md"
         },
         {
-          "description": "将已生成的短剧镜头剪成成片，记录入出点、镜序、声音、字幕与交付规格。用于套剪、加字幕、统一响度、调整节奏或导出精修素材；需要补素材或修改故事时转回对应创作阶段。",
+          "description": "将已生成的短剧镜头与配音剪成成片，编写剪辑单并完成渲染验收。用于“剪成成片/套剪”“加字幕/画面文字”“统一响度”“调整成片剪辑节奏、配乐/字幕混音与渲染导出”或导出精修素材；需补素材或改故事时转回上游阶段。",
           "name": "short-drama-edit",
           "path": "skills/short-drama-edit/SKILL.md"
         },
         {
-          "description": "为短剧人物、造型、场景、道具和状态编写或修改可直接复制的图片提示词 Markdown。用户提到角色设定图、三视图、参考图、场景空镜图、道具设定图、视觉定调图、Look Development、状态变化图或局部改图提示词时使用；不生成图片，也不调用供应商。",
+          "description": "为角色/场景/道具设定图、视觉定调测试图、状态变化图、局部改图及需单出的首尾帧静图编写可直接复制的静态图片提示词，写入《图片提示词.md》。不负责项目级制作形态选型或 Lookdev 统筹、不拆视觉设定，也不直接调用外部模型出图。",
           "name": "short-drama-image-prompts",
           "path": "skills/short-drama-image-prompts/SKILL.md"
         },
         {
-          "description": "把小说、连载网文或多集散稿拆成有据可查的原著拆解：支持全书或按创作者指定章节范围（如前 100 章、第一季）分批完成章节索引、改编价值快评、逐章情节提取、剧情单元与爽点梳理、人物与设定跨卷演进整理，给出结合目标制作形态的改编取舍建议与分集候选，移交 $short-drama-develop 定改编方案。用户说“导入这本小说”“拆这本书”“先拆前一百章”“分析原著”“这本书能不能改短剧”“把小说拆成分集候选”，或直接给出小说文件路径时使用。",
+          "description": "拆解长篇小说、连载网文或多章原著，完成章节索引、改编价值评估、情节提取、爽点与人物演进梳理及分集候选，移交 short-drama-develop 定改编方案。用户说“导入/拆这本小说”“分析原著”“先拆前N章”或给小说文件时使用；不写立项简报或剧本。",
           "name": "short-drama-novel-analyze",
           "path": "skills/short-drama-novel-analyze/SKILL.md"
         },
         {
-          "description": "在创作者明确确认后，单条或按批次执行短剧项目的图片、视频、TTS/配音或成片配乐生成任务，并把产出文件与运行记录存回项目。用户说“生成这张图/这段视频/这句配音/这段配乐”“开始跑图/跑视频/合成语音/生成音乐”“把定稿提示词送去生成”，或要求批量执行已确认媒体任务时使用；不负责编写提示词、拆镜头、改台词、写歌词或定角色音色设定，也绝不把预览、继续、预算说明或之前的定稿状态当作本次调用付费接口的确认。",
+          "description": "在创作者明确确认后，单条或按批调用已配置接口执行图片、视频、配音或配乐生成并保存产物与运行记录。用于“生成图/视频/配音/音乐”“开始跑图/跑视频”“把定稿提示词送去生成”；不写提示词、不改台词，不把预览或定稿当扣费确认。",
           "name": "short-drama-produce",
           "path": "skills/short-drama-produce/SKILL.md"
         },
         {
-          "description": "审查短剧项目中的原著拆解、对标拆解、故事大纲、剧本、视觉设定、图片提示词、分镜、首尾帧提示词、视频提示词、剪辑单以及已生成素材与整集成片。用户提出“审稿/检查剧本”“检查视觉设定或连戏”“检查图片/视频提示词”“检查原著或对标拆解”“审查套路模板感”“检查剪辑单或成片接缝”“根据试拍出片结果调优提示词与设定”时使用；只出具审查问题单、结论和修改要求，不越俎代庖直接改原稿文件。",
+          "description": "独立审查短剧原著拆解、对标拆解、大纲、剧本、视觉设定、提示词、分镜、剪辑单及已生成素材与成片，负责跨场/跨镜连戏核查（轴线、站位、视线、持物、状态与接缝）及出片问题归因。只输出审查问题单、结论与返修要求，不直接改原稿或调用生成。",
           "name": "short-drama-review",
           "path": "skills/short-drama-review/SKILL.md"
         },
         {
-          "description": "把短剧剧本和视觉设定写成切镜有据、前后接戏清晰并带首帧提示词的分镜 Markdown。用户提出“拆分镜/设计镜头/做镜头表”“重头戏分镜构思/场面调度”“比选分镜拍法”“写首帧/尾帧提示词”或检查轴线、站位、视线、持物连戏时使用；不生成媒体。",
+          "description": "把短剧剧本和视觉设定拆成切镜有据、调度清晰并带首尾帧提示词的分镜，或快速草拟单场镜头与首帧提示词。用于拆分镜、设计镜头表、重头戏场面调度、比选分镜拍法、编写首帧或尾帧提示词；不生成媒体，不做独立连戏审查。",
           "name": "short-drama-storyboard",
           "path": "skills/short-drama-storyboard/SKILL.md"
         },
         {
-          "description": "把短剧分镜和首帧写成可直接复制的视频提示词 Markdown，也可按用户要求写成片配乐或主题曲提示词。用户提到文生/图生视频动作、人物表演、运镜、口型、环境动态、镜头时长、起止状态、把分镜转成视频提示词或写配乐提示词时使用；不直接调用生成接口、不创作歌词、不改分镜定好的起止状态。",
+          "description": "把短剧分镜和首帧写成可直接复制的视频提示词，也可独立起草视频动作或成片配乐/主题曲提示词。用于文生/图生视频动作、人物表演、运镜、口型、环境动态、镜头时长与配乐提示词编写；不调生成接口、不写歌词、不改分镜起止状态。",
           "name": "short-drama-video-prompts",
           "path": "skills/short-drama-video-prompts/SKILL.md"
         },
         {
-          "description": "编写或修订可拍摄的中文短剧、漫剧单集 Markdown 剧本，也负责保留作者原文并把现成剧本整理成标准格式。用户提出“写/改一集短剧”“把大纲写成剧本”“优化场景/对白”“去模板感”“去 AI 味润色”“续写下一集”或提供剧本要求进入后续制作时使用；不负责视觉设定、分镜、生图与视频提示词或终审。",
+          "description": "编写、修订或格式化可拍摄的短剧与漫剧单集 Markdown 剧本（保留作者原文与口吻）。用户说“写/改一集剧本”“把大纲写成剧本”“优化场景对白”“去 AI 味润色”“续写下一集”或整理现成剧本格式时使用；不负责大纲、视觉设定、分镜、提示词或终审。",
           "name": "short-drama-write",
           "path": "skills/short-drama-write/SKILL.md"
         },
         {
-          "description": "创建或继续本地短剧、漫剧项目，围绕五份核心创作文档衔接各创作环节，提供本地短剧创作台（Dashboard）、全局配置更新、制作形态选型与视觉风格定调（Look Development）。用户提出“创建/继续短剧项目”“看进度/下一步”“做视觉风格定调 / Look Development”“打开 dashboard/短剧创作台”“打包/导出制作资料”，或任务跨多个创作环节时使用；明确的写作、设定、提示词、分镜、剪辑或审查请求由对应子技能直接处理。",
+          "description": "创建或继续短剧、漫剧项目，处理全局配置、制作形态选型、视觉定调（Lookdev）统筹、跨环节路由、本地创作台（Dashboard）与交付打包。用于立项、改配置、看进度、启动创作台或导出打包；单一环节的写作、设定、提示词、分镜、剪辑与审查交由对应子技能。",
           "name": "short-drama",
           "path": "skills/short-drama/SKILL.md"
         }
