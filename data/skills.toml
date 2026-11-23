@@ -1222,6 +1222,19 @@ agents  = ["claude-code"]
 models  = ["seedance"]
 checked = 2026-11-16
 
+[[skills]]
+repo    = "Dikese411980/hotapi-skill"
+name    = "hotapi-skill (seedance-storyboard)"
+desc    = "Asset-First 分镜执行器：Seedream 5.0 锁资产、Seedance 2.5 草稿预览与 1080p 升频、离线 HTML 看板"
+desc_en = "Asset-First storyboard runner: lock character/scene refs with Seedream 5.0, render Seedance 2.5/2.0 drafts and 1080p finals, import project_bundle.json, and build an offline HTML board."
+group   = "visual"
+stages  = ["character", "storyboard", "prompt", "production"]
+format  = "skill"
+lang    = "en"
+agents  = ["claude-code", "codex", "cursor", "opencode"]
+models  = ["seedance"]
+install = "npx skills add Dikese411980/hotapi-skill --skill seedance-storyboard"
+
 # ───────────────────────── 上游：IP 评估与故事拆解 ─────────────────────────
 
 [[skills]]
